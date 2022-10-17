@@ -1,0 +1,224 @@
+﻿Source,Disease,OfficialName,OfficialAgentAbbreviation
+Distiller,African horse sickness virus,African horse sickness,AHSV
+OIE,African horse sickness                  ,African horse sickness,AHSV
+OIE,African horse sickness virus (Inf. with),African horse sickness,AHSV
+OtherRisk,African horse sickness virus,African horse sickness,AHSV
+SLR,African horse sickness,African horse sickness,AHSV
+Vector,African Horse Sickness (AHS),African horse sickness,AHSV
+WAHIS,African horse sickness virus (Inf. with),African horse sickness,AHSV
+Distiller,African swine fever virus,African swine fever,ASFV
+OIE,African swine fever                    ,African swine fever,ASFV
+OIE,African swine fever virus (Inf. with),African swine fever,ASFV
+OtherRisk,African swine fever virus,African swine fever,ASFV
+SLR,African swine fever,African swine fever,ASFV
+Vector,African swine fever (ASF),African swine fever,ASFV
+WAHIS,African swine fever virus (Inf. with),African swine fever,ASFV
+Distiller,Aino virus,Aino virus infection,AINOV
+OtherRisk,Aino virus,Aino virus infection,AINOV
+Vector,Aino virus (AINOV) infection,Aino virus infection,AINOV
+Distiller,Akabane virus,Akabane virus infection,AKAV
+OtherRisk,Akabane virus,Akabane virus infection,AKAV
+Vector,Akabane virus (AKAV) infection,Akabane virus infection,AKAV
+Distiller,Alkhurma haemorrhagic fever virus,Alkhurma haemorrhagic fever,AHFV
+OtherRisk,Alkhurma haemorrhagic fever virus,Alkhurma haemorrhagic fever,AHFV
+Vector,Alkhurma hemorrhagic fever virus (AHFV),Alkhurma haemorrhagic fever,AHFV
+Distiller,Bhanja virus,Bhanja virus infection,BHAV
+OtherRisk,Bhanja virus,Bhanja virus infection,BHAV
+Vector,Bhanja virus (BHAV) infection,Bhanja virus infection,BHAV
+Distiller,Bluetongue virus,bluetongue disease,BTV
+OIE,Bluetongue                              ,bluetongue disease,BTV
+OIE,Bluetongue virus (Inf. with),bluetongue disease,BTV
+OtherRisk,Bluetongue virus,bluetongue disease,BTV
+SLR,Bluetongue,bluetongue disease,BTV
+Vector,Bluetongue virus (BTV),bluetongue disease,BTV
+WAHIS,Bluetongue virus (Inf. with),bluetongue disease,BTV
+Distiller,Bovine ephemeral fever virus,bovine ephemeral fever,BEFV
+OtherRisk,Bovine ephemeral fever virus,bovine ephemeral fever,BEFV
+Vector,Bovine ephemeral fever (BEFV),bovine ephemeral fever,BEFV
+Distiller,Bunyamwera virus,Cache Valley virus infection,CVV
+OtherRisk,Bunyamwera virus,Cache Valley virus infection,CVV
+Vector,Bunyamwera virus (CVV) Cache Valley virus infection,Cache Valley virus infection,CVV
+Distiller,Palyam virus,Chuzan disease,KASV
+OtherRisk,Palyam virus,Chuzan disease,KASV
+Vector,"Palyam (Kasba) virus (KASV), Chuzan disease",Chuzan disease,KASV
+Distiller,Classical Swine Fever,classical swine fever                  ,CSFV
+OIE,Classical swine fever                  ,classical swine fever                  ,CSFV
+OIE,Classical swine fever virus (Inf. with),classical swine fever                  ,CSFV
+OtherRisk,Classical Swine Fever,classical swine fever                  ,CSFV
+SLR,Classical swine fever,classical swine fever                  ,CSFV
+WAHIS,Classical swine fever virus (Inf. with),classical swine fever                  ,CSFV
+Distiller,Contagious bovine pleuropneumonia,contagious bovine pleuropneumonia         ,CBPP
+OIE,Contagious bov. pleuropneumonia         ,contagious bovine pleuropneumonia         ,CBPP
+OIE,Mycoplasma mycoides subsp. mycoides SC (Inf. with) (Contagious bovine pleuropneumonia),contagious bovine pleuropneumonia         ,CBPP
+OtherRisk,Contagious bovine pleuropneumonia,contagious bovine pleuropneumonia         ,CBPP
+OtherRisk,Mycoplasma mycoides subsp. mycoides SC (Inf. with) (Contagious bovine pleuropneumonia),contagious bovine pleuropneumonia         ,CBPP
+SLR,Contagious bovine pleuropneumonia,contagious bovine pleuropneumonia         ,CBPP
+Distiller,Contagious caprine pleuropneumonia,contagious caprine pleuropneumonia        ,CCPP
+OIE,Contagious cap. pleuropneumonia        ,contagious caprine pleuropneumonia        ,CCPP
+OIE,Contagious caprine pleuropneumonia,contagious caprine pleuropneumonia        ,CCPP
+OtherRisk,Contagious caprine pleuropneumonia,contagious caprine pleuropneumonia        ,CCPP
+WAHIS,Contagious caprine pleuropneumonia,contagious caprine pleuropneumonia        ,CCPP
+Distiller,Crimean-Congo haemorrhagic fever virus,Crimean-Congo haemorrhagic fever,CCHFV
+OtherRisk,Crimean-Congo haemorrhagic fever virus,Crimean-Congo haemorrhagic fever,CCHFV
+Vector,Crimean Congo Haemorrhagic Fever (CCHF),Crimean-Congo haemorrhagic fever,CCHFV
+WAHIS,Crimean Congo haemorrhagic fever (2006-),Crimean-Congo haemorrhagic fever,CCHFV
+Distiller,Eastern equine encephalitis virus,Eastern equine encephalitis,EEEV
+OIE,Encephalomyelitis (East. and W.)        ,Eastern equine encephalitis,EEEV
+OIE,Equine encephalomyelitis (Eastern)     ,Eastern equine encephalitis,EEEV
+OtherRisk,Eastern equine encephalitis virus,Eastern equine encephalitis,EEEV
+Vector,Eastern equine encephalitis virus (EEEV),Eastern equine encephalitis,EEEV
+WAHIS,Equine encephalomyelitis (Eastern)(2006-),Eastern equine encephalitis,EEEV
+Distiller,Epizootic haemorrhagic disease virus,epizootic haemorrhagic disease          ,EHDV
+OIE,Epizootic haemorrhagic disease          ,epizootic haemorrhagic disease          ,EHDV
+OtherRisk,Epizootic hemorrhagic disease virus,epizootic haemorrhagic disease          ,EHDV
+Vector,Epizootic haemorrhagic disease (EHDV),epizootic haemorrhagic disease          ,EHDV
+WAHIS,Epizootic hemorrhagic disease virus (Inf. with),epizootic haemorrhagic disease          ,EHDV
+Distiller,Equine encephalosis virus,equine encephalosis,EEV
+OIE,Equine encephalosis                     ,equine encephalosis,EEV
+OIE,Equine encephalosis virus (Inf. with),equine encephalosis,EEV
+Vector,Equine encephalosis virus (EEV),equine encephalosis,EEV
+WAHIS,Equine encephalosis virus (Inf. with),equine encephalosis,EEV
+Distiller,FMD - Foot and Mouth Disease,foot and mouth disease                 ,FMDV
+OIE,Foot and mouth disease                 ,foot and mouth disease                 ,FMDV
+OIE,Foot and mouth disease virus (Inf. with),foot and mouth disease                 ,FMDV
+OtherRisk,Foot and Mouth,foot and mouth disease                 ,FMDV
+SLR,Foot and mouth disease,foot and mouth disease                 ,FMDV
+WAHIS,Foot and mouth disease virus (Inf. with),foot and mouth disease                 ,FMDV
+Distiller,Getah virus,Getah virus infection,GETV
+OtherRisk,Getah virus,Getah virus infection,GETV
+Vector,Getah virus (GETV),Getah virus infection,GETV
+Distiller,Glanders (Burkholderia mallei),glanders,Bmallei
+OIE,Burkholderia mallei (Inf. with) (Glanders),glanders,Bmallei
+OIE,Glanders                                ,glanders,Bmallei
+OtherRisk,Glanders,glanders,Bmallei
+SLR,Glanders,glanders,Bmallei
+WAHIS,Burkholderia mallei (Inf. with) (Glanders),glanders,Bmallei
+Distiller,Ehrlichia ruminantium,heartwater,Eruminantium
+OtherRisk,Cowdria ruminantium,heartwater,Eruminantium
+OtherRisk,Heartwater,heartwater,Eruminantium
+Vector,Heartwater syn.Cowdriosis,heartwater,Eruminantium
+Distiller,Hepatozoon canis,hepatozoonosis,hepat
+OtherRisk,Hepatozoon canis,hepatozoonosis,hepat
+Vector,Hepatozoon canis (hepat),hepatozoonosis,hepat
+Distiller,Highlands J virus,Highlands J virus infection,HJV
+OtherRisk,Highlands J virus,Highlands J virus infection,HJV
+Vector,Highlands J virus (HJV),Highlands J virus infection,HJV
+Distiller,HPAI - Highly Pathogenic Avian Influenza,highly pathogenic avian influenza,HPAI
+OIE,Highly path. avian influenza           ,highly pathogenic avian influenza,HPAI
+OIE,Highly pathogenic avian influenza,highly pathogenic avian influenza,HPAI
+OIE,Highly pathogenic influenza A viruses (Inf. with)(non-poultry including wild birds)(2017-),highly pathogenic avian influenza,HPAI
+OIE,HPAI (non-poultry including wild birds) ,highly pathogenic avian influenza,HPAI
+OIE,High pathogenicity avian influenza viruses (poultry) (Inf. with),highly pathogenic avian influenza,HPAI
+OIE,Influenza A viruses of high pathogenicity (Inf. with) (non-poultry including wild birds) (2017-),highly pathogenic avian influenza,HPAI
+OtherRisk,Highly pathogenic avian influenza (poultry),highly pathogenic avian influenza,HPAI
+OtherRisk,Highly pathogenic influenza A viruses (Inf. with)(non-poultry including wild birds)(2017-),highly pathogenic avian influenza,HPAI
+OtherRisk,HPAI,highly pathogenic avian influenza,HPAI
+SLR,Influenza - Avian,highly pathogenic avian influenza,HPAI
+Distiller,Japanese encephalitis virus,Japanese encephalitis,JEV
+OtherRisk,Japanese encephalitis,Japanese encephalitis,JEV
+OtherRisk,Japanese encephalitis virus,Japanese encephalitis,JEV
+SLR,Japanese Encephalitis,Japanese encephalitis,JEV
+Vector,Japanese encephalitis virus (JEV),Japanese encephalitis,JEV
+Distiller,Kotonkon virus,Kotonkan virus infection,KOTV
+OtherRisk,Kotonkon virus,Kotonkan virus infection,KOTV
+Vector,Kotonkan virus (KOTV),Kotonkan virus infection,KOTV
+Distiller,Leishmania infantum,leishmaniosis,Linfantum
+OIE,Leishmaniosis                           ,leishmaniosis,Linfantum
+OtherRisk,Leishmania infantum,leishmaniosis,Linfantum
+OtherRisk,Leishmaniosis,leishmaniosis,Linfantum
+Vector,Leishmaniasis (L. infantum/L. chagasi),leishmaniosis,Linfantum
+Distiller,Lumpy Skin Disease,lumpy skin disease,LSDV
+OIE,Lumpy skin disease                     ,lumpy skin disease,LSDV
+OtherRisk,Lumpy skin,lumpy skin disease,LSDV
+OtherRisk,Lumpy skin disease virus (Inf. with),lumpy skin disease,LSDV
+SLR,Lumpy skin disease,lumpy skin disease,LSDV
+Distiller,Main drain virus,Main Drain virus infection,MDV
+OtherRisk,Main drain virus,Main Drain virus infection,MDV
+Vector,Main Drain Virus (MDV),Main Drain virus infection,MDV
+Distiller,Middelburg virus,Middelburg virus infection,MIDV
+OtherRisk,Middelburg virus,Middelburg virus infection,MIDV
+Vector,Middelburg virus (MIDV),Middelburg virus infection,MIDV
+Distiller,Nairobi sheep disease virus,Nairobi sheep disease,NSDV
+OtherRisk,Nairobi sheep disease,Nairobi sheep disease,NSDV
+OtherRisk,Nairobi sheep disease virus,Nairobi sheep disease,NSDV
+Vector,Nairobi sheep disease virus (NSDV)/Ganjam virus,Nairobi sheep disease,NSDV
+Distiller,Newcastle disease,Newcastle disease,NDV
+OIE,Newcastle disease                       ,Newcastle disease,NDV
+OIE,Newcastle disease virus (Inf. with),Newcastle disease,NDV
+OtherRisk,Newcastle,Newcastle disease,NDV
+OtherRisk,Newcastle disease virus (Inf. with),Newcastle disease,NDV
+SLR,Newcastle disease,Newcastle disease,NDV
+Distiller,Peruvian horse sickness virus,Peruvian horse sickness,PHSV
+OtherRisk,Peruvian horse sickness virus,Peruvian horse sickness,PHSV
+Vector,Peruvian horse sickness virus (PHSV),Peruvian horse sickness,PHSV
+Distiller,Peste des petit ruminants,Peste des petits ruminants,PPRV
+OIE,Peste des petits ruminants             ,Peste des petits ruminants,PPRV
+OIE,Peste des petits ruminants virus (Inf. with),Peste des petits ruminants,PPRV
+OtherRisk,Peste des petit ruminants,Peste des petits ruminants,PPRV
+OtherRisk,Peste des petits ruminants virus (Inf. with),Peste des petits ruminants,PPRV
+SLR,Peste des petits ruminants,Peste des petits ruminants,PPRV
+Distiller,Rift Valley fever virus,Rift Valley fever,RVFV
+OIE,Rift Valley fever                       ,Rift Valley fever,RVFV
+OtherRisk,Rift Valley fever virus,Rift Valley fever,RVFV
+OtherRisk,Rift Valley fever virus (Inf. with),Rift Valley fever,RVFV
+SLR,Rift Valley fever,Rift Valley fever,RVFV
+Vector,Rift Valley fever (RVF),Rift Valley fever,RVFV
+Distiller,Rinderpest,Rinderpest,RPV
+OtherRisk,Rinderpest,Rinderpest,RPV
+OtherRisk,Rinderpest virus (Inf. with),Rinderpest,RPV
+SLR,Rinderpest,Rinderpest,RPV
+Distiller,Schmallenberg virus,Schmallenberg disease,SBV
+OIE,Infection with Schmallenberg virus     ,Schmallenberg disease,SBV
+OIE,Schmallenberg virus (Inf. with),Schmallenberg disease,SBV
+OtherRisk,Schmallenberg virus,Schmallenberg disease,SBV
+OtherRisk,Schmallenberg virus (Inf. with),Schmallenberg disease,SBV
+SLR,Schmallenberg,Schmallenberg disease,SBV
+Vector,Schmallenberg virus (SBV),Schmallenberg disease,SBV
+Distiller,Sheep and goat pox,sheep pox and goat pox,SPPV
+OIE,Goat pox,sheep pox and goat pox,SPPV
+OIE,Sheep pox,sheep pox and goat pox,SPPV
+OIE,Sheep pox and goat pox                 ,sheep pox and goat pox,SPPV
+OtherRisk,Goat pox,sheep pox and goat pox,SPPV
+OtherRisk,Sheep and got pox,sheep pox and goat pox,SPPV
+OtherRisk,Sheep pox,sheep pox and goat pox,SPPV
+OtherRisk,Sheep pox and goat pox,sheep pox and goat pox,SPPV
+SLR,Sheep pox and goat pox,sheep pox and goat pox,SPPV
+Distiller,Shuni virus,Shuni virus infection,SHUV
+OtherRisk,Shuni virus,Shuni virus infection,SHUV
+Vector,Shuni virus (SHUV),Shuni virus infection,SHUV
+Distiller,St. Louis encephalitis virus,St. Louis encephalitis,SLEV
+OtherRisk,St. Louis encephalitis virus,St. Louis encephalitis,SLEV
+Vector,St. Louis encephalitis (SLEV),St. Louis encephalitis,SLEV
+Distiller,Thogoto virus,Thogoto virus infection,THOV
+OtherRisk,Thogoto virus,Thogoto virus infection,THOV
+Vector,Thogoto virus (THOV),Thogoto virus infection,THOV
+Distiller,Venezuelan equine encephalitis virus,Venezuelan equine encephalitis,VEED
+OIE,Venezuelan equ.encephalomyelitis       ,Venezuelan equine encephalitis,VEED
+OIE,Venezuelan equine encephalomyelitis,Venezuelan equine encephalitis,VEED
+OtherRisk,Venezuelan equine encephalitis virus,Venezuelan equine encephalitis,VEED
+OtherRisk,Venezuelan equine encephalomyelitis,Venezuelan equine encephalitis,VEED
+Vector,Venezuelan equine encephalitis (VEE),Venezuelan equine encephalitis,VEED
+Distiller,Vesicular stomatitis virus,vesicular stomatitis,VSV
+OIE,Vesicular stomatitis                   ,vesicular stomatitis,VSV
+OIE,Vesicular stomatitis (-2014),vesicular stomatitis,VSV
+OtherRisk,Vesicular stomatitis (-2014),vesicular stomatitis,VSV
+OtherRisk,Vesicular stomatitis viruses,vesicular stomatitis,VSV
+Vector,Vesicular stomatitis virus (VSV),vesicular stomatitis,VSV
+Distiller,Wesselsbron virus,Wesselsbron virus infection,WSLV
+OtherRisk,Wesselsbron virus,Wesselsbron virus infection,WSLV
+Vector,Wesselsbron virus (WSLV),Wesselsbron virus infection,WSLV
+Distiller,West Nile virus,West Nile fever,WNFV
+OIE,West Nile Fever,West Nile fever,WNFV
+OtherRisk,West Nile Fever,West Nile fever,WNFV
+OtherRisk,West Nile virus,West Nile fever,WNFV
+SLR,West Nile Fever,West Nile fever,WNFV
+Vector,West Nile Virus (WNV),West Nile fever,WNFV
+Distiller,Western equine encephalitis virus,Western equine encephalitis,WEEV
+OIE,Encephalomyelitis (West.)              ,Western equine encephalitis,WEEV
+OIE,Equine encephalomyelitis (Western),Western equine encephalitis,WEEV
+OtherRisk,Western equine encephalitis virus,Western equine encephalitis,WEEV
+Vector,Western equine encephalitis virus (WEEV),Western equine encephalitis,WEEV
+WAHIS,Equine encephalomyelitis (Western)(2006-),Western equine encephalitis,WEEV
+Distiller,Yunnan orbivirus,Yunnan orbivirus infection,YUOV
+OtherRisk,Yunnan orbivirus,Yunnan orbivirus infection,YUOV
+Vector,Yunnan orbivirus (YUOV),Yunnan orbivirus infection,YUOV

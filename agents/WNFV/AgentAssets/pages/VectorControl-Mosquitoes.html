@@ -1,0 +1,2932 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>Vector control studies - Evidence from systematic literature review</title>
+
+<meta property="og:title" content="Vector control studies - Evidence from systematic literature review" />
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
+<link rel="icon" href="data:image/x-icon;" type="image/x-icon">
+
+
+<script type="text/javascript">
+window.FlexDashboardComponents = [];
+</script>
+
+<script src="../../assets/flexdash_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="../../assets/flexdash_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="../../assets/flexdash_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="../../assets/flexdash_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="../../assets/flexdash_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="../../assets/flexdash_libs/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
+<script src="../../assets/flexdash_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="../../assets/flexdash_libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="../../assets/flexdash_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="../../assets/flexdash_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="../../assets/flexdash_libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="../../assets/flexdash_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/datatables-binding-0.19/datatables.js"></script>
+<link href="../../assets/flexdash_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="../../assets/flexdash_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="../../assets/flexdash_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="../../assets/flexdash_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/selectize-0.12.0/selectize.min.js"></script>
+<style type="text/css">
+
+/*
+ Dashboard CSS from Keen IO Dashboards
+ (https://github.com/keen/dashboards)
+*/
+
+body {
+  background: #f2f2f2;
+  padding: 60px 0 0 8px; /* padding-top overridden by theme */
+}
+
+body hr {
+  border-color: #d7d7d7;
+  margin: 10px 0;
+}
+
+.navbar-inverse .navbar-nav > li > a,
+.navbar .navbar-brand {
+  text-decoration: none;
+}
+
+.navbar-logo {
+  margin-top: 1px;
+}
+
+.navbar-logo img {
+  margin-right: 12px;
+}
+
+.navbar-author {
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.navbar .dropdown-menu .fa {
+  min-width: 20px;
+}
+
+.navbar .dropdown-menu {
+  min-width: 150px;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.chart-wrapper,
+.nav-tabs-custom,
+.sbframe-commentary
+{
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+.chart-title {
+  border-bottom: 1px solid #d7d7d7;
+  color: #666;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 7px 10px 4px;
+}
+
+.chart-wrapper .chart-title:empty {
+  display: none;
+}
+
+.chart-wrapper .chart-stage {
+  overflow: hidden;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.chart-wrapper .chart-notes {
+  background: #fbfbfb;
+  border-top: 1px solid #e2e2e2;
+  color: #808080;
+  font-size: 12px;
+  padding: 8px 10px 5px;
+}
+
+/*
+ CSS for handling flexbox layout
+*/
+
+#dashboard-container {
+  visibility: hidden;
+}
+
+.tab-content>.dashboard-page-wrapper.active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dashboard-page-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dashboard-row-orientation {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dashboard-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard-row-flex {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.dashboard-column-orientation {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard-column {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.chart-wrapper-flex {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.chart-stage-flex {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+}
+
+.chart-shim {
+  position: absolute;
+  left: 8px; top: 8px; right: 8px; bottom: 8px;
+}
+
+.no-padding .chart-shim {
+  left: 0; top: 0; right: 0; bottom: 0;
+}
+
+.flowing-content-shim {
+  overflow: auto;
+  left: 0; top: 0; right: 0; bottom: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.flowing-content-container {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.chart-stage .table-bordered {
+  border: none;
+}
+
+.chart-stage .table-bordered > tbody > tr > th,
+.chart-stage .table-bordered > tfoot > tr > th,
+.chart-stage .table-bordered > tbody > tr > td,
+.chart-stage .table-bordered > tfoot > tr > td {
+  border: none;
+}
+
+.chart-stage .table-bordered > tbody > tr > td {
+  border-top: 1px solid #dddddd;
+}
+
+.chart-stage .table-bordered > thead > tr > th {
+  border: none;
+  border-bottom: 2px solid #dddddd;
+}
+
+.bootstrap-table table>thead {
+  background-color: #fff;
+}
+
+.bootstrap-table table.data,
+.bootstrap-table table.shiny-table {
+  width: inherit !important;
+}
+
+.bootstrap-table table.data>tbody>tr>th,
+.bootstrap-table table.shiny-table>tbody>tr>th {
+  border-top: none;
+  border-bottom: 2px solid #dddddd;
+  padding: 5px;
+}
+
+.bootstrap-table .data td[align=right] {
+  font-family: inherit;
+}
+
+.chart-wrapper form {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.shiny-input-container label {
+  font-weight: normal;
+}
+
+.chart-stage .html-widget {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.chart-stage .html-widget-static-bound {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.chart-stage .shiny-bound-output {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Omit display of empty paragraphs */
+
+.chart-shim>p:empty {
+  display: none;
+}
+
+.chart-stage>p:empty {
+  display: none;
+}
+
+/* Omit display of special knitr options div*/
+
+.chart-stage .knitr-options {
+  display: none;
+}
+
+/* Automatically resizing images */
+
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+}
+
+.image-container img {
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* Value box */
+
+.value-box {
+  border-radius: 2px;
+  position: relative;
+  display: block;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.value-box > .inner {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.value-box .value {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 0 0 3px 0;
+  white-space: nowrap;
+  padding: 0;
+}
+
+.value-box .caption {
+  font-size: 15px;
+}
+.value-box .caption > small {
+  display: block;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.value-box .icon i {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 80px;
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.linked-value:hover {
+  cursor: pointer;
+}
+
+.value-box.linked-value:hover {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* STORYBOARD */
+
+.storyboard-nav button {
+  background: transparent;
+  border: 0;
+  opacity: .3;
+  outline: none;
+  padding: 0;
+}
+
+.storyboard-nav button:hover,
+.storyboard-nav button:hover {
+  opacity: .5;
+}
+
+.storyboard-nav button:disabled,
+.storyboard-nav button:disabled {
+  opacity: .1;
+}
+
+.storyboard-nav .sbnext,
+.storyboard-nav .sbprev {
+  float: left;
+  width: 2%;
+  height: 120px;
+  font-size: 50px;
+}
+
+.storyboard-nav .sbprev {
+  text-align: left;
+  width: 2%;
+}
+
+.storyboard-nav .sbnext {
+  float: right;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.storyboard-nav .sbframelist {
+  margin: 0 auto;
+  width: 94%;
+  height: 120px;
+  overflow: hidden;
+  text-shadow: none;
+  margin-bottom: 8px;
+}
+
+.storyboard-nav .sbframelist ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.storyboard-nav .sbframelist ul li {
+  float: left;
+  width: 270px;
+  height: 100%;
+  padding: 10px 10px 10px 10px;
+  margin-right: 8px;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  color: #3a3c47;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.storyboard-nav .sbframelist ul li:last-child {
+  margin-right: 0px;
+}
+
+.storyboard-nav .sbframelist ul li.active {
+  color: #fff;
+  background: #B8B8B8;
+}
+
+.sbframe-commentary {
+  width: 300px;
+  background: #fbfbfb;
+  font-size: 14px;
+}
+
+.sbframe-commentary ul {
+  padding-left: 22px;
+}
+
+.sbframe.active {
+  display: flex;
+}
+
+.sbframe:not(.active) {
+  display: none;
+}
+
+/* NAV TABS */
+
+.nav-tabs-custom > .nav-tabs {
+  margin: 0;
+  border-bottom: 1px solid #d7d7d7;
+  color: #666;
+  font-size: 14px;
+  font-weight: 300;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.nav-tabs-custom > .nav-tabs > li {
+  border-top: 3px solid transparent;
+  margin-bottom: -1px;
+  margin-right: 5px;
+}
+.nav-tabs-custom > .nav-tabs > li > a,
+.nav-tabs-custom > .nav-tabs > li > a:active {
+  color: #666;
+  font-weight: 300;
+  font-size: 14px;
+  border-radius: 0;
+  padding: 3px 10px 5px;
+  text-transform: none;
+}
+
+.nav-tabs-custom > .nav-tabs > li:not(.active) > a {
+  border-bottom-color: transparent;
+}
+
+.nav-tabs-custom > .nav-tabs > li > a.text-muted {
+  color: #999;
+}
+.nav-tabs-custom > .nav-tabs > li > a,
+.nav-tabs-custom > .nav-tabs > li > a:hover {
+  background: transparent;
+  margin: 0;
+}
+.nav-tabs-custom > .nav-tabs > li > a:hover {
+  color: #999;
+}
+.nav-tabs-custom > .nav-tabs > li:not(.active) > a:hover,
+.nav-tabs-custom > .nav-tabs > li:not(.active) > a:focus,
+.nav-tabs-custom > .nav-tabs > li:not(.active) > a:active {
+  border-color: transparent;
+}
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color: #3c8dbc;
+}
+.nav-tabs-custom > .nav-tabs > li.active > a,
+.nav-tabs-custom > .nav-tabs > li.active:hover > a {
+  background-color: #fff;
+  color: #666;
+}
+.nav-tabs-custom > .nav-tabs > li.active > a {
+  border-top-color: transparent;
+  border-left-color: #d7d7d7;
+  border-right-color: #d7d7d7;
+}
+.nav-tabs-custom > .nav-tabs > li:first-of-type {
+  margin-left: 0;
+}
+.nav-tabs-custom > .nav-tabs > li:first-of-type.active > a {
+  border-left-color: transparent;
+}
+.nav-tabs-custom > .nav-tabs.pull-right {
+  float: none !important;
+}
+.nav-tabs-custom > .nav-tabs.pull-right > li {
+  float: right;
+}
+.nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type {
+  margin-right: 0;
+}
+.nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type > a {
+  border-left-width: 1px;
+}
+.nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type.active > a {
+  border-left-color: #d7d7d7;
+  border-right-color: transparent;
+}
+.nav-tabs-custom > .nav-tabs > li.header {
+  line-height: 35px;
+  padding: 0 10px;
+  font-size: 20px;
+  color: #666;
+}
+.nav-tabs-custom > .nav-tabs > li.header > .fa,
+.nav-tabs-custom > .nav-tabs > li.header > .glyphicon,
+.nav-tabs-custom > .nav-tabs > li.header > .ion {
+  margin-right: 5px;
+}
+.nav-tabs-custom > .tab-content {
+  background: #fff;
+  padding: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-tabs-custom > .tab-content > .chart-wrapper {
+  background: #fff;
+  border: none;
+  margin: 0;
+}
+
+
+.nav-tabs-custom > .tab-content > .active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-tabs-custom .dropdown.open > a:active,
+.nav-tabs-custom .dropdown.open > a:focus {
+  background: transparent;
+  color: #999;
+}
+
+
+@media (max-width: 767px) {
+  .value-box {
+    text-align: center;
+    margin-right: 8px;
+  }
+  .value-box .icon {
+    display: none;
+  }
+}
+
+/* Fixed position sidebar */
+
+.section.sidebar {
+  position: fixed;
+  top: 51px; /* overridden by theme */
+  left: 0;
+  bottom: 0;
+  border-right: 1px solid #e2e2e2;
+  background-color: white; /* overridden by theme */
+  padding-left: 10px;
+  padding-right: 10px;
+  visibility: hidden;
+  overflow: auto;
+}
+
+.section.sidebar form p:first-child {
+  margin-top: 10px;
+}
+
+/* Embedded source code */
+
+#flexdashboard-source-code {
+  display: none;
+}
+
+.featherlight-content #flexdashboard-source-code {
+  display: inline-block;
+}
+
+.featherlight-content {
+  width: 80%;
+  max-width: 800px;
+  padding: 0 !important;
+  border-bottom: none !important;
+}
+
+.featherlight:last-of-type {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.featherlight-inner {
+  width: 100%;
+}
+
+.featherlight-content pre {
+  margin: 0;
+  border: 0;
+  background: #fff;
+  font-size: 12px;
+}
+
+.unselectable {
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#flexdashboard-source-code code {
+  -ms-user-select: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -o-user-select: text;
+  user-select: text;
+}
+
+/* DataTables Tweaks */
+
+.dataTables_filter input[type="search"] {
+  -webkit-appearance: searchfield;
+  outline: none;
+}
+
+.dataTables_wrapper.no-footer
+.dataTables_info {
+  padding-top: 0;
+}
+
+
+table.dataTable thead th {
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+  border-bottom: 1px solid #d7d7d7;
+}
+
+/* Mobile phone only CSS */
+
+.desktop-layout div.section.mobile {
+  display: none;
+}
+
+.mobile-layout div.section.no-mobile {
+  display: none;
+}
+
+.mobile-figure {
+  display: none;
+}
+
+
+
+body {
+  padding-top: 60px;
+}
+
+.section.sidebar {
+  top: 51px;
+  background-color: rgba(39, 128, 227, 0.1);
+}
+
+.value-box {
+  color: #f9f9f9;
+}
+
+.bg-primary {
+  background-color: rgba(39, 128, 227, 0.7);
+}
+
+.storyboard-nav .sbframelist ul li.active {
+  background-color: rgba(39, 128, 227, 0.7);
+}
+
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color: rgba(39, 128, 227, 0.7);
+}
+
+.bg-info {
+  background-color: rgba(153, 84, 187, 0.7);
+}
+
+.bg-warning {
+  background-color: rgba(255, 117, 24, 0.7);
+}
+
+.bg-danger {
+  background-color: rgba(255, 0, 57, 0.7);
+}
+
+.bg-success {
+  background-color: rgba(63, 182, 24, 0.7);
+}
+
+.chart-title {
+  font-weight: 500;
+}
+
+.nav-tabs-custom > .nav-tabs > li > a,
+.nav-tabs-custom > .nav-tabs > li > a:active {
+  font-weight: 500;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container-fluid">
+<div class="navbar-header">
+
+<button id="navbar-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+
+<span class="navbar-logo pull-left">
+  
+</span>
+<span class="navbar-brand">
+  Vector control studies - Evidence from systematic literature review
+  <span class="navbar-author">
+        </span>
+</span>
+
+</div>
+<div id="navbar" class="navbar-collapse collapse">
+<ul class="nav navbar-nav navbar-left">
+</ul>
+<ul class="nav navbar-nav navbar-right">
+</ul>
+</div><!--/.nav-collapse-->
+</div><!--/.container-->
+</div><!--/.navbar-->
+
+<script type="text/javascript">
+
+
+var FlexDashboard = (function () {
+
+  // initialize options
+  var _options = {};
+
+  var FlexDashboard = function() {
+
+    // default options
+    _options = $.extend(_options, {
+      theme: "cosmo",
+      fillPage: false,
+      orientation: 'columns',
+      storyboard: false,
+      defaultFigWidth: 576,
+      defaultFigHeight: 461,
+      defaultFigWidthMobile: 360,
+      defaultFigHeightMobile: 461,
+      isMobile: false,
+      isPortrait: false,
+      resize_reload: true
+    });
+  };
+
+  function init(options) {
+
+    // extend default options
+    $.extend(true, _options, options);
+
+    // add ids to sections that don't have them (pandoc won't assign ids
+    // to e.g. sections with titles consisting of only chinese characters)
+    var nextId = 1;
+    $('.level1:not([id]),.level2:not([id]),.level3:not([id])').each(function() {
+      $(this).attr('id', 'dashboard-' + nextId++);
+    });
+
+    // find navbar items
+    var navbarItems = $('#flexdashboard-navbar');
+    if (navbarItems.length)
+      navbarItems = JSON.parse(navbarItems.html());
+    addNavbarItems(navbarItems);
+
+    // find the main dashboard container
+    var dashboardContainer = $('#dashboard-container');
+
+    // resolve mobile classes
+    resolveMobileClasses(dashboardContainer);
+
+    // one time global initialization for components
+    componentsInit(dashboardContainer);
+
+    // look for a global sidebar
+    var globalSidebar = dashboardContainer.find(".section.level1.sidebar");
+    if (globalSidebar.length > 0) {
+
+      // global layout for fullscreen displays
+      if (!isMobilePhone()) {
+
+         // hoist it up to the top level
+         globalSidebar.insertBefore(dashboardContainer);
+
+         // lay it out (set width/positions)
+         layoutSidebar(globalSidebar, dashboardContainer);
+
+      // tuck sidebar into first page for mobile phones
+      } else {
+
+        // convert it into a level3 section
+        globalSidebar.removeClass('sidebar');
+        globalSidebar.removeClass('level1');
+        globalSidebar.addClass('level3');
+        var h1 = globalSidebar.children('h1');
+        var h3 = $('<h3></h3>');
+        h3.append(h1.contents());
+        h3.insertBefore(h1);
+        h1.detach();
+
+        // move it into the first page
+        var page = dashboardContainer.find('.section.level1').first();
+        if (page.length > 0)
+          page.prepend(globalSidebar);
+      }
+    }
+
+    // look for pages to layout
+    var pages = $('div.section.level1');
+    if (pages.length > 0) {
+
+        // find the navbar and collapse on clicked
+        var navbar = $('#navbar');
+        navbar.on("click", "a[data-toggle!=dropdown]", null, function () {
+           navbar.collapse('hide');
+        });
+
+        // envelop the dashboard container in a tab content div
+        dashboardContainer.wrapInner('<div class="tab-content"></div>');
+
+        pages.each(function(index) {
+
+          // lay it out
+          layoutDashboardPage($(this));
+
+          // add it to the navbar
+          addToNavbar($(this), index === 0);
+
+        });
+
+    } else {
+
+      // remove the navbar and navbar button if we don't
+      // have any navbuttons
+      if (navbarItems.length === 0) {
+        $('#navbar').remove();
+        $('#navbar-button').remove();
+      }
+
+      // add the storyboard class if requested
+      if (_options.storyboard)
+        dashboardContainer.addClass('storyboard');
+
+      // layout the entire page
+      layoutDashboardPage(dashboardContainer);
+    }
+
+    // if we are in shiny we need to trigger a window resize event to
+    // force correct layout of shiny-bound-output elements
+    if (isShinyDoc())
+      $(window).trigger('resize');
+
+    // make main components visible
+    $('.section.sidebar').css('visibility', 'visible');
+    dashboardContainer.css('visibility', 'visible');
+
+    // handle location hash
+    handleLocationHash();
+
+    // intialize prism highlighting
+    initPrismHighlighting();
+
+    // record mobile and orientation state then register a handler
+    // to refresh if resize_reload is set to true and it changes
+    _options.isMobile = isMobilePhone();
+    _options.isPortrait = isPortrait();
+    if (_options.resize_reload) {
+      $(window).on('resize', function() {
+        if (_options.isMobile !== isMobilePhone() ||
+            _options.isPortrait !== isPortrait()) {
+          window.location.reload();
+        }
+      });
+    } else {
+      // if in desktop mode and resizing to mobile, make sure the heights are 100%
+      // This enforces what `fillpage.css` does for "wider" pages.
+      // Since we are not reloading once the page becomes small, we need to force the height to 100%
+      // This is a new situation introduced when `_options.resize_reload` is `false`
+      if (! _options.isMobile) {
+        // only add if `fillpage.css` was added in the first place
+        if (_options.fillPage) {
+          // fillpage.css
+          $("html,body,#dashboard").css("height", "100%");
+        }
+      }
+    }
+    // trigger layoutcomplete event
+    dashboardContainer.trigger('flexdashboard:layoutcomplete');
+  }
+
+  function resolveMobileClasses(dashboardContainer) {
+     // add top level layout class
+    dashboardContainer.addClass(isMobilePhone() ? 'mobile-layout' :
+                                                  'desktop-layout');
+
+    // look for .mobile sections and add .no-mobile to their peers
+    var mobileSections = $('.section.mobile');
+    mobileSections.each(function() {
+       var id = $(this).attr('id');
+       var nomobileId = id.replace(/-\d+$/, '');
+       $('#' + nomobileId).addClass('no-mobile');
+    });
+  }
+
+  function addNavbarItems(navbarItems) {
+
+    var navbarLeft = $('ul.navbar-left');
+    var navbarRight = $('ul.navbar-right');
+
+    for (var i = 0; i<navbarItems.length; i++) {
+
+      // get the item
+      var item = navbarItems[i];
+
+      // determine the container
+      var container = null;
+      if (item.align === "left")
+        container = navbarLeft;
+      else
+        container = navbarRight;
+
+      // navbar menu if we have multiple items
+      if (item.items) {
+        var menu = navbarMenu(null, item.icon, item.title, container);
+        for (var j = 0; j<item.items.length; j++) {
+          var subItem = item.items[j];
+          var li = $('<li></li>');
+          li.append(navbarLink(subItem.icon, subItem.title, subItem.href, subItem.target));
+          menu.append(li);
+        }
+      } else {
+        var li = $('<li></li>');
+        li.append(navbarLink(item.icon, item.title, item.href, item.target));
+        container.append(li);
+      }
+    }
+  }
+
+  // create or get a reference to an existing dropdown menu
+  function navbarMenu(id, icon, title, container) {
+    var existingMenu = [];
+    if (id)
+      existingMenu = container.children('#' + id);
+    if (existingMenu.length > 0) {
+      return existingMenu.children('ul');
+    } else {
+      var li = $('<li></li>');
+      if (id)
+        li.attr('id', id);
+      li.addClass('dropdown');
+      // auto add "Share" title on mobile if necessary
+      if (!title && icon && (icon === "fa-share-alt") && isMobilePhone())
+        title = "Share";
+      if (title) {
+        title = title + ' <span class="caret"></span>';
+      }
+      var a = navbarLink(icon, title, "#");
+      a.addClass('dropdown-toggle');
+      a.attr('data-toggle', 'dropdown');
+      a.attr('role', 'button');
+      a.attr('aria-expanded', 'false');
+      li.append(a);
+      var ul = $('<ul class="dropdown-menu"></ul>');
+      ul.attr('role', 'menu');
+      li.append(ul);
+      container.append(li);
+      return ul;
+    }
+  }
+
+  function addToNavbar(page, active) {
+
+    // capture the id and data-icon attribute (if any)
+    var id = page.attr('id');
+    var icon = page.attr('data-icon');
+    var navmenu = page.attr('data-navmenu');
+
+    // get hidden state (transfer this to navbar)
+    var hidden = page.hasClass('hidden');
+    page.removeClass('hidden');
+
+    // sanitize the id for use with bootstrap tabs
+    id = id.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_');
+    page.attr('id', id);
+
+    // get the wrapper
+    var wrapper = page.closest('.dashboard-page-wrapper');
+
+    // move the id to the wrapper
+    page.removeAttr('id');
+    wrapper.attr('id', id);
+
+    // add the tab-pane class to the wrapper
+    wrapper.addClass('tab-pane');
+    if (active)
+      wrapper.addClass('active');
+
+    // get a reference to the h1, discover its inner contens, then detach it
+    var h1 = wrapper.find('h1').first();
+    var title = h1.contents();
+    h1.detach();
+
+    // create a navbar item
+    var li = $('<li></li>');
+    var a = navbarLink(icon, title, '#' + id);
+    a.attr('data-toggle', 'tab');
+    li.append(a);
+
+    // add it to the navbar (or navbar menu if specified)
+    var container = $('ul.navbar-left');
+    if (navmenu) {
+      var menuId = navmenu.replace(/\s+/g, '');
+      var menu = navbarMenu(menuId, null, navmenu, container);
+      menu.append(li);
+    } else {
+      container.append(li);
+    }
+
+    // hide it if requested
+    if (hidden)
+      li.addClass('hidden');
+  }
+
+  function navbarLink(icon, title, href, target) {
+
+    var a = $('<a></a>');
+    if (icon) {
+
+      // get the name of the icon set and icon
+      var dashPos = icon.indexOf("-");
+      var iconSet = null;
+      var iconSplit = icon.split(" ");
+      if (iconSplit.length > 1) {
+        iconSet = iconSplit[0];
+        icon = iconSplit.slice(1).join(" ");
+      } else {
+        iconSet = icon.substring(0, dashPos);
+      }
+      var iconName = icon.substring(dashPos + 1);
+
+      // create the icon
+      var iconElement = $('<span class="' + iconSet + ' ' + icon + '"></span>');
+      if (title)
+        iconElement.css('margin-right', '7px');
+      a.append(iconElement);
+      // if href is null see if we can auto-generate based on icon (e.g. social)
+      if (!href)
+        maybeGenerateLinkFromIcon(iconName, a);
+    }
+    if (title)
+      a.append(title);
+
+    // add the href.
+    if (href) {
+      if (href === "source_embed") {
+        a.attr('href', '#');
+        a.attr('data-featherlight', "#flexdashboard-source-code");
+        a.featherlight({
+            beforeOpen: function(event){
+              $('body').addClass('unselectable');
+            },
+            afterClose: function(event){
+              $('body').removeClass('unselectable');
+            }
+        });
+      } else {
+        a.attr('href', href);
+      }
+    }
+
+    // add the arget
+    if (target)
+      a.attr('target', target);
+
+    return a;
+  }
+
+  // auto generate a link from an icon name (e.g. twitter) when possible
+  function maybeGenerateLinkFromIcon(iconName, a) {
+
+     var serviceLinks = {
+      "twitter": "https://twitter.com/share?text=" + encodeURIComponent(document.title) + "&url="+encodeURIComponent(location.href),
+      "facebook": "https://www.facebook.com/sharer/sharer.php?s=100&p[url]="+encodeURIComponent(location.href),
+      "google-plus": "https://plus.google.com/share?url="+encodeURIComponent(location.href),
+      "linkedin": "https://www.linkedin.com/shareArticle?mini=true&url="+encodeURIComponent(location.href) + "&title=" + encodeURIComponent(document.title),
+      "pinterest": "https://pinterest.com/pin/create/link/?url="+encodeURIComponent(location.href) + "&description=" + encodeURIComponent(document.title)
+    };
+
+    var makeSocialLink = function(a, href) {
+      a.attr('href', '#');
+      a.on('click', function(e) {
+        e.preventDefault();
+        window.open(href);
+      });
+    };
+
+    $.each(serviceLinks, function(key, value) {
+      if (iconName.indexOf(key) !== -1)
+        makeSocialLink(a, value);
+    });
+  }
+
+  // layout a dashboard page
+  function layoutDashboardPage(page) {
+
+    // use a page wrapper so that free form content above the
+    // dashboard appears at the top rather than the side (as it
+    // would without the wrapper in a column orientation)
+    var wrapper = $('<div class="dashboard-page-wrapper"></div>');
+    page.wrap(wrapper);
+
+    // if there are no level2 or level3 headers synthesize a level3
+    // header to contain the (e.g. frame it, scroll container, etc.)
+    var headers = page.find('h2,h3');
+    if (headers.length === 0)
+      page.wrapInner('<div class="section level3"></div>');
+
+    // hoist up any content before level 2 or level 3 headers
+    var children = page.children();
+    children.each(function(index) {
+      if ($(this).hasClass('level2') || $(this).hasClass('level3'))
+        return false;
+      $(this).insertBefore(page);
+    });
+
+    // determine orientation and fillPage behavior for distinct media
+    var orientation, fillPage, storyboard;
+
+    // media: mobile phone
+    if (isMobilePhone()) {
+
+      // if there is a sidebar we need to ensure it's content
+      // is properly framed as an h3
+      var sidebar = page.find('.section.sidebar');
+      sidebar.removeClass('sidebar');
+      sidebar.wrapInner('<div class="section level3"></div>');
+      var h2 = sidebar.find('h2');
+      var h3 = $('<h3></h3>');
+      h3.append(h2.contents());
+      h3.insertBefore(h2);
+      h2.detach();
+
+      // wipeout h2 elements then enclose them in a single h2
+      var level2 = page.find('div.section.level2');
+      level2.each(function() {
+        level2.children('h2').remove();
+        level2.children().unwrap();
+      });
+      page.wrapInner('<div class="section level2"></div>');
+
+      // substitute mobile images
+      if (isPortrait()) {
+        var mobileFigures = $('img.mobile-figure');
+        mobileFigures.each(function() {
+          // get the src (might be base64 encoded)
+          var src = $(this).attr('src');
+
+          // find it's peer
+          var id = $(this).attr('data-mobile-figure-id');
+          var img = $('img[data-figure-id=' + id + "]");
+          img.attr('src', src)
+             .attr('width', _options.defaultFigWidthMobile)
+             .attr('height', _options.defaultFigHeightMobile);
+        });
+      }
+
+      // hoist storyboard commentary into it's own section
+      if (page.hasClass('storyboard')) {
+        var commentaryHR = page.find('div.section.level3 hr');
+        commentaryHR.each(function() {
+          var commentary = $(this).nextAll().detach();
+          var commentarySection = $('<div class="section level3"></div>');
+          commentarySection.append(commentary);
+          commentarySection.insertAfter($(this).closest('div.section.level3'));
+          $(this).remove();
+        });
+      }
+
+      // force a non full screen layout by columns
+      orientation = _options.orientation = 'columns';
+      fillPage = _options.fillPage = false;
+      storyboard = _options.storyboard = false;
+
+    // media: desktop
+    } else {
+
+      // determine orientation
+      orientation = page.attr('data-orientation');
+      if (orientation !== 'rows' && orientation != 'columns')
+        orientation = _options.orientation;
+
+      // determine storyboard mode
+      storyboard = page.hasClass('storyboard');
+
+      // fillPage based on options (force for storyboard)
+      fillPage = _options.fillPage || storyboard;
+
+      // handle sidebar
+      var sidebar = page.find('.section.level2.sidebar');
+      if (sidebar.length > 0)
+        layoutSidebar(sidebar, page);
+    }
+
+    // give it and it's parent divs height: 100% if we are in fillPage mode
+    if (fillPage) {
+      page.addClass('vertical-layout-fill');
+      page.css('height', '100%');
+      page.parents('div').css('height', '100%');
+    } else {
+      page.addClass('vertical-layout-scroll');
+    }
+
+    // perform the layout
+    if (storyboard)
+      layoutPageAsStoryboard(page);
+    else if (orientation === 'rows')
+      layoutPageByRows(page, fillPage);
+    else if (orientation === 'columns')
+      layoutPageByColumns(page, fillPage);
+  }
+
+  function layoutSidebar(sidebar, content) {
+
+    // get it out of the header hierarchy
+    sidebar = sidebar.first();
+    if (sidebar.hasClass('level1')) {
+      sidebar.removeClass('level1');
+      sidebar.children('h1').remove();
+    } else if (sidebar.hasClass('level2')) {
+      sidebar.removeClass('level2');
+      sidebar.children('h2').remove();
+    }
+
+    // determine width
+    var sidebarWidth = isTablet() ? 220 : 250;
+    var dataWidth = parseInt(sidebar.attr('data-width'));
+    if (dataWidth)
+      sidebarWidth = dataWidth;
+
+    // set the width and shift the page right to accomodate the sidebar
+    sidebar.css('width', sidebarWidth + 'px');
+    content.css('padding-left', sidebarWidth + 'px');
+
+    // wrap it's contents in a form
+    sidebar.wrapInner($('<form></form>'));
+  }
+
+  function layoutPageAsStoryboard(page) {
+
+    // create storyboard navigation
+    var nav = $('<div class="storyboard-nav"></div>');
+
+    // add navigation buttons
+    var prev = $('<button class="sbprev"><i class="fa fa-angle-left"></i></button>');
+    nav.append(prev);
+    var next= $('<button class="sbnext"><i class="fa fa-angle-right"></i></button>');
+    nav.append(next);
+
+    // add navigation frame
+    var frameList = $('<div class="sbframelist"></div>');
+    nav.append(frameList);
+    var ul = $('<ul></ul>');
+    frameList.append(ul);
+
+     // find all the level3 sections (those are the storyboard frames)
+    var frames = page.find('div.section.level3');
+    frames.each(function() {
+
+      // mark it
+      $(this).addClass('sbframe');
+
+      // divide it into chart content and (optional) commentary
+      $(this).addClass('dashboard-column-orientation');
+
+      // stuff the chart into it's own div w/ flex
+      $(this).wrapInner('<div class="sbframe-component"></div>');
+      setFlex($(this), 1);
+      var frame = $(this).children('.sbframe-component');
+
+      // extract the title from the h3
+      var li = $('<li></li>');
+      var h3 = frame.children('h3');
+      li.append(h3.contents());
+      h3.detach();
+      ul.append(li);
+
+      // extract commentary
+      var hr = frame.children('hr');
+      if (hr.length) {
+        var commentary = hr.nextAll().detach();
+        hr.remove();
+        var commentaryFrame = $('<div class="sbframe-commentary"></div>');
+        commentaryFrame.addClass('flowing-content-shim');
+        commentaryFrame.addClass('flowing-content-container');
+        commentaryFrame.append(commentary);
+        $(this).append(commentaryFrame);
+
+        // look for a data-commentary-width attribute
+        var commentaryWidth = $(this).attr('data-commentary-width');
+        if (commentaryWidth)
+          commentaryFrame.css('width', commentaryWidth + 'px');
+      }
+
+      // layout the chart (force flex)
+      var result = layoutChart(frame, true);
+
+      // ice the notes if there are none
+      if (!result.notes)
+        frame.find('.chart-notes').remove();
+
+      // set flex on chart
+      setFlex(frame, 1);
+    });
+
+    // create a div to hold all the frames
+    var frameContent = $('<div class="sbframe-content"></div>');
+    frameContent.addClass('dashboard-row-orientation');
+    frameContent.append(frames.detach());
+
+    // row orientation to stack nav and frame content
+    page.addClass('dashboard-row-orientation');
+    page.append(nav);
+    page.append(frameContent);
+    setFlex(frameContent, 1);
+
+    // initialize sly
+    var sly = new Sly(frameList, {
+    		horizontal: true,
+    		itemNav: 'basic',
+    		smart: true,
+    		activateOn: 'click',
+    		startAt: 0,
+    		scrollBy: 1,
+    		activatePageOn: 'click',
+    		speed: 200,
+    		moveBy: 600,
+    		dragHandle: true,
+    		dynamicHandle: true,
+    		clickBar: true,
+    		keyboardNavBy: 'items',
+    		next: next,
+    		prev: prev
+    	}).init();
+
+    // make first frame active
+    frames.removeClass('active');
+    frames.first().addClass('active');
+
+    // subscribe to frame changed events
+    sly.on('active', function (eventName, itemIndex) {
+      frames.removeClass('active');
+      frames.eq(itemIndex).addClass('active')
+                          .trigger('shown');
+    });
+  }
+
+  function layoutPageByRows(page, fillPage) {
+
+    // row orientation
+    page.addClass('dashboard-row-orientation');
+
+    // find all the level2 sections (those are the rows)
+    var rows = page.find('div.section.level2');
+
+    // if there are no level2 sections then treat the
+    // entire page as if it's a level 2 section
+    if (rows.length === 0) {
+      page.wrapInner('<div class="section level2"></div>');
+      rows = page.find('div.section.level2');
+    }
+
+    rows.each(function () {
+
+      // flags
+      var haveNotes = false;
+      var haveFlexHeight = true;
+
+      // remove the h2
+      $(this).children('h2').remove();
+
+      // check for a tabset
+      var isTabset = $(this).hasClass('tabset');
+      if (isTabset)
+        layoutTabset($(this));
+
+      // give it row layout semantics if it's not a tabset
+      if (!isTabset)
+        $(this).addClass('dashboard-row');
+
+      // find all of the level 3 subheads
+      var columns = $(this).find('div.section.level3');
+
+      // determine figureSizes sizes
+      var figureSizes = chartFigureSizes(columns);
+
+      // fixup the columns
+      columns.each(function(index) {
+
+        // layout the chart (force flex if we are in a tabset)
+        var result = layoutChart($(this), isTabset);
+
+        // update flexHeight state
+        if (!result.flex)
+          haveFlexHeight = false;
+
+        // update state
+        if (result.notes)
+          haveNotes = true;
+
+        // set the column flex based on the figure width
+        // (value boxes will just get the default figure width)
+        var chartWidth = figureSizes[index].width;
+        setFlex($(this), chartWidth + ' ' + chartWidth + ' 0px');
+
+      });
+
+      // remove empty chart note divs
+      if (isTabset)
+        $(this).find('.chart-notes').filter(function() {
+            return $(this).html() === "&nbsp;";
+        }).remove();
+      if (!haveNotes)
+        $(this).find('.chart-notes').remove();
+
+       // make it a flexbox row
+      if (haveFlexHeight)
+        $(this).addClass('dashboard-row-flex');
+
+      // now we can set the height on all the wrappers (based on maximum
+      // figure height + room for title and notes, or data-height on the
+      // container if specified). However, don't do this if there is
+      // no flex on any of the constituent columns
+      var flexHeight = null;
+      var dataHeight = parseInt($(this).attr('data-height'));
+      if (dataHeight)
+        flexHeight = adjustedHeight(dataHeight, columns.first());
+      else if (haveFlexHeight)
+        flexHeight = maxChartHeight(figureSizes, columns);
+      if (flexHeight) {
+        if (fillPage)
+          setFlex($(this), flexHeight + ' ' + flexHeight + ' 0px');
+        else {
+          $(this).css('height', flexHeight + 'px');
+          setFlex($(this), '0 0 ' + flexHeight + 'px');
+        }
+      }
+
+    });
+  }
+
+  function layoutPageByColumns(page, fillPage) {
+
+    // column orientation
+    page.addClass('dashboard-column-orientation');
+
+    // find all the level2 sections (those are the columns)
+    var columns = page.find('div.section.level2');
+
+    // if there are no level2 sections then treat the
+    // entire page as if it's a level 2 section
+    if (columns.length === 0) {
+      page.wrapInner('<div class="section level2"></div>');
+      columns = page.find('div.section.level2');
+    }
+
+    // layout each column
+    columns.each(function (index) {
+
+      // remove the h2
+      $(this).children('h2').remove();
+
+      // make it a flexbox column
+      $(this).addClass('dashboard-column');
+
+      // check for a tabset
+      var isTabset = $(this).hasClass('tabset');
+      if (isTabset)
+        layoutTabset($(this));
+
+      // find all the h3 elements
+      var rows = $(this).find('div.section.level3');
+
+      // get the figure sizes for the rows
+      var figureSizes = chartFigureSizes(rows);
+
+      // column flex is the max row width (or data-width if specified)
+      var flexWidth;
+      var dataWidth = parseInt($(this).attr('data-width'));
+      if (dataWidth)
+        flexWidth = dataWidth;
+      else
+        flexWidth = maxChartWidth(figureSizes);
+      setFlex($(this), flexWidth + ' ' + flexWidth + ' 0px');
+
+      // layout each chart
+      rows.each(function(index) {
+
+        // perform the layout
+        var result = layoutChart($(this), false);
+
+        // ice the notes if there are none
+        if (!result.notes)
+          $(this).find('.chart-notes').remove();
+
+        // set flex height based on figHeight, then adjust
+        if (result.flex) {
+          var chartHeight = figureSizes[index].height;
+          chartHeight = adjustedHeight(chartHeight, $(this));
+          if (fillPage)
+            setFlex($(this), chartHeight + ' ' + chartHeight + ' 0px');
+          else {
+            $(this).css('height', chartHeight + 'px');
+            setFlex($(this), chartHeight + ' ' + chartHeight + ' ' + chartHeight + 'px');
+          }
+        }
+      });
+    });
+  }
+
+  function chartFigureSizes(charts) {
+
+    // sizes
+    var figureSizes = new Array(charts.length);
+
+    // check each chart
+    charts.each(function(index) {
+
+      // start with default
+      figureSizes[index] = {
+        width: _options.defaultFigWidth,
+        height: _options.defaultFigHeight
+      };
+
+      // look for data-height or data-width then knit options
+      var dataWidth = parseInt($(this).attr('data-width'));
+      var dataHeight = parseInt($(this).attr('data-height'));
+      var knitrOptions = $(this).find('.knitr-options:first');
+      var knitrWidth, knitrHeight;
+      if (knitrOptions) {
+        knitrWidth = parseInt(knitrOptions.attr('data-fig-width'));
+        knitrHeight =  parseInt(knitrOptions.attr('data-fig-height'));
+      }
+
+      // width
+      if (dataWidth)
+        figureSizes[index].width = dataWidth;
+      else if (knitrWidth)
+        figureSizes[index].width = knitrWidth;
+
+      // height
+      if (dataHeight)
+        figureSizes[index].height = dataHeight;
+      else if (knitrHeight)
+        figureSizes[index].height = knitrHeight;
+    });
+
+    // return sizes
+    return figureSizes;
+  }
+
+  function maxChartHeight(figureSizes, charts) {
+
+    // first compute the maximum height
+    var maxHeight = _options.defaultFigHeight;
+    for (var i = 0; i<figureSizes.length; i++)
+      if (figureSizes[i].height > maxHeight)
+        maxHeight = figureSizes[i].height;
+
+    // now add offests for chart title and chart notes
+    if (charts.length)
+      maxHeight = adjustedHeight(maxHeight, charts.first());
+
+    return maxHeight;
+  }
+
+  function adjustedHeight(height, chart) {
+    if (chart.length > 0) {
+      var chartTitle = chart.find('.chart-title');
+      if (chartTitle.length)
+        height += chartTitle.first().outerHeight();
+      var chartNotes = chart.find('.chart-notes');
+      if (chartNotes.length)
+        height += chartNotes.first().outerHeight();
+    }
+    return height;
+  }
+
+  function maxChartWidth(figureSizes) {
+    var maxWidth = _options.defaultFigWidth;
+    for (var i = 0; i<figureSizes.length; i++)
+      if (figureSizes[i].width > maxWidth)
+        maxWidth = figureSizes[i].width;
+    return maxWidth;
+  }
+
+  // layout a chart
+  function layoutChart(chart, forceFlex) {
+
+    // state to return
+    var result = {
+      notes: false,
+      flex: false
+    };
+
+    // extract the title
+    var title = extractTitle(chart);
+
+    // find components that apply to this container
+    var components = componentsFind(chart);
+
+    // if it's a custom component then call it and return
+    var customComponents = componentsCustom(components);
+    if (customComponents.length) {
+      componentsLayout(customComponents, title, chart);
+      result.notes = false;
+      result.flex = forceFlex || componentsFlex(customComponents);
+      return result;
+    }
+
+    // put all the content in a chart wrapper div
+    chart.addClass('chart-wrapper');
+    chart.wrapInner('<div class="chart-stage"></div>');
+    var chartContent = chart.children('.chart-stage');
+
+    // flex the content if appropriate
+    result.flex = forceFlex || componentsFlex(components);
+    if (result.flex) {
+      // add flex classes
+      chart.addClass('chart-wrapper-flex');
+      chartContent.addClass('chart-stage-flex');
+
+      // additional shim to break out of flexbox sizing
+      chartContent.wrapInner('<div class="chart-shim"></div>');
+      chartContent = chartContent.children('.chart-shim');
+    }
+
+    // set custom data-padding attribute
+    var pad = chart.attr('data-padding');
+    if (pad) {
+      if (pad === "0")
+        chart.addClass('no-padding');
+      else {
+        pad = pad + 'px';
+        chartContent.css('left', pad)
+                    .css('top', pad)
+                    .css('right', pad)
+                    .css('bottom', pad)
+      }
+    }
+
+    // call compoents
+    componentsLayout(components, title, chartContent);
+
+    // also activate components on shiny output
+    findShinyOutput(chartContent).on('shiny:value',
+      function(event) {
+        var element = $(event.target);
+        setTimeout(function() {
+
+          // see if we opted out of flex based on our output (for shiny
+          // we can't tell what type of output we have until after the
+          // value is bound)
+          var components = componentsFind(element);
+          var flex = forceFlex || componentsFlex(components);
+          if (!flex) {
+            chart.css('height', "");
+            setFlex(chart, "");
+            chart.removeClass('chart-wrapper-flex');
+            chartContent.removeClass('chart-stage-flex');
+            chartContent.children().unwrap();
+          }
+
+          // perform layout
+          componentsLayout(components, title, element.parent());
+        }, 10);
+      });
+
+    // add the title
+    var chartTitle = $('<div class="chart-title"></div>');
+    chartTitle.append(title);
+    chart.prepend(chartTitle);
+
+    // add the notes section
+    var chartNotes = $('<div class="chart-notes"></div>');
+    chartNotes.html('&nbsp;');
+    chart.append(chartNotes);
+
+    // attempt to extract notes if we have a component
+    if (components.length)
+      result.notes = extractChartNotes(chartContent, chartNotes);
+
+    // return result
+    return result;
+  }
+
+  // build a tabset from a section div with the .tabset class
+  function layoutTabset(tabset) {
+
+    // check for fade option
+    var fade = tabset.hasClass("tabset-fade");
+    var navClass = "nav-tabs";
+
+    // determine the heading level of the tabset and tabs
+    var match = tabset.attr('class').match(/level(\d) /);
+    if (match === null)
+      return;
+    var tabsetLevel = Number(match[1]);
+    var tabLevel = tabsetLevel + 1;
+
+    // find all subheadings immediately below
+    var tabs = tabset.find("div.section.level" + tabLevel);
+    if (!tabs.length)
+      return;
+
+    // create tablist and tab-content elements
+    var tabList = $('<ul class="nav ' + navClass + '" role="tablist"></ul>');
+    $(tabs[0]).before(tabList);
+    var tabContent = $('<div class="tab-content"></div>');
+    $(tabs[0]).before(tabContent);
+
+    // build the tabset
+    tabs.each(function(i) {
+
+      // get the tab div
+      var tab = $(tabs[i]);
+
+      // get the id then sanitize it for use with bootstrap tabs
+      var id = tab.attr('id');
+
+      // sanitize the id for use with bootstrap tabs
+      id = id.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_');
+      tab.attr('id', id);
+
+      // get the heading element within it and grab it's text
+      var heading = tab.find('h' + tabLevel + ':first');
+      var headingDom = heading.contents();
+
+      // build and append the tab list item
+      var a = $('<a role="tab" data-toggle="tab"></a>');
+      a.append(headingDom);
+      a.attr('href', '#' + id);
+      a.attr('aria-controls', id);
+      var li = $('<li role="presentation"></li>');
+      li.append(a);
+      if (i === 0)
+        li.attr('class', 'active');
+      tabList.append(li);
+
+      // set it's attributes
+      tab.attr('role', 'tabpanel');
+      tab.addClass('tab-pane');
+      tab.addClass('tabbed-pane');
+      tab.addClass('no-title');
+      if (fade)
+        tab.addClass('fade');
+      if (i === 0) {
+        tab.addClass('active');
+        if (fade)
+          tab.addClass('in');
+      }
+
+      // move it into the tab content div
+      tab.detach().appendTo(tabContent);
+    });
+
+    // add nav-tabs-custom
+    tabset.addClass('nav-tabs-custom');
+
+    // internal layout is dashboard-column with tab-content flexing
+    tabset.addClass('dashboard-column');
+    setFlex(tabContent, 1);
+  }
+
+  // one time global initialization for components
+  function componentsInit(dashboardContainer) {
+    for (var i=0; i<window.FlexDashboardComponents.length; i++) {
+      var component = window.FlexDashboardComponents[i];
+      if (component.init)
+        component.init(dashboardContainer);
+    }
+  }
+
+  // find components that apply within a container
+  function componentsFind(container) {
+
+    // look for components
+    var components = [];
+    for (var i=0; i<window.FlexDashboardComponents.length; i++) {
+      var component = window.FlexDashboardComponents[i];
+      if (component.find(container).length)
+        components.push(component);
+    }
+
+    // if there were none then use a special flowing content component
+    // that just adds a scrollbar in fillPage mode
+    if (components.length == 0) {
+      components.push({
+        find: function(container) {
+          return container;
+        },
+
+        flex: function(fillPage) {
+          return fillPage;
+        },
+
+        layout: function(title, container, element, fillPage) {
+          if (fillPage) {
+            container.addClass('flowing-content-shim');
+            container.addClass('flowing-content-container');
+          }
+        }
+      });
+    }
+
+    return components;
+  }
+
+  // if there is a custom component then pick it out
+  function componentsCustom(components) {
+    var customComponent = [];
+    for (var i=0; i<components.length; i++)
+      if (components[i].type === "custom") {
+        customComponent.push(components[i]);
+        break;
+      }
+    return customComponent;
+  }
+
+  // query all components for flex
+  function componentsFlex(components) {
+
+    // no components at all means no flex
+    if (components.length === 0)
+      return false;
+
+    // otherwise query components (assume true unless we see false)
+    var isMobile = isMobilePhone();
+    for (var i=0; i<components.length; i++)
+      if (components[i].flex && !components[i].flex(_options.fillPage))
+        return false;
+    return true;
+  }
+
+  // layout all components
+  function componentsLayout(components, title, container) {
+    var isMobile = isMobilePhone();
+    for (var i=0; i<components.length; i++) {
+      var element = components[i].find(container);
+      if (components[i].layout) {
+        // call layout (don't call other components if it returns false)
+        var result = components[i].layout(title, container, element, _options.fillPage);
+        if (result === false)
+          return;
+      }
+    }
+  }
+
+  // get a reference to the h3, discover it's inner html, and remove it
+  function extractTitle(container) {
+    var h3 = container.children('h3').first();
+    var title = '';
+    if (!container.hasClass('no-title'))
+      title = h3.contents();
+    h3.detach();
+    return title;
+  }
+
+  // extract chart notes
+  function extractChartNotes(chartContent, chartNotes) {
+    // look for a terminating blockquote or image caption
+    var blockquote = chartContent.children('blockquote:last-child');
+    var caption = chartContent.children('div.image-container')
+                              .children('p.caption');
+    if (blockquote.length) {
+      chartNotes.empty().append(blockquote.children('p:first-child').contents());
+      blockquote.remove();
+      return true;
+    } else if (caption.length) {
+      chartNotes.empty().append(caption.contents());
+      caption.remove();
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function findShinyOutput(chartContent) {
+    return chartContent.find('.shiny-text-output, .shiny-html-output');
+  }
+
+  // safely detect rendering on a mobile phone
+  function isMobilePhone() {
+    try
+    {
+      return ! window.matchMedia("only screen and (min-width: 768px)").matches;
+    }
+    catch(e) {
+      return false;
+    }
+  }
+
+  function isFillPage() {
+    return _options.fillPage;
+  }
+
+  // detect portrait mode
+  function isPortrait() {
+    return ($(window).width() < $(window).height());
+  }
+
+  // safely detect rendering on a tablet
+  function isTablet() {
+    try
+    {
+      return window.matchMedia("only screen and (min-width: 769px) and (max-width: 992px)").matches;
+    }
+    catch(e) {
+      return false;
+    }
+  }
+
+  // test whether this is a shiny doc
+  function isShinyDoc() {
+    return (typeof(window.Shiny) !== "undefined" && !!window.Shiny.outputBindings);
+  }
+
+  // set flex using vendor specific prefixes
+  function setFlex(el, flex) {
+    el.css('-webkit-box-flex', flex)
+      .css('-webkit-flex', flex)
+      .css('-ms-flex', flex)
+      .css('flex', flex);
+  }
+
+  // support bookmarking of pages
+  function handleLocationHash() {
+
+    // restore tab/page from bookmark
+    var hash = window.decodeURIComponent(window.location.hash);
+    if (hash.length > 0)
+      $('ul.nav a[href="' + hash + '"]').tab('show');
+    FlexDashboardUtils.manageActiveNavbarMenu();
+
+    // navigate to a tab when the history changes
+    window.addEventListener("popstate", function(e) {
+      var hash = window.decodeURIComponent(window.location.hash);
+      var activeTab = $('ul.nav a[href="' + hash + '"]');
+      if (activeTab.length) {
+        activeTab.tab('show');
+      } else {
+        $('ul.nav a:first').tab('show');
+      }
+      FlexDashboardUtils.manageActiveNavbarMenu();
+    });
+
+    // add a hash to the URL when the user clicks on a tab/page
+    $('.navbar-nav a[data-toggle="tab"]').on('click', function(e) {
+      var baseUrl = FlexDashboardUtils.urlWithoutHash(window.location.href);
+      var hash = FlexDashboardUtils.urlHash($(this).attr('href'));
+      var href = baseUrl + hash;
+      FlexDashboardUtils.setLocation(href);
+    });
+
+    // handle clicks of other links that should activate pages
+    var navPages = $('ul.navbar-nav li a[data-toggle=tab]');
+    navPages.each(function() {
+      var href =  $(this).attr('href');
+      var links = $('a[href="' + href + '"][data-toggle!=tab]');
+      links.each(function() {
+        $(this).on('click', function(e) {
+          window.FlexDashboardUtils.showPage(href);
+        });
+      });
+    });
+  }
+
+  // tweak Prism highlighting
+  function initPrismHighlighting() {
+
+    if (window.Prism) {
+      Prism.languages.insertBefore('r', 'comment', {
+        'heading': [
+          {
+            // title 1
+        	  // =======
+
+        	  // title 2
+        	  // -------
+        	  pattern: /\w+.*(?:\r?\n|\r)(?:====+|----+)/,
+            alias: 'operator'
+          },
+          {
+            // ### title 3
+            pattern: /(^\s*)###[^#].+/m,
+            lookbehind: true,
+            alias: 'operator'
+          }
+        ]
+      });
+
+      // prism highlight
+      Prism.highlightAll();
+    }
+  }
+
+
+  // get theme color
+  var themeColors = {
+    bootstrap: {
+      primary: "rgba(51, 122, 183, 0.4)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    cerulean: {
+      primary: "rgb(47, 164, 231)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    journal: {
+      primary: "rgba(235, 104, 100, 0.70)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    flatly: {
+      primary: "rgba(44, 62, 80, 0.70)",
+      info: "rgba(52, 152, 219, 0.70)",
+      success: "rgba(24, 188, 156, 0.70)",
+      warning: "rgba(243, 156, 18, 0.70)",
+      danger: "rgba(231, 76, 60, 0.70)"
+    },
+    readable: {
+      primary: "rgba(69, 130, 236, 0.4)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    spacelab: {
+      primary: "rgba(68, 110, 155, 0.25)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    united: {
+      primary: "rgba(221, 72, 20, 0.30)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    cosmo: {
+      primary: "rgba(39, 128, 227, 0.7)",
+      info: "rgba(153, 84, 187, 0.7)",
+      success: "rgba(63, 182, 24, 0.7)",
+      warning: "rgba(255, 117, 24, 0.7)",
+      danger: "rgba(255, 0, 57, 0.7)"
+    },
+    lumen: {
+      primary: "rgba(21, 140, 186, 0.70)",
+      info: "rgba(117, 202, 235, 0.90)",
+      success: "rgba(40, 182, 44, 0.70)",
+      warning: "rgba(255, 133, 27, 0.70)",
+      danger: "rgba(255, 65, 54, 0.70)"
+    },
+    paper: {
+      primary: "rgba(33, 150, 243, 0.35)",
+      info: "rgb(225, 190, 231)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(255, 224, 178)",
+      danger: "rgb(249, 189, 187)"
+    },
+    sandstone: {
+      primary: "rgba(50, 93, 136, 0.3)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    simplex: {
+      primary: "rgba(217, 35, 15, 0.25)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    yeti: {
+      primary: "rgba(0, 140, 186, 0.298039)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    }
+  }
+  function themeColor(color) {
+    return themeColors[_options.theme][color];
+  }
+
+  FlexDashboard.prototype = {
+    constructor: FlexDashboard,
+    init: init,
+    isMobilePhone: isMobilePhone,
+    isFillPage: isFillPage,
+    themeColor: themeColor
+  };
+
+  return FlexDashboard;
+
+})();
+
+// utils
+window.FlexDashboardUtils = {
+  resizableImage: function(img) {
+    var src = img.attr('src');
+    var url = 'url("' + src + '")';
+    img.parent().css('background', url)
+                .css('background-size', 'contain')
+                .css('background-repeat', 'no-repeat')
+                .css('background-position', 'center')
+                .addClass('image-container');
+  },
+  setLocation: function(href) {
+    if (history && history.pushState) {
+      history.pushState(null, null, href);
+    } else {
+      window.location.replace(href);
+    }
+    setTimeout(function() {
+        window.scrollTo(0, 0);
+    }, 10);
+    this.manageActiveNavbarMenu();
+  },
+  showPage: function(href) {
+    $('ul.navbar-nav li a[href="' + href + '"]').tab('show');
+    var baseUrl = this.urlWithoutHash(window.location.href);
+    var loc = baseUrl + href;
+    this.setLocation(loc);
+  },
+  showLinkedValue: function(href) {
+    // check for a page link
+    if ($('ul.navbar-nav li a[data-toggle=tab][href="' + href + '"]').length > 0)
+      this.showPage(href);
+    else
+      window.open(href);
+  },
+  urlWithoutHash: function(url) {
+    var hashLoc = url.indexOf('#');
+    if (hashLoc != -1)
+      return url.substring(0, hashLoc);
+    else
+      return url;
+  },
+  urlHash: function(url) {
+    var hashLoc = url.indexOf('#');
+    if (hashLoc != -1)
+      return url.substring(hashLoc);
+    else
+      return "";
+  },
+  manageActiveNavbarMenu: function () {
+    // remove active from anyone currently active
+    $('.navbar ul.nav').find('li').removeClass('active');
+    // find the active tab
+    var activeTab = $('.dashboard-page-wrapper.tab-pane.active');
+    if (activeTab.length > 0) {
+      var tabId = activeTab.attr('id');
+      if (tabId)
+        $(".navbar ul.nav a[href='#" + tabId + "']").parents('li').addClass('active');
+    }
+  }
+};
+
+window.FlexDashboard = new FlexDashboard();
+
+// empty content
+window.FlexDashboardComponents.push({
+  find: function(container) {
+    if (container.find('p').length == 0)
+      return container;
+    else
+      return $();
+  }
+})
+
+// plot image
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.children('p')
+                    .children('img:only-child');
+  },
+
+  layout: function(title, container, element, fillPage) {
+    FlexDashboardUtils.resizableImage(element);
+  }
+});
+
+// plot image (figure style)
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.children('div.figure').children('img');
+  },
+
+  layout: function(title, container, element, fillPage) {
+    FlexDashboardUtils.resizableImage(element);
+  }
+});
+
+// htmlwidget
+window.FlexDashboardComponents.push({
+
+  init: function(dashboardContainer) {
+    // trigger "shown" after initial layout to force static htmlwidgets
+    // in runtime: shiny to be resized after the dom has been transformed
+    dashboardContainer.on('flexdashboard:layoutcomplete', function(event) {
+      setTimeout(function() {
+        dashboardContainer.trigger('shown');
+      }, 200);
+    });
+  },
+
+  find: function(container) {
+    return container.children('div[id^="htmlwidget-"],div.html-widget');
+  }
+});
+
+// gauge
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.children('div.html-widget.gauge');
+  },
+
+  flex: function(fillPage) {
+    return false;
+  },
+
+  layout: function(title, container, element, fillPage) {
+
+
+  }
+
+});
+
+// shiny output
+window.FlexDashboardComponents.push({
+  find: function(container) {
+    return container.children('div[class^="shiny-"]');
+  }
+});
+
+// datatables
+window.FlexDashboardComponents.push({
+  find: function(container) {
+    return container.find('.datatables');
+  },
+  flex: function(fillPage) {
+    return fillPage;
+  }
+});
+
+// bootstrap table
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    var bsTable = container.find('table.table');
+    if (bsTable.length !== 0)
+      return bsTable;
+    else
+      return container.find('tr.header').parent('thead').parent('table');
+  },
+
+  flex: function(fillPage) {
+    return fillPage;
+  },
+
+  layout: function(title, container, element, fillPage) {
+
+    // alias variables
+    var bsTable = element;
+
+    // fixup xtable generated tables with a proper thead
+    var headerRow = bsTable.find('tbody > tr:first-child > th').parent();
+    if (headerRow.length > 0) {
+      var thead = $('<thead></thead>');
+      bsTable.prepend(thead);
+      headerRow.detach().appendTo(thead);
+    }
+
+    // improve appearance
+    container.addClass('bootstrap-table');
+
+    // for fill page provide scrolling w/ sticky headers
+    if (fillPage) {
+      // force scrollbar on overflow
+      container.addClass('flowing-content-shim');
+
+      // stable table headers when scrolling
+      bsTable.stickyTableHeaders({
+        scrollableArea: container
+      });
+    }
+  }
+});
+
+// embedded shiny app
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.find('iframe.shiny-frame');
+  },
+
+  flex: function(fillPage) {
+    return fillPage;
+  },
+
+  layout: function(title, container, element, fillPage) {
+    if (fillPage) {
+      element.attr('height', '100%');
+    } else {
+      // provide default height if necessary
+      var height = element.get(0).style.height;
+      if (!height)
+        height = element.attr('height');
+      if (!height)
+        element.attr('height', 500);
+    }
+  }
+});
+
+// shiny fillRow or fillCol
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.find('.flexfill-container');
+  },
+
+  flex: function(fillPage) {
+    return fillPage;
+  },
+
+  layout: function(title, container, element, fillPage) {
+    if (fillPage)
+      element.css('height', '100%');
+    else {
+      // provide default height if necessary
+      var height = element.get(0).style.height;
+      if (height === "100%" || height === "auto" || height === "initial" ||
+          height === "inherit" || !height) {
+        element.css('height', 500);
+      }
+    }
+  }
+});
+
+// valueBox
+window.FlexDashboardComponents.push({
+
+  type: "custom",
+
+  find: function(container) {
+    if (container.find('span.value-output, .shiny-valuebox-output').length)
+      return container;
+    else
+      return $();
+  },
+
+  flex: function(fillPage) {
+    return false;
+  },
+
+  layout: function(title, container, element, fillPage) {
+
+    // alias variables
+    var chartTitle = title;
+    var valueBox = element;
+
+    // add value-box class to container
+    container.addClass('value-box');
+
+    // value paragraph
+    var value = $('<p class="value"></p>');
+
+    // if we have shiny-text-output then just move it in
+    var valueOutputSpan = [];
+    var shinyOutput = valueBox.find('.shiny-valuebox-output').detach();
+    if (shinyOutput.length) {
+      valueBox.children().remove();
+      shinyOutput.html("&mdash;");
+      value.append(shinyOutput);
+    } else {
+      // extract the value (remove leading vector index)
+      var chartValue = valueBox.text().trim();
+      chartValue = chartValue.replace("[1] ", "");
+      valueOutputSpan = valueBox.find('span.value-output').detach();
+      valueBox.children().remove();
+      value.text(chartValue);
+    }
+
+    // caption
+    var caption = $('<p class="caption"></p>');
+    caption.append(chartTitle);
+
+    // build inner div for value box and add it
+    var inner = $('<div class="inner"></div>');
+    inner.append(value);
+    inner.append(caption);
+    valueBox.append(inner);
+
+    // add icon if specified
+    var icon = $('<div class="icon"><i></i></div>');
+    valueBox.append(icon);
+    function setIcon(chartIcon) {
+      var iconLib = "";
+      var iconSplit = chartIcon.split(" ");
+      if (iconSplit.length > 1) {
+        iconLib = iconSplit[0];
+        chartIcon = iconSplit.slice(1).join(" ");
+      } else {
+        var components = chartIcon.split("-");
+        if (components.length > 1)
+          iconLib = components[0];
+      }
+      icon.children('i').attr('class', iconLib + ' ' + chartIcon);
+    }
+    var chartIcon = valueBox.attr('data-icon');
+    if (chartIcon)
+      setIcon(chartIcon);
+
+    // set color based on data-background if necessary
+    var dataBackground = valueBox.attr('data-background');
+    if (dataBackground)
+      valueBox.css('background-color', bgColor);
+    else {
+      // default to bg-primary if no other background is specified
+      if (!valueBox.hasClass('bg-primary') &&
+          !valueBox.hasClass('bg-info') &&
+          !valueBox.hasClass('bg-warning') &&
+          !valueBox.hasClass('bg-success') &&
+          !valueBox.hasClass('bg-danger')) {
+        valueBox.addClass('bg-primary');
+      }
+    }
+
+    // handle data attributes in valueOutputSpan
+    function handleValueOutput(valueOutput) {
+
+      // caption
+      var dataCaption = valueOutput.attr('data-caption');
+      if (dataCaption)
+        caption.html(dataCaption);
+
+      // icon
+      var dataIcon = valueOutput.attr('data-icon');
+      if (dataIcon)
+        setIcon(dataIcon);
+
+      // color
+      var dataColor = valueOutput.attr('data-color');
+      if (dataColor) {
+        if (dataColor.indexOf('bg-') === 0) {
+          valueBox.css('background-color', '');
+          if (!valueBox.hasClass(dataColor)) {
+             valueBox.removeClass('bg-primary bg-info bg-warning bg-danger bg-success');
+             valueBox.addClass(dataColor);
+          }
+        } else {
+          valueBox.removeClass('bg-primary bg-info bg-warning bg-danger bg-success');
+          valueBox.css('background-color', dataColor);
+        }
+      }
+
+      // url
+      var dataHref = valueOutput.attr('data-href');
+      if (dataHref) {
+        valueBox.addClass('linked-value');
+        valueBox.off('click.value-box');
+        valueBox.on('click.value-box', function(e) {
+          window.FlexDashboardUtils.showLinkedValue(dataHref);
+        });
+      }
+    }
+
+    // check for a valueOutputSpan
+    if (valueOutputSpan.length > 0) {
+      handleValueOutput(valueOutputSpan);
+    }
+
+    // if we have a shinyOutput then bind a listener to handle
+    // new valueOutputSpan values
+    shinyOutput.on('shiny:value',
+      function(event) {
+        var element = $(event.target);
+        setTimeout(function() {
+          var valueOutputSpan = element.find('span.value-output');
+          if (valueOutputSpan.length > 0)
+            handleValueOutput(valueOutputSpan);
+        }, 10);
+      }
+    );
+  }
+});
+</script>
+
+<div id="dashboard-container">
+
+<style type="text/css">
+
+body{
+  font-family: Verdana;
+  font-size: 12pt;
+}
+
+.navbar {
+  background-color:#00A590;
+}
+
+.bggreen {
+  background-color: #00A590;
+}
+
+/* Headers */
+h1{
+  font-family: Verdana;
+  font-size: 16pt;
+  font-weight: bold; 
+  color: white;
+}
+
+.chart-title {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li.active a {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li:not(.active) a {
+    font-size: 16pt;
+}
+
+
+</style>
+<div id="row" class="section level2 bggreen" data-height="60">
+<h2 class="bggreen" data-height="60">Row</h2>
+<h1>
+     Studies where insectides/repellents were applied to hosts
+</h1>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#main">
+<img src=../../assets/css/images/info.png>
+</button>
+<!-- Modal -->
+<div id="main" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<p>The plots below give an overview of substances for which experimental assessments of efficacy against mosquitoes are available. Please note that experimental protocols differed greatly: studies could have many different substance application methods, from different doses and frequencies, to different time of exposure. The box-plots give an overview of the range of efficacy reported, but direct comparisons can only be drawn by looking at the full details available on the data for each experiment (the full datasets are available, see left panel).</p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">
+Close
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="row-1" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section" class="section level3 bggreen" data-width="200">
+<h3 class="bggreen" data-width="200"></h3>
+<h1>
+External use - collar/ear tag
+</h1>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#collar">
+<img src=../../assets/css/images/info.png>
+</button>
+<!-- Modal -->
+<div id="collar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<p>You can click on the species names on the legend to the right to choose which species to hide/show. <br><br> Plots are interactive, drag the mouse to zoom.</p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">
+Close
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="section-1" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-d54251ce917236810b83" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d54251ce917236810b83">{"x":{"visdat":{"4784230d1db6":["function () ","plotlyVisDat"]},"cur_data":"4784230d1db6","attrs":{"4784230d1db6":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"},"4784230d1db6.1":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box","line":{"color":"rgb(7,40,89)"},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45},"yaxis":{"domain":[0,1],"automargin":true,"title":"Efficacy %"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(31,119,180,0.5)","type":"box","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(252,141,98,0.5)","x":["lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS"],"y":[48,60,20,45,18,38,5,12,22,37,5,3],"type":"box","line":{"color":"rgb(7,40,89)"},"name":"Cattle","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-2" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section-2" class="section level3 bggreen" data-width="200">
+<h3 class="bggreen" data-width="200"></h3>
+<h1>
+External use - topic/spray
+</h1>
+</div>
+<div id="section-3" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-8d458151f013d3de5fed" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8d458151f013d3de5fed">{"x":{"visdat":{"478445c61688":["function () ","plotlyVisDat"]},"cur_data":"478445c61688","attrs":{"478445c61688":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"},"478445c61688.1":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box","line":{"color":"rgb(7,40,89)"},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["DEET","DEET+permethrin","fipronil+Methoprene","fipronil+permethrin","imidacloprid+permethrin","Metofluthrin","OTHER - oil combinations","OTHERS","permethrin","permethrin+fipronil","permethrin+pyriproxyfen"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Efficacy %"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(252,141,98,0.5)","x":["imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","permethrin+fipronil","permethrin+fipronil","permethrin+fipronil","permethrin+fipronil","permethrin+fipronil","permethrin+fipronil","permethrin+fipronil","permethrin+fipronil","permethrin+fipronil","permethrin+fipronil","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin+pyriproxyfen","permethrin+pyriproxyfen","permethrin+pyriproxyfen","permethrin+pyriproxyfen","permethrin+pyriproxyfen"],"y":[100,94.1,97,93,77.8,92.8,40.4,84.9,2.1,50.4,100,66.6,99.5,55.9,97.7,38,98.3,17.2,96.7,12.3,82.5,40.3,58.8,13.1,45.5,91.5,94,94,94,87],"type":"box","name":"Dog","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(141,160,203,0.5)","x":["DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","Metofluthrin","Metofluthrin","Metofluthrin","Metofluthrin","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations"],"y":[98.5,98.5,67.6,40.5,13.5,76.9,61.5,46.5,27.9,46.5,69.4,62.5,62.5,82,65.6,16.4,62.3,51,68,6.8,40.8,36.4,27.3,69.2,72.7,68,89.6,96,94.8,81.1,95.3,81.1,100,100,55.8,62.3,100,96.25,94.94,92.83,97.22,98.9,99.2,97.6,98.8,98.6,98.8,98.9,98.9,97.4,98.3,98.8,98.8,75.8,79,95.26,92.15,87.55,94.14,11.51,7.09,9.37,2.03,25.57],"type":"box","name":"Humans","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(102,194,165,0.5)","x":["OTHERS","OTHERS","OTHERS","OTHERS","permethrin","permethrin","permethrin","permethrin"],"y":[25,25,8,15,0,0,0,0],"type":"box","line":{"color":"rgb(7,40,89)"},"name":"Cattle","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(252,141,98,0.5)","x":["fipronil+Methoprene","fipronil+Methoprene","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","OTHERS","OTHERS","OTHERS","OTHERS"],"y":[36,56,99.7,79.4,100,99.8,93.8,97.8,99.1,37.3,100,99.3,45,100,86.6,30.9,84.7,56,0,50,0],"type":"box","line":{"color":"rgb(7,40,89)"},"name":"Dog","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(231,138,195,0.5)","x":["OTHERS","OTHERS","OTHERS"],"y":[66.7,66.7,66.7],"type":"box","line":{"color":"rgb(7,40,89)"},"name":"Zebu","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-3" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section-4" class="section level3 bggreen" data-width="200">
+<h3 class="bggreen" data-width="200"></h3>
+<h1>
+Subcutaneous application
+</h1>
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#cs">
+<img src=../../assets/css/images/info.png>
+</button>
+<!-- Modal -->
+<div id="cs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<p>Boxes with a dark blue contour refer to studies reporting vector MORTALITY, rather than substance efficacy (which is calculated as the mortality in the experimental group in comparison to a control group). <br><br> Efficacy = 1 - (mortality in the control group / mortality in the experimental group))</p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">
+Close
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="section-5" class="section level3">
+<h3></h3>
+<p>blue colored box = mortality, not efficacy</p>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-6cfc58cc0ad8cd544641" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6cfc58cc0ad8cd544641">{"x":{"visdat":{"4784206b4a4":["function () ","plotlyVisDat"]},"cur_data":"4784206b4a4","attrs":{"4784206b4a4":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"},"4784206b4a4.1":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box","line":{"color":"rgb(7,40,89)"},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45},"yaxis":{"domain":[0,1],"automargin":true,"title":"Efficacy %"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(31,119,180,0.5)","type":"box","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(252,141,98,0.5)","x":["Ivermectin","Ivermectin","Ivermectin","Ivermectin"],"y":[40,80,0,5],"type":"box","line":{"color":"rgb(7,40,89)"},"name":"Cattle","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-4" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section-6" class="section level3 bggreen" data-width="200">
+<h3 class="bggreen" data-width="200"></h3>
+<h1>
+Oral administration
+</h1>
+</div>
+<div id="section-7" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-dcb3b724ac0ea95c425e" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dcb3b724ac0ea95c425e">{"x":{"visdat":{"47844f681e2a":["function () ","plotlyVisDat"]},"cur_data":"47844f681e2a","attrs":{"47844f681e2a":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"},"47844f681e2a.1":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box","line":{"color":"rgb(7,40,89)"},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45},"yaxis":{"domain":[0,1],"automargin":true,"title":"Efficacy %"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(31,119,180,0.5)","type":"box","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(252,141,98,0.5)","x":["fipronil","fipronil","fipronil","fipronil","OTHERS","OTHERS","OTHERS","OTHERS"],"y":[66.7,66.7,66.7,66.7,66.7,66.7,66.7,66.7],"type":"box","line":{"color":"rgb(7,40,89)"},"name":"Zebu","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-5" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section-8" class="section level3 bggreen" data-width="200">
+<h3 class="bggreen" data-width="200"></h3>
+<h1>
+Impregnated clothing
+</h1>
+</div>
+<div id="section-9" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-b85ce5cd1f98f9649aec" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b85ce5cd1f98f9649aec">{"x":{"visdat":{"4784500d3f1":["function () ","plotlyVisDat"]},"cur_data":"4784500d3f1","attrs":{"4784500d3f1":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"},"4784500d3f1.1":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box","line":{"color":"rgb(7,40,89)"},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["DEET","DEET+permethrin","permethrin"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Efficacy %"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(252,141,98,0.5)","x":["DEET","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","DEET+permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin"],"y":[92.3,83.7,74.4,90.3,83.3,76.4,100,100,49.2,73.7,79.3,54.4,47.6,27.3,18.2,40.8,0,58.9,18.5,28.5,30.9,11.1,11.7,57.6,69.7,16.1,92.3,18.9,7,82.8,29,24.3,91.4,49.3,26.4],"type":"box","name":"Humans","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(252,141,98,0.5)","x":["permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin"],"y":[2.8,90.4,58,3.6,85.2,52,95.1,95.9,73.5],"type":"box","line":{"color":"rgb(7,40,89)"},"name":"Humans","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-6" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section-10" class="section level3 bggreen" data-width="200">
+<h3 class="bggreen" data-width="200"></h3>
+<h1>
+Vector exposed to treated nets
+</h1>
+</div>
+<div id="section-11" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-38b60ad7f8a842a879d1" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-38b60ad7f8a842a879d1">{"x":{"visdat":{"4784b902dd7":["function () ","plotlyVisDat"]},"cur_data":"4784b902dd7","attrs":{"4784b902dd7":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"},"4784b902dd7.1":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box","line":{"color":"rgb(7,40,89)"},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["bifenthrin","bifenthrin+OTHERS","deltamethrin","OTHERS"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Efficacy %"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(252,141,98,0.5)","x":["deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin"],"y":[50,50,40,30,60,30,40,40,40,70.5],"type":"box","name":"Humans","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(252,141,98,0.5)","x":["bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin+OTHERS","bifenthrin+OTHERS","bifenthrin+OTHERS","bifenthrin+OTHERS","bifenthrin+OTHERS","bifenthrin+OTHERS","deltamethrin","deltamethrin","deltamethrin","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS"],"y":[98.2,100,98,100,100,100,100,100,100,98.1,100,100,100,50,100,71.9,81.5,95.7,91.7,100,95.8],"type":"box","line":{"color":"rgb(7,40,89)"},"name":"Humans","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-7" class="section level2 bggreen" data-height="60">
+<h2 class="bggreen" data-height="60">Row</h2>
+<h1>
+     Studies where vectors were targeted directly (not host specific)
+</h1>
+</div>
+<div id="row-8" class="section level2">
+<h2>Row</h2>
+<div id="section-12" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-2acd1e8e8dedaf536b4e" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2acd1e8e8dedaf536b4e">{"x":{"visdat":{"478413517155":["function () ","plotlyVisDat"]},"cur_data":"478413517155","attrs":{"478413517155":{"x":{},"y":{},"name":"efficacy","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"},"478413517155.1":{"x":{},"y":{},"name":"mortality","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box","inherit":true}},"layout":{"margin":{"b":160,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["alpha-cyhalothrin","alpha-cypermethrin","asarinin","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)+Lysinibacillus sphaericus","bendiocarb","bifenthrin","chlorpyrifos+deltamethrin","clothianidin","cyflothrin","cypermethrin","DDT","DDT+Piperonyl butoxide (PBO)","DEET","deltamethrin","deltamethrin+bendiocarb","deltamethrin+clothianidin","deltamethrin+Piperonyl butoxide (PBO)","dieldrin","Diflubenzuron","ethyl butylacetylaminoproprionate","ethyl butylacetylaminoproprionate+nananoic acid","etofenprox","fenitrothion","fipronil","fluralaner","fluralaner+DEF","fluralaner+DEM","fluralaner+Piperonyl butoxide (PBO)","fluralaner+Triton X-100","imidacloprid","lambda-cyhalothrin","lambda-cyhalothrin+Piperonyl butoxide (PBO)","Lysinibacillus sphaericus","malathion","Methoprene","Metofluthrin","nitenpyram","OTHER - oil combinations","OTHERS","OTHERS - bacteria","OTHERS - fungi","OTHERS - fungi+imidacloprid","OTHERS - plant (non-oil)","OTHERS+Methoprene","Pellitorine","permethrin","permethrin+Piperonyl butoxide (PBO)","Piperonyl butoxide (PBO)","Piperonyl butoxide (PBO)+DDT","Piperonyl butoxide (PBO)+permethrin","Pirimiphos-methyl","propoxur","pyrethrin+Piperonyl butoxide (PBO)","pyrethroid","pyriproxyfen","pyriproxyfen+Beauveria bassiana","sesamin","spinosad","Suadea maritima","temephos","triazophos","Ulva lactuca","XDA (Xanthoxylol-y,y-dimethylallylether)","Zanthoxylum piperitum bark"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"% Mortality or Efficacy"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(31,119,180,0.5)","x":["alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","Metofluthrin","Metofluthrin","Metofluthrin","Metofluthrin","Metofluthrin","Metofluthrin","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","pyrethrin+Piperonyl butoxide (PBO)","pyrethrin+Piperonyl butoxide (PBO)","OTHERS - bacteria","OTHERS - bacteria","OTHERS - bacteria","OTHERS - bacteria","OTHERS - bacteria","OTHERS - bacteria","OTHERS - bacteria","OTHERS - bacteria","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","DEET","ethyl butylacetylaminoproprionate+nananoic acid","ethyl butylacetylaminoproprionate","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","pyriproxyfen+Beauveria bassiana","pyriproxyfen+Beauveria bassiana","pyriproxyfen+Beauveria bassiana","pyriproxyfen+Beauveria bassiana","pyrethroid"],"y":[23.8,42.6,19.67,27.86,27.86,38.35,33.44,16.63,11.81,11.81,11.88,22.47,13.48,19.1,19.1,12.5,28.6,20,57.14,57.14,43.58,27.27,16.36,19.09,19.09,20.79,22.5,12.5,25,25,23.64,23.64,14.11,27.05,12.82,95.3,95.3,11,17.6,0,44.28,44.28,11.42,25.71,30.69,31.25,45.4,18.18,32.72,32.72,46.15,33.33,14.28,8.5,8.5,24.75,26.31,23.68,15.78,15.78,0,24.7,9.41,91.76,91.76,18.41,17.43,14.9,31.18,31.18,5.94,22.1,12.63,40,40,100,100,100,100,100,100,100,100,100,100,93,83,100,83,70,78,100,68,100,100,88,60,88,58,48,63,100,68,95,100,75,23,80,10,25,38,95,40,95,100,16,19,78,13,8,69,41,52,84,82,32,36,65,0,25,50,12,65,75,48.7,86.4,96.3,38.8,26.3,81,94.5,19,52.1,100,100,100,100,95,100,100,100,89,76,100,100,100,89,82,100,48,82,95,62,100,29,20,38,54,76,95,100,76,94,100,100,88,76,62,100,100,46,48,80,100,26,100,29,69,92,69,42,32,14,100,0,100,62,25.1,19.5,40.1,19.5,41.9,6,20.6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,56,69,72,89,100,56,62,78,100,86,56,56,86,62,78,100,69,89,72,100,100,100,81,94,93],"name":"efficacy","type":"box","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(255,127,14,0.5)","x":["alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","bendiocarb","bendiocarb","bendiocarb","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","chlorpyrifos+deltamethrin","clothianidin","deltamethrin+clothianidin","deltamethrin+clothianidin","deltamethrin+clothianidin","deltamethrin+clothianidin","deltamethrin+clothianidin","deltamethrin+clothianidin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin+Piperonyl butoxide (PBO)","deltamethrin+Piperonyl butoxide (PBO)","deltamethrin+Piperonyl butoxide (PBO)","deltamethrin+Piperonyl butoxide (PBO)","fenitrothion","fenitrothion","fenitrothion","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","alpha-cyhalothrin","alpha-cyhalothrin","alpha-cyhalothrin","alpha-cyhalothrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","asarinin","asarinin","asarinin","asarinin","asarinin","asarinin","Bacillus thuringiensis svar israelensis (Bti)+Lysinibacillus sphaericus","Bacillus thuringiensis svar israelensis (Bti)+Lysinibacillus sphaericus","Bacillus thuringiensis svar israelensis (Bti)+Lysinibacillus sphaericus","Bacillus thuringiensis svar israelensis (Bti)+Lysinibacillus sphaericus","Bacillus thuringiensis svar israelensis (Bti)+Lysinibacillus sphaericus","Bacillus thuringiensis svar israelensis (Bti)+Lysinibacillus sphaericus","Bacillus thuringiensis svar israelensis (Bti)+Lysinibacillus sphaericus","Bacillus thuringiensis svar israelensis (Bti)+Lysinibacillus sphaericus","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","Bacillus thuringiensis svar israelensis (Bti)","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bendiocarb","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","bifenthrin","cyflothrin","cyflothrin","cypermethrin","cypermethrin","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT","DDT+Piperonyl butoxide (PBO)","DDT+Piperonyl butoxide (PBO)","DDT+Piperonyl butoxide (PBO)","DDT+Piperonyl butoxide (PBO)","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin+Piperonyl butoxide (PBO)","deltamethrin+Piperonyl butoxide (PBO)","deltamethrin+Piperonyl butoxide (PBO)","deltamethrin+Piperonyl butoxide (PBO)","deltamethrin+Piperonyl butoxide (PBO)","deltamethrin+Piperonyl butoxide (PBO)","deltamethrin+Piperonyl butoxide (PBO)","dieldrin","dieldrin","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","Diflubenzuron","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","etofenprox","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fenitrothion","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fluralaner+DEF","fluralaner+DEF","fluralaner+DEF","fluralaner+DEM","fluralaner+DEM","fluralaner+DEM","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner+Piperonyl butoxide (PBO)","fluralaner+Piperonyl butoxide (PBO)","fluralaner+Piperonyl butoxide (PBO)","fluralaner+Triton X-100","imidacloprid","imidacloprid","imidacloprid","imidacloprid","imidacloprid","imidacloprid","imidacloprid","imidacloprid","imidacloprid","imidacloprid","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin+Piperonyl butoxide (PBO)","Lysinibacillus sphaericus","Lysinibacillus sphaericus","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","malathion","Methoprene","Methoprene","Methoprene","Methoprene","Methoprene","Methoprene","Methoprene","Methoprene","Methoprene","Methoprene","Methoprene","Metofluthrin","Metofluthrin","Metofluthrin","Metofluthrin","nitenpyram","nitenpyram","nitenpyram","nitenpyram","nitenpyram","nitenpyram","nitenpyram","nitenpyram","nitenpyram","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS+Methoprene","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS - bacteria","OTHERS - bacteria","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","Pellitorine","Pellitorine","Pellitorine","Pellitorine","Pellitorine","Pellitorine","Pellitorine","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin+Piperonyl butoxide (PBO)","permethrin+Piperonyl butoxide (PBO)","permethrin+Piperonyl butoxide (PBO)","permethrin+Piperonyl butoxide (PBO)","permethrin+Piperonyl butoxide (PBO)","Piperonyl butoxide (PBO)+DDT","Piperonyl butoxide (PBO)","Piperonyl butoxide (PBO)+permethrin","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","Pirimiphos-methyl","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","propoxur","pyrethrin+Piperonyl butoxide (PBO)","pyrethrin+Piperonyl butoxide (PBO)","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","sesamin","sesamin","sesamin","sesamin","sesamin","sesamin","spinosad","spinosad","spinosad","spinosad","spinosad","spinosad","spinosad","spinosad","spinosad","spinosad","spinosad","spinosad","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","temephos","triazophos","triazophos","triazophos","triazophos","triazophos","triazophos","triazophos","triazophos","triazophos","triazophos","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","Ulva lactuca","XDA (Xanthoxylol-y,y-dimethylallylether)","XDA (Xanthoxylol-y,y-dimethylallylether)","XDA (Xanthoxylol-y,y-dimethylallylether)","XDA (Xanthoxylol-y,y-dimethylallylether)","XDA (Xanthoxylol-y,y-dimethylallylether)","XDA (Xanthoxylol-y,y-dimethylallylether)","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","Zanthoxylum piperitum bark","alpha-cyhalothrin","alpha-cyhalothrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","alpha-cypermethrin","deltamethrin+bendiocarb","deltamethrin+bendiocarb","deltamethrin+bendiocarb","deltamethrin+bendiocarb","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","lambda-cyhalothrin","lambda-cyhalothrin","lambda-cyhalothrin","OTHERS - fungi+imidacloprid","OTHERS - fungi","OTHERS - plant (non-oil)","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen"],"y":[77,24.3,39.3,92.8,38.4,68.8,52.1,100,78.6,89,62,79,72,85,46,62,100,72.7,21,31.6,13,19,19,29.5,42.4,13.2,7.1,83.6,84,100,64.3,100,53.4,73.7,100,100,90,100,35,100,50,100,24,100,25,100,50,100,98,60,63,28,45,36,11.9,19.8,44.5,46.4,51.7,15.5,38.2,36.6,14.4,34.6,26.9,100,38,54,8,25,12,9,90,82,100,100,100,100,81,86,83,78,81,100,62,42,30,24,9,90,50,50,90,99,99,99.5,25,35,4,21,5,32,17,50,43,61,17,16,77,80,15,73,70,90.5,90.5,93,83,81.5,85.5,79,71.5,70.5,63,60,63.5,56.5,50.5,57.5,86,47,32,100,100,93,100,100,100,11,96,100,80,72,0,76,94,92,100,100,50,50,50,90,90,90,90,50,50,90,90,50,90,50,11,40,88,100,100,100,100,20,58,90,100,100,100,100,100,100,0,100,100,50,90,50,90,90,50,90,50,50,90,90,50,90,50,90,50,50,50,50,50,50,50,50,50,50,50,50,50,0,10.7,100,97.9,93,92,86,95,80,100,100,100,100,100,90,100,100,100,87,75,87,87,100,98,100,96,100,97,92,100,100,100,99,50,90,50,90,17,90,97,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,75,100,95,99.5,100,100,100,72,50,40,30,20,10,50,40,30,20,10,48,50,60,49,55,80,50,100,85,100,100,0,33.8,4,9,7,4,10,13,26,6,27,3,22,6,14,6,16,9,11,0,25,25,40,34,13,24,19,48,67,50,90,50,90,83,98,75,78,100,100,69,72,69,77,56.3,85,57.9,82.5,75,85.5,23.8,1,84,93,17,28,22,18,21,64,12,46,5,41,26.2,99.8,100,100,10,0,30,59,100,30,10,100,62,64,10,67.2,87.7,96,98.5,99,12,26,42,32,8,27,36,11,32,76,12,52,43,48,44,20,25,25,81,1,43,44,57,50,18,11,45,49,53,55,100,100,100,100,100,85,100,100,100,100,74,100,45,100,100,100,57,100,100,73,97,100,100,100,100,93.3,100,0,0,0,0,83.5,86,87,74.5,75,76.5,60,60.5,63.5,46.5,40.5,50,41.5,34.5,42,98.1,98.8,100,96.2,98.7,100,8,100,65,38,29,91,20,41,100,8,79,82,72,4,91,100,81,87,100,49,93,99,18.7,99.7,100,100,88,58,48,77,31,100,100,100,84.4,60,66,90,90,100,98,66.6,100,100,100,100,100,100,100,100,100,100,100,100,100,99.3,100,100,100,100,100,81.5,100,100,89,100,100,56.8,79.3,80.3,63.3,91.3,88.3,37.8,61.5,64.5,41.8,76.5,75,33.3,36.5,49,39.3,59.5,46.8,87.5,17,2.6,9,55,50,20,29,24,10,23,55,23,9,43,19,53,11,86,87,79,100,99,97,100,100,99,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,93.6,100,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,40,30,20,10,50,40,30,20,10,20.9,97.5,100,100,26,15,39,9,4,44,11,54,24,11,21,58,35,15,24,46,35,76.5,58,50,40,30,20,10,50,40,30,20,10,80,74,60,88,91,88,91.5,90,60,35,79.5,81.5,81.5,69.5,65.5,70.5,54.5,48,55,46.5,41.5,48.5,85,95,58,61,100,100,94,86,98,39,97,100,84,90,100,98,95,97,18.7,31,35,100,100,50,90,100,100,66,81,73,83,83,90,90,93,98,58,71,94,96,26,33,89,43,73,48,96,89,100,96,95,100,100,100,96,90,50,90,50,100,98.7,98.8,100,98.7,97.5,85,100,99.8,100,74,100,100,99.6,96,99.6,99.6,100,97.6,74.2,95.2,100,18,14,10,29,3,40,30,20,10,50,40,30,20,10,50,90,50,90,50,90,92.3,97.5,97.3,93.3,100,99.3,100,99.6,100,100,100,100,100,100,100,100,96.3,100,99.1,100,100,99.1,99.6,100,100,96,96.8,99.1,99.6,99.6,100,99.6,99.1,100,90.5,99.6,95.2,98.4,99.6,98.4,96.3,97.3,100,92.1,99.1,100,99.6,96.3,99.6,100,98.4,99.6,81.2,86.3,98.4,89.5,92.7,91.5,99.1,99.6,100,91.6,91.7,96.8,94.8,94.1,92.1,97.6,91.6,99.6,63.2,76.6,76.6,92.7,95.6,80.8,80.4,76.8,90,86.3,77.5,96.6,94.7,93.9,99.1,73,99.6,96.6,50,90,50,90,50,90,100,10,0.3,2.3,40.3,13.3,54.3,22.3,66.3,30,78,38,98.3,41.6,68.7,33.7,33.7,40.4,40.4,50.7,50.7,11.3,12.8,13.9,23.2,26.8,5.2,14.4,14.4,97,17,47.2,47.2,31.4,47.2,66.8,84.5,100,25.6,43.9,62.1,81.3,98.7,21.3,38.5,56.4,77.9,96.2,100,50,90,100,50,90,100,50,90,90,81,42,62,30,24,25,37,44,56,72,63,82,82.7,100,61.9,47,26,65,99,82,99.1,63.8,25.8,46.4,50,90,90,50,100,100,86.8,50,50,50,90,90,90,0,64.7,49,0,0,91,0,0,100,13,58,9,100,100,100,11,22,16,22,5,3,13,57,31,20,66,9,79,25,10,89,27,28,28,19,61,71,90,50,90,50,87,100,65,71,100,100,100,69,100,100,68,50,50,50,50,50,50,50,50,50,50,50,50,40,2,1,100,94,93,100,100,100,100,86,100,100,80,100,71,100,100,100,92,84,10.5,100,100,100,70,50,23,100,27,23,70,100,100,2.7,0,14,100,100,100,100,98,98,100,100,100,99,100,100,100,100,100,100,100,100,100,100,100,92,100,100,100,100,100,100,100,90.4,98,98,100,100,100,100,100,100,100,94,96,100,100,100,100,100,96,100,99,97,99,100,98,100,100,100,100,100,100,100,90.1,99.8,16,8,1,0,0.5,3,24.5,10,73,55.5,40,30,20,10,50,40,30,20,10,99.3,93.3,100,99.8,50,50,50,90,90,90,94.2,100,50,40,30,20,10,50,40,30,20,10,90,50,90,50,50,90,50,90,50,90,50,90,50,90,50,90,50,90,90,50,50,90,62,51.8,41.6,0,100,100,0,10,0,30.3,10,50,99,10,50,99,10,50,99,10,50,99,10,50,99,10,50,99,50,50,50,90,90,90,50,40,30,20,10,50,40,30,20,10,66,51,41,90,50,50,90,50,90,90,50,90,50,90,50,90,50,50,90,50,90,50,90,50,50,50,90,90,90,50,50,50,50,50,50,50,50,50,50,90,90,90,90,90,85,50,83.7,74,96.3,93.7,83.3,74.4,62.9,70,79.4,90,79.9,100,26.4,46.6,100,100,100,92.1,81,68.7,90.5,66.3,38.9,14,81.5,98.2,99.2,94,97,100,100,100,85,100,100,78,70,100,48,35,100,97.3,99.5,100,86,44,100,100,100,96.7,71.9,100,100,64.1,85.7,91.3,89.7,92.1,84.1,92.1,89.3,90.8,82.9,88.6,91.8,95.6,81.9,91.2,69.2,37.5,97,84,54,7,56,45,27,33,5,80,20,84.7,100,100,34,38,45,47,20,22,17,0,0,59,100,95,90,85,80,100,100,100,100,100,88.2,84,93.3,25,10,100,35.3,72,22,92.4,17,81.6,72.3,100,100,100,85,68,69,67,77.5,59,59,59,37,62.1,33.3,54,0,0,40,100,100,100,100,91.3,100,84,100,71,100,50,100,10.3,100,21.4,100,5,16,1,1,100],"name":"mortality","type":"box","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-9" class="section level2 bggreen" data-height="60">
+<h2 class="bggreen" data-height="60">Row</h2>
+<h1>
+     Other types of outcomes
+</h1>
+</div>
+<div id="row-10" class="section level2">
+<h2>Row</h2>
+<div id="section-13" class="section level3">
+<h3></h3>
+<p>Efficacy and mortality were the most common types of outcomes reported, and these studies have been presented above. In the table below, we have listed all studies in which other types of outcomes were reported.</p>
+</div>
+</div>
+<div id="row-11" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section-14" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-92a283e5d9794393415d" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-92a283e5d9794393415d">{"x":{"filter":"none","vertical":false,"fillContainer":true,"data":[["2093","2094","2095","2096","2097","2162","2163","2164","2165","2166","2167","2168","2169","2170","2171","2178","2180","2181","2183","2184","2185","2338","2339","2340","2341","2342","2343","2344","2345","2658","2662","2665","2671","2673","2699","2716","3189","3198","3201","3202","3205","3226"],[70025,70025,70025,70025,70025,70037,70037,70037,70037,70037,70037,70037,70037,70037,70037,70037,70037,70037,70037,70037,70037,70075,70075,70075,70075,70075,70075,70075,70075,70077,70077,70077,70077,70077,70077,70077,70566,70566,70566,70566,70566,70566],[4,4,4,4,4,37,36,35,34,33,31,30,29,28,27,20,19,18,16,15,14,1,9,2,10,3,11,4,12,372,368,365,359,357,329,311,1,9,10,11,11,11],["NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","NOT HOST SPECIFIC","Humans","Humans","Humans","Humans","Humans","Humans"],["Water treatment","Water treatment","Water treatment","Water treatment","Water treatment","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector exposed to treated nets","Vector exposed to treated nets","Vector exposed to treated nets","Vector exposed to treated nets","Vector exposed to treated nets","Vector exposed to treated nets","Vector exposed to treated nets","Vector exposed to treated nets","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Vector directly exposed","Impregnated clothing","Impregnated clothing","Impregnated clothing","Impregnated clothing","Impregnated clothing","Impregnated clothing"],["pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","Suadea maritima","permethrin","permethrin","permethrin","permethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","DDT","DDT","DDT","DDT","DDT","lambda-cyhalothrin","deltamethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin"],["not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","Piperonyl butoxide (PBO)","Piperonyl butoxide (PBO)","Piperonyl butoxide (PBO)","Piperonyl butoxide (PBO)","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant"],["Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Hatchability","Hatchability","Hatchability","Hatchability","Hatchability","Hatchability","Hatchability","Hatchability","Hatchability","Hatchability","Numberof vector units (counted mosquitos, ticks, etc)","Numberof vector units (counted mosquitos, ticks, etc)","Numberof vector units (counted mosquitos, ticks, etc)","Numberof vector units (counted mosquitos, ticks, etc)","Numberof vector units (counted mosquitos, ticks, etc)","Numberof vector units (counted mosquitos, ticks, etc)","Numberof vector units (counted mosquitos, ticks, etc)","Parity rate","Numberof vector units (counted mosquitos, ticks, etc)","Parity rate","Numberof vector units (counted mosquitos, ticks, etc)","Parity rate","Numberof vector units (counted mosquitos, ticks, etc)","Parity rate","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant"],[5.4,35.9,10.9,5.4,14.1,0,0,25,37,53,0,21,29,42,61,0,38,59,0,51,86,3.21,76.8,3.7,76.1,3.05,75.4,1.92,78.7,null,null,null,null,null,null,null,null,null,null,null,null,null],["percentage","percentage","percentage","percentage","percentage","percentage","percentage","percentage","percentage","percentage","percentage","percentage","percentage","percentage","percentage","absolute number","absolute number","absolute number","absolute number","absolute number","absolute number","mosquitos/tested room/day","percentage","mosquitos/tested room/day","percentage","mosquitos/tested room/day","percentage","mosquitos/tested room/day","percentage","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant","not investigated/not given/not relevant"],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display fill-container\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>refID<\/th>\n      <th>Exp.Group<\/th>\n      <th>Target Host<\/th>\n      <th>roue of vector exposure<\/th>\n      <th>Substance1<\/th>\n      <th>Substance2<\/th>\n      <th>Outcome measured<\/th>\n      <th>Outcome Value<\/th>\n      <th>Outcome Unit<\/th>\n      <th># tested<\/th>\n      <th>#NEG<\/th>\n      <th>#POS<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollY":"100vh","pageLength":5,"columnDefs":[{"className":"dt-right","targets":[1,2,8,10,11,12]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-12" class="section level2 bggreen" data-height="60">
+<h2 class="bggreen" data-height="60">Row</h2>
+<h1>
+     REFERENCES
+</h1>
+</div>
+<div id="row-13" class="section level2">
+<h2>Row</h2>
+<div id="section-15" class="section level3">
+<h3></h3>
+<p>In the left panel you can find information about the entire systematic literature review. The specific references for this agent, and used in this section of the story map are listed below.</p>
+</div>
+</div>
+<div id="row-14" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-874f097091a602d5b119" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-874f097091a602d5b119">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"9039\" data-max=\"70735\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"1967\" data-max=\"2018\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","fillContainer":true,"data":[[9039,9382,9408,9633,9875,10171,10380,10790,11135,11362,11774,13199,13224,13717,13955,13970,13986,14000,14002,14017,14018,14047,14051,14072,14092,14128,14133,14155,14170,14173,14191,14276,14291,14295,14305,14308,14331,14332,14372,14387,14389,14396,14407,14413,14416,14419,14434,14438,14476,14483,14495,14502,14505,14524,14526,14543,14572,14617,14625,14701,14715,14728,14738,14777,70016,70024,70025,70033,70037,70044,70046,70055,70056,70057,70075,70077,70115,70116,70138,70168,70217,70220,70294,70527,70545,70559,70566,70572,70634,70728,70735],[" Marimuthu Govindarajan, et al. 2015."," Marimuthu Govindarajan, et al. 2014."," Marimuthu Govindarajan, et al. 2014."," Kaliyan Veerakumar, et al. 2013."," Marimuthu Govindarajan, et al. 2013."," Jude PJ, et al. 2012."," Sebastien Marcombe, et al. 2011."," Gandhi Elango, et al. 2010."," Elnaiem Dia-EldinA, et al. 2008."," Trout RT, et al. 2007."," Raval-Nelson P, et al. 2005."," Mani TR, et al. 1991."," Sundararaj R, et al. 1991."," Kappus KD, et al. 1967."," Poche RichardM, et al. 2015."," Michel Franc, et al. 2015."," Mayura Soonwera, et al. 2015."," Wanjala CL, et al. 2015."," Aneesa Jaffer, et al. 2015."," Becky Fankhauser, et al. 2015."," Joshua Mutagahywa, et al. 2015."," Jovin Kitau, et al. 2014."," Dame DavidA, et al. 2014."," van Roey K, et al. 2014."," Athanase Badolo, et al. 2014."," Revay EditaE, et al. 2013."," Chih-Yuan Wang, et al. 2013."," Paula AR, et al. 2013."," Michel Franc, et al. 2012."," Soleimani-Ahmadi M, et al. 2012."," Okumu FO, et al. 2012."," Mark Nelder, et al. 2010."," Akogbeto MC, et al. 2010."," Chandre F, et al. 2010."," Sharma SK, et al. 2009."," Bouhsira E, et al. 2009."," Armel Djenontin, et al. 2009."," Wim Van Bortel, et al. 2009."," Sonthaya Tiawsirisup, et al. 2007."," Moosa-Kazemi SH, et al. 2007."," Perez CM, et al. 2007."," Sharma SK, et al. 2006."," Diabate A, et al. 2006."," Seccacini E, et al. 2006."," Cetin H, et al. 2006."," Dabire RK, et al. 2006."," Mani TR, et al. 2005."," Sharma SK, et al. 2005."," Hougard JM, et al. 2003."," Meyer JA, et al. 2003."," Frances SP, et al. 2003."," Graham K, et al. 2002."," Muller O, et al. 2002."," Schmidtmann ET, et al. 2001."," Govere J, et al. 2001."," Kolaczinski JH, et al. 2000."," Darriet F, et al. 1999."," Loftin KM, et al. 1996."," Curtis GA, et al. 1996."," Magesa SM, et al. 1991."," Rozendaal JA, et al. 1989."," Ree HI. 1988."," Gupta RK, et al. 1987."," Kaliyan Veerakumar, et al. 2013."," Shoukat RF, et al. 2018."," Riveron JM, et al. 2018."," Oo SZM, et al. 2018."," Chatterjee M, et al. 2018."," Suresh U, et al. 2018."," Akram MI, et al. 2017."," Izadi H, et al. 2017."," Rosilawati R, et al. 2017."," Ngufor C, et al. 2017."," Hamid PH, et al. 2017."," Cisse MBM, et al. 2017."," Messenger LA, et al. 2017."," Suter T, et al. 2017."," Oumbouke WelbeckA, et al. 2017."," Buckner EA, et al. 2017."," Sumarnrote A, et al. 2017."," Kim S-I, et al. 2017."," Kaindoa EW, et al. 2017."," Jiang S, et al. 2017."," Randriamaherijaona S, et al. 2016."," Marriel NB, et al. 2016."," Etang J, et al. 2016."," Orsborne J, et al. 2016."," Sangba MLO, et al. 2016."," Alsheikh AA, et al. 2016."," Murugan K, et al. 2015."," Galardo AKR, et al. 2015."],[" Marimuthu Govindarajan, Mohan Rajeswary (2015).  Ovicidal and adulticidal potential of leaf and seed extract of Albizia lebbeck (L.) Benth. (Family: Fabaceae) against Culex quinquefasciatus, Aedes aegypti, and Anopheles stephensi (Diptera: Culicidae) Parasitology Research, 114(#issue#),  1949-1961"," Marimuthu Govindarajan, Rajamohan Sivakumar (2014).  Ovicidal, larvicidal and adulticidal properties of Asparagus racemosus (Willd.) (Family: Asparagaceae) root extracts against filariasis (Culex quinquefasciatus), dengue (Aedes aegypti) and malaria (Anopheles stephensi) vector mosquitoes (Diptera: Culicidae) Parasitology Research, 113(#issue#),  1435-1449"," Marimuthu Govindarajan, Rajamohan Sivakumar (2014).  Larvicidal, ovicidal, and adulticidal efficacy of Erythrina indica (Lam.) (Family: Fabaceae) against Anopheles stephensi, Aedes aegypti, and Culex quinquefasciatus (Diptera: Culicidae) Parasitology Research, 113(#issue#),  777-791"," Kaliyan Veerakumar, Marimuthu Govindarajan, Mohan Rajeswary (2013).  Green synthesis of silver nanoparticles using Sida acuta (Malvaceae) leaf extract against Culex quinquefasciatus, Anopheles stephensi, and Aedes aegypti (Diptera: Culicidae) Parasitology Research, 112(#issue#),  4073-4085"," Marimuthu Govindarajan, Rajamohan Sivakumar, Mohan Rajeswary, Kaliyan Veerakumar (2013).  Mosquito larvicidal activity of thymol from essential oil of Coleus aromaticus Benth. against Culex tritaeniorhynchus, Aedes albopictus, and Anopheles subpictus (Diptera: Culicidae) Parasitology Research, 112(#issue#),  3713-3721"," P. J. Jude, T. Tharmasegaram, G. Sivasubramaniyam, M. Senthilnanthanan, S. Kannathasan, S. Raveendran, R. Ramasamy, S. N. Surendran (2012).  Salinity-tolerant larvae of mosquito vectors in the tropical coast of Jaffna, Sri Lanka and the effect of salinity on the toxicity of Bacillus thuringiensis to Aedes aegypti larvae Parasites and Vectors, 5(#issue#),  (22 November 2012)-(22 November 2012)"," Sebastien Marcombe, Frederic Darriet, Michel Tolosa, Philip Agnew, Stephane Duchon, Manuel Etienne, Marie Michele Yp Tcha, Fabrice Chandre, Vincent Corbel, Andre Yebakima (2011).  Pyrethroid Resistance Reduces the Efficacy of Space Sprays for Dengue Control on the Island of Martinique (Caribbean) Plos Neglected Tropical Diseases, 5(#issue#),  #Pages#"," Gandhi Elango, Abdul Abdul Rahuman, Asokan Bagavan, Chinnaperumal Kamaraj, Abdul Abduz Zahir, Govindasamy Rajakumar, Sampath Marimuthu, Thirunavukkarasu Santhoshkumar (2010).  Efficacy of botanical extracts against Japanese encephalitis vector, Culex tritaeniorhynchus Parasitology Research, 106(#issue#),  481-492"," Dia-Eldin A. Elnaiem, Kara Kelley, Stan Wright, Rhonda Laffey, Glenn Yoshimura, Marcia Reed, Gary Goodman, Tara Thiemann, Lisa Reimer, William K. Reisen, David Brown (2008).  Impact of aerial spraying of pyrethrin insecticide on Culex pipiens and Culex tarsalis (Diptera : Culicidae) abundance and West Nile virus infection rates in an urban/suburban area of Sacramento County, California Journal of Medical Entomology, 45(#issue#),  751-757"," R. T. Trout, G. C. Brown, M. F. Potter, J. L. Hubbard (2007).  Efficacy of two pyrethroid insecticides applied as barrier treatments for managing mosquito (Diptera : Culicidae) populations in suburban residential properties Journal of Medical Entomology, 44(#issue#),  470-477"," P. Raval-Nelson, K. Soin, S. Tolerud (2005).  Analysis of Bacillus sphaericus in controlling mosquito populations in urban catch basins Journal of Environmental Health, 67(#issue#),  28-31"," T. R. Mani, R. Reuben, J. Akiyama (1991).  Field efficacy of \"Mosbar\" mosquito repellent soap against vectors of bancroftian filariasis and Japanese encephalitis in southern India Journal of the American Mosquito Control Association, 7(#issue#),  565-8"," R. Sundararaj, R. Reuben (1991).  Evaluation of a microgel droplet formulation of Bacillus sphaericus 1593 M (Biocide-S) for control of mosquito larvae in rice fields in southern India Journal of the American Mosquito Control Association, 7(#issue#),  556-9"," K. D. Kappus, E. C. Corristan (1967).  Effect of apholate and metepa on Aedes aegypti infected with Venezuelan equine encephalomyelitis virus The American journal of tropical medicine and hygiene, 16(#issue#),  539-43"," Richard M. Poche, Dylan Burruss, Larisa Polyakova, David M. Poche, Rajesh B. Garlapati (2015).  Treatment of livestock with systemic insecticides for control of Anopheles arabiensis in western Kenya Malaria Journal, 14(#issue#),  #Pages#"," Michel Franc, Emmanuel Lienard, Philippe Jacquiet, Stephane Bonneau, Emilie Bouhsira (2015).  Efficacy of fipronil combined with permethrin commercial spot on (EffitixA (R)) preventing Culex pipiens from feeding on dogs Parasitology Research, 114(#issue#),  2093-2097"," Mayura Soonwera, Siriporn Phasornkusolsill (2015).  Efficacy of Thai herbal essential oils as green repellent against mosquito vectors Acta Tropica, 142(#issue#),  127-130"," C. L. Wanjala, GuoFa Zhou, J. Mbugi, J. Simbauni, Y. A. Afrane, E. Ototo, M. Gesuge, H. Atieli, A. K. Githeko, GuiYun Yan (2015).  Insecticidal decay effects of long-lasting insecticide nets and indoor residual spraying on Anopheles gambiae and Anopheles arabiensis in Western Kenya Parasites and Vectors, 8(#issue#),  (14 November 2015)-(14 November 2015)"," Aneesa Jaffer, Natacha Protopopoff, Franklin W. Mosha, David Malone, Mark W. Rowland, Richard M. Oxborough (2015).  Evaluating the sterilizing effect of pyriproxyfen treated mosquito nets against Anopheles gambiae at different blood-feeding intervals Acta Tropica, 150(#issue#),  131-135"," Becky Fankhauser, Pascal Dumont, James S. Hunter, John W. McCall, Christian Kaufmann, Alexander Mathis, David R. Young, Scott P. Carroll, Scott McCall, S. Theodore Chester, Mark D. Soll (2015).  Repellent and insecticidal efficacy of a new combination of fipronil and permethrin against three mosquito species (Aedes albopictus, Aedes aegypti and Culex pipiens) on dogs Parasites &amp; Vectors, 8(#issue#),  #Pages#"," Joshua Mutagahywa, Jasper N. Ijumba, Harish B. Pratap, Fabrizio Molteni, Frances E. Mugarula, Stephen M. Magesa, Mahdi M. Ramsan, Jessica M. Kafuko, Elias C. Nyanza, Osia Mwaipape, Juma G. Rutta, Charles D. Mwalimu, Isaiah Ndong, Richard Reithinger, Narjis G. Thawer, Jeremiah M. Ngondi (2015).  The impact of different sprayable surfaces on the effectiveness of indoor residual spraying using a micro encapsulated formulation of lambda-cyhalothrin against Anopheles gambiae s.s Parasites &amp; Vectors, 8(#issue#),  #Pages#"," Jovin Kitau, Richard Oxborough, Angela Kaye, Vanessa Chen-Hussey, Evelyn Isaacs, Johnson Matowo, Harparkash Kaur, Stephen M. Magesa, Franklin Mosha, Mark Rowland, James Logan (2014).  Laboratory and experimental hut evaluation of a long-lasting insecticide treated blanket for protection against mosquitoes Parasites &amp; Vectors, 7(#issue#),  #Pages#"," David A. Dame, Max V. Meisch, Carolyn N. Lewis, Daniel L. Kline, Gary G. Clark (2014).  FIELD EVALUATION OF FOUR SPATIAL REPELLENT DEVICES AGAINST ARKANSAS RICE-LAND MOSQUITOES Journal of the American Mosquito Control Association, 30(#issue#),  31-36"," K. van Roey, S. Sovannaroth, T. Sochantha, M. S. Touch, O. Pigeon, V. Sluydts, L. Durnez, M. Coosemans (2014).  A phase III trial to evaluate the efficacy, fabric integrity and community acceptance of Netprotect using a recommended long-lasting insecticidal net as positive control Malaria Journal, 13(#issue#),  (7 July 2014)-(7 July 2014)"," Athanase Badolo, Wamdaogo M. Guelbeogo, Alfred B. Tiono, Abdoulaye Traore, N'Fale Sagnon, Sodiomon B. Sirima (2014).  Laboratory evaluation of Fendona 6SC (R) treated bednets and Interceptor (R) long-lasting nets against Anopheles gambiae s.l. in Burkina Faso Parasitology Research, 113(#issue#),  1069-1075"," Edita E. Revay, Amy Junnila, Rui-De Xue, Daniel L. Kline, Ulrich R. Bernier, Vasiliy D. Kravchenko, Whitney A. Qualls, Nina Ghattas, Guenter C. Mueller (2013).  Evaluation of commercial products for personal protection against mosquitoes Acta Tropica, 125(#issue#),  226-230"," Chih-Yuan Wang, Hwa-Jen Teng, Si-Jia Lee, Cheo Lin, Jhy-Wen Wu, Ho-Sheng Wu (2013).  Efficacy of Various Larvicides against Aedes aegypti Immatures in the Laboratory Japanese Journal of Infectious Diseases, 66(#issue#),  341-344"," A. R. Paula, A. T. Carolino, C. P. Silva, R. I. Samuels (2013).  Efficiency of fungus-impregnated black cloths combined with Imidacloprid for the control of adult Aedes aegypti (Diptera: Culicidae) Letters in Applied Microbiology, 57(#issue#),  157-163"," Michel Franc, Claudio Genchi, Emilie Bouhsira, Stephan Warin, Vassilios Kaltsatos, Laure Baduel, Marc Genchi (2012).  Efficacy of dinotefuran, permethrin and pyriproxyfen combination spot-on against Aedes aegypti mosquitoes on dogs Veterinary Parasitology, 189(#issue#),  333-337"," M. Soleimani-Ahmadi, H. Vatandoost, M. Shaeghi, A. Raeisi, F. Abedi, M. R. Eshraghian, A. Madani, R. Safari, M. A. Oshaghi, M. Abtahi, H. Hajjaran (2012).  Field evaluation of permethrin long-lasting insecticide treated nets (Olyset (R)) for malaria control in an endemic area, southeast of Iran Acta Tropica, 123(#issue#),  146-153"," F. O. Okumu, B. Chipwaza, E. P. Madumla, E. Mbeyela, G. Lingamba, J. Moore, A. J. Ntamatungro, D. R. Kavishe, S. J. Moore (2012).  Implications of bio-efficacy and persistence of insecticides when indoor residual spraying and longlasting insecticide nets are combined for malaria prevention Malaria Journal, 11(#issue#),  (19 November 2012)-(19 November 2012)"," Mark Nelder, Banugopan Kesavaraju, Ary Farajollahi, Sean Healy, Isik Unlu, Taryn Crepeau, Ashok Ragavendran, Dina Fonseca, Randy Gaugler (2010).  Suppressing Aedes albopictus, an Emerging Vector of Dengue and Chikungunya Viruses, by a Novel Combination of a Monomolecular Film and an Insect-Growth Regulator American Journal of Tropical Medicine and Hygiene, 82(#issue#),  831-837"," M. C. Akogbeto, G. G. Padonou, D. Gbenou, S. Irish, A. Yadouleton (2010).  Bendiocarb, a potential alternative against pyrethroid resistant Anopheles gambiae in Benin, West Africa Malaria Journal, 9(#issue#),  (14 July 2010)-(14 July 2010)"," F. Chandre, R. K. Dabire, J. M. Hougard, L. S. Djogbenou, S. R. Irish, M. Rowland, R. N'Guessan (2010).  Field efficacy of pyrethroid treated plastic sheeting (durable lining) in combination with long lasting insecticidal nets against malaria vectors Parasites and Vectors, 3(#issue#),  (3 August 2010)-(3 August 2010)"," S. K. Sharma, A. K. Upadhyay, M. A. Haque, P. K. Tyagi, S. S. Mohanty, P. K. Mittal, A. P. Dash (2009).  Field evaluation of ZeroFly (R) - an insecticide incorporated plastic sheeting against malaria vectors &amp; its impact on malaria transmission in tribal area of northern Orissa Indian Journal of Medical Research, 130(#issue#),  458-466"," E. Bouhsira, A. Fysikopoulos, M. Franc (2009).  Efficacy of fipronil-(S)-methoprene, metaflumizone combined with amitraz, and pyriprole commercial spot-on products in preventing Culex pipiens pipens from feeding on dogs Veterinary Record, 165(#issue#),  135-137"," Armel Djenontin, Joseph Chabi, Thierry Baldet, Seth Irish, Cedric Pennetier, Jean-Marc Hougard, Vincent Corbel, Martin Akogbeto, Fabrice Chandre (2009).  Managing insecticide resistance in malaria vectors by combining carbamate-treated plastic wall sheeting and pyrethroid-treated bed nets Malaria Journal, 8(#issue#),  #Pages#"," Wim Van Bortel, Chinh Vu Duc, Dirk Berkvens, Niko Speybroeck, Trung Ho Dinh, Marc Coosemans (2009).  Impact of insecticide-treated nets on wild pyrethroid resistant Anopheles epiroticus population from southern Vietnam tested in experimental huts Malaria Journal, 8(#issue#),  #Pages#"," Sonthaya Tiawsirisup, Suwannee Nithiuthai, Morakot Kaewthamasorn (2007).  Repellent and adulticide efficacy of a combination containing 10% imidacloprid and 50% permethrin against Aedes aegypti mosquitoes on dogs Parasitology Research, 101(#issue#),  527-531"," S. H. Moosa-Kazemi, H. Vatandoost, A. Raeisi, K. Akbarzadeh (2007).  Deltamethrin Impregnated Bed Nets in a Malaria Control Program in Chabahar, Southeast Baluchistan, IR Iran Iranian Journal of Arthropod-Borne Diseases, 1(#issue#),  43-51"," C. M. Perez, C. F. Marina, J. G. Bond, J. C. Rojas, J. Valle, T. Williams (2007).  Spinosad, a naturally derived insecticide, for control of Aedes aegypti (Diptera: Culicidae): efficacy, persistence, and elicited oviposition response Journal of Medical Entomology, 44(#issue#),  631-638"," S. K. Sharma, A. K. Upadhyay, M. A. Haque, K. Padhan, P. K. Tyagi, M. A. Ansari, A. P. Dash (2006).  Wash resistance and bioefficacy of olyset net - A long-lasting insecticide-treated mosquito net against malaria vectors and nontarget household pests Journal of Medical Entomology, 43(#issue#),  884-888"," A. Diabate, F. Chandre, M. Rowland, R. N'Guessan, S. Duchon, K. R. Dabire, J. M. Hougard (2006).  The indoor use of plastic sheeting pre-impregnated with insecticide for control of malaria vectors Tropical Medicine &amp; International Health, 11(#issue#),  597-603"," E. Seccacini, H. Masuh, S. A. Licastro, E. N. Zerba (2006).  Laboratory and scaled up evaluation of cis-permethrin applied as a new ultra low volume formulation against Aedes aegypti (Diptera : Culicidae) Acta Tropica, 97(#issue#),  1-4"," H. Cetin, A. Yanikoglu, J. E. Cilek (2006).  Efficacy of diflubenzuron, a chitin synthesis inhibitor, against Culex pipiens larvae in septic tank water Journal of the American Mosquito Control Association, 22(#issue#),  343-345"," R. K. Dabire, A. Diabate, T. Baldet, L. Pare-Toe, R. T. Guiguemde, J. B. Ouedraogo, O. Skovmand (2006).  Personal protection of long lasting insecticide-treated nets in areas of Anopheles gambiae s.s. resistance to pyrethroids Malaria Journal, 5(#issue#),  #Pages#"," T. R. Mani, N. Arunachalam, R. Rajendran, K. Satyanarayana, A. P. Dash (2005).  Efficacy of thermal fog application of deltacide, a synergized mixture of pyrethroids, against Aedes aegypti, the vector of dengue Tropical Medicine &amp; International Health, 10(#issue#),  1298-1304"," S. K. Sharma, A. K. Upadhyay, M. A. Haque, K. Padhan, P. K. Tyagi, C. P. Batra, T. Adak, A. P. Dash, S. K. Subbarao (2005).  Village-scale evaluation of mosquito nets treated with a tablet formulation of deltamethrin against malaria vectors Medical and Veterinary Entomology, 19(#issue#),  286-292"," J. M. Hougard, V. Corbel, R. N'Guessan, F. Darriet, F. Chandre, M. Akogbeto, T. Baldet, P. Guillet, P. Carnevale, M. Traore-Lamizana (2003).  Efficacy of mosquito nets treated with insecticide mixtures or mosaics against insecticide resistant Anopheles gambiae and Culex quinquefasciatus (Diptera : Culicidae) in Cote d'Ivoire Bulletin of Entomological Research, 93(#issue#),  491-498"," J. A. Meyer, D. Disch, L. R. Cruthers, R. L. Slone, R. G. Endris (2003).  Repellency and efficacy of a 65% permethrin spot-on formulation for dogs against Aedes aegypti (Diptera : Culicidae) mosquitoes Veterinary Therapeutics, 4(#issue#),  135-144"," S. P. Frances, R. D. Cooper, R. K. Gupta, M. Debboun (2003).  Efficacy of a new self-supporting low-profile bednet for personal protection against Anopheles farauti (Diptera : Culicidae) in a village in Papua New Guinea Journal of Medical Entomology, 40(#issue#),  68-72"," K. Graham, N. Mohammad, H. Rehman, A. Nazari, M. Ahmad, M. Kamal, O. Skovmand, P. Guillet, R. Allan, M. Zaim, A. Yates, J. Lines, M. Rowland (2002).  Insecticide-treated plastic tarpaulins for control of malaria vectors in refugee camps Medical and Veterinary Entomology, 16(#issue#),  404-408"," O. Muller, K. Ido, C. Traore (2002).  Evaluation of a prototype long-lasting insecticide-treated mosquito net under field conditions in rural Burkina Faso Transactions of the Royal Society of Tropical Medicine and Hygiene, 96(#issue#),  483-484"," E. T. Schmidtmann, J. E. Lloyd, R. J. Bobian, R. Kumar, J. W. Waggoner, W. J. Tabachnick, D. Legg (2001).  Suppression of mosquito (Diptera : Culicidae) and black fly (Diptera : Simuliidae) blood feeding from Hereford cattle and ponies treated with permethrin Journal of Medical Entomology, 38(#issue#),  728-734"," J. Govere, L. E. O. Braack, D. N. Durrheim, R. H. Hunt, M. Coetzee (2001).  Repellent effects on Anopheles arabiensis biting humans in Kruger Park, South Africa Medical and Veterinary Entomology, 15(#issue#),  287-292"," J. H. Kolaczinski, C. F. Curtis (2000).  Comparison of two alpha-cyano pyrethroids when impregnated into bednets against a pyrethroid resistant and susceptible strain of Anopheles stephensi (Diptera : Culicidae) and their F-1 progeny Bulletin of Entomological Research, 90(#issue#),  119-123"," F. Darriet, P. Guillet, R. N. N'Guessan, J. M. C. Doannio, A. A. Koffi, L. Y. Konan, P. Carnevale (1999).  The impact of permethrin and deltamethrin resistance in Anopheles gambiae s.s. on the efficacy of insecticide-treated mosquito nets World Health Organization, WHO/MAL, #volume#(#issue#),  20 pp.-20 pp."," K. M. Loftin, R. L. Byford, M. E. Craig, R. L. Steiner (1996).  Evaluation of cattle insecticide treatments on attraction, mortality and fecundity of mosquitoes Journal of the American Mosquito Control Association, 12(#issue#),  17-22"," G. A. Curtis, E. J. Beidler (1996).  Influence of ground ULV droplet spectra on adulticide efficacy for Aedes taeniorhynchus Journal of the American Mosquito Control Association, 12(#issue#),  368-371"," S. M. Magesa, T. J. Wilkes, A. E. Mnzava, K. J. Njunwa, J. Myamba, M. D. Kivuyo, N. Hill, J. D. Lines, C. F. Curtis (1991).  Trial of pyrethroid impregnated bednets in an area of Tanzania holoendemic for malaria. Part 2. Effects on the malaria vector population Acta tropica, 49(#issue#),  97-108"," J. A. Rozendaal, J. Voorham, J. P. Van Hoof, B. F. Oostburg (1989).  Efficacy of mosquito nets treated with permethrin in Suriname Medical and veterinary entomology, 3(#issue#),  353-65"," H. I. Ree (1988).  Studies on control effect of the permethrin-impregnated mosquito net against Anopheles farauti in the experimental hut Japanese Journal of Sanitary Zoology, 39(#issue#),  113-118"," R. K. Gupta, A. W. Sweeney, L. C. Rutledge, R. D. Cooper, S. P. Frances, D. R. Westrom (1987).  Effectiveness of controlled-release personal-use arthropod repellents and permethrin-impregnated clothing in the field Journal of the American Mosquito Control Association, 3(#issue#),  556-60"," Kaliyan Veerakumar, Marimuthu Govindarajan, Mohan Rajeswary (2013).  Green synthesis of silver nanoparticles using Sida acuta (Malvaceae) leaf extract against Culex quinquefasciatus, Anopheles stephensi, and Aedes aegypti (Diptera: Culicidae) Parasitology Research, 112(#issue#),  4073-4085"," R.F. Shoukat, S. Freed, K.W. Ahmad,Ateeq-Ur-Rehman (2018).  Assessment of binary mixtures of entomopathogenic fungi and chemical insecticides on biological parameters of culex pipiens (diptera: Culicidae) under laboratory and field conditions Pakistan Journal of Zoology, 50(1),  299"," J.M. Riveron, F. Watsenga, H. Irving, S.R. Irish, C.S. Wondji (2018).  High Plasmodium Infection Rate and Reduced Bed Net Efficacy in Multiple Insecticide-Resistant Malaria Vectors in Kinshasa, Democratic Republic of Congo Journal of Infectious Diseases, 217(2),  320"," S.Z.M. Oo, S. Thaung, Y.N.M. Maung, K.M. Aye, Z.Z. Aung, H.M. Thu, K.Z. Thant, N. Minakawa (2018).  Effectiveness of a novel long-lasting pyriproxyfen larvicide (SumiLarvÂ®2MR) against Aedes mosquitoes in schools in Yangon, Myanmar Parasites and Vectors, 11(1),  #Pages#"," M. Chatterjee, S. Ballav, A.K. Maji, N. Basu, B.C. Sarkar, P. Saha (2018).  Polymorphisms in voltage-gated sodium channel gene and susceptibility of Aedes albopictus to insecticides in three districts of northern West Bengal, India PLoS Neglected Tropical Diseases, 12(1),  #Pages#"," U. Suresh, K. Murugan, C. Panneerselvam, R. Rajaganesh, M. Roni, A.T. Aziz, H.A. Naji Al-Aoh, S. Trivedi, H. Rehman, S. Kumar, A. Higuchi, A. Canale, G. Benelli (2018).  Suaeda maritima-based herbal coils and green nanoparticles as potential biopesticides against the dengue vector Aedes aegypti and the tobacco cutworm Spodoptera litura Physiological and Molecular Plant Pathology, 101(#issue#),  225"," M.I. Akram, W. Akram, K. Zia, N.A. Khan (2017).  Comparative efficacy of pyrethroids on Aedes Aegypti, aedes albopictus and Culex quinquefasciatus collected from different ecological zones of Punjab, Pakistan Pakistan Journal of Agricultural Sciences, 54(4),  753"," H. Izadi, W.W. Focke, E. Asaadi, R. Maharaj, J. Pretorius, M.T. Loots (2017).  A promising azeotrope-like mosquito repellent blend Scientific Reports, 7(1),  #Pages#"," R. Rosilawati, H.L. Lee, W.A. Nazni, A.H. Nurulhusna, A. Roziah, M. Khairul Asuad, F. Siti Futri Farahininajua, M.Y. Mohd Farihan, J. Ropiah (2017).  Pyrethroid resistance status of Aedes (Stegomyia) Aegypti (Linneaus) from dengue endemic areas in peninsular Malaysia International Medical Journal Malaysia, 16(2),  73"," C. Ngufor, A. Fongnikin, M. Rowland, R. Nâ€™Guessan (2017).  Indoor residual spraying with a mixture of clothianidin (a neonicotinoid insecticide) and deltamethrin provides improved control and long residual activity against pyrethroid resistant Anopheles gambiae sl in Southern Benin PLoS ONE, 12(12),  #Pages#"," P.H. Hamid, J. Prastowo, A. Ghiffari, A. Taubert, C. Hermosilla (2017).  Aedes aegypti resistance development to commonly used insecticides in Jakarta, Indonesia PLoS ONE, 12(12),  #Pages#"," M.B.M. Cisse, D. Sangare, R.M. Oxborough, A. Dicko, D. Dengela, A. Sadou, J. Mihigo, K. George, L. Norris, C. Fornadel (2017).  A village level cluster-randomized entomological evaluation of combination long-lasting insecticidal nets containing pyrethroid plus PBO synergist in Southern Mali Malaria Journal, 16(1),  #Pages#"," L.A. Messenger, J. Shililu, S.R. Irish, G.Y. Anshebo, A.G. Tesfaye, Y. Ye-Ebiyo, S. Chibsa, D. Dengela, G. Dissanayake, E. Kebede, E. Zemene, A. Asale, M. Yohannes, H.S. Taffese, K. George, C. Fornadel, A. Seyoum, R.A. Wirtz, D. Yewhalaw (2017).  Insecticide resistance in Anopheles arabiensis from Ethiopia (2012-2016): A nationwide study for insecticide resistance monitoring Malaria Journal, 16(1),  #Pages#"," T. Suter, M.M. Crespo, M.F. De Oliveira, T.S.A. De Oliveira, M.A.V. De Melo-Santos, C.M.F. De Oliveira, C.F.J. Ayres, R.M.R. Barbosa, A.P. AraÃºjo, L.N. Regis, E. Flacio, L. Engeler, P. MÃ¼ller, M.H.N.L. Silva-Filha (2017).  Insecticide susceptibility of Aedes albopictus and Ae. aegypti from Brazil and the Swiss-Italian border region Parasites and Vectors, 10(1),  #Pages#"," Welbeck A. Oumbouke, Augustin Fongnikin, Koffi B. Soukou, Sarah J. Moore, Raphael Nâ€™Guessan (2017).  Relative performance of indoor vector control interventions in the Ifakara and the West African experimental huts #journal#, 10(1),  432"," E.A. Buckner, K.F. Williams, A.L. Marsicano, M.D. Latham, C.R. Lesser (2017).  Evaluating the Vector Control Potential of the In2CareÂ® Mosquito Trap Against Aedes aegypti and Aedes albopictus under Semifield Conditions in Manatee County, Florida Journal of the American Mosquito Control Association, 33(3),  193"," A. Sumarnrote, H.J. Overgaard, N. Marasri, B. Fustec, K. Thanispong, T. Chareonviriyaphap, V. Corbel (2017).  Status of insecticide resistance in Anopheles mosquitoes in Ubon Ratchathani province, Northeastern Thailand Malaria Journal, 16(1),  #Pages#"," S.-I. Kim, Y.-J. Ahn (2017).  Larvicidal activity of lignans and alkaloid identified in Zanthoxylum piperitum bark toward insecticide-susceptible and wild Culex pipiens pallens and Aedes aegypti Parasites and Vectors, 10(1),  #Pages#"," E.W. Kaindoa, N.S. Matowo, H.S. Ngowo, G. Mkandawile, A. Mmbando, M. Finda, F.O. Okumu (2017).  Interventions that effectively target Anopheles funestus mosquitoes could significantly improve control of persistent malaria transmission in south-eastern Tanzania PLoS ONE, 12(5),  #Pages#"," S. Jiang, M. Tsikolia, U.R. Bernier, J.R. Bloomquist (2017).  Mosquitocidal activity and mode of action of the isoxazoline fluralaner International Journal of Environmental Research and Public Health, 14(2),  #Pages#"," S. Randriamaherijaona, H.J. Velonirina, S. Boyer (2016).  Susceptibility status of Anopheles arabiensis (Diptera: Culicidae) commonly used as biological materials for evaluations of malaria vector control tools in Madagascar Malaria Journal, 15(1),  #Pages#"," N.B. Marriel, H.V.V. TomÃ©, R.C.N. Guedes, G.F. Martins (2016).  Deltamethrin-mediated survival, behavior, and oenocyte morphology of insecticide-susceptible and resistant yellow fever mosquitos (Aedes aegypti) Acta Tropica, 158(#issue#),  88"," J. Etang, A. Mbida Mbida, P. Ntonga Akono, J. Binyang, C.E. Eboumbou Moukoko, L.G. Lehman, P. Awono-Ambene, A. Talipouo, W. Ekoko Eyisab, D. Tagne, R. Tchoffo, L. Manga, R. Mimpfoundi (2016).  Anopheles coluzzii larval habitat and insecticide resistance in the island area of Manoka, Cameroon BMC Infectious Diseases, 16(1),  #Pages#"," J. Orsborne, S.D. Banks, A. Hendy, S.A. Gezan, H. Kaur, A. Wilder-Smith, S.W. Lindsay, J.G. Logan (2016).  Personal protection of permethrin-treated clothing against aedes aegypti, the vector of dengue and zika virus, in the laboratory PLoS ONE, 11(5),  #Pages#"," M.L.O. Sangba, T. Deketramete, S.P. Wango, M. Kazanji, M. Akogbeto, M.O. Ndiath (2016).  Insecticide resistance status of the Anopheles funestus population in Central African Republic: A challenge in the war Parasites and Vectors, 9(1),  #Pages#"," A.A. Alsheikh, W.S. Mohammed, E.M. Noureldin, O.M. Daffalla, K.J. Shrwani, Y.A. Hobani, F.A. Alsheikh, M.H. Alzahrani, A.A. Binsaeed (2016).  Resistance status of Aedes aegypti to insecticides in the Jazan Region of Saudi Arabia Biosciences Biotechnology Research Asia, 13(1),  155"," K. Murugan, C.M. Samidoss, C. Panneerselvam, A. Higuchi, M. Roni, U. Suresh, B. Chandramohan, J. Subramaniam, P. Madhiyazhagan, D. Dinesh, R. Rajaganesh, A.A. Alarfaj, M. Nicoletti, S. Kumar, H. Wei, A. Canale, H. Mehlhorn, G. Benelli (2015).  Seaweed-synthesized silver nanoparticles: an eco-friendly tool in the fight against Plasmodium falciparum and its vector Anopheles stephensi? Parasitology Research, 114(11),  4087"," A.K.R. Galardo, M.M. PÃ³voa, I.M.C. Sucupira, C.D. Galardo, R.L.C. dos Santos (2015).  Anopheles darlingi and Anopheles marajoara (Diptera: Culicidae) susceptibility to pyrethroids in an endemic area of the Brazilian Amazon Revista da Sociedade Brasileira de Medicina Tropical, 48(6),  765"],[2015,2014,2014,2013,2013,2012,2011,2010,2008,2007,2005,1991,1991,1967,2015,2015,2015,2015,2015,2015,2015,2014,2014,2014,2014,2013,2013,2013,2012,2012,2012,2010,2010,2010,2009,2009,2009,2009,2007,2007,2007,2006,2006,2006,2006,2006,2005,2005,2003,2003,2003,2002,2002,2001,2001,2000,1999,1996,1996,1991,1989,1988,1987,2013,2018,2018,2018,2018,2018,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2017,2016,2016,2016,2016,2016,2016,2015,2015]],"container":"<table class=\"display fill-container\">\n  <thead>\n    <tr>\n      <th>Refid<\/th>\n      <th>ShortBibliography<\/th>\n      <th>FullBibliography<\/th>\n      <th>publicationYear<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollY":"100vh","pageLength":5,"columnDefs":[{"className":"dt-right","targets":[0,3]}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+
+</div>
+
+<script>
+
+$(document).ready(function () {
+
+  // add bootstrap table styles to pandoc tables
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+
+  // initialize mathjax
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+  document.getElementsByTagName("head")[0].appendChild(script);
+
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  FlexDashboard.init({
+    theme: "cosmo",
+    fillPage: false,
+    orientation: "rows",
+    storyboard: false,
+    defaultFigWidth: 576,
+    defaultFigHeight: 460,
+    defaultFigWidthMobile: 360,
+    defaultFigHeightMobile: 460,
+    resize_reload: true
+  });
+});
+</script>
+
+</body>
+</html>

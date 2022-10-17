@@ -1,0 +1,140 @@
+"Refid","refID"
+"Bibliography","FullReference"
+"User","user"
+"Ris Code","empty"
+"Level","level"
+"DE_VBD_PREVALENCE_FINAL_k","empty2"
+"studyID
+Unique ID to link all observations from the same study or experiment","studyID"
+"agent
+Causative agent of vector borne diseases","agent"
+"agentSubtypeType","agentSubtype"
+"agentSubtypeType_comment","agentSubtype_C"
+"agentDetails
+The further information given regarding the sutype type given above. ","agentDetails"
+"sampCountry
+Country where study was performed","country"
+"sampCountry
+Country where study was performed_comment","country_c"
+"SampArea_text
+Please provide the name of the sampled area.","sampArea"
+"Sampling context
+reason for sampling, type of study, surveillance types","studyContext"
+"Sampling context
+reason for sampling, type of study, surveillance types_comment","studyContext_C"
+"Reason for sampling
+Free text to describe the reason for performing pathogen testing (e.g. serological survey, trade purposes), if not already clear from the study type","reasonSampling"
+"Disease situation / outbreak phase
+Please report outbreak phase or any other information given regarding the disease situation in the area. ","phase"
+"sampY
+Start year of study/outbreak
+(-1 if not specified)","startYear"
+"sampM
+Start month of study/outbreak
+(-1 if not specified)","StartMonth"
+"duration
+Duration of study/outbreak in months","duration"
+"analysisY
+Year when the analysis was completed","analysisYear"
+"studyTargetSpecies
+Description of the sample. Where result relates to environmental samples this field can be left blank but sampledMatrix should be completed","targetSpecies"
+"studyTargetSpecies
+Description of the sample. Where result relates to environmental samples this field can be left blank but sampledMatrix should be completed_comment","targetSpecies_C"
+"sampPoint
+Point in the food chain, where the samples were taken","sampPoint"
+"sampPoint
+Point in the food chain, where the samples were taken_comment","sampPoint_C"
+"sampStrategy
+Strategy used to select sample units for laboratory analysis","sampStrategy"
+"sampStrategy
+Strategy used to select sample units for laboratory analysis_comment","sampStrategy_C"
+"Longitudinal/Repeated sampling?
+if this is a longitudinal study, describe the scheme of sampling (for instance paired samples with 2 months interval). ","longitudinal"
+"sampUnit
+Type of unit sampled in the study and reported in sampUnitSize","sampUnit"
+"sampUnit
+Type of unit sampled in the study and reported in sampUnitSize_comment","sampUnit_C"
+"sampUnitSize
+Number of sampling units tested (sample size)","sampUnitSize"
+"MinAgeMonths
+Age of animals in months
+(-1 if not specified)","minAgeMonths"
+"MaxAgeMonths
+Age of animals in months
+(-1 if not specified)","maxAgeMonths"
+"sampledMatrix
+Matrix sampled for testing","matrix"
+"sampledMatrix
+Matrix sampled for testing_comment","matrix_C"
+"anMethCode
+Laboratory test used","labTest"
+"anMethCode
+Laboratory test used_comment","labTest_C"
+"anMatText
+Target of laboratory test","labTarget"
+"anMatText
+Target of laboratory test_comment","labTarget_C"
+"anMethText
+Description of laboratory method (where relevant include method of calculation of cut-offs)","labDescription"
+"sensitivity
+Sensitivity of test","sensitivity"
+"specificity
+Specificity of test","specificity"
+"nPositive
+Number of animals positive","nPositive"
+"Were all cases confirmed to be IMPORTED (animals believed not to have been infected in the study area) -> YES, only IMPORTED cases","imported"
+"nNegative
+Number of animals negative","nNegative"
+"Disease freedom
+was this phrased as a disease freedom investigation?","disFreedom"
+"Design prevalence
+If given, in % (p.e. 2%). This is the minimum assumed prevalence of the disease in the region, if it was present.","designPrev"
+"prevalence (..%, e.g write 7, when the prevalence is 0.07 or 7%)
+Reported prevalence in paper","prevalence"
+"LCI_PR
+Lower Confidence interval-prevalence","UCI_prev"
+"UCI_PR
+Upper confidence interval-prevalence","LCI_prev"
+"incidence
+Reported incidence value","incidence"
+"LCI_I
+Lower confidence interval-incidence","UCI_incid"
+"UCI_I
+Upper confidence interval-incidence","LCI_incid"
+"incidenceUnits
+Units of reported incidence value","incidUnit"
+"incidence Unit comments
+Any further information on incidence units","incidUnit2"
+"R0
+Basic reproduction number","R0"
+"Lower value of Ro range","lowerR0"
+"Upper level of range or of Ro","upperR0"
+"impactMeasure
+Description of the measure used / reported in the paper","impactMeasure"
+"impactValue
+Value","impactValue"
+"impactUnit
+Unit","impactUnit"
+"impactUnit
+Unit_comment","impactUnit_C"
+"Clinical signs
+If clinical signs were described, please list them here","clinicalSigns"
+"Severity
+If any measure of severity was described, please give an objective summary here","severity"
+"More info missed?
+Are there more detailed information on the clinical progression, which could not be collected here? Would this paper be worth a new data collection form focusing specifically on the type and duration of clinical signs? ","moreInfo"
+"Risk factors - INCREASE RISK
+if this was a study where risk factor were investigated, please list factors confirmed to be associated with increased disease risk","riskFactors"
+"Risk factors - PROTECTIVE FACTOR
+if this was a study where risk factor were investigated, please list factors confirmed to REDUCE disease risk","protectiveFactors"
+"More info missed?
+Are there more detailed information on risk factors, which could not be collected here? Would this paper be worth a new data collection form focusing specifically on risk factors? ","moreInfo2"
+"Quality check and other notes
+if relevant, please add any notes about information in the paper which you think is relevant but was not capured in the form.
+Also add any notes about detected biases or other methodological flaws.","qualityCheck"
+"agentSubtype
+Code agent of vector borne diseases agent serotype/genotype/strain
+from DACRAH1, no need to answer","agentSubtypeDC1"
+"agentSubtype
+Code agent of vector borne diseases agent serotype/genotype/strain
+from DACRAH1, no need to answer_comment","agentSubtypeDC1_C"

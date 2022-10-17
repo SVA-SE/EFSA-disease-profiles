@@ -1,0 +1,988 @@
+---
+title: "Evidence from systematic literature review"
+params:
+    agent: "agent"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    orientation: rows
+    self_contained: false
+---
+<style type="text/css">
+
+body{
+  font-family: Verdana;
+  font-size: 12pt;
+}
+
+.navbar {
+  background-color:#1DAF8E;
+}
+
+.bggreen {
+  background-color: #1DAF8E;
+}
+
+/* Headers */
+h1{
+  font-family: Verdana;
+  font-size: 16pt;
+  font-weight: bold; 
+  color: white;
+}
+
+.chart-title {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li.active a {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li:not(.active) a {
+    font-size: 16pt;
+}
+
+
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message=FALSE, fig.width=10,fig.height=6)
+library(plotly)
+library(dplyr)
+library(stringr)
+library(knitr)
+library(gdata)
+library(kableExtra)
+library(DT)
+library(RColorBrewer)
+library(htmltools)
+
+
+source("Functions.r") #source("SLR_objectives/Functions.r")
+
+
+dftt <- read.csv("../data/FilesDownload/Treatments_cleaned.csv")
+references <- read.csv("../data/FilesDownload/Treatments_refid.csv")
+
+agent <- params$agent 
+styling <- params$styling 
+min.groups.plot <- params$min.groups.plot 
+agent.subtype <- params$agent.subtype
+
+# source("SLR_objectives/Functions.r")
+# dftt <- read.csv("data/FilesDownload/Treatments_cleaned.csv")
+# references <- read.csv("data/FilesDownload/Treatments_refid.csv")
+# styling=T
+# min.groups.plot=1
+# agent = agents[a]
+# agent.subtype <- "agentSubtype"
+
+
+dfDZ <- dftt[dftt$agent==agent,]
+
+
+dfDZ$targetHost <-gsub("\\s*\\([^\\)]+\\)","",as.character(dfDZ$targetHost))
+
+
+references$targetSpecies<- gsub("\\s*\\([^\\)]+\\)","",as.character(references$targetSpecies))
+references <- species.name.cleanup(data=references)
+
+
+#dfDZ$testSubstance <-gsub("\\s*\\([^\\)]+\\)","",as.character(dfDZ$testSubstance))
+
+
+dfDZ$SubstanceCat[str_detect(dfDZ$SubstanceCat,"CONTROL")]<-"CONTROL"
+dfDZ$testSubstance <- dfDZ$SubstanceCat 
+dfDZ$testSubstance[dfDZ$substance2Cat!="not investigated/not given/not relevant"] <- paste(dfDZ$SubstanceCat[dfDZ$substance2Cat!="not investigated/not given/not relevant"],dfDZ$substance2Cat[dfDZ$substance2Cat!="not investigated/not given/not relevant"],sep=" + ")
+dfDZ$substance2Cat[dfDZ$substance2Cat=="not investigated/not given/not relevant"]<-""
+ 
+    #dfDZ$testSubstance <- as.factor(dfDZ$testSubstance)
+    #dfDZ$testSubstance <- relevel(dfDZ$testSubstance,"CONTROL")
+
+
+dfDZ <- species.name.cleanup(data=dfDZ,colname="targetHost")
+
+
+dfDZ$targetHost <- as.factor(dfDZ$targetHost)
+
+plots.font <- list(
+  family="Verdana",
+  size=16
+)
+
+dfPharma <- dfDZ %>% filter (interventionStudy == "Pharmaceutical treatment")
+dfvector <- dfDZ %>% filter (interventionStudy == "Insecticide treatment")
+
+df1 <- dfPharma %>% filter (!is.na(efficacy))
+df2 <- dfPharma %>% filter (!is.na(titres))
+df3 <- dfPharma %>% filter (!is.na(nPositive))
+df4 <- dfPharma %>% filter (!is.na(mortalityPerc))
+df5 <- dfvector %>% filter (!is.na(efficacy))
+df6 <- dfvector %>% filter (!is.na(titres))
+df7 <- dfvector %>% filter (!is.na(nPositive))
+df8 <- dfvector %>% filter (!is.na(mortalityPerc))
+
+
+```
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pharmaceutical treatments applied to HOSTS </h1>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#main">
+<img src=../../../../templates/assets/css/images/info.png>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="main" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+The plots below give an overview of substances for which experimental assessments of treatment effect are available. In these studies, ANIMALS (HOSTS) WERE TREATED DIRECTLY with the substances listed, and the efficacy of the substance in PREVENTING DISEASE was assessed by comparing test groups to a control (untreated or treated with a placebo substance). Studies are presented based on the type of outcome measured to assess treatment effect. All studies reporting mortality in the control and treated groups are also summarized.
+<br>
+It is important to consider the ROUTE of application of these substances. Routes for each study are listed in a TABLE following the plots. Filter or sort by route. 
+<br>
+Please note that experimental protocols differed greatly: studies could have many different substance application methods, with different doses and frequencies. The box-plots give an overview of the range of efficacy reported, but direct comparisons can only be drawn by looking at the full details available on the data for each experiment.
+<br>
+The full datasets are available for download from the left panel, and tabled summaries are provided below. 
+<br>
+Having a control group was one of the inclusion criteria for studies to be included in this literature review. However, not all studies compared results of treatment groups to control groups to report a calculated efficacy. We chose therefore to present all raw results available in each study, but please be mindful of the control data presented as own summaries, and per study in the tables further below. The control groups can be found in the column “intervention”, and the table can be filtered to see results of individual, specific studies.
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+
+```{r, results='asis'}
+if(!dim(dfPharma)[1]>0){
+
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n###  {.bggreen data-width=250}\n") 
+cat("\n<h1>No eligible papers found</h1>\n")
+cat("\n### \n")
+cat("\nUp to the latest update, the systematic literature review (SLR) found no eligible papers investigating the efficacy of phamaceutical treatments against this agent/disease.  The next update is planned for 2023. \n")
+cat("\n<br>\n")
+cat("\nDetailed information about the SLR, including a link to the review protocol, is available in the left panel and in the references section of this story map.\n") 
+}
+
+
+```
+
+
+```{r, results='asis'}
+if(dim(df1)[1]>0){
+
+  
+cat("\nRow{data-height=600}\n-----------------------------------------------------------------------\n")
+cat("\n###  {.bggreen data-width=200}\n")
+cat("\n<h1>Efficacy</h1>\n")
+
+cat("\n<!-- Button trigger modal -->\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#eff\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+
+cat("\n<!-- Modal -->\n")
+cat("\n<div class=\"modal fade\" id=\"eff\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nThese are studies where the main outcome reported was the efficacy of the treatment, compared to an untreated control group. \n")
+cat("\n<br><br>\n")
+cat("\nEfficacy = 1 - (morbidity in the control group / morbidity in the experimental group))\n")
+cat("\n<br><br>\n")
+cat("\nPlots are interactive, drag the mouse to zoom.\n")
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+
+cat("\n### \n")
+}
+  
+```
+
+
+```{r efficacy, message=FALSE, warning=FALSE}
+
+if(dim(df1)[1]>0){
+df1$interventionStudy <- as.character(df1$interventionStudy)
+df1$efficacy <- df1$efficacy*100
+
+df1 <- df1 %>% select (refID, groupID, targetHost, intervention, 
+                       testSubstance,
+                       sampUnitSize, route, timePoint, 
+                       dosageFreq, 
+                       dosageInterval, dose, doseUnits,
+                       efficacy)
+
+df1 <- df1[order(df1$targetHost,
+                 df1$testSubstance,
+                 df1$route,
+                 df1$timePoint),]%>%drop.levels()
+
+df1[df1=="not investigated/not given/not relevant"]<-""
+
+
+# fig1 <- plot_ly(df1, x = ~testSubstance, y = ~efficacy, color = ~targetHost, 
+#                    type = "box")%>%
+#         layout(title = title,
+#                xaxis = list(title = 'Substance or combination of substances tested',tickangle = -45),
+#                yaxis = list(title = 'Efficacy %'),
+#                showlegend=T)
+#     #fig <- fig %>% layout(boxmode = "group")
+#     
+#     fig1%>% layout(font=plots.font)
+
+
+fig1 <- plot_ly(orientation='h') %>%
+  add_boxplot(data=df1, y = ~testSubstance, x = ~efficacy, color = ~targetHost)%>%
+        layout(title = title,
+               yaxis = list(title = 'Treatment substance(s) tested'),
+               xaxis = list(title = 'Efficacy %'),
+               showlegend=T,boxmode = "group")
+    
+    fig1%>% layout(font=plots.font)
+
+}
+
+
+```
+
+
+
+
+```{r, results='asis'}
+if(dim(df2)[1]>0){
+
+  
+cat("\nRow{data-height=600}\n-----------------------------------------------------------------------\n")
+cat("\n###  {.bggreen data-width=200}\n")
+cat("\n<h1>Antibody titers</h1>\n")
+
+cat("\n<!-- Button trigger modal -->\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#titers\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+
+cat("\n<!-- Modal -->\n")
+cat("\n<div class=\"modal fade\" id=\"titers\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nThese are studies where treatment result was monitored by comparing the presence of antibody titers in a treatment group and in a control group.  \n")
+cat("\n<br><br>\n")
+cat("\nPlots are interactive, drag the mouse to zoom.\n")
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+
+cat("\n### \n")
+}
+  
+```
+
+
+
+```{r titres, message=FALSE, warning=FALSE}
+
+if(dim(df2)[1]>0){
+df2$interventionStudy <- as.character(df2$interventionStudy)
+
+df2 <- df2 %>% select (refID, groupID, targetHost, intervention, 
+                       testSubstance,
+                       sampUnitSize, route, timePoint, 
+                       dosageFreq, 
+                       dosageInterval, dose, doseUnits,
+                       titres)
+
+df2 <- df2[order(df2$targetHost,
+                 df2$testSubstance,
+                 df2$route,
+                 df2$timePoint),]%>%drop.levels()
+
+df2[df2=="not investigated/not given/not relevant"]<-""
+
+
+
+    fig2 <- plot_ly(orientation='h') %>%
+  add_boxplot(data=df2, y = ~testSubstance, x = ~titres, color = ~targetHost)%>%
+        layout(title = title,
+               yaxis = list(title = 'Treatment substance(s) tested'),
+               xaxis = list(title = 'Antibody titres'),
+               showlegend=T,
+               boxmode = "group")
+    
+    fig2%>% layout(font=plots.font)
+
+}
+
+```
+
+
+
+
+```{r, results='asis'}
+if(dim(df3)[1]>0){
+
+  
+cat("\nRow{data-height=600}\n-----------------------------------------------------------------------\n")
+cat("\n###  {.bggreen data-width=200}\n")
+cat("\n<h1>% infected hosts</h1>\n")
+
+cat("\n<!-- Button trigger modal -->\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#perc\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+
+cat("\n<!-- Modal -->\n")
+cat("\n<div class=\"modal fade\" id=\"perc\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nThese are studies where treatment result was monitored by comparing the percentage of hosts that tested positive for the agent in a treatment group and in a control group.\n")
+cat("\n<br><br>\n")
+cat("\nPlots are interactive, drag the mouse to zoom.\n")
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+
+cat("\n### \n")
+}
+  
+```
+
+
+
+```{r npos, message=FALSE, warning=FALSE}
+
+if(dim(df3)[1]>0){
+df3$interventionStudy <- as.character(df3$interventionStudy)
+df3$percPos <- round(df3$nPositive/df3$nTested*100,2)
+
+
+
+df3 <- df3 %>% select (refID, groupID, targetHost, intervention, 
+                       testSubstance,
+                       sampUnitSize, route, timePoint, 
+                       dosageFreq, 
+                       dosageInterval, dose, doseUnits,
+                       percPos)
+
+df3 <- df3[order(df3$targetHost,
+                 df3$testSubstance,
+                 df3$route,
+                 df3$timePoint),]%>%drop.levels()
+
+df3[df3=="not investigated/not given/not relevant"]<-""
+
+
+
+    fig3 <- plot_ly(orientation='h') %>%
+  add_boxplot(data=df3, y = ~testSubstance, x = ~percPos, color = ~targetHost)%>%
+        layout(title = title,
+               yaxis = list(title = 'Treatment sustance(s) tested'),
+               xaxis = list(title = '% infected hosts'),
+               showlegend=T,
+               boxmode = "group")
+    
+    fig3%>% layout(font=plots.font)
+    
+}
+
+
+```
+
+
+
+
+
+```{r, results='asis'}
+if(dim(df4)[1]>0){
+
+  
+cat("\nRow{data-height=600}\n-----------------------------------------------------------------------\n")
+cat("\n###  {.bggreen data-width=200}\n")
+cat("\n<h1>Mortality</h1>\n")
+
+cat("\n<!-- Button trigger modal -->\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#mort\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+
+cat("\n<!-- Modal -->\n")
+cat("\n<div class=\"modal fade\" id=\"mort\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nAll studies which reported mortality are summarized based on the percentage mortality within the animal group. For the raw numbers (sample size, number of dead) see the table further below. \n")
+cat("\n<br><br>\n")
+cat("\nPlots are interactive, drag the mouse to zoom.\n")
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+
+cat("\n### \n")
+}
+  
+```
+
+
+
+```{r mortalityPerc, message=FALSE, warning=FALSE}
+if(dim(df4)[1]>0){
+
+df4$interventionStudy <- as.character(df4$interventionStudy)
+
+df4 <- df4 %>% select (refID, groupID, targetHost, intervention, 
+                       testSubstance,
+                       sampUnitSize, route, timePoint, 
+                       dosageFreq, 
+                       dosageInterval, dose, doseUnits,
+                       mortalityPerc)
+
+df4 <- df4[order(df4$targetHost,
+                 df4$testSubstance,
+                 df4$route,
+                 df4$timePoint),]%>%drop.levels()
+
+df4[df4=="not investigated/not given/not relevant"]<-""
+
+
+    fig4 <- plot_ly(orientation='h') %>%
+  add_boxplot(data=df4, y = ~testSubstance, x = ~mortalityPerc, color = ~targetHost)%>%
+        layout(title = title,
+               yaxis = list(title = 'Treatment substance(s) tested'),
+               xaxis = list(title = 'Mortality %'),
+               showlegend=T,
+               boxmode = "group")
+    
+    fig4%>% layout(font=plots.font)
+
+}
+
+```
+
+
+```{r, results='asis'}
+if(dim(dfPharma)[1]>0){
+
+  cat("\nRow{data-height=60 .bggreen}\n-----------------------------------------------------------------------\n")
+  cat("\n<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Host treatment studies - all data </h1>\n")
+
+
+cat("\n<!-- Button trigger modal -->\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#pharmaTable\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+
+cat("\n<!-- Modal -->\n")
+cat("\n<div class=\"modal fade\" id=\"pharmaTable\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nThe plots above grouped studies based on the substance used. In the table below you can see all data
+for each individualized study group. Study groups part of the same reported study can be identified by their common refID. This refID can be used to consult the full bibliography in the reference section further below. \n")
+cat("\n<br><br>\n")
+cat("\nFurther details are also presented, such as the route of treatment administration.\n") 
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+
+
+cat("\nRow{data-height=700}\n-----------------------------------------------------------------------\n")
+cat("\n###\n")
+
+
+}
+  
+```
+
+
+```{r table1}
+if(dim(dfPharma)[1]>0){
+columns.raw.data <- c("refID","groupID","targetHost","targetVector","sampUnitSize","route",
+                      "intervention","SubstanceCat","substancePerc","substance2Cat",
+                      "substance2Perc",
+                      "dosageFreq","dosageInterval","dose","doseUnits",
+                      "timePoint",
+                      "nAnimals",	"nClinical",	"titres",	"nTested",	"nPositive",	"nNegative",
+                      "efficacy","mortalityNr",	"mortalityPerc")
+dfPharma$refID <- factor (dfPharma$refID) 
+dfPharma$groupID <- factor (dfPharma$groupID) 
+
+options(DT.options = list(scrollY="100vh",pageLength =5))
+datatable(dfPharma[,columns.raw.data], filter = 'top', rownames=FALSE,
+          options = list(autoWidth = TRUE))
+}
+
+```
+ 
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VECTOR CONTROL treatments </h1>
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#main2">
+<img src=../../../../templates/assets/css/images/info.png>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="main2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+Insecticide treatment studies were considered disease prevention or control treatments when the outcomes were reported from the perspective of the HOST - for instance number of infections prevented.
+<br>
+Please note that insecticide treatments which effect were measured from the perspective of the vector (vector mortality or presence inhibition for instance) are reported in another section of this story map, "VECTOR CONTROL". 
+<br>
+Studies are presented based on the type of outcome measured to assess treatment effect. All studies reporting mortality in the control and treated groups are also summarized.
+<br>
+It is important to consider the ROUTE of application of these substances. Routes for each study are listed in a TABLE following the plots. Filter or sort by route. 
+<br>
+Please note that experimental protocols differed greatly: studies could have many different substance application methods, with different doses and frequencies. The box-plots give an overview of the range of efficacy reported, but direct comparisons can only be drawn by looking at the full details available on the data for each experiment.
+<br>
+The full datasets are available for download from the left panel, and tabled summaries are provided below. 
+<br>
+Having a control group was one of the inclusion criteria for studies to be included in this literature review. However, not all studies compared results of treatment groups to control groups to report a calculated efficacy. We chose therefore to present all raw results available in each study, but please be mindful of the control data presented as own summaries, and per study in the tables further below. The control groups can be found in the column “intervention”, and the table can be filtered to see results of individual, specific studies.
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+```{r, results='asis'}
+if(!dim(dfvector)[1]>0){
+
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n###  {.bggreen data-width=250}\n") 
+cat("\n<h1>No eligible papers found</h1>\n")
+cat("\n### \n")
+cat("\nUp to the latest update, the systematic literature review (SLR) found no eligible papers investigating how the use of vector control insecitides can prevent infection in hosts.   The next update is planned for 2023. \n")
+cat("\n<br>\n")
+cat("\nDetailed information about the SLR, including a link to the review protocol, is available in the left panel and in the references section of this story map.\n") 
+}
+
+
+```
+
+
+
+```{r, results='asis'}
+if(dim(df5)[1]>0){
+
+  
+cat("\nRow{data-height=600}\n-----------------------------------------------------------------------\n")
+cat("\n###  {.bggreen data-width=200}\n")
+cat("\n<h1>Efficacy</h1>\n")
+
+cat("\n<!-- Button trigger modal -->\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#eff2\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+
+cat("\n<!-- Modal -->\n")
+cat("\n<div class=\"modal fade\" id=\"eff2\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nThese are studies where the main outcome reported was the efficacy of the treatment, compared to an untreated control group. \n")
+cat("\n<br><br>\n")
+cat("\nEfficacy = 1 - (morbidity in the control group / morbidity in the experimental group))\n")
+cat("\n<br><br>\n")
+cat("\nPlots are interactive, drag the mouse to zoom.\n")
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+
+cat("\n### \n")
+}
+  
+```
+
+
+
+```{r efficacy2, message=FALSE, warning=FALSE}
+
+
+if(dim(df5)[1]>0){
+
+df5$interventionStudy <- as.character(df5$interventionStudy)
+df5$efficacy <- df5$efficacy*100
+
+df5 <- df5 %>% select (refID, groupID, targetHost, intervention, 
+                       testSubstance,
+                       sampUnitSize, route, timePoint, 
+                       dosageFreq, 
+                       dosageInterval, dose, doseUnits,
+                       efficacy)
+
+df5 <- df5[order(df5$targetHost,
+                 df5$testSubstance,
+                 df5$route,
+                 df5$timePoint),]%>%drop.levels()
+
+df5[df5=="not investigated/not given/not relevant"]<-""
+
+
+fig1 <- plot_ly(orientation='h') %>%
+  add_boxplot(data=df5, y = ~testSubstance, x = ~efficacy, color = ~targetHost)%>%
+        layout(title = title,
+               yaxis = list(title = 'Insecticide substance(s) tested'),
+               xaxis = list(title = 'Efficacy %'),
+               showlegend=T,
+               boxmode = "group")
+    
+    fig1%>% layout(font=plots.font)
+}
+
+
+```
+
+
+
+
+```{r, results='asis'}
+if(dim(df6)[1]>0){
+
+  
+cat("\nRow{data-height=600}\n-----------------------------------------------------------------------\n")
+cat("\n###  {.bggreen data-width=200}\n")
+cat("\n<h1>Antibody titers</h1>\n")
+
+cat("\n<!-- Button trigger modal -->\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#titers2\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+
+cat("\n<!-- Modal -->\n")
+cat("\n<div class=\"modal fade\" id=\"titers2\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nThese are studies where treatment result was monitored by comparing the presence of antibody titers in a treatment group and in a control group.  \n")
+cat("\n<br><br>\n")
+cat("\nPlots are interactive, drag the mouse to zoom.\n")
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+
+cat("\n### \n")
+}
+  
+```
+
+
+```{r titres2, message=FALSE, warning=FALSE}
+
+if(dim(df6)[1]>0){
+df6$interventionStudy <- as.character(df6$interventionStudy)
+
+df6 <- df6 %>% select (refID, groupID, targetHost, intervention, 
+                       testSubstance,
+                       sampUnitSize, route, timePoint, 
+                       dosageFreq, 
+                       dosageInterval, dose, doseUnits,
+                       titres)
+
+df6 <- df6[order(df6$targetHost,
+                 df6$testSubstance,
+                 df6$route,
+                 df6$timePoint),]%>%drop.levels()
+
+df6[df6=="not investigated/not given/not relevant"]<-""
+
+
+
+    fig2 <- plot_ly(orientation='h') %>%
+  add_boxplot(data=df6, y = ~testSubstance, x = ~titres, color = ~targetHost)%>%
+        layout(title = title,
+               yaxis = list(title = 'Insecticide substance(s) tested'),
+               xaxis = list(title = 'Antibody titres %'),
+               showlegend=T,
+               boxmode = "group")
+    
+    fig2%>% layout(font=plots.font)
+}
+
+```
+
+
+
+
+
+
+```{r, results='asis'}
+if(dim(df7)[1]>0){
+
+  
+cat("\nRow{data-height=600}\n-----------------------------------------------------------------------\n")
+cat("\n###  {.bggreen data-width=200}\n")
+cat("\n<h1>% infected hosts</h1>\n")
+
+cat("\n<!-- Button trigger modal -->\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#perc2\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+
+cat("\n<!-- Modal -->\n")
+cat("\n<div class=\"modal fade\" id=\"perc2\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nThese are studies where treatment result was monitored by comparing the percentage of hosts that tested positive for the agent in a treatment group and in a control group. \n")
+cat("\n<br><br>\n")
+cat("\nPlots are interactive, drag the mouse to zoom.\n")
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+
+cat("\n### \n")
+}
+  
+```
+
+
+
+```{r npos2, message=FALSE, warning=FALSE}
+if(dim(df7)[1]>0){
+
+df7$interventionStudy <- as.character(df7$interventionStudy)
+df7$percPos <- round(df7$nPositive/df7$nTested*100,2)
+
+
+
+df7 <- df7 %>% select (refID, groupID, targetHost, intervention, 
+                       testSubstance,
+                       sampUnitSize, route, timePoint, 
+                       dosageFreq, 
+                       dosageInterval, dose, doseUnits,
+                       percPos)
+
+df7 <- df7[order(df7$targetHost,
+                 df7$testSubstance,
+                 df7$route,
+                 df7$timePoint),]%>%drop.levels()
+
+df7[df7=="not investigated/not given/not relevant"]<-""
+
+fig3 <- plot_ly(orientation='h') %>%
+  add_boxplot(data=df7, y = ~testSubstance, x = ~percPos, color = ~targetHost)%>%
+        layout(title = title,
+               yaxis = list(title = 'Insecticide substance(s) tested'),
+               xaxis = list(title = '% infected hosts'),
+               showlegend=T,
+               boxmode = "group")
+    
+    fig3%>% layout(font=plots.font)
+    
+}
+
+```
+
+
+
+
+```{r, results='asis'}
+if(dim(df8)[1]>0){
+
+  
+cat("\nRow{data-height=600}\n-----------------------------------------------------------------------\n")
+cat("\n###  {.bggreen data-width=200}\n")
+cat("\n<h1>Mortality</h1>\n")
+
+cat("\n<!-- Button trigger modal -->\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#mort\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+
+cat("\n<!-- Modal -->\n")
+cat("\n<div class=\"modal fade\" id=\"mort\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nAll studies which reported mortality are summarized based on the percentage mortality within the animal group. For the raw numbers (sample size, number of dead) see the table further below. \n")
+cat("\n<br><br>\n")
+cat("\nPlots are interactive, drag the mouse to zoom.\n")
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+
+cat("\n### \n")
+}
+  
+```
+
+
+
+```{r mortality2, message=FALSE, warning=FALSE}
+
+if(dim(df8)[1]>0){
+df8$interventionStudy <- as.character(df8$interventionStudy)
+
+df8 <- df8 %>% select (refID, groupID, targetHost, intervention, 
+                       testSubstance,
+                       sampUnitSize, route, timePoint, 
+                       dosageFreq, 
+                       dosageInterval, dose, doseUnits,
+                       mortalityPerc)
+
+df8 <- df8[order(df8$targetHost,
+                 df8$testSubstance,
+                 df8$route,
+                 df8$timePoint),]%>%drop.levels()
+
+df8[df8=="not investigated/not given/not relevant"]<-""
+
+fig4 <- plot_ly(orientation='h') %>%
+  add_boxplot(data=df8, y = ~testSubstance, x = ~mortalityPerc, color = ~targetHost)%>%
+        layout(title = title,
+               yaxis = list(title = 'Insecticide substance(s) tested'),
+               xaxis = list(title = '% mortality'),
+               showlegend=T,
+               boxmode = "group")
+    
+    fig4%>% layout(font=plots.font)
+    
+    
+}
+
+```
+
+
+
+
+
+```{r, results='asis'}
+if(dim(dfvector)[1]>0){
+
+  cat("\nRow{data-height=60 .bggreen}\n-----------------------------------------------------------------------\n")
+  cat("\n<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;VECTOR CONTROL treatments - all data</h1>\n")
+
+
+cat("\n<!-- Button trigger modal -->\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#vectorTable\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+
+cat("\n<!-- Modal -->\n")
+cat("\n<div class=\"modal fade\" id=\"vectorTable\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nThe plots above grouped studies based on the substance used. In the table below you can see all data
+for each individualized study group. Study groups part of the same reported study can be identified by their common refID. This refID can be used to consult the full bibliography in the reference section further below. \n")
+cat("\n<br><br>\n")
+cat("\nFurther details are also presented, such as the route of treatment administration.\n") 
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+
+
+cat("\nRow{data-height=700}\n-----------------------------------------------------------------------\n")
+cat("\n###\n")
+
+
+}
+  
+```
+
+
+
+```{r table2}
+
+if(dim(dfvector)[1]>0){
+  
+dfvector$refID <- factor (dfvector$refID) 
+dfvector$groupID <- factor (dfvector$groupID) 
+
+options(DT.options = list(scrollY="100vh",pageLength =5))
+datatable(dfvector[,columns.raw.data], filter = 'top', rownames=FALSE,
+          options = list(autoWidth = TRUE))
+}
+
+```
+ 
+
+
+
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REFERENCES </h1>
+
+
+Row
+-----------------------------------------------------------------------
+###
+In the left panel you can find information about the entire systematic literature review. The specific references for this agent, and used in this section of the story map are listed below.
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+
+```{r references}
+options(DT.options = list(scrollY="100vh",pageLength =5))
+datatable(unique(references[references$Refid%in%dfDZ$refID,c(1,3,5)]), filter = 'top', rownames=FALSE)
+
+```
+ 

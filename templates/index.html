@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title></title>
+    <script>
+		let root = '/';
+		let host = location.hostname;
+		if (host === 'svastatichosting.z6.web.core.windows.net' || host === 'svastatichostingtest.z6.web.core.windows.net') {
+			root = '/disease-profiles' + root;
+		}
+		document.write('<base href="' + root + '">');
+	</script>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-Equiv="Cache-Control" Content="no-cache" />
+    <meta http-Equiv="Pragma" Content="no-cache" />
+    <meta http-Equiv="Expires" Content="0" />
+    <link rel="stylesheet" href="assets/css/leaflet.css" />
+    <link rel="stylesheet" href="assets/css/easy-button.css"/>
+    <link rel="stylesheet" href="assets/css/classic-min.css"/>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/css/style_storymap.css" />
+    <link rel="stylesheet" href="assets/css/style_map.css"/>
+    <link rel="shortcut icon" href="https://www.efsa.europa.eu/themes/custom/efsa_theme/favicon.ico" type="image/vnd.microsoft.icon">
+
+    <script src="assets/js/leaflet.js"></script>
+	<script src="assets/js/easy-button.js"></script>
+    <script src="assets/js/jquery-3.3.1.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jQDateRangeSlider-min.js"></script>
+	<script src="assets/js/bootstrap-datepicker.min.js"></script>
+	<script src="assets/js/polyfill.js"></script>
+
+    <script src="data.js"></script>
+</head>
+<body>
+<div class="header">
+    <a href="#contents" class="skip-to-content" tabindex="0"> Skip to the contents  </a>
+    <div id="header1">Disease profile</div>
+    <div id="header2"></div>
+    <div id="header3">
+		<a href="https://www.efsa.europa.eu/en" target="_blank">
+        <img src="assets/css/images/EFSA_logo.svg" id="logo" alt="European Food Safety Authority">
+		</a>
+    </div>
+</div>
+<div class="main">
+    <div class="row div-nav">
+		<ul class="nav">
+
+        </ul>
+    </div>
+
+    <div class="left first" onclick="slideLeft()"></div>
+    <div class="right" onclick="slideRight()"></div>
+
+    <div class="wrapper" id="contents">
+
+    </div>
+</div>
+
+<script src="scripts/script.js"></script>
+</body>
+</html>

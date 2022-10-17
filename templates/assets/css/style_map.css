@@ -1,0 +1,221 @@
+#map1, #map2 {
+	z-index: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+.slider {
+	height: 30px;
+	padding: 0 ;
+}
+#dateslider1, #dateslider2{
+	width: 90%;
+	position: absolute;
+	left: 85px;
+	top: 50px;
+}
+#dateslider1-1,#dateslider1-2{
+	width: 100%;
+	float: left;
+}
+.legend {
+  text-align: left;
+  line-height: 18px;
+  color: black;
+  background-color: rgb(255, 255, 255, 0.9);
+  width: 210px;
+  padding: 15px;
+  box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.8;
+	border:1px solid gray;
+}
+.legend .circle {
+	border-radius: 50%;
+	border:1px solid black;
+	width: 10px;
+	height: 10px;
+	margin-top: 4px;
+}
+.legend .lyName {
+	font-size: 14px;
+	font-weight: bold;
+	color: balck;
+}
+.legend .update{
+	font-size: 12px;
+	color: #555;
+}
+.legend br {
+  clear:both;
+}
+h6.lyrName{
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0 10px;
+	color: #555;
+}
+.lyrNameFilter{
+	font-size: 13px;
+	font-weight: normal;
+	color: #555;
+}
+#name1{
+	position: absolute;
+	top: 20px;
+}
+#name2{
+	position: absolute;
+	top: 160px;
+}
+.lyrFilter {
+	position: absolute;
+	top: 45px;
+	left: 25px;
+	width: 100%;
+	padding-right: 25px;
+}
+#filter-sero, #filter-species{
+	padding: 0 5px;
+	border: 1px solid #1997d8;
+    background-color: #f4f8fb;
+}
+#layer-control1{
+	position: absolute;
+	left: 25px;
+	top: 90px;
+}
+#layer-control2{
+	position: absolute;
+	left: 25px;
+	top: 195px;
+}
+.layer-slider1{
+	position: absolute;
+	top: 85px;
+	left: 90px;
+	width: 100%;
+	padding-right: 90px;
+}
+.layer-slider2{
+	position: absolute;
+	top: 190px;
+	left: 90px;
+	width: 100%;
+	padding-right: 90px;
+}
+
+.from1, .from2{
+    text-align: right;
+	margin-top: 15px;
+	width:10%;
+	padding: 0 5px;
+}
+.to1, .to2{
+	float: left;
+	margin-top: 15px;
+	width:10%;
+	padding: 0 5px;
+}
+.mapControl {
+	width: 90%;
+	height: 255px;
+	margin: auto;
+	padding: 0 0 40px 0;
+	position: absolute;
+	top: 12px;
+	right: 27px;
+	font: 14px/16px Verdana, sans-serif;
+	background: white;
+	background: rgba(255,255,255,0.7);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 2px;
+	z-index:99999;
+}
+.leaflet-control-layers{
+	padding: 1px;
+}
+a.control-close-button {
+	float: right;
+	margin: 0px 5px 5px 5px;
+	font: 20px Verdana, sans-serif;
+	text-decoration: none;
+	color: #727272;
+}
+a.control-close-button:hover {
+    font-weight: bold;
+    color: #555;
+}
+.leaflet-popup-content-wrapper {
+    border-radius: 3px;
+    z-index: 9999;
+}
+.easy-button-button{
+	height: 30px !important;
+	width: 30px !important;
+	padding: 3px;
+	vertical-align: middle;
+}
+.leaflet-control-layers-expanded {
+	width: 200px;
+	z-index:999;
+	padding: 10px 5px 5px 10px;
+}
+#map2 .leaflet-control-layers-expanded {
+	width: 300px;
+	padding: 0px 2px 5px 10px;
+}
+#map2 .lyr-con-label{
+	display: inline-block;
+	padding: 4px;
+	height: 25px;
+	width: 250px;
+	vertical-align: top;
+	margin-top: -2px;
+}
+#map2 .leaflet-popup-content-wrapper .leaflet-popup-content {
+    overflow-y: scroll;
+    width: 350px !important;
+    max-height: 250px;
+}
+#map2 .leaflet-popup-content-wrapper .leaflet-popup-content td,th {
+    border: 1px solid gray;
+    text-align: left !important;
+    color: black;
+    font-size: 12px;
+    padding: 3px;
+    background-color: #fff;
+}
+#btnDown {
+	border: 1px solid #008CBA;
+	color: white;
+	padding: 4px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	margin: 4px 0;
+	cursor: pointer;
+	background-color: #008CBA;
+}
+#btnDown:hover {
+	background-color: white;
+	color: #008CBA;
+	border: 1px solid #008CBA;
+}
+#btnDown:focus {
+	outline: 0;
+    box-shadow: none!important;
+}
+.leaflet-control-zoom{
+	border-color: #959595 !important;
+}
+.leaflet-disabled {
+	color: #828282 !important;
+}

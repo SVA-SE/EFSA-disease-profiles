@@ -1,0 +1,518 @@
+---
+title: "Evidence from systematic literature review"
+params:
+    styling: TRUE
+    agent: "agent"
+    min.groups.plot: 1
+    agent.subtype: "agentSubtype"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    orientation: rows
+    self_contained: false
+
+---
+<style type="text/css">
+
+body{
+  font-family: Verdana;
+  font-size: 12pt;
+}
+
+.navbar {
+  background-color:#1DAF8E;
+}
+
+.bggreen {
+  background-color: #1DAF8E;
+}
+
+/* Headers */
+h1{
+  font-family: Verdana;
+  font-size: 16pt;
+  font-weight: bold; 
+  color: white;
+}
+
+.chart-title {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li.active a {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li:not(.active) a {
+    font-size: 16pt;
+}
+
+
+</style>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message=FALSE, fig.width=10,fig.height=6)
+library(plotly)
+library(dplyr)
+library(stringr)
+library(knitr)
+library(gdata)
+library(kableExtra)
+library(DT)
+library(flexdashboard)
+
+source("Functions.r")
+#source("Metaanalysis_functions.r")
+
+dfei <- read.csv("../data/FilesDownload/ExperimentalInfections_cleaned.csv")
+references <- read.csv("../data/FilesDownload/ExperimentalInfections_refid.csv")
+
+agent <- params$agent 
+styling <- params$styling 
+min.groups.plot <- params$min.groups.plot 
+agent.subtype <- params$agent.subtype
+
+# source("SLR_objectives/Functions.r")
+# source("SLR_objectives/Metaanalysis_functions.r")
+# dfei <- read.csv("data/FilesDownload/ExperimentalInfections_cleaned.csv")
+# references <- read.csv("data/FilesDownload/ExperimentalInfections_refid.csv")
+# styling=T
+# min.groups.plot=1
+# agent = agents[a]
+# #agent=agent.list[1]
+# #agent <- "African horse sickness virus"
+# #agent <-"Rift Valley fever virus"
+# agent.subtype <- agent.subtypes[a]
+
+
+dfDZ <- dfei[dfei$agent==agent,]
+
+
+dfDZ$targetSpecies <- gsub("\\s*\\([^\\)]+\\)","",as.character(dfDZ$targetSpecies))
+dfDZ <- species.name.cleanup(data=dfDZ)
+
+references$targetSpecies<- gsub("\\s*\\([^\\)]+\\)","",as.character(references$targetSpecies))
+references <- species.name.cleanup(data=references)
+
+
+dfDZ$targetSpecies <- as.factor(dfDZ$targetSpecies)
+
+plots.font <- list(
+  family="Verdana",
+  size=16
+)
+
+#table(dfDZ$targetSpecies)
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+
+###  {.bggreen data-width=150}
+<h1>Host species</h1>
+
+
+###
+
+Experimental infection was demonstrated in the following animal species:
+
+<b>  `r trimws(as.character(unique(dfDZ$targetSpecies)),which="right")`</b>
+
+
+
+
+Row{data-height=500}
+-----------------------------------------------------------------------
+
+###  {.bggreen data-width=150}
+<a name="CS_duration"></a>
+
+<h1>Duration of clinical signs</h1>
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#cs">
+<img src=../../../../templates/assets/css/images/info.png>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="cs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+Please note that experimental infections are generally conducted in ANIMAL GROUPS. 
+    <br><br>
+    As data are recorded per animal group (not for individual animals), two separate values are reported: the first day in which any animal in the group started showing clinical signs; and the last day in which clinical signs were observed in any animal in the group. The results therefore are not a true distribution of the length of the clinical signs period in any single animal, but two distributions representing the range of minimum (shortest number of days until start) and maximum possible days after infection during which clinical signs can manifest.
+  <br><br>  
+    For each host species in which experimental infections were reported in literature, the plots show the distribution of all values reported for the start and end of clinical signs, per animal group studied. Boxes represent the "interquartile range", that is, the range between the first quartile and the third quartile, with a vertical line representing the median. "Median" is the middle value of the dataset. The first quartile (Q1/25th Percentile) is the middle number between the smallest number and the median of the dataset.The third quartile (Q3/75th Percentile) is the middle value between the median and the highest value of the dataset. The dots represent the "outliers", that is, values which are below the Q1 minus 1.5 times the interquartile range, or above Q3 plus 1.5 times the interquartile range (Q3-Q1).
+<br><br>
+Animals could still be showing clinical signs on the last day of the experiment. Data in this case is censored - the maximum represents the maximum observed, not the true maximum. Meta-analysis presented in the dedicated section recalculated the incubation period accounting for censoring (lack of information about true maximum when experiments ended while the agent was still detectable).
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+  
+
+
+### 
+
+```{r CSduration.plot,fig.height=4,  message=FALSE, warning=FALSE}
+cs.plot <- CS.plots(dataset=dfDZ,
+                category="targetSpecies",
+                min.groups.plot=min.groups.plot)#min.groups.plot is set in the settings file, set to 1 to run ALL categories
+cs.plot %>% layout(font=plots.font)
+```
+
+
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+###  {.bggreen data-width=150}
+<h1>Clinical signs observed</h1>
+
+### 
+
+```{r CS.plot, message=FALSE, warning=FALSE}
+
+cs.plot2 <- clinical.signs.plot(dataset=dfDZ,
+                    ID="uniqueID",
+                    min.groups.plot=min.groups.plot)
+cs.plot2 %>% layout(font=plots.font)
+
+```
+
+
+Row{data-height=500}
+-----------------------------------------------------------------------
+
+###  {.bggreen data-width=150}
+<a name="CF"></a>
+
+<h1>Reported Case Fatality</h1>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#cfr">
+<img src=../../../../templates/assets/css/images/info.png>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="cfr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+Case fatality was calculated as the percentage of animals, within a group of animals experimentally infected with the agent, which were later reported dead or euthanised due to advanced clinical signs. Fatality was recorded as 0% when the study specifically reported that no animals died due to the infection. 
+<br><br>
+The data available for all animal groups extracted from the systematic literature review is summarized in this plot. The grey dots correspond to individual animal groups reported in the studies reviewed (unique data points). The fatality reported for each of these individual groups is shown in the plot in the Y-axis, and points are aggregated by animal species (and when appropriate, agent subtype) in the X-axis. The coloured box-plots behind the points represent the distribution of the observed fatality for each combination of agent subtype and animal host species. Hover the box-plots to see the distribution metrics (median and interquartile ranges).<b> You can see these detailed metrics when hovering the mouse over the coloured bars </b>.
+<br><br>
+Please note that, when considered relevant, data are presented aggregated by pathogen subtype in order to provide one more layer of detail regarding the data available. Particularly in cases where pathogen subtypes are well known and may be associated with different geographical distributions. However, pathogenicity of an organism (its ability to cause disease) is not determined by its subtype, and this should not be interpreted as a causal relationship between subtype and fatality.
+<br><br>
+Further details about the case fatality data are provided in the meta-analysis section.
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+###
+
+```{r mortality, message=FALSE, warning=FALSE}
+cf <- dfDZ[,c("refID","uniqueID","targetSpecies","agentSubtype","sampUnitSize","deadInfection","nrDeadInfection","eutInfection","nrEutInfection","NoDeath")]
+
+cf$deadsum <- rowSums(cf[,c("nrDeadInfection", "nrEutInfection")], na.rm=TRUE)
+cf$cf <- round(cf$deadsum/cf$sampUnitSize*100,2)
+cf$cf[which(cf$NoDeath=="NO ANIMALS DIED during the study period")] <- 0
+
+cf$death.inf <- NA
+cf$death.inf[which(cf$deadInfection=="yes"|cf$eutInfection=="yes")]<- "YES"
+cf$death.inf[which(cf$NoDeath=="NO ANIMALS DIED during the study period")]<- "NO"
+#cf$death.inf[which(is.na(cf$deadInfection)&is.na(cf$eutInfection))]<- NA
+
+
+cf$cf[which(is.na(cf$death.inf))] <- NA
+cf$cf[which(cf$cf>100)] <- NA
+
+cf <- unique(cf)
+
+# cf2 <- cf
+# cf2$death.inf <- "ALL"
+
+#cf<- cf[!cf$death.inf=="NO",]
+
+#cf <- rbind(cf,cf2)
+
+
+
+if(is.na(agent.subtype)){
+  cf.plot <- plot_ly(data=cf, x = ~targetSpecies, y = ~cf, color = ~targetSpecies, type = "box", 
+                   boxpoints = "all", jitter = 1,
+                   pointpos = 0,marker = list(color = "grey"))%>% 
+    layout(yaxis = list(title = '% dead within experimentally infected groups',range=list(0,100)),
+           xaxis = list(title = 'Host species'),
+           boxmode = 'group')%>%
+    layout(font=plots.font)
+
+cf.plot
+  
+}else{
+
+cf.plot <- plot_ly(data=cf, x = ~targetSpecies, y = ~cf, color = ~agentSubtype, type = "box", 
+                   boxpoints = "all", jitter = 1,
+                   pointpos = 0,marker = list(color = "grey"))%>% 
+    layout(yaxis = list(title = '% dead within experimentally infected groups',range=list(0,100)),
+           xaxis = list(title = 'Host species'),
+           boxmode = 'group',
+           legend=list(title=list(text='<b> Agent subtype </b>')))%>%
+    layout(font=plots.font)
+
+cf.plot
+}
+
+
+# cf.plot <- multiple.cat.summary.numerical.dfOutput(dataset=cf,
+#                                columns=c("targetSpecies","agentSubtype","death.inf"),
+#                                outcomes=c("cf"),
+#                                ID="uniqueID",
+#                                labels=c("targetSpecies","agentSubtype",
+#                                         "death.inf",
+#                                         "N.groups","cf"),
+#                                         #"case fatality rate within group (MEDIAN %)"),
+#                                styling=T)#styling=styling)
+
+
+# #cf.plot$plotVar <- paste(cf.plot$agentSubtype,cf.plot$death.inf,sep="_")
+# cf.plot$plotVar <- cf.plot$agentSubtype
+# if(is.na(agent.subtype)){
+#   cf.plot$plotVar <- agent
+# }
+# 
+# cf.plot <- cf.plot[cf.plot$death.inf=="ALL",]
+# 
+# cf.plot <- split(cf.plot,cf.plot$plotVar)
+# 
+# 
+#    p <- plot_ly(x = cf.plot[[1]]$targetSpecies, y = cf.plot[[1]]$cf,
+#                  name=cf.plot[[1]]$plotVar ,type = 'bar',
+#                  text=paste0(round(cf.plot[[1]]$cf,1),"%"), textposition = 'outside')%>%
+#       layout(yaxis = list(title = '% dead within group (median of all groups)',range=list(0,100)),
+#              xaxis = list(title = 'Host species'),
+#              barmode = 'group')
+#              #title =  '% fatality within group (MEDIAN of all groups)')
+# 
+#     if (length(cf.plot)>2){
+#       for (t in 2:length(cf.plot)){
+#         p <- p %>% add_trace(x = cf.plot[[t]]$targetSpecies, 
+#                              y = cf.plot[[t]]$cf, 
+#                              name=cf.plot[[t]]$plotVar ,type = 'bar',
+#                              text=paste0(round(cf.plot[[t]]$cf,1),"%"), textposition = 'outside')
+#       }
+#     }
+# 
+#     p %>% layout(font=plots.font)
+
+
+
+
+
+```
+
+
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;META-ANALYSIS </h1>
+
+
+```{r, results='asis'}
+if(file.exists("impact_ma1.png")|file.exists("impact_ma2.png")){
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### Duration of clinical signs: Meta-analysis accounting for censoring\n")
+  cat("\nKaplan-Meier curves were fit to the data,in order to estimate confidence intervals (CI) and interquartile ranges (IQ) that explicitly take into account the data censoring issue (lack of information about true maximum when experiments ended while the agent was still detectable). The results are the survival curves shown below, first with confidence intervals (parametric assumption), and then with interquartile ranges (non-parametric). Further below you will find a table with the exact calculated CI and IQ.\n")
+  
+  
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### Kaplan-Meier curves with parametric Confidence Intervals\n")
+}
+```
+
+```{r}
+if(file.exists("impact_ma1.png")){
+  include_graphics("impact_ma1.png",
+                 auto_pdf=FALSE)
+}
+```
+  
+
+```{r, results='asis'}
+if(file.exists("impact_ma2.png")){
+  
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### Kaplan-Meier curves with Inter-Quartile Intervals\n")
+}
+```
+
+```{r}
+if(file.exists("impact_ma2.png")){
+  include_graphics("impact_ma2.png",
+                 auto_pdf=FALSE)
+}
+```
+
+ 
+```{r, results='asis'}
+if(file.exists("impact_ma1.png")|file.exists("impact_ma2.png")){
+ 
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### Duration of clinical signs: Calculated confidence interval and interquartile ranges accounting for censoring\n")
+  cat("\nLCL and UCL stand for the lower and upper control limit of a 95% confidence interval accounting for censoring (lack of information about true maximum when experiments ended while the agent was still detectable).\n")
+  cat("\nN.groups is the number of animal groups from which experimental infection data was available.\n")
+  
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n###\n")
+  tables.INCUB <- produce.tables.INCUB()
+  kable(tables.INCUB)%>%kable_styling()
+  
+}else{
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### Meta-analysis was not performed for this agent/disease\n")
+  cat("\nWhen evidence was available through systematic literature review for a <b>minimum of 4 animal groups</b> studied through experimental infections, this evidence was subjected to meta-analysis. In such cases, Kaplan-Meier curves would be fit to the data,in order to estimate confidence intervals (CI) and interquartile ranges (IQ) for the duration of clinical signs  explicitly taking into account the data censoring issue (lack of information about true maximum when experiments ended while the agent was still detectable).\n")
+      cat("\nThere was not enough evidence for this disease/pathogen.\n")
+      cat("\nThe systematic literature reviews are updated regularly (see information in the left panel).\n")
+
+}
+  
+```
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case-fatality in further details </h1>
+
+Row
+-----------------------------------------------------------------------
+
+###
+
+The table below details the number of groups (N.groups) for which experimental infection data was available, and gives a summary of the fatality observed within these experimentally infected groups.
+
+For each combination of animal species and, when relevant, agent subtype, three rows of information are available:
+
+1) The within group fatality, summarized for all animal groups in which the reference explicitly gave information about whether deaths were observed (or animals were euthanised due to advanced clinical signs). This therefore can include groups in which no animals died or were euthanised, as long as this information was explicitily observed and reported. The within group percentage displayed in the table is the median of all observations available (one observation = % dead within one animal group experimentally infected and followed).
+
+2) the within group fatality only for groups in which mortality was observed. That is, when disease was observed to cause deathes, what was the percentage fatality within animal groups.
+
+3) the number of animal groups for which no fatality information is available (the reference did not report deaths, but it was not possible to determine whether no deaths were observed, or this information was simply not reported).
+
+
+
+Row
+-----------------------------------------------------------------------
+
+###
+```{r casefatality.all}
+
+columns <- c("targetSpecies","agentSubtype","death.inf")
+if(is.na(agent.subtype)){
+  columns <- c("targetSpecies","death.inf")
+}
+
+
+table.data <- cf[,c("uniqueID",columns,"cf")]
+table.data <- unique(table.data)
+table.data$uniqueID<-1
+
+
+table.data_Y <- table.data[which(table.data$death.inf=="YES"),]
+if(dim(table.data_Y)[1]>0){
+        table.data_Y$death.inf <- "only groups with death"
+}
+
+table.data_ALL <- table.data[which(!is.na(table.data$death.inf)),]
+if(dim(table.data_ALL)[1]>0){
+        table.data_ALL$death.inf <- "groups with mortality information"
+}
+
+table.data_NA <- table.data[which(is.na(table.data$death.inf)),]
+if(dim(table.data_NA)[1]>0){
+        table.data_NA$death.inf <- "no mortality information"
+}
+
+        
+        table.data2 <- rbind(table.data_Y,table.data_ALL,table.data_NA)
+        table.data2$death.inf <- factor(table.data2$death.inf, ordered = TRUE, 
+                                        levels = c("groups with mortality information", 
+                                                   "only groups with death", 
+                                                   "no mortality information"))
+        
+groups.totals <- aggregate(table.data2[,c("uniqueID")],
+                          by=as.list(table.data2[,columns]),FUN=sum,na.rm=TRUE)
+colnames(groups.totals)<- c(columns,"N.groups")
+
+cf.median <- aggregate(table.data2[,"cf"],by=as.list(table.data2[,columns]),FUN=median,na.rm=TRUE)
+colnames(cf.median)<- c(columns,"cf")
+
+cf.median$cf[which(!is.na(cf.median$cf))] <- paste0(as.character(round(cf.median$cf[which(!is.na(cf.median$cf))],1)),"%")
+cf.median$cf[which(is.na(cf.median$cf))] <- "--"
+
+
+merged <- cbind(groups.totals,cf.median[,"cf"])
+colnames(merged) <- c(columns,"N.groups","Within group mortality")
+
+if(is.na(agent.subtype)){
+  merged <- merged[order(merged$targetSpecies),]
+}else{
+merged <- merged[order(merged$targetSpecies,merged$agentSubtype),]
+}
+
+    kable(merged, align="c",row.names = F)%>%
+        kable_styling()
+    
+
+```
+
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REFERENCES </h1>
+
+
+Row
+-----------------------------------------------------------------------
+###
+In the left panel you can find information about the entire systematic literature review. The specific references for this agent, and used in this section of the story map are listed below.
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+
+```{r references}
+options(DT.options = list(scrollY="100vh",pageLength =5))
+datatable(unique(references[references$Refid%in%dfDZ$refID,c(1,3,5)]), filter = 'top', rownames=FALSE)
+
+```
+ 
+

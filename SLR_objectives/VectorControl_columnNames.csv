@@ -1,0 +1,323 @@
+"Refid","refID"
+"Bibliography","FullReference"
+"User","user"
+"Ris Code","risCode"
+"Level","level"
+"DE_DACRAH_OB4_Covetlab_k","empty"
+"
+
+
+
+
+studyID
+Unique ID to link all observations from the same study or experiment
+
+","studyID2"
+"
+
+
+
+
+studyIDNumerical
+
+","studyID1"
+"sampCountry
+Country where study was performed","country"
+"
+
+
+
+
+sampY
+Year the study was conducted
+(-1 if not reported)
+
+","year"
+"agent
+Causative agent of vector borne diseases","agent"
+"agentSubtype
+DACRAH1 - no need to answer","agentSubtype"
+"agentSubtypeTypeWhat type of further detailed information is given regarding the agent.Select here, and type below.","agentSuptype_C1"
+"agentSubtypeTypeWhat type of further detailed information is given regarding the agent.Select here, and type below._comment","agentSuptype_C2"
+"agentDetails
+The further information given regarding the sutype type given above. ","agentDetails"
+"studyTargetHOST
+Species target of the study. If not mentioned (for instance vector studies not mentioning any particular host species), then please leave it as \NOT HOST SPECIFIC\","studyTarget_host"
+"studyTargetHOST
+Species target of the study. If not mentioned (for instance vector studies not mentioning any particular host species), then please leave it as \NOT HOST SPECIFIC\_comment","studyTarget_host_C"
+"studyTargetVector
+Please select the specific vector.","studyTarget_vector"
+"
+
+
+
+
+sampUnit
+Type of unit sampled in the study and reported in sampUnitSize
+ 
+
+","sampUnitType"
+"
+
+
+
+
+sampUnit
+Type of unit sampled in the study and reported in sampUnitSize
+ 
+
+_comment","sampUnitType_C"
+"
+
+
+
+
+sampUnitSize
+Number of units in the group (the number of units listed above (e.g. herds))
+(-1 if not reported, -2 if not relevant)
+
+","sampUnitSize"
+"route
+Method of application or treatment regime or administration method of vaccine","route"
+"route
+Method of application or treatment regime or administration method of vaccine_comment","route_C"
+"intervention
+Intervention or treatment","intervention"
+"intervention
+Intervention or treatment_comment","intervention_C"
+"testsubstance
+Insecticide or pharmaceutical substance","testSubstance1"
+"
+
+
+
+
+testsubstance2
+Insecticide or pharmaceutical substance
+
+","testSubstance2"
+"
+
+
+
+
+test substance CATEGORICAL
+
+","testSubstance1_cat"
+"
+
+
+
+
+test substance2 CATEGORICAL
+
+","testSubstance2_cat"
+"
+
+
+
+
+formulation %
+The concentration given for the preparation, if given (p.e. 5%)
+
+","formulation1_Perc"
+"
+
+
+
+
+formulation2 %
+The concentration given for the preparation, if given (p.e. 5%)
+
+","formulation2_Perc"
+"dose
+quantity of vaccine/insecticide/pharmaceutical given - value reported in the study","dose"
+"
+
+
+
+
+dose2
+quantity of vaccine/insecticide/pharmaceutical given - value reported in the study
+
+","dose2"
+"doseUnits
+Units of measurement for the reported parameter value","doseUnits1"
+"doseUnits
+Units of measurement for the reported parameter value_comment","doseUnits1_C"
+"
+
+
+
+
+doseUnits2
+Units of measurement for the reported parameter value
+
+","doseUnits2"
+"
+
+
+
+
+doseUnits2
+Units of measurement for the reported parameter value
+
+_comment","doseUnits2_C"
+"dosageFreq
+Dosage frequency: number of doses (=how many times is the dose aministred?)","dosageFreq1"
+"
+
+
+
+
+dosageFreq2
+Dosage frequency: number of doses (=how many times is the dose aministred?)
+
+","dosageFreq2"
+"dosageInterval
+Dosage - interval at which the dose is given (days) (how many days are in between the administration of 2 doses)","dosageInterval1"
+"
+
+
+
+
+dosageInterval2
+Dosage - interval at which the dose is given (days) (how many days are in between the administration of 2 doses)
+
+","dosageInterval2"
+"
+
+
+
+
+Exposure time
+
+","exposureTime"
+"
+
+
+
+
+Exposure time units
+
+","exposureUnit"
+"SubstanceDoseComments
+Add any other comments about dosage and the test substance.
+Please try as much as possible to enter some quantitiative data
+in the fields above (for instance the most frequent dosage regimen,
+or the start regimen), and then add any additional details here.
+Please also try to leave the testSubstance name as clean as possible","substanceDose_C"
+"sampledMatrix
+Tissue sampled for testing","sampledMatrix"
+"sampledMatrix
+Tissue sampled for testing_comment","sampledMatrix_C"
+"
+
+
+
+
+anMethCode
+Laboratory test used to analyse for virus, antibodies or antigens associated with the VBD
+
+","labTest"
+"
+
+
+
+
+anMethCode
+Laboratory test used to analyse for virus, antibodies or antigens associated with the VBD
+
+_comment","labTest_C"
+"anMethText
+Description of laboratory method (where relevant include method of calculation of cut-offs)","LabMethod_description"
+"anMatText
+Target of laboratory test","targetLabtest"
+"anMatText
+Target of laboratory test_comment","targetLabtest_C"
+"timePoint
+Indicate time point in days from the start of the study to which the following parameters (dead, clinical and tested) correspond","timePoint"
+"
+
+
+
+
+dead (or mortality)
+Number of dead vectors (if reported as percentage, please provide percentage -e.g. 20 for 20% - and change the units in the following question).
+
+","mortality"
+"dead (or mortality) Units
+Units of measurement of the reported dead/mortality","mortalityUnit"
+"mortalityLCI
+Lower confidence interval limit for mortality reported as percentage (use 20 for 20%, for example)","mortality_LCI"
+"mortalityUCI
+Upper confidence interval limit for mortality reported as percentage (use 20 for 20%, for example)","mortality_UCI"
+"mortalityTime
+If provided in the paper, please report the time between application of the treatment and recorded mortality. Use this question for the numerical value and the next for the unit.","mortalityTime"
+"mortalityTimeUnits
+The units for the reported time to mortality.","mortalityTimeUnit"
+"efficacy
+1-RR","efficacy"
+"LCI_EF
+Lower Confidence interval limit - Efficacy","efficacy_LCI"
+"
+
+
+
+
+LCI_EF
+Lower Confidence interval limit - Efficacy
+ 
+
+","efficacy_UCI"
+"
+
+
+
+
+Outcome type
+
+","outcomeType"
+"
+
+
+
+
+Number given
+numerical part of the outcome
+
+","outcomeNumber"
+"
+
+
+
+
+Units
+ 
+
+","outcomeUnit"
+"nTested
+Number of samples tested","nTested"
+"nNegative
+Number of samples negative","nNegative"
+"nPositive
+Number of samples positive","nPositive"
+"OUTCOMESOtherComments
+Please give any details that could not be reported in the format above.
+Please first make sure to report as many results as possible in a quantitative format above, and leave any additional comments here.","outcomes_C"
+"
+
+
+
+
+Study design STRENGTHSAdd notes on the strengths of the study design.
+
+","strengths"
+"
+
+
+
+
+Study design WEAKNESSESAdd any notes on the study design weaknesses - lack of proper controls, lack of proper analyses methods, flaws in the way data were reported, etc. What is the impact of these flaws on the use of the data collected?
+
+","weaknesses"

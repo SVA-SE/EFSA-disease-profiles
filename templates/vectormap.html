@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vector map</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="x-ua-compatible" content="IE=edge" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-Equiv="Cache-Control" Content="no-cache" />
+	<meta http-Equiv="Pragma" Content="no-cache" />
+	<meta http-Equiv="Expires" Content="0" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.EasyButton/2.4.0/easy-button.min.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets_vector/css/classic-min.css"/>
+	<link rel="stylesheet" href="assets_vector/css/style_vector.css"/>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+	<script src="assets_vector/js/jQDateRangeSlider-min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.EasyButton/2.4.0/easy-button.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-polyfills/0.1.43/polyfill.min.js"></script>
+	<script src="data.js"></script>
+
+</head>
+<header>
+	<a href="#main" class="skip-to-map" tabindex="0"> Skip to map </a>
+</header>
+<body>
+<div id="main">
+	<div id= "map"></div>
+	<div class="mapControl-vector" id="control">
+		<a class = "control-close-button" href="javascript:rmMap1Control()">&#xd7; </a><br>
+		<h6 id = "name1" class="lyrName">Filter Species</h6>
+		<div id="layer-control1"></div>
+		<div class ="row layer-slider1">
+			<div class ="col-1 from1">From</div>
+			<div id ="dateslider1" class ="col-10 slider"></div>
+			<div class="col-1 to1">To</div>
+		</div>
+	</div>
+</div>
+
+<script>
+$(function () {
+    $("#map").attr('tabindex',-1);
+    $("svg").attr('role', 'img');
+    $("svg").attr('aria-label', 'map application');
+});
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+var params = urlParams.get('spc');
+var para_spc;
+if(params != null)
+	var para_spc = params.split(',');
+
+const vector = vectordata.filter(function (e) {
+	if(para_spc != null)
+		return para_spc.includes(e.scode);
+	else
+		return e;
+});
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2)
+        month = '0' + month;
+    if (day.length < 2)
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+
+// set dates for datesliders
+var smin = new Date(setup.smin);
+var smax = new Date();
+
+var lastClicked;
+function highlightFeature(e) {
+	var layer = e.target;
+	if(lastClicked){
+	   lastClicked.setStyle({
+			weight: 1.5,
+			opacity: 0.2,
+			color: 'gray',
+			fillOpacity: 0.5
+		});
+	}
+	layer.setStyle({
+		weight: 2,
+		opacity: 1,
+		color: "#27D8DD",
+		fillOpacity: 0.7
+	});
+	lastClicked = layer;
+}
+
+function resetHighlight (e) {
+	var layer = e.target;
+	layer.setStyle({
+		weight: 1.5,
+		opacity: 0.2,
+		color: 'gray',
+		fillOpacity: 0.5
+	});
+}
+
+var bmin = new Date(setup.bmin);
+
+//default
+$("#dateslider1").dateRangeSlider({
+  bounds: {
+	min: bmin,
+	max: new Date()
+  },
+  defaultValues: {
+	min: smin,
+	max: smax
+  },
+  step: {
+	days: 1
+  }
+});
+
+$("#dateslider1").bind("valuesChanged", function(e, data){
+	smin = data.values.min;
+	smax = data.values.max;
+	refreshLayer_map();
+});
+
+function onEachPolygon(feature, layer, s){
+	var popupContent = '';
+
+        for(k in s){
+    		popupContent += '<br><table>';
+        	popupContent += '<tr><td>Vector/Species</td><td>'+ setup.vector +' / '+ s[k].species +'</td></tr>';
+			popupContent += '<tr><td>Distribution status</td><td>'+ s[k].col +'</td></tr>';
+        	popupContent += '<tr><td>Distribution period</td><td>'+ s[k].from + ' ~ ' + s[k].to + '</td></tr>';
+        	if(s[k].doi != '')
+                popupContent += '<tr><td>Source</td><td><a href="'+ s[k].doi + '" target="_blank">' + s[k].citation +'</a></td></tr>';
+    	    else
+                popupContent += '<tr><td>Source</td><td>'+ s[k].citation +'</td></tr>';
+
+            popupContent +='</table>';
+		}
+	layer.bindPopup(popupContent);
+
+	var popup = layer.bindPopup(popupContent);
+	popup.on("popupclose", function(e) {
+		resetHighlight(e);
+	});
+}
+
+function getColorPolygon(col){
+	return col =='present' ? '#eabc00' :
+	col =='absent' ? '#92D050' :
+	col =='unknown' ? '#595959' :
+	col =='without' ? '#a6a6a6' :
+	col =='out' ? '#ffffff10' :
+	'#ffffff10';
+}
+
+var streets = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {noWrap: true,
+	maxZoom: 18, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>  &copy; <a href="https://data.europa.eu/">Joint Research Centre</a>' });
+
+var lyr_boundary = new L.featureGroup;
+var baseLayer = {
+};
+
+// check number of data source and divide into separate layers
+const lyr_species = [...new Set(vector.map(v => v.species))];
+lyr_species.sort();
+var pts_map= {};
+var overlays_map= {};
+for ( i in lyr_species) {
+	this['layer_map_pts_'+i] = new L.featureGroup;
+	pts_map[lyr_species[i]] = window['layer_map_pts_'+i];
+
+	this['layer_map_'+i] = new L.featureGroup;
+	overlays_map[lyr_species[i]] = window['layer_map_'+i];
+}
+
+var myRenderer = L.canvas({ padding: 0.1 });
+var map = L.map('map', {
+	center: [60, 18],
+	zoom: 3,
+    minZoom: 3,
+	maxBounds: L.latLngBounds(L.latLng(-90, -180), L.latLng(90, 180))
+});
+
+var temp_dt = {};
+function refreshLayer_map() {
+	const dt = vector.filter(entry => {
+		const from = new Date(entry['from']);
+		const to = new Date(entry['to']);
+		return (smin <= from && from<= smax) || (smin <=to && to <= smax)
+	})
+
+	for ( i = 0; i < lyr_species.length; ++i) {
+		//point layer
+		window['layer_map_pts_'+i].clearLayers();
+		L.geoJson(pts, {
+			filter: function (feature, layer) {
+				const from = new Date(feature.properties.from);
+				const to = new Date(feature.properties.to);
+				return ((smin <= from && from<= smax) || (smin <=to && to <= smax)) &&
+				feature.properties.species == lyr_species[i];
+			},
+			pointToLayer: function (feature, latlng) {
+				return L.circleMarker(latlng, {
+				interactive: false,
+				renderer: myRenderer,
+				radius: 3.5,
+				fillColor: getColorPolygon(feature.properties.col),
+				color: '#5c5c5c',
+				weight: 1,
+				opacity: 1,
+				fillOpacity: 1
+				});
+			}
+		}).addTo(window['layer_map_pts_'+i]);
+
+		//polygon
+		window['layer_map_'+i].clearLayers();
+		temp_dt = dt.filter(d => {
+			return d['species'] == lyr_species[i]
+		});
+
+		var locals = [...new Set(temp_dt.map(t => t.loc))];
+
+		L.geoJson(admin, {
+			filter: function (feature, layer) {
+				return locals.indexOf(feature.properties.code) !== -1
+			},
+			style:function (feature) {
+				var source = temp_dt.filter(function (d) {
+					if(d.loc == feature.properties.code ) return d;});
+
+				var col;
+				var col_list = [...new Set(source.map(item => item.col))];
+				if(col_list.includes('present')){
+					col = 'present';
+				}
+				else{
+					if(col_list.includes('absent')){
+							col = 'absent';
+					}
+					else {
+						if(col_list.includes('unknown')){
+							col = 'unknown';
+						}
+					}
+				}
+
+				return {
+					fillColor: getColorPolygon(col),
+					weight: 1.5,
+					opacity: 0.2,
+					color: 'gray',
+					fillOpacity: 0.5
+			  };
+			},
+			onEachFeature: function(feature, layer) {
+				var source = temp_dt.filter(function (d) {
+					if(d.loc == feature.properties.code ) return d;});
+
+        		onEachPolygon(feature, layer, source);
+        		layer.on({
+        			click: function(e) { highlightFeature(e) }
+        		})
+        	}
+		}).addTo(window['layer_map_'+i]);
+	}
+}
+
+function getUniqueArrBy(arr, key) {
+    return [...new Map(arr.map(item => [item[key], item])).values()]
+}
+
+function rmMap1Control() {
+	$('.mapControl-vector').hide();
+	swMap1Control.addTo(map);
+}
+
+var swMap1Control = L.easyButton('fa fa-edit fa-2x',
+	function (btn, map) {
+		  $('.mapControl-vector').show();
+		   map.removeControl(swMap1Control);
+		},
+		{ position: 'topright'}
+);
+
+var layer1_1 = L.control.layers(baseLayer, overlays_map, {collapsed:true, position: 'bottomright'}).addTo(map);
+var htmlObject_1 = layer1_1.getContainer();
+var a_1 = document.getElementById('layer-control1');
+    function setParent(el, newParent){
+    newParent.appendChild(el);
+}
+setParent(htmlObject_1, a_1);
+
+L.geoJson(boundary, {
+	interactive: false,
+	style:function (feature) {
+		return {
+			fillColor: 'gray',
+			weight: 1.5,
+			opacity: 0.5,
+			color: 'white',
+			fillOpacity: 0.3
+	  };
+	}
+}).addTo(lyr_boundary);
+
+streets.addTo(map);
+
+
+if(params != null){
+	for ( i in lyr_species) {
+		this['layer_map_pts_'+i].addTo(map);
+		this['layer_map_'+i].addTo(map);
+	}
+}
+else{
+	layer_map_pts_0.addTo(map);
+	layer_map_0.addTo(map);
+}
+
+
+lyr_boundary.addTo(map);
+map.zoomControl.setPosition('topleft');
+
+map.on('overlayadd', function(e) {
+	pts_map[e.name].addTo(map);
+} );
+
+map.on('overlayremove', function(e) {
+	map.removeLayer(pts_map[e.name]);
+} );
+
+// legend
+var mapLegend = L.control({position: 'bottomright'});
+mapLegend.onAdd = function (map) {
+	var div = L.DomUtil.create('div', 'info legend'),
+	labels = ['<span class="lyName">Occurrence reported for area</span>'];
+    labels.push('(spatial resolution =area)');
+	labels.push('<i style="background:' + getColorPolygon('present') + '"></i> Present');
+	labels.push('<i style="background:' + getColorPolygon('absent') + '"></i> Absent');
+	labels.push('<i style="background:' + getColorPolygon('unknown') + '"></i> Unknown (information source remains to be validated)');
+	labels.push('<i style="background:' + getColorPolygon('without') + '"></i> Unknown (no information source)');
+	labels.push('<i style="background:' + getColorPolygon('out') + '"></i> Outside scope');
+
+    labels.push('<br><span class="lyName">Occurrence reported for specific location</span>');
+    labels.push('(spatial resolution =geo-coordinates)');
+    labels.push('<i class="circle" style="background:' + getColorPolygon('present') + '"></i> Present');
+	labels.push('<i class="circle" style="background:' + getColorPolygon('absent') + '"></i> Absent');
+
+	labels.push('<span class ="update"><br>Map updated: ' + setup.datetimestamp + '</span>');
+	div.innerHTML = labels.join('<br>');
+	return div;
+}
+
+mapLegend.addTo(map);
+
+</script>
+</body>
+</html>

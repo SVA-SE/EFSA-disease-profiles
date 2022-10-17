@@ -1,0 +1,111 @@
+"","Column1","Column2"
+"1","Refid","refID"
+"2","Bibliography","FullReference"
+"3","User","user"
+"4","Ris Code","empty"
+"5","Level","level"
+"6","Pathogen survival _k","empty2"
+"7","studyID
+Unique ID to link all observations from the same study or experiment","studyID"
+"8","studyGroupID","groupID"
+"9","agent
+Causative agent of vector borne diseases","agent"
+"10","agentSubtypeType
+What type of further detailed information is given regarding the agent.Select here, and type below. ","agentSubtype"
+"11","agentSubtypeType
+What type of further detailed information is given regarding the agent.Select here, and type below. _comment","agentSubtype_C"
+"12","agentDetails
+strain and any other further information","agentDetails"
+"13","agentSubtype
+(question from DACRAH1, no need to answer)","agentSubtypeDC1"
+"14","studyTargetSpecies
+Species used in study","targetSpecies"
+"15","studyTargetSpecies
+Species used in study_comment","targetSpecies_C"
+"16","
+
+
+
+
+sampUnitSize
+Number of samples tested in the study
+(enter -1 if not reported, -2 if not relevant)
+
+","sampUnitSize"
+"17","
+
+
+
+
+sampledMatrix
+Matrix sampled
+
+","matrix"
+"18","
+
+
+
+
+sampledMatrix
+Matrix sampled
+
+_comment","matrix_C"
+"19","
+
+
+
+
+sampled Matrix Text
+matrix as given in the paper/ any further details about the sample matrix
+
+","matrixDetails"
+"20","temperature
+Degrees Celcius","temperature"
+"21","Further.details.about.temperature","tempDetails"
+"22","humidity
+Humidity conditions (%)","humidity"
+"23","details about humidity","humidityDetails"
+"231","anMethCode
+Laboratory test used to analyse for virus, antibodies or antigens associated with the VBD","labTest"
+"24","anMatText
+Target of laboratory test","targetLab"
+"25","maxDetect
+Maximum number of days post inoculation to observe pathogen, antibody or nucleic acid","maxDetect"
+"26","
+
+
+
+
+Truncated
+Is the value of MaxDetect truncated ? In other words: was the study finished before samples were negative. That is, is the reported  “MaxDetect” equal to the last experiment day ?
+
+","truncated"
+"27","
+
+
+
+
+Half-life in days
+
+","halfLife"
+"28","
+
+
+
+
+LCI 95% Half-life
+Value in days for the lower limite of the confidence interval for half-life
+
+","LCI_halfLife"
+"29","
+
+
+
+
+UCI 95% Half-life
+Value in days for the upper limit of the confidence interval for half-life
+
+","UCI_halfLife"
+"30","Study design STRENGTHS
+Add notes on the strengths of the study design.","strengths"
+"31","Study design WEAKNESSESAdd any notes on the study design weaknesses - lack of proper controls, lack of proper analyses methods, flaws in the way data were reported, etc. What is the impact of these flaws on the use of the data collected?","weaknesses"

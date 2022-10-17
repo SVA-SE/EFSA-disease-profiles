@@ -1,0 +1,12 @@
+no specific RA listed (checked 2021-09-17)
+DISEASE	VECTOR SPECIES (STORYMAPS)	VECTOR SPECIES (VECTORNET)	VECTOR CODE
+African Horse Sickness (AHS)	Culicoides imicola	Culicoides imicola	VECT-000448-A
+African Horse Sickness (AHS)	Culicoides obsoletus	Culicoides obsoletus s.l.	VECT-000451-A
+African Horse Sickness (AHS)	Culicoides obsoletus	Culicoides obsoletus s.l./Culicoides scoticus	VECT-000452-A
+African Horse Sickness (AHS)	Culicoides obsoletus	Culicoides obsoletus s.l./scoticus/chiopterus	VECT-0004880-A
+African Horse Sickness (AHS)	Culicoides obsoletus	Culicoides obsoletus s.l./scoticus/chiopterus/dewulfi	VECT-0004879-A
+African Horse Sickness (AHS)	Culicoides obsoletus	Culicoides obsoletus s.s.	VECT-0004861-A
+African Horse Sickness (AHS)	Culicoides obsoletus	Culicoides obsoletus#dark	VECT-0004862-A
+African Horse Sickness (AHS)	Culicoides obsoletus	Culicoides obsoletus#O2	VECT-0004863-A
+African Horse Sickness (AHS)	Culicoides pulicaris	Culicoides pulicaris s.l.	VECT-000454-A
+African Horse Sickness (AHS)	Culicoides pulicaris	Culicoides pulicaris s.l./Culicoides lupicaris	VECT-000455-A

@@ -1,0 +1,724 @@
+---
+title: "Evidence from systematic literature review"
+params:
+    styling: TRUE
+    agent: "agent"
+    min.groups.plot: 1
+    agent.subtype: "agentSubtype"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    orientation: rows
+    self_contained: false
+---
+<style type="text/css">
+
+body{
+  font-family: Verdana;
+  font-size: 12pt;
+}
+
+.navbar {
+  background-color:#1DAF8E;
+}
+
+.bggreen {
+  background-color: #1DAF8E;
+}
+
+/* Headers */
+h1{
+  font-family: Verdana;
+  font-size: 16pt;
+  font-weight: bold; 
+  color: white;
+}
+
+.chart-title {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li.active a {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li:not(.active) a {
+    font-size: 16pt;
+}
+
+
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message=FALSE, fig.width=10,fig.height=6)
+library(plotly)
+library(dplyr)
+library(stringr)
+library(knitr)
+library(gdata)
+library(kableExtra)
+library(DT)
+library(grid)
+library(lattice)
+library(latticeExtra)
+library(survival)
+
+
+source("Functions.r")
+source("Metaanalysis_functions.r")
+
+
+dfps <- read.csv("../data/FilesDownload/PathogenSurvival_cleaned.csv")
+references <- read.csv("../data/FilesDownload/PathogenSurvival_refid.csv")
+
+
+agent <- params$agent 
+styling <- params$styling 
+min.grpsoups.plot <- params$min.groups.plot 
+agent.subtype <- params$agent.subtype
+
+# running local
+# source("SLR_objectives/Functions.r")
+# source("SLR_objectives/Metaanalysis_functions.r")
+# dfps <- read.csv("data/FilesDownload/PathogenSurvival_cleaned.csv")
+# references <- read.csv("data/FilesDownload/PathogenSurvival_refid.csv")
+# styling=T
+# min.groups.plot=1
+# agent <- agents[a]
+# agent.subtype <- "agentSubtype"
+
+
+dfDZ <- dfps[dfps$agent==agent,]
+
+dfDZ$targetSpecies <- gsub("\\s*\\([^\\)]+\\)","",as.character(dfDZ$targetSpecies))
+dfDZ <- species.name.cleanup(data=dfDZ)
+dfDZ$targetSpecies <- as.factor(dfDZ$targetSpecies)
+
+
+dfDZ$matrix <- gsub("\\s*\\([^\\)]+\\)","",as.character(dfDZ$matrix))
+dfDZ$matrix <- gsub("(.*):.*", "\\1", as.character(dfDZ$matrix))
+dfDZ$matrix <- gsub("FEED","Feed",as.character(dfDZ$matrix),ignore.case=F)
+
+
+plots.font <- list(
+  family="Verdana",
+  size=16
+)
+
+```
+
+
+
+
+
+```{r building.data, include=FALSE}
+
+## missing maxDetect day
+miss.max <- dfDZ %>% select(refID, groupID, maxDetect) %>% filter (is.na(dfDZ$maxDetect))
+
+## information on temperature of curing not given
+miss.temp <- dfDZ %>% select(refID, groupID, temperature, maxDetect) %>% filter (is.na(dfDZ$temperature)) 
+
+## humidity information missing
+miss.hum <- dfDZ %>% select(refID, groupID, temperature, maxDetect) %>% filter (is.na(dfDZ$humidity))
+
+dfDZ_days <- dfDZ[complete.cases(dfDZ$maxDetect), ]
+dfDZ_days <- dfDZ_days[complete.cases(dfDZ_days$temperature), ]
+
+dfDZ_days_v <- dfDZ_days %>% filter (targetLab == "Virus")
+dfDZ_days_na <- dfDZ_days %>% filter (targetLab == "Nucleic acid")
+
+dfDZ_hl <- dfDZ[complete.cases(dfDZ$halfLife), ]
+
+dfDZ_hl_v <- dfDZ_hl %>% filter (targetLab == "Virus")
+dfDZ_hl_na <- dfDZ_hl %>% filter (targetLab == "Nucleic acid")
+
+dfDZ_hl_v <- dfDZ_hl_v %>% arrange(halfLife)
+dfDZ_hl_na <- dfDZ_hl_na %>% arrange(halfLife)
+
+nomax.refIDs <- unique(miss.max$refID)
+hl.refIDs <- unique(dfDZ_hl$refID)
+
+miss.all <- nomax.refIDs[!nomax.refIDs%in%hl.refIDs]
+
+```
+
+
+```{r, results='asis'}
+if(dim(dfDZ_days_v)[1]>1){
+  
+cat("\nRow{data-height=500}\n-----------------------------------------------------------------------\n")
+cat("\n###  {.bggreen data-width=250}\n")
+cat("\n<a name=\"SP_isol_section\"></a>\n")
+cat("\n<h1>Survival plots - virus isolation in days after animal infection </h1>\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#sp_isol\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+cat("\n<div class=\"modal fade\" id=\"sp_isol\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"  aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nMost of the studies reported survival results as the maximum number of days, after infection, when the pathogen was still detectable in the evaluated matrix. We present these results against the temperature of the experiment.\n")
+cat("\n<br>\n")
+cat("\nThis plot shows tests that ensure virus detection/isolation. Further below a separate plot shows detection of DNA/RNA based tests (virus viability not confirmed).\n")
+cat("\n<br>\n")
+cat("\nHumidity values, if reported, can be seen in the menu available when hovering the mouse over plot points.\n")
+cat("\n<br>\n")
+cat("\n<b>The \"refID\" information seen when hovering on each point can be used to search for the original publication in the complete list of references provided at the end of this page.</b> \n")
+cat("\n<br>\n")
+cat("\nEach point represents one result reported for one specific study group. Studies in which the matrices were observed over several days, for instance, would be represented as several points in the plot. Please note that:\n")
+cat("\n<ul>\n")
+  cat("\n<li>points may be superimposed but markers are transparent, so color intensity demonstrates overlapping dots.</li>\n")
+  cat("\n<li>the plots are interactive, so it is possible to hide specific matrices by clicking on their name in the legend (hover on a point to see which matrix it refers to). You can also click and drag to zoom on a specific region of the plot.</li>\n")
+cat("\n</ul>\n")
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n### \n")
+  
+}
+  
+```
+
+
+
+
+```{r, message=FALSE, warning=FALSE}
+if(dim(dfDZ_days_v)[1]>1){
+p1 <- plot_ly ()
+p1 <- plot_ly(data = dfDZ_days_v  , x = ~maxDetect, y = ~temperature, color = ~matrix, alpha = 0.5,
+                 text = ~paste("Matrix: ", matrix, 
+                               '<br>Temperature:',temperature, 
+                               'C<br>Days:', maxDetect, 
+                               '<br>Humidity:', humidity,
+                               '<br>refID:',refID)) %>%
+                   layout(p1, title = "Temperature vs maximum day of detection (Virus isolation)",
+                          xaxis = list(title = "Day"),
+                          yaxis = list (title = "Temperature (Celsius)"))
+
+p1
+}
+```
+
+
+
+
+
+```{r, results='asis'}
+if(dim(dfDZ_days_na)[1]>1){
+  
+cat("\nRow{data-height=500}\n-----------------------------------------------------------------------\n")
+cat("\n###  {.bggreen data-width=250}\n")
+cat("\n<a name=\"SP_dna_section\"></a>\n")
+cat("\n<h1>Survival plots - DNA/RNA detection in days after animal infection </h1>\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#sp_dna\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+cat("\n<div class=\"modal fade\" id=\"sp_dna\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"  aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nThis plot shows detection of DNA/RNA in reference to the number of days since the animal was infected.\n")
+cat("\n<br>\n")
+cat("\nHumidity values, if reported, can be seen in the menu available when hovering the mouse over plot points.\n")
+cat("\n<br>\n")
+cat("\n<b>The \"refID\" information seen when hovering on each point can be used to search for the original publication in the complete list of references provided at the end of this page.</b> \n")
+cat("\n<br>\n")
+cat("\nEach point represents one result reported for one specific study group. Studies in which the matrices were observed over several days, for instance, would be represented as several points in the plot. Please note that:\n")
+cat("\n<ul>\n")
+  cat("\n<li>points may be superimposed but markers are transparent, so color intensity demonstrates overlapping dots.</li>\n")
+  cat("\n<li>the plots are interactive, so it is possible to hide specific matrices by clicking on their name in the legend (hover on a point to see which matrix it refers to). You can also click and drag to zoom on a specific region of the plot.</li>\n")
+cat("\n</ul>\n")
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n### \n")
+  
+}
+  
+```
+
+
+```{r, message=FALSE, warning=FALSE}
+if(dim(dfDZ_days_na)[1]>1){
+p2 <- plot_ly ()
+p2 <- plot_ly(data = dfDZ_days_na  , x = ~maxDetect, y = ~temperature, color = ~matrix, alpha = 0.5,
+                 text = ~paste("Matrix: ", matrix, '<br>Temperature:', temperature, 'C<br>Days:', maxDetect, 
+                               '<br>Humidity:', humidity,
+                               '<br>refID:',refID)) %>%
+                   layout(p2, title = "Temperature vs maximum day of detection (RNA/DNA)",
+                          xaxis = list(title = "Day"),
+                          yaxis = list (title = "Temperature (Celsius)"))
+p2
+
+}
+```
+
+
+
+
+```{r, results='asis'}
+if(dim(dfDZ_hl_v)[1]>1){
+  
+cat("\nRow{data-height=500}\n-----------------------------------------------------------------------\n")
+cat("\n###  {.bggreen data-width=250}\n")
+cat("\n<a name=\"halflife_isol_section\"></a>\n")
+cat("\n<h1>Half-life studies - virus isolation</h1>\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#hl_isol\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+cat("\n<div class=\"modal fade\" id=\"hl_isol\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"  aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nIn these studies, survival results were reported as half life in days. Again, results for agent cutlure/isolation and nucleic acid detection are presented separately. \n")
+cat("\n<br>\n")
+cat("\nPlots are interactive, you can click and drag the mouse to restrict the X axis to a specific range.\n")
+cat("\n<br>\n")
+cat("\n<b>The \"refID\" information seen when hovering on each point can be used to search for the original publication in the complete list of references provided at the end of this page.</b> \n")
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n### \n")
+  
+}
+  
+```
+
+
+```{r, message=FALSE, warning=FALSE}
+
+if(dim(dfDZ_hl_v)[1]>1){
+
+p3 <- plot_ly () 
+p3 <- plot_ly(data = dfDZ_hl_v  , x = ~halfLife, y = ~temperature, color = ~matrix, alpha = 0.5,
+                 text = ~paste("Matrix: ", matrix, '<br>Temperature:', temperature, 'C<br>Days:', halfLife, 
+                               '<br>Humidity:', humidity,
+                               '<br>refID:',refID)) %>%
+  layout(p3, title = "Temperature vs half life in days (Virus isolation)",
+         xaxis = list(title = "Day"),
+         yaxis = list (title = "Temperature (Celsius)") ) %>%
+  add_trace(y = ~temperature, mode = 'lines+markers')
+
+p3
+}
+
+```
+
+
+
+
+
+
+```{r, results='asis'}
+if(dim(dfDZ_hl_na)[1]>1){
+  
+cat("\nRow{data-height=500}\n-----------------------------------------------------------------------\n")
+cat("\n###  {.bggreen data-width=250}\n")
+cat("\n<a name=\"halflife_dna_section\"></a>\n")
+cat("\n<h1>Half-life studies - DNA/RNA detection</h1>\n")
+cat("\n<button type=\"button\" class=\"btn btn-link\" data-toggle=\"modal\" data-target=\"#hl_dna\">\n")
+cat("\n<img src=../../../../templates/assets/css/images/info.png>\n")
+cat("\n</button>\n")
+cat("\n<div class=\"modal fade\" id=\"hl_dna\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\"  aria-hidden=\"true\">\n")
+cat("\n<div class=\"modal-dialog\" role=\"document\">\n")
+cat("\n<div class=\"modal-content\">\n")
+cat("\n<div class=\"modal-body\">\n")
+cat("\nStudy groups with missing temperature were not included in the plots. Upper and lower half-life days confidence intervals were missing for some study groups, and therefore, were not included in the half-life plots.\n")
+cat("\n<br>\n")
+cat("\n<b>The \"refID\" information seen when hovering on each point can be used to search for the original publication in the complete list of references provided at the end of this page.</b> \n")
+cat("\n</div>\n")
+cat("\n<div class=\"modal-footer\">\n")
+cat("\n<button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n</div>\n")
+cat("\n### \n")
+  
+}
+  
+```
+
+```{r , message=FALSE, warning=FALSE}
+
+if(dim(dfDZ_hl_na)[1]>1){
+
+p4 <- plot_ly ()
+p4 <- plot_ly(data = dfDZ_hl_na  , x = ~halfLife, y = ~temperature, color = ~matrix, alpha = 0.5, 
+                 text = ~paste("Matrix: ", matrix, '<br>Temperature:', temperature, 'C<br>Days:', halfLife, 
+                               '<br>Humidity:', humidity,
+                               '<br>refID:',refID)) %>%
+  layout(p4, title = "Temperature vs half life in days (DNA/RNA detection)",
+         xaxis = list(title = "Day"),
+         yaxis = list (title = "Temperature (Celsius)") ) %>%
+  add_trace(y = ~temperature, mode = 'lines+markers')
+
+p4
+}
+
+```
+
+
+
+```{r, results='asis'}
+if(!((dim(dfDZ_days_v)[1]>1)|(dim(dfDZ_days_na)[1]>1)|
+     (dim((dfDZ_hl_v))[1]>1)|(dim(dfDZ_hl_na)[1]>1))){
+  
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### {.bggreen data-width=150}\n")
+cat("\n<h1>Survival plots</h1>\n")
+cat("\n###\n")
+ cat("\nWhen evidence is available through systematic literature review survival plots are presented here.\n")
+cat("\n<br>\n")
+      cat("\n<b>There was not enough evidence for this disease/pathogen.</b>\n")
+      cat("\n<br>\n")
+      cat("\nThe systematic literature reviews are updated regularly (see information in the left panel).\n")
+  
+     }
+
+```
+
+
+
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;META-ANALYSIS </h1>
+
+
+
+
+```{r, results='asis'}
+if(file.exists("survival_ma1.png")|file.exists("survival_ma2.png")|file.exists("survival_ma3.png")
+   |file.exists("survival_ma4.png")){
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### Meta-analysis: agent survival time in different matrices\n")
+  cat("\nThe reported survival times for the virus in different matrices was subjected to meta-analysis to account explicitly for the effect of censoring, that is, studies which were interrupted while the agent was still detectable in the matrices investigated.\n")
+  cat("\nONLY STUDIES WITH TEMPERATURE BETWEEN 0 AND 30 DEGREES CELSIUS (materials not frozen or heated) are eligible, as comparisons among studies with larger temperature variation would not be meaningful.\n")
+  cat("\nStudies confirming virus detection and studies in which detection was based on genetic material (DNA/RNA) were evaluated separately.\n")
+  cat("\nPlots show the parametric confidence intervals for the mean survival time when at least 4 study groups are reported.  The plots are then repeated presenting interquartile ranges (IQ, Q1-Q3). Following the plots, a table gives the exact number for these intervals for each of the matrices reported. For the raw data (all study groups reported individually), see download link on the left panel.\n")
+  
+}
+```
+
+
+
+```{r, results='asis'}
+if(file.exists("survival_ma1.png")){
+  cat("\nRow{.tabset .tabset-fade}\n-----------------------------------------------------------------------\n")
+  cat("\n### VIRUS DETECTION (0-30 degrees Celsius) (PARAMETRIC intervals)\n")
+}
+ 
+```
+
+```{r}
+if(file.exists("survival_ma1.png")){
+  
+  include_graphics("survival_ma1.png",
+                 auto_pdf=FALSE)
+ }
+
+```
+  
+
+```{r, results='asis'}
+if(file.exists("survival_ma1b.png")){
+  cat("\n### More matrices\n")
+}
+ 
+```
+
+```{r}
+if(file.exists("survival_ma1b.png")){
+  
+  include_graphics("survival_ma1b.png",
+                 auto_pdf=FALSE)
+ }
+
+```
+  
+  
+
+```{r, results='asis'}
+if(file.exists("survival_ma1c.png")){
+  cat("\n### More matrices\n")
+}
+ 
+```
+
+```{r}
+if(file.exists("survival_ma1c.png")){
+  
+  include_graphics("survival_ma1c.png",
+                 auto_pdf=FALSE)
+ }
+
+```
+  
+
+
+
+
+```{r, results='asis'}
+if(file.exists("survival_ma2.png")){
+  cat("\nRow{.tabset .tabset-fade}\n-----------------------------------------------------------------------\n")
+  cat("\n### VIRUS DETECTION (0-30 degrees Celsius) (IQ range)\n")
+}
+ 
+```
+
+```{r}
+if(file.exists("survival_ma2.png")){
+  
+  include_graphics("survival_ma2.png",
+                 auto_pdf=FALSE)
+ }
+
+```
+  
+
+```{r, results='asis'}
+if(file.exists("survival_ma2b.png")){
+  cat("\n### More matrices\n")
+}
+ 
+```
+
+```{r}
+if(file.exists("survival_ma2b.png")){
+  
+  include_graphics("survival_ma2b.png",
+                 auto_pdf=FALSE)
+ }
+
+```
+  
+  
+
+```{r, results='asis'}
+if(file.exists("survival_ma2c.png")){
+  cat("\n### More matrices\n")
+}
+ 
+```
+
+```{r}
+if(file.exists("survival_ma2c.png")){
+  
+  include_graphics("survival_ma2c.png",
+                 auto_pdf=FALSE)
+ }
+
+```
+  
+
+
+
+
+
+
+```{r, results='asis'}
+if(file.exists("survival_ma3.png")){
+  cat("\nRow{.tabset .tabset-fade}\n-----------------------------------------------------------------------\n")
+  cat("\n### DNA/RNA DETECTION (0-30 degrees Celsius) (PARAMETRIC intervals)\n")
+}
+ 
+```
+
+```{r}
+if(file.exists("survival_ma3.png")){
+  
+  include_graphics("survival_ma3.png",
+                 auto_pdf=FALSE)
+ }
+
+```
+  
+
+```{r, results='asis'}
+if(file.exists("survival_ma3b.png")){
+  cat("\n### More matrices\n")
+}
+ 
+```
+
+```{r}
+if(file.exists("survival_ma3b.png")){
+  
+  include_graphics("survival_ma3b.png",
+                 auto_pdf=FALSE)
+ }
+
+```
+  
+  
+
+```{r, results='asis'}
+if(file.exists("survival_ma3c.png")){
+  cat("\n### More matrices\n")
+}
+ 
+```
+
+```{r}
+if(file.exists("survival_ma3c.png")){
+  
+  include_graphics("survival_ma3c.png",
+                 auto_pdf=FALSE)
+ }
+
+```
+  
+
+
+
+
+```{r, results='asis'}
+if(file.exists("survival_ma4.png")){
+  cat("\nRow{.tabset .tabset-fade}\n-----------------------------------------------------------------------\n")
+  cat("\n### DNA/RNA DETECTION (0-30 degrees Celsius) (IQ range)\n")
+}
+ 
+```
+
+```{r}
+if(file.exists("survival_ma4.png")){
+  
+  include_graphics("survival_ma4.png",
+                 auto_pdf=FALSE)
+ }
+
+```
+  
+
+```{r, results='asis'}
+if(file.exists("survival_ma4b.png")){
+  cat("\n### More matrices\n")
+}
+ 
+```
+
+```{r}
+if(file.exists("survival_ma4b.png")){
+  
+  include_graphics("survival_ma4b.png",
+                 auto_pdf=FALSE)
+ }
+
+```
+  
+  
+
+```{r, results='asis'}
+if(file.exists("survival_ma4c.png")){
+  cat("\n### More matrices\n")
+}
+ 
+```
+
+```{r}
+if(file.exists("survival_ma4c.png")){
+  
+  include_graphics("survival_ma2c.png",
+                 auto_pdf=FALSE)
+ }
+
+```
+  
+
+```{r, include=FALSE}
+min.groups <- 4
+plot.CI <- TRUE 
+
+dd.raw <- dfDZ  %>%
+  as_tibble
+data.set <- dd.raw %>%
+  filter(temperature>0, temperature<30, !is.na(maxDetect)) %>%
+  mutate(cns=ifelse(truncated=="not investigated/not given/not relevant", "no", as.character(truncated))) %>%
+  mutate(cns=ifelse(cns=="yes", T, F)) 
+
+```
+
+
+
+
+```{r, results='asis'}
+if(file.exists("survival_ma1.png")|file.exists("survival_ma2.png")|file.exists("survival_ma3.png")
+   |file.exists("survival_ma4.png")){  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### Meta-analyses - numerical values\n")
+  cat("\nlower.CI and upper.CI stand for the lower and upper control limit of a 95% confidence interval accounting for censoring (lack of information about true maximum when experiments ended while the agent was still detectable). q1 and q3 refer to the first and third quartiles (25% and 75% of values). \n")
+    cat("\nN.rows is the number of experiments from which pathogen survival data was available.\n")
+      cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n###\n")
+}
+ 
+```
+ 
+ 
+
+```{r}
+
+if(file.exists("survival_ma1.png")|file.exists("survival_ma2.png")|file.exists("survival_ma3.png")
+   |file.exists("survival_ma4.png")){  
+kable(make.KM.curves(data.set, agent, CI=FALSE, table=TRUE))%>%kable_styling()
+  
+}
+```
+
+
+
+
+
+
+
+```{r, results='asis'}
+if(!(file.exists("survival_ma1.png")|file.exists("survival_ma2.png")|file.exists("survival_ma3.png")|file.exists("survival_ma4.png"))){
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### Meta-analysis was not performed for this agent/disease\n")
+  cat("\nWhen evidence was available through systematic literature review for a <b>minimum of 4 data points per animal matrix</b>, this evidence was subjected to meta-analysis. In such cases, Kaplan-Meier curves would be fit to the data,in order to estimate confidence intervals (CI) and interquartile ranges (IQ) for the duration of the pathogen survival explicitly taking into account the data censoring issue (lack of information about true maximum when experiments ended while the agent was still detectable).\n")
+      cat("\nThere was not enough evidence for this disease/pathogen.\n")
+      cat("\nThe systematic literature reviews are updated regularly (see information in the left panel).\n")
+  
+}
+```
+
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REFERENCES </h1>
+
+
+Row
+-----------------------------------------------------------------------
+###
+In the left panel you can find information about the entire systematic literature review. The specific references for this agent, and used in this section of the story map are listed below.
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+
+```{r references}
+options(DT.options = list(scrollY="100vh",pageLength =5))
+datatable(unique(references[references$Refid%in%dfDZ$refID,c(1,2,4)]), filter = 'top', rownames=FALSE)
+
+```
+ 

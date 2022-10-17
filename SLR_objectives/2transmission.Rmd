@@ -1,0 +1,413 @@
+---
+title: "Evidence from systematic literature review"
+params:
+    styling: TRUE
+    dfei: !r read.csv("../data/FilesDownload/ExperimentalInfections_cleaned.csv")
+    agent: "African swine fever virus"
+    references: !r read.csv("../data/FilesDownload/ExperimentalInfections_refid.csv")
+    min.groups.plot: 1
+    agent.subtype: "agentSubtype"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    orientation: rows
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message=FALSE, fig.width=10,fig.height=6)
+library(plotly)
+library(dplyr)
+library(stringr)
+library(knitr)
+library(gdata)
+library(kableExtra)
+library(DT)
+
+source("Functions.r")
+source("Metaanalysis_functions.r")
+
+dfei <- params$dfei
+agent <- params$agent 
+references <- params$references
+styling <- params$styling #styling=T
+min.groups.plot <- params$min.groups.plot #min.groups.plot=1
+
+
+#dfei <- read.csv("../data/FilesDownload/ExperimentalInfections_cleaned.csv")
+
+#agent <- "African swine fever virus"
+#agent = agents[a]
+dfDZ <- dfei[dfei$agent==agent,]
+
+#references <- read.csv("../data/FilesDownload/ExperimentalInfections_refid.csv")
+
+dfDZ$targetSpecies <- gsub("\\s*\\([^\\)]+\\)","",as.character(dfDZ$targetSpecies))
+
+dfDZ$targetSpecies<- str_replace(dfDZ$targetSpecies, "PIG - Pig", "Pigs")
+dfDZ$targetSpecies<- str_replace(dfDZ$targetSpecies, "PIG - Wild boar", "Wild boar")
+dfDZ$targetSpecies<- str_replace(dfDZ$targetSpecies, "HORSE - Horse", "Horse")
+dfDZ$targetSpecies<- str_replace(dfDZ$targetSpecies, "HORSE - Equines", "Other equine (Equus)")
+
+
+dfDZ$targetSpecies <- as.factor(dfDZ$targetSpecies)
+
+#table(dfDZ$targetSpecies)
+
+
+```
+
+
+Row{data-height=500}
+-----------------------------------------------------------------------
+
+### Duration of the infectious period 
+
+
+```{r INFduration.plot, message=FALSE, warning=FALSE}
+inf.plots(dataset=dfDZ,
+                category="targetSpecies",
+                targetLabTest=NULL, #set to NULL to run all lab tests together)
+                matrix="Blood", #not case sensitive, #can be set to NULL
+                not.matrix=NULL,
+                min.groups.plot=min.groups.plot,
+          separated.tests=TRUE)#set in the definitions file, set to 1 to run ALL categories
+
+
+```
+
+### Readme
+
+Species listed are those for which evidence was available in peer-reviewed literature (in English). 
+
+Plots are interactive, hover to see more information, drag to zoom.
+
+<font size="1"> Please note that:</font>
+
+<font size="1">1. "Infectious period" cannot be measured directly unless transmission experiments are also conducted. Infection experiments reviewed in the literature actually measured the period of time during which the pathogen/genetic material could be detected in specific body matrices.</font>
+
+<font size="1">2. All data were recorded per ANIMAL GROUP, not individually. As a result, the periods were recorded in the form of "minimum" and "maximum" values (in days) observed in the group. The values therefore do not reflect a distribution of infectivity in a single animal, but the earliest and latest day in which the pathogen/genetic material could possibly be detected in specific body matrices.</font>
+
+<font size="1">3. Animals could still be "infectious"  on the last day of the experiment. Data in this case is  censored - the maximum represents the maximum observed, not the true maximum.  </font>
+
+<font size="2">Data collected from matrices other than blood, and calculations of the infectious period accounting for censoring are available further below in the experts area. </font>
+
+Row
+-----------------------------------------------------------------------
+
+### Evidence of Host-host transmission?
+
+```{r hosthost, message=FALSE, warning=FALSE, include=FALSE}
+hh <- cbind(dfDZ$uniqueID,dfDZ$hostHost)
+hh <- hh[!duplicated(hh),]
+
+total.p <- sum(!duplicated(dfDZ$refID))
+total.n <- dim(hh)[1]
+
+
+hhY <- sum(hh=="yes")
+hhN <- sum(hh=="no")
+hhM <- sum(hh=="not investigated/not given/not relevant")
+```
+
+The systematic literature review included a total of `r total.p` articles, which combined presented evidence from `r total.n` animal groups subjected to experimental infections with this agent. Host-to-host transmission was reported in `r hhY` animal groups, and investigated but not found in `r hhN` animal groups. Host-to-host transmission was not investigated or not explicitly reported for `r hhM` animal groups. 
+
+### Evidence of transplacentary transmission?
+
+```{r transplac, message=FALSE, warning=FALSE, include=FALSE}
+transp <- cbind(dfDZ$uniqueID,dfDZ$transplac)
+transp <- transp[!duplicated(transp),]
+
+transpY <- sum(transp=="yes")
+transpN <- sum(transp=="no")
+transpM <- sum(transp=="not investigated/not given/not relevant")
+```
+
+The systematic literature review included a total of `r total.p` articles, which combined presented evidence from `r total.n` animal groups subjected to experimental infections with this agent. Transplacentary transmission was reported in `r transpY` animal groups, and investigated but not found in `r transpN` animal groups. Transplacentary transmission was not investigated or not explicitly reported for `r transpM` animal groups. 
+
+
+Row{data-height=60}
+-----------------------------------------------------------------------
+
+### 
+
+<font size="6"> Experts area </font>
+
+
+Row
+-----------------------------------------------------------------------
+
+### Duration of the infectious period: Meta-analysis accounting for censoring
+
+Kaplan-Meier curves were fit to the data,in order to estimate parametric confidence intervals (CI) and interquartile ranges (IQ) that explicitly take into account the data censoring issue. Further below you will find a table with the numerical values.
+
+Meta-analysis have been applied separately for detection of virus ANTIGENS, VIRUS ISOLATION, and detection of genetic material (DNA/RN), in species/matrices combinations where data was available for at least FOUR animal groups. The median minimum and maximum days during which virus/genetic material were detected in other matrices are listed in a table further below. 
+
+Row
+-----------------------------------------------------------------------
+
+### Kaplan-Meier curves with parametric Confidence Intervals - Virus detection
+
+
+```{r metaanalysis.plot}
+
+if(file.exists("transmission_ma1.png")){
+include_graphics("transmission_ma1.png",
+                 auto_pdf=FALSE)
+}else{
+    cat("Not enough evidence for Meta Analyses")
+}
+
+
+
+```
+
+Row
+-----------------------------------------------------------------------
+
+### Kaplan-Meier curves with Inter-Quantile Ranges - Virus detection
+
+```{r}
+if(file.exists("transmission_ma2.png")){
+include_graphics("transmission_ma2.png",
+                 auto_pdf=FALSE)
+}else{
+    cat("Not enough evidence for Meta Analyses")
+}
+
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+### Kaplan-Meier curves with parametric Confidence Intervals - DNA/RNA detection
+
+
+```{r}
+if(file.exists("transmission_ma3.png")){
+include_graphics("transmission_ma3.png",
+                 auto_pdf=FALSE)
+}else{
+    cat("Not enough evidence for Meta Analyses")
+}
+
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+### Kaplan-Meier curves with Inter-Quantile Ranges - DNA/RNA detection
+
+```{r}
+if(file.exists("transmission_ma4.png")){
+include_graphics("transmission_ma4.png",
+                 auto_pdf=FALSE)
+}else{
+    cat("Not enough evidence for Meta Analyses")
+}
+
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+### Kaplan-Meier curves with parametric Confidence Intervals - ANTIGEN detection
+
+
+```{r}
+if(file.exists("transmission_ma5.png")){
+include_graphics("transmission_ma5.png",
+                 auto_pdf=FALSE)
+}else{
+    cat("Not enough evidence for Meta Analyses")
+}
+
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+### Kaplan-Meier curves with Inter-Quantile Ranges - ANTIGEN detection
+
+```{r}
+if(file.exists("transmission_ma6.png")){
+include_graphics("transmission_ma6.png",
+                 auto_pdf=FALSE)
+}else{
+    cat("Not enough evidence for Meta Analyses")
+}
+
+```
+
+Row
+-----------------------------------------------------------------------
+
+### Virus detection - Duration accounting for censoring - numerical values
+LCL and UCL stand for the lower and upper control limit of a 95% confidence interval accounting for censoring.
+
+N.groups is the number of animal groups from which experimental infection data was available.
+
+
+```{r metaanalysis.tableV}
+
+min.groups <- 4
+data.set <- prepare.data.MA(datainput=dfDZ)
+
+targetLabTest.selection <- "Virus"
+result.list.detect.ci <- list()
+result.list.detect.iq <- list()
+dd.plot <- prepare.data.DETECT(datainput=data.set)
+
+#if(dim(dd.plot)[1]>0){
+try(km.detect.ci(),silent=TRUE)
+try(km.detect.iq(),silent=TRUE)
+
+
+tables.DETECT.v <- NULL
+try(tables.DETECT.v <- produce.tables.DETECT(),silent=TRUE)
+
+
+if(styling=="word"){
+  datatable(tables.DETECT.v)
+  }else{
+kable(tables.DETECT.v)%>%kable_styling()
+  }
+
+# }else{
+#     cat("Not enough evidence for Meta Analyses")
+# 
+# }
+
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+### DNA/RNA detection - Duration accounting for censoring - numerical values
+
+LCL and UCL stand for the lower and upper control limit of a 95% confidence interval accounting for censoring.
+
+N.groups is the number of animal groups from which experimental infection data was available.
+
+
+```{r metaanalysis.tableNA}
+
+
+
+targetLabTest.selection <- "Nucleic acid"
+result.list.detect.ci <- list()
+result.list.detect.iq <- list()
+dd.plot <- prepare.data.DETECT(datainput=data.set)
+
+
+#if(dim(dd.plot)[1]>0){
+try(km.detect.ci(),silent=TRUE)
+try(km.detect.iq(),silent=TRUE)
+
+
+tables.DETECT.na <- NULL
+try(tables.DETECT.na <- produce.tables.DETECT(),silent=TRUE)
+
+
+if(styling=="word"){
+  datatable(tables.DETECT.na)
+  }else{
+kable(tables.DETECT.na)%>%kable_styling()
+  }
+
+# }else{
+#     cat("Not enough evidence for Meta Analyses")
+# 
+# }
+
+
+
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+### ANTIGEN detection - Duration accounting for censoring - numerical values
+LCL and UCL stand for the lower and upper control limit of a 95% confidence interval accounting for censoring.
+
+N.groups is the number of animal groups from which experimental infection data was available.
+
+
+```{r metaanalysis.tableV}
+
+min.groups <- 4
+data.set <- prepare.data.MA(datainput=dfDZ)
+
+targetLabTest.selection <- "Antigen"
+result.list.detect.ci <- list()
+result.list.detect.iq <- list()
+dd.plot <- prepare.data.DETECT(datainput=data.set)
+
+#if(dim(dd.plot)[1]>0){
+try(km.detect.ci(),silent=TRUE)
+try(km.detect.iq(),silent=TRUE)
+
+
+tables.DETECT.v <- NULL
+try(tables.DETECT.v <- produce.tables.DETECT(),silent=TRUE)
+
+
+if(styling=="word"){
+  datatable(tables.DETECT.v)
+  }else{
+kable(tables.DETECT.v)%>%kable_styling()
+  }
+
+# }else{
+#     cat("Not enough evidence for Meta Analyses")
+# 
+# }
+
+```
+
+
+
+
+Row
+-----------------------------------------------------------------------
+
+### Detection in matrices: All data available per species and matrices
+
+As pointed out above, meta-analyses were conducted only when data were available for at least four animal groups. Median values for all detection data collected in the systematic literature review is reported in the table below.
+
+N.groups is the number of animal groups from which experimental infection data was available. The entire dataset can be downloaded through the link on the left panel. 
+
+
+```{r detMatrices.all}
+
+multiple.cat.summary.numerical(dataset=dfDZ,
+                               columns=c("targetSpecies","matrix"),
+                               outcomes=c("minDetect","maxDetect"),
+                               ID="uniqueID",
+                               labels=c("Species","matrix",
+                                        "N.groups","minDetect (MEDIAN days)","maxDetect (MEDIAN days)"),
+                               styling=styling)
+
+
+```
+
+Row {.tabset .tabset-fade data-height=1000}
+-----------------------------------------------------------------------
+
+### References 
+
+In the right panel you can find information about the entire systematic literature review. The specific references for this agent, and used in this section of the story map are listed below.
+
+```{r references}
+
+datatable(unique(references[references$Refid%in%dfDZ$refID,c(1,3,5)]), filter = 'top', rownames=FALSE)
+
+```
+ 
+ 

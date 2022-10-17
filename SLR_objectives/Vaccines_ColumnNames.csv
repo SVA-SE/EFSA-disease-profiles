@@ -1,0 +1,119 @@
+"Refid","refID"
+"Bibliography","FullReference"
+"User","user"
+"Ris Code","empty"
+"Level","level"
+"test_k","empty2"
+"sampCountry
+Country where study was performed","country"
+"sampY
+Year the study was conducted
+(-1 if not reported)","year"
+"agent *
+Causative agent of the disease","agent"
+"agentSubtypeType
+What type of further detailed information is given regarding the agent. Select here, and type below. Give the highest subtype information available - for instance serotype if available, instead of strain. ","agentSubtypeType"
+"agentSubtypeType
+What type of further detailed information is given regarding the agent. Select here, and type below. Give the highest subtype information available - for instance serotype if available, instead of strain. _comment","agentSubtype_C"
+"agentDetails
+The further information given regarding the sutype type given above. ","agentDetails"
+"studyID *
+Unique ID to link all observations from the same study, experiment, or time point evaluations.","studyID"
+"studyTargetSpecies *
+Species used in study","targetSpecies"
+"studyTargetSpecies *
+Species used in study_comment","targetSpecies_C"
+"ageMonths
+Age of animals in months
+(-1 if not reported)","ageMonths"
+"sampUnit *
+Type of unit sampled in the study and reported in sampUnitSize","sampUnit"
+"sampUnit *
+Type of unit sampled in the study and reported in sampUnitSize_comment","sampUnit_C"
+"sampUnitSize *
+Number of units in the group (the number of units listed above (e.g. herds))","sampUnitSize"
+"Animal status","animalStatus"
+"Animal status_comment","animalStatus_C"
+"testsubstance
+select the vaccine used","testSubstance"
+"testsubstance
+select the vaccine used_comment","testSubstanceCAT"
+"Type of vaccine","vaccineType"
+"Type of vaccine_comment","vaccineType_C"
+"route
+Method of application or treatment regime or administration method of vaccine","route"
+"route
+Method of application or treatment regime or administration method of vaccine_comment","route_C"
+"Day dose 1
+The day, from the start of the experiment (day 0), when the first vaccine dose was given.","dayDose1"
+"Vaccine dose 1
+Dose of vaccine given for the first time (dose 1).","dose1"
+"Day dose 2
+The day, from the start of the experiment (day 0), when the second vaccine dose was given. Leave empty if not second dose was administered.","dayDose2"
+"Vaccine Dose 2
+Dose of vaccine given for the second time (dose 2). Leave empty if no second dose was administered.","dose2"
+"Day dose 3
+IF a third dose was given, enter the number of days since the start of the experiment (day 0), when it was administered. Leave empty otherwise","dayDose3"
+"Vaccine Dose 3
+IF a third dose was given (dose 3), enter the dose of vaccine given. Leave empty if no third dose was administered.","dose3"
+"Challenge type","challengeType"
+"route
+Method of application of the challenge","challengeRoute"
+"route
+Method of application of the challenge_comment","challengeRoute_C"
+"Challenge substance","challengeSubstance"
+"Challenge dose
+Plese describe (free-text) the dosage information given","challengeDose"
+"Challenge day
+From the beginning of the experiment","challengeDay"
+"deadUnits
+Number of dead animals ","deadUnits"
+"mortalityTime minimum
+If provided in the paper, please report the time between application of the treatment and first recorded mortality. Use this question for the numerical value and the next for the unit.","mortalityTime"
+"mortalityTimeUnits_min
+The units for the first reported time to mortality.","mortalityTimeUnits"
+"mortalityTime maximum
+If provided in the paper, please report the time between application of the treatment and last recorded mortality. Use this question for the numerical value and the next for the unit.","mortalityTimeMax"
+"mortalityTimeUnits_max
+The units for the last reported time to mortality.","mortalityTimeUnitsMax"
+"efficacy
+1-RR. Report as given in the paper.
+If not reported, leave it empty.","efficacy"
+"coverage
+Coverage in %","coverage"
+"Direct vaccine costs
+Decsribe DIRECT vaccine costs, if given. ","vaccCost"
+"Indirect vaccine costs
+Decsribe any indirect vaccine costs reported in the paper, for instance loss of productivity, food conversion, etc.","vaccCostIndirect"
+"Withdrawal period (in days)
+Minimum number of days since last vaccine dose before animals can be sent to slaughter.
+ ","withdrawal"
+"vaccine storage
+Does the vaccine need to be kept cold or in any other specific conditions? please report any details about logistical constraints given in the paper.","storage"
+"TIME POINT
+Indicate time point in days from the start of the study to which the reported parameters below correspond","timePoint"
+"STAGE of experiment
+At which step of the experiment do the information to be reported relate to.","experimentStatus"
+"LAB TEST *
+Laboratory test used to detect agent, antibdies, or antigens associated with the disease","labTest"
+"LAB TEST details
+Description of laboratory method (where relevant include method of calculation of cut-offs)","labDescription"
+"Target of laboratory test","labTarget"
+"Target of laboratory test_comment","labTarget_C"
+"Tissue sampled for testing
+(Note: as part-nature = the tissue has not been processed)","matrix"
+"Tissue sampled for testing
+(Note: as part-nature = the tissue has not been processed)_comment","matrix_C"
+"Number of samples tested","nTested"
+"Number of samples positive","nPositive"
+"testValue
+The reported value for the test, for instance titers of SNT, IP for ELISA test, CQ/CT for a PCR, or a clinical score. GROUP AVERAGE, for the POSITIVE animals only.","testValue"
+"UNITS
+the units for the value reported to the left.","testValueUnits"
+"UNITS
+the units for the value reported to the left._comment","testValueUnits_C"
+"Scale MIN
+If a scale is needed in order to understand the test value (for instance the maximum score in a clinical score scale), then report the minimum here","scaleMin"
+"Scale MAX
+If a scale is needed in order to understand the test value (for instance the maximum score in a clinical score scale), then report the maximum here","ScaleMax"
+"QUALITY check If you have noted any significant weakness in the study design, or details worth of note which could not be captured in the current form, please enter comments here. All papers with comments in this section will be reviewed by a second revie","quality"

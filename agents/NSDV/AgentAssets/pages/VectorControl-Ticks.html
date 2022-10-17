@@ -1,0 +1,2932 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>Vector control studies - Evidence from systematic literature review</title>
+
+<meta property="og:title" content="Vector control studies - Evidence from systematic literature review" />
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+
+<link rel="icon" href="data:image/x-icon;" type="image/x-icon">
+
+
+<script type="text/javascript">
+window.FlexDashboardComponents = [];
+</script>
+
+<script src="../../assets/flexdash_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="../../assets/flexdash_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="../../assets/flexdash_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="../../assets/flexdash_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="../../assets/flexdash_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="../../assets/flexdash_libs/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
+<script src="../../assets/flexdash_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="../../assets/flexdash_libs/plotly-binding-4.9.4.1/plotly.js"></script>
+<script src="../../assets/flexdash_libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="../../assets/flexdash_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="../../assets/flexdash_libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="../../assets/flexdash_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/datatables-binding-0.19/datatables.js"></script>
+<link href="../../assets/flexdash_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="../../assets/flexdash_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="../../assets/flexdash_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="../../assets/flexdash_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="../../assets/flexdash_libs/selectize-0.12.0/selectize.min.js"></script>
+<style type="text/css">
+
+/*
+ Dashboard CSS from Keen IO Dashboards
+ (https://github.com/keen/dashboards)
+*/
+
+body {
+  background: #f2f2f2;
+  padding: 60px 0 0 8px; /* padding-top overridden by theme */
+}
+
+body hr {
+  border-color: #d7d7d7;
+  margin: 10px 0;
+}
+
+.navbar-inverse .navbar-nav > li > a,
+.navbar .navbar-brand {
+  text-decoration: none;
+}
+
+.navbar-logo {
+  margin-top: 1px;
+}
+
+.navbar-logo img {
+  margin-right: 12px;
+}
+
+.navbar-author {
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.navbar .dropdown-menu .fa {
+  min-width: 20px;
+}
+
+.navbar .dropdown-menu {
+  min-width: 150px;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.chart-wrapper,
+.nav-tabs-custom,
+.sbframe-commentary
+{
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+.chart-title {
+  border-bottom: 1px solid #d7d7d7;
+  color: #666;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 7px 10px 4px;
+}
+
+.chart-wrapper .chart-title:empty {
+  display: none;
+}
+
+.chart-wrapper .chart-stage {
+  overflow: hidden;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.chart-wrapper .chart-notes {
+  background: #fbfbfb;
+  border-top: 1px solid #e2e2e2;
+  color: #808080;
+  font-size: 12px;
+  padding: 8px 10px 5px;
+}
+
+/*
+ CSS for handling flexbox layout
+*/
+
+#dashboard-container {
+  visibility: hidden;
+}
+
+.tab-content>.dashboard-page-wrapper.active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dashboard-page-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dashboard-row-orientation {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dashboard-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard-row-flex {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.dashboard-column-orientation {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard-column {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.chart-wrapper-flex {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.chart-stage-flex {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+}
+
+.chart-shim {
+  position: absolute;
+  left: 8px; top: 8px; right: 8px; bottom: 8px;
+}
+
+.no-padding .chart-shim {
+  left: 0; top: 0; right: 0; bottom: 0;
+}
+
+.flowing-content-shim {
+  overflow: auto;
+  left: 0; top: 0; right: 0; bottom: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.flowing-content-container {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.chart-stage .table-bordered {
+  border: none;
+}
+
+.chart-stage .table-bordered > tbody > tr > th,
+.chart-stage .table-bordered > tfoot > tr > th,
+.chart-stage .table-bordered > tbody > tr > td,
+.chart-stage .table-bordered > tfoot > tr > td {
+  border: none;
+}
+
+.chart-stage .table-bordered > tbody > tr > td {
+  border-top: 1px solid #dddddd;
+}
+
+.chart-stage .table-bordered > thead > tr > th {
+  border: none;
+  border-bottom: 2px solid #dddddd;
+}
+
+.bootstrap-table table>thead {
+  background-color: #fff;
+}
+
+.bootstrap-table table.data,
+.bootstrap-table table.shiny-table {
+  width: inherit !important;
+}
+
+.bootstrap-table table.data>tbody>tr>th,
+.bootstrap-table table.shiny-table>tbody>tr>th {
+  border-top: none;
+  border-bottom: 2px solid #dddddd;
+  padding: 5px;
+}
+
+.bootstrap-table .data td[align=right] {
+  font-family: inherit;
+}
+
+.chart-wrapper form {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.shiny-input-container label {
+  font-weight: normal;
+}
+
+.chart-stage .html-widget {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.chart-stage .html-widget-static-bound {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.chart-stage .shiny-bound-output {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Omit display of empty paragraphs */
+
+.chart-shim>p:empty {
+  display: none;
+}
+
+.chart-stage>p:empty {
+  display: none;
+}
+
+/* Omit display of special knitr options div*/
+
+.chart-stage .knitr-options {
+  display: none;
+}
+
+/* Automatically resizing images */
+
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+}
+
+.image-container img {
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* Value box */
+
+.value-box {
+  border-radius: 2px;
+  position: relative;
+  display: block;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.value-box > .inner {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.value-box .value {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 0 0 3px 0;
+  white-space: nowrap;
+  padding: 0;
+}
+
+.value-box .caption {
+  font-size: 15px;
+}
+.value-box .caption > small {
+  display: block;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.value-box .icon i {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 80px;
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.linked-value:hover {
+  cursor: pointer;
+}
+
+.value-box.linked-value:hover {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* STORYBOARD */
+
+.storyboard-nav button {
+  background: transparent;
+  border: 0;
+  opacity: .3;
+  outline: none;
+  padding: 0;
+}
+
+.storyboard-nav button:hover,
+.storyboard-nav button:hover {
+  opacity: .5;
+}
+
+.storyboard-nav button:disabled,
+.storyboard-nav button:disabled {
+  opacity: .1;
+}
+
+.storyboard-nav .sbnext,
+.storyboard-nav .sbprev {
+  float: left;
+  width: 2%;
+  height: 120px;
+  font-size: 50px;
+}
+
+.storyboard-nav .sbprev {
+  text-align: left;
+  width: 2%;
+}
+
+.storyboard-nav .sbnext {
+  float: right;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.storyboard-nav .sbframelist {
+  margin: 0 auto;
+  width: 94%;
+  height: 120px;
+  overflow: hidden;
+  text-shadow: none;
+  margin-bottom: 8px;
+}
+
+.storyboard-nav .sbframelist ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.storyboard-nav .sbframelist ul li {
+  float: left;
+  width: 270px;
+  height: 100%;
+  padding: 10px 10px 10px 10px;
+  margin-right: 8px;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  color: #3a3c47;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.storyboard-nav .sbframelist ul li:last-child {
+  margin-right: 0px;
+}
+
+.storyboard-nav .sbframelist ul li.active {
+  color: #fff;
+  background: #B8B8B8;
+}
+
+.sbframe-commentary {
+  width: 300px;
+  background: #fbfbfb;
+  font-size: 14px;
+}
+
+.sbframe-commentary ul {
+  padding-left: 22px;
+}
+
+.sbframe.active {
+  display: flex;
+}
+
+.sbframe:not(.active) {
+  display: none;
+}
+
+/* NAV TABS */
+
+.nav-tabs-custom > .nav-tabs {
+  margin: 0;
+  border-bottom: 1px solid #d7d7d7;
+  color: #666;
+  font-size: 14px;
+  font-weight: 300;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.nav-tabs-custom > .nav-tabs > li {
+  border-top: 3px solid transparent;
+  margin-bottom: -1px;
+  margin-right: 5px;
+}
+.nav-tabs-custom > .nav-tabs > li > a,
+.nav-tabs-custom > .nav-tabs > li > a:active {
+  color: #666;
+  font-weight: 300;
+  font-size: 14px;
+  border-radius: 0;
+  padding: 3px 10px 5px;
+  text-transform: none;
+}
+
+.nav-tabs-custom > .nav-tabs > li:not(.active) > a {
+  border-bottom-color: transparent;
+}
+
+.nav-tabs-custom > .nav-tabs > li > a.text-muted {
+  color: #999;
+}
+.nav-tabs-custom > .nav-tabs > li > a,
+.nav-tabs-custom > .nav-tabs > li > a:hover {
+  background: transparent;
+  margin: 0;
+}
+.nav-tabs-custom > .nav-tabs > li > a:hover {
+  color: #999;
+}
+.nav-tabs-custom > .nav-tabs > li:not(.active) > a:hover,
+.nav-tabs-custom > .nav-tabs > li:not(.active) > a:focus,
+.nav-tabs-custom > .nav-tabs > li:not(.active) > a:active {
+  border-color: transparent;
+}
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color: #3c8dbc;
+}
+.nav-tabs-custom > .nav-tabs > li.active > a,
+.nav-tabs-custom > .nav-tabs > li.active:hover > a {
+  background-color: #fff;
+  color: #666;
+}
+.nav-tabs-custom > .nav-tabs > li.active > a {
+  border-top-color: transparent;
+  border-left-color: #d7d7d7;
+  border-right-color: #d7d7d7;
+}
+.nav-tabs-custom > .nav-tabs > li:first-of-type {
+  margin-left: 0;
+}
+.nav-tabs-custom > .nav-tabs > li:first-of-type.active > a {
+  border-left-color: transparent;
+}
+.nav-tabs-custom > .nav-tabs.pull-right {
+  float: none !important;
+}
+.nav-tabs-custom > .nav-tabs.pull-right > li {
+  float: right;
+}
+.nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type {
+  margin-right: 0;
+}
+.nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type > a {
+  border-left-width: 1px;
+}
+.nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type.active > a {
+  border-left-color: #d7d7d7;
+  border-right-color: transparent;
+}
+.nav-tabs-custom > .nav-tabs > li.header {
+  line-height: 35px;
+  padding: 0 10px;
+  font-size: 20px;
+  color: #666;
+}
+.nav-tabs-custom > .nav-tabs > li.header > .fa,
+.nav-tabs-custom > .nav-tabs > li.header > .glyphicon,
+.nav-tabs-custom > .nav-tabs > li.header > .ion {
+  margin-right: 5px;
+}
+.nav-tabs-custom > .tab-content {
+  background: #fff;
+  padding: 0;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-tabs-custom > .tab-content > .chart-wrapper {
+  background: #fff;
+  border: none;
+  margin: 0;
+}
+
+
+.nav-tabs-custom > .tab-content > .active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-tabs-custom .dropdown.open > a:active,
+.nav-tabs-custom .dropdown.open > a:focus {
+  background: transparent;
+  color: #999;
+}
+
+
+@media (max-width: 767px) {
+  .value-box {
+    text-align: center;
+    margin-right: 8px;
+  }
+  .value-box .icon {
+    display: none;
+  }
+}
+
+/* Fixed position sidebar */
+
+.section.sidebar {
+  position: fixed;
+  top: 51px; /* overridden by theme */
+  left: 0;
+  bottom: 0;
+  border-right: 1px solid #e2e2e2;
+  background-color: white; /* overridden by theme */
+  padding-left: 10px;
+  padding-right: 10px;
+  visibility: hidden;
+  overflow: auto;
+}
+
+.section.sidebar form p:first-child {
+  margin-top: 10px;
+}
+
+/* Embedded source code */
+
+#flexdashboard-source-code {
+  display: none;
+}
+
+.featherlight-content #flexdashboard-source-code {
+  display: inline-block;
+}
+
+.featherlight-content {
+  width: 80%;
+  max-width: 800px;
+  padding: 0 !important;
+  border-bottom: none !important;
+}
+
+.featherlight:last-of-type {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.featherlight-inner {
+  width: 100%;
+}
+
+.featherlight-content pre {
+  margin: 0;
+  border: 0;
+  background: #fff;
+  font-size: 12px;
+}
+
+.unselectable {
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#flexdashboard-source-code code {
+  -ms-user-select: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -o-user-select: text;
+  user-select: text;
+}
+
+/* DataTables Tweaks */
+
+.dataTables_filter input[type="search"] {
+  -webkit-appearance: searchfield;
+  outline: none;
+}
+
+.dataTables_wrapper.no-footer
+.dataTables_info {
+  padding-top: 0;
+}
+
+
+table.dataTable thead th {
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+  border-bottom: 1px solid #d7d7d7;
+}
+
+/* Mobile phone only CSS */
+
+.desktop-layout div.section.mobile {
+  display: none;
+}
+
+.mobile-layout div.section.no-mobile {
+  display: none;
+}
+
+.mobile-figure {
+  display: none;
+}
+
+
+
+body {
+  padding-top: 60px;
+}
+
+.section.sidebar {
+  top: 51px;
+  background-color: rgba(39, 128, 227, 0.1);
+}
+
+.value-box {
+  color: #f9f9f9;
+}
+
+.bg-primary {
+  background-color: rgba(39, 128, 227, 0.7);
+}
+
+.storyboard-nav .sbframelist ul li.active {
+  background-color: rgba(39, 128, 227, 0.7);
+}
+
+.nav-tabs-custom > .nav-tabs > li.active {
+  border-top-color: rgba(39, 128, 227, 0.7);
+}
+
+.bg-info {
+  background-color: rgba(153, 84, 187, 0.7);
+}
+
+.bg-warning {
+  background-color: rgba(255, 117, 24, 0.7);
+}
+
+.bg-danger {
+  background-color: rgba(255, 0, 57, 0.7);
+}
+
+.bg-success {
+  background-color: rgba(63, 182, 24, 0.7);
+}
+
+.chart-title {
+  font-weight: 500;
+}
+
+.nav-tabs-custom > .nav-tabs > li > a,
+.nav-tabs-custom > .nav-tabs > li > a:active {
+  font-weight: 500;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="container-fluid">
+<div class="navbar-header">
+
+<button id="navbar-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+
+<span class="navbar-logo pull-left">
+  
+</span>
+<span class="navbar-brand">
+  Vector control studies - Evidence from systematic literature review
+  <span class="navbar-author">
+        </span>
+</span>
+
+</div>
+<div id="navbar" class="navbar-collapse collapse">
+<ul class="nav navbar-nav navbar-left">
+</ul>
+<ul class="nav navbar-nav navbar-right">
+</ul>
+</div><!--/.nav-collapse-->
+</div><!--/.container-->
+</div><!--/.navbar-->
+
+<script type="text/javascript">
+
+
+var FlexDashboard = (function () {
+
+  // initialize options
+  var _options = {};
+
+  var FlexDashboard = function() {
+
+    // default options
+    _options = $.extend(_options, {
+      theme: "cosmo",
+      fillPage: false,
+      orientation: 'columns',
+      storyboard: false,
+      defaultFigWidth: 576,
+      defaultFigHeight: 461,
+      defaultFigWidthMobile: 360,
+      defaultFigHeightMobile: 461,
+      isMobile: false,
+      isPortrait: false,
+      resize_reload: true
+    });
+  };
+
+  function init(options) {
+
+    // extend default options
+    $.extend(true, _options, options);
+
+    // add ids to sections that don't have them (pandoc won't assign ids
+    // to e.g. sections with titles consisting of only chinese characters)
+    var nextId = 1;
+    $('.level1:not([id]),.level2:not([id]),.level3:not([id])').each(function() {
+      $(this).attr('id', 'dashboard-' + nextId++);
+    });
+
+    // find navbar items
+    var navbarItems = $('#flexdashboard-navbar');
+    if (navbarItems.length)
+      navbarItems = JSON.parse(navbarItems.html());
+    addNavbarItems(navbarItems);
+
+    // find the main dashboard container
+    var dashboardContainer = $('#dashboard-container');
+
+    // resolve mobile classes
+    resolveMobileClasses(dashboardContainer);
+
+    // one time global initialization for components
+    componentsInit(dashboardContainer);
+
+    // look for a global sidebar
+    var globalSidebar = dashboardContainer.find(".section.level1.sidebar");
+    if (globalSidebar.length > 0) {
+
+      // global layout for fullscreen displays
+      if (!isMobilePhone()) {
+
+         // hoist it up to the top level
+         globalSidebar.insertBefore(dashboardContainer);
+
+         // lay it out (set width/positions)
+         layoutSidebar(globalSidebar, dashboardContainer);
+
+      // tuck sidebar into first page for mobile phones
+      } else {
+
+        // convert it into a level3 section
+        globalSidebar.removeClass('sidebar');
+        globalSidebar.removeClass('level1');
+        globalSidebar.addClass('level3');
+        var h1 = globalSidebar.children('h1');
+        var h3 = $('<h3></h3>');
+        h3.append(h1.contents());
+        h3.insertBefore(h1);
+        h1.detach();
+
+        // move it into the first page
+        var page = dashboardContainer.find('.section.level1').first();
+        if (page.length > 0)
+          page.prepend(globalSidebar);
+      }
+    }
+
+    // look for pages to layout
+    var pages = $('div.section.level1');
+    if (pages.length > 0) {
+
+        // find the navbar and collapse on clicked
+        var navbar = $('#navbar');
+        navbar.on("click", "a[data-toggle!=dropdown]", null, function () {
+           navbar.collapse('hide');
+        });
+
+        // envelop the dashboard container in a tab content div
+        dashboardContainer.wrapInner('<div class="tab-content"></div>');
+
+        pages.each(function(index) {
+
+          // lay it out
+          layoutDashboardPage($(this));
+
+          // add it to the navbar
+          addToNavbar($(this), index === 0);
+
+        });
+
+    } else {
+
+      // remove the navbar and navbar button if we don't
+      // have any navbuttons
+      if (navbarItems.length === 0) {
+        $('#navbar').remove();
+        $('#navbar-button').remove();
+      }
+
+      // add the storyboard class if requested
+      if (_options.storyboard)
+        dashboardContainer.addClass('storyboard');
+
+      // layout the entire page
+      layoutDashboardPage(dashboardContainer);
+    }
+
+    // if we are in shiny we need to trigger a window resize event to
+    // force correct layout of shiny-bound-output elements
+    if (isShinyDoc())
+      $(window).trigger('resize');
+
+    // make main components visible
+    $('.section.sidebar').css('visibility', 'visible');
+    dashboardContainer.css('visibility', 'visible');
+
+    // handle location hash
+    handleLocationHash();
+
+    // intialize prism highlighting
+    initPrismHighlighting();
+
+    // record mobile and orientation state then register a handler
+    // to refresh if resize_reload is set to true and it changes
+    _options.isMobile = isMobilePhone();
+    _options.isPortrait = isPortrait();
+    if (_options.resize_reload) {
+      $(window).on('resize', function() {
+        if (_options.isMobile !== isMobilePhone() ||
+            _options.isPortrait !== isPortrait()) {
+          window.location.reload();
+        }
+      });
+    } else {
+      // if in desktop mode and resizing to mobile, make sure the heights are 100%
+      // This enforces what `fillpage.css` does for "wider" pages.
+      // Since we are not reloading once the page becomes small, we need to force the height to 100%
+      // This is a new situation introduced when `_options.resize_reload` is `false`
+      if (! _options.isMobile) {
+        // only add if `fillpage.css` was added in the first place
+        if (_options.fillPage) {
+          // fillpage.css
+          $("html,body,#dashboard").css("height", "100%");
+        }
+      }
+    }
+    // trigger layoutcomplete event
+    dashboardContainer.trigger('flexdashboard:layoutcomplete');
+  }
+
+  function resolveMobileClasses(dashboardContainer) {
+     // add top level layout class
+    dashboardContainer.addClass(isMobilePhone() ? 'mobile-layout' :
+                                                  'desktop-layout');
+
+    // look for .mobile sections and add .no-mobile to their peers
+    var mobileSections = $('.section.mobile');
+    mobileSections.each(function() {
+       var id = $(this).attr('id');
+       var nomobileId = id.replace(/-\d+$/, '');
+       $('#' + nomobileId).addClass('no-mobile');
+    });
+  }
+
+  function addNavbarItems(navbarItems) {
+
+    var navbarLeft = $('ul.navbar-left');
+    var navbarRight = $('ul.navbar-right');
+
+    for (var i = 0; i<navbarItems.length; i++) {
+
+      // get the item
+      var item = navbarItems[i];
+
+      // determine the container
+      var container = null;
+      if (item.align === "left")
+        container = navbarLeft;
+      else
+        container = navbarRight;
+
+      // navbar menu if we have multiple items
+      if (item.items) {
+        var menu = navbarMenu(null, item.icon, item.title, container);
+        for (var j = 0; j<item.items.length; j++) {
+          var subItem = item.items[j];
+          var li = $('<li></li>');
+          li.append(navbarLink(subItem.icon, subItem.title, subItem.href, subItem.target));
+          menu.append(li);
+        }
+      } else {
+        var li = $('<li></li>');
+        li.append(navbarLink(item.icon, item.title, item.href, item.target));
+        container.append(li);
+      }
+    }
+  }
+
+  // create or get a reference to an existing dropdown menu
+  function navbarMenu(id, icon, title, container) {
+    var existingMenu = [];
+    if (id)
+      existingMenu = container.children('#' + id);
+    if (existingMenu.length > 0) {
+      return existingMenu.children('ul');
+    } else {
+      var li = $('<li></li>');
+      if (id)
+        li.attr('id', id);
+      li.addClass('dropdown');
+      // auto add "Share" title on mobile if necessary
+      if (!title && icon && (icon === "fa-share-alt") && isMobilePhone())
+        title = "Share";
+      if (title) {
+        title = title + ' <span class="caret"></span>';
+      }
+      var a = navbarLink(icon, title, "#");
+      a.addClass('dropdown-toggle');
+      a.attr('data-toggle', 'dropdown');
+      a.attr('role', 'button');
+      a.attr('aria-expanded', 'false');
+      li.append(a);
+      var ul = $('<ul class="dropdown-menu"></ul>');
+      ul.attr('role', 'menu');
+      li.append(ul);
+      container.append(li);
+      return ul;
+    }
+  }
+
+  function addToNavbar(page, active) {
+
+    // capture the id and data-icon attribute (if any)
+    var id = page.attr('id');
+    var icon = page.attr('data-icon');
+    var navmenu = page.attr('data-navmenu');
+
+    // get hidden state (transfer this to navbar)
+    var hidden = page.hasClass('hidden');
+    page.removeClass('hidden');
+
+    // sanitize the id for use with bootstrap tabs
+    id = id.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_');
+    page.attr('id', id);
+
+    // get the wrapper
+    var wrapper = page.closest('.dashboard-page-wrapper');
+
+    // move the id to the wrapper
+    page.removeAttr('id');
+    wrapper.attr('id', id);
+
+    // add the tab-pane class to the wrapper
+    wrapper.addClass('tab-pane');
+    if (active)
+      wrapper.addClass('active');
+
+    // get a reference to the h1, discover its inner contens, then detach it
+    var h1 = wrapper.find('h1').first();
+    var title = h1.contents();
+    h1.detach();
+
+    // create a navbar item
+    var li = $('<li></li>');
+    var a = navbarLink(icon, title, '#' + id);
+    a.attr('data-toggle', 'tab');
+    li.append(a);
+
+    // add it to the navbar (or navbar menu if specified)
+    var container = $('ul.navbar-left');
+    if (navmenu) {
+      var menuId = navmenu.replace(/\s+/g, '');
+      var menu = navbarMenu(menuId, null, navmenu, container);
+      menu.append(li);
+    } else {
+      container.append(li);
+    }
+
+    // hide it if requested
+    if (hidden)
+      li.addClass('hidden');
+  }
+
+  function navbarLink(icon, title, href, target) {
+
+    var a = $('<a></a>');
+    if (icon) {
+
+      // get the name of the icon set and icon
+      var dashPos = icon.indexOf("-");
+      var iconSet = null;
+      var iconSplit = icon.split(" ");
+      if (iconSplit.length > 1) {
+        iconSet = iconSplit[0];
+        icon = iconSplit.slice(1).join(" ");
+      } else {
+        iconSet = icon.substring(0, dashPos);
+      }
+      var iconName = icon.substring(dashPos + 1);
+
+      // create the icon
+      var iconElement = $('<span class="' + iconSet + ' ' + icon + '"></span>');
+      if (title)
+        iconElement.css('margin-right', '7px');
+      a.append(iconElement);
+      // if href is null see if we can auto-generate based on icon (e.g. social)
+      if (!href)
+        maybeGenerateLinkFromIcon(iconName, a);
+    }
+    if (title)
+      a.append(title);
+
+    // add the href.
+    if (href) {
+      if (href === "source_embed") {
+        a.attr('href', '#');
+        a.attr('data-featherlight', "#flexdashboard-source-code");
+        a.featherlight({
+            beforeOpen: function(event){
+              $('body').addClass('unselectable');
+            },
+            afterClose: function(event){
+              $('body').removeClass('unselectable');
+            }
+        });
+      } else {
+        a.attr('href', href);
+      }
+    }
+
+    // add the arget
+    if (target)
+      a.attr('target', target);
+
+    return a;
+  }
+
+  // auto generate a link from an icon name (e.g. twitter) when possible
+  function maybeGenerateLinkFromIcon(iconName, a) {
+
+     var serviceLinks = {
+      "twitter": "https://twitter.com/share?text=" + encodeURIComponent(document.title) + "&url="+encodeURIComponent(location.href),
+      "facebook": "https://www.facebook.com/sharer/sharer.php?s=100&p[url]="+encodeURIComponent(location.href),
+      "google-plus": "https://plus.google.com/share?url="+encodeURIComponent(location.href),
+      "linkedin": "https://www.linkedin.com/shareArticle?mini=true&url="+encodeURIComponent(location.href) + "&title=" + encodeURIComponent(document.title),
+      "pinterest": "https://pinterest.com/pin/create/link/?url="+encodeURIComponent(location.href) + "&description=" + encodeURIComponent(document.title)
+    };
+
+    var makeSocialLink = function(a, href) {
+      a.attr('href', '#');
+      a.on('click', function(e) {
+        e.preventDefault();
+        window.open(href);
+      });
+    };
+
+    $.each(serviceLinks, function(key, value) {
+      if (iconName.indexOf(key) !== -1)
+        makeSocialLink(a, value);
+    });
+  }
+
+  // layout a dashboard page
+  function layoutDashboardPage(page) {
+
+    // use a page wrapper so that free form content above the
+    // dashboard appears at the top rather than the side (as it
+    // would without the wrapper in a column orientation)
+    var wrapper = $('<div class="dashboard-page-wrapper"></div>');
+    page.wrap(wrapper);
+
+    // if there are no level2 or level3 headers synthesize a level3
+    // header to contain the (e.g. frame it, scroll container, etc.)
+    var headers = page.find('h2,h3');
+    if (headers.length === 0)
+      page.wrapInner('<div class="section level3"></div>');
+
+    // hoist up any content before level 2 or level 3 headers
+    var children = page.children();
+    children.each(function(index) {
+      if ($(this).hasClass('level2') || $(this).hasClass('level3'))
+        return false;
+      $(this).insertBefore(page);
+    });
+
+    // determine orientation and fillPage behavior for distinct media
+    var orientation, fillPage, storyboard;
+
+    // media: mobile phone
+    if (isMobilePhone()) {
+
+      // if there is a sidebar we need to ensure it's content
+      // is properly framed as an h3
+      var sidebar = page.find('.section.sidebar');
+      sidebar.removeClass('sidebar');
+      sidebar.wrapInner('<div class="section level3"></div>');
+      var h2 = sidebar.find('h2');
+      var h3 = $('<h3></h3>');
+      h3.append(h2.contents());
+      h3.insertBefore(h2);
+      h2.detach();
+
+      // wipeout h2 elements then enclose them in a single h2
+      var level2 = page.find('div.section.level2');
+      level2.each(function() {
+        level2.children('h2').remove();
+        level2.children().unwrap();
+      });
+      page.wrapInner('<div class="section level2"></div>');
+
+      // substitute mobile images
+      if (isPortrait()) {
+        var mobileFigures = $('img.mobile-figure');
+        mobileFigures.each(function() {
+          // get the src (might be base64 encoded)
+          var src = $(this).attr('src');
+
+          // find it's peer
+          var id = $(this).attr('data-mobile-figure-id');
+          var img = $('img[data-figure-id=' + id + "]");
+          img.attr('src', src)
+             .attr('width', _options.defaultFigWidthMobile)
+             .attr('height', _options.defaultFigHeightMobile);
+        });
+      }
+
+      // hoist storyboard commentary into it's own section
+      if (page.hasClass('storyboard')) {
+        var commentaryHR = page.find('div.section.level3 hr');
+        commentaryHR.each(function() {
+          var commentary = $(this).nextAll().detach();
+          var commentarySection = $('<div class="section level3"></div>');
+          commentarySection.append(commentary);
+          commentarySection.insertAfter($(this).closest('div.section.level3'));
+          $(this).remove();
+        });
+      }
+
+      // force a non full screen layout by columns
+      orientation = _options.orientation = 'columns';
+      fillPage = _options.fillPage = false;
+      storyboard = _options.storyboard = false;
+
+    // media: desktop
+    } else {
+
+      // determine orientation
+      orientation = page.attr('data-orientation');
+      if (orientation !== 'rows' && orientation != 'columns')
+        orientation = _options.orientation;
+
+      // determine storyboard mode
+      storyboard = page.hasClass('storyboard');
+
+      // fillPage based on options (force for storyboard)
+      fillPage = _options.fillPage || storyboard;
+
+      // handle sidebar
+      var sidebar = page.find('.section.level2.sidebar');
+      if (sidebar.length > 0)
+        layoutSidebar(sidebar, page);
+    }
+
+    // give it and it's parent divs height: 100% if we are in fillPage mode
+    if (fillPage) {
+      page.addClass('vertical-layout-fill');
+      page.css('height', '100%');
+      page.parents('div').css('height', '100%');
+    } else {
+      page.addClass('vertical-layout-scroll');
+    }
+
+    // perform the layout
+    if (storyboard)
+      layoutPageAsStoryboard(page);
+    else if (orientation === 'rows')
+      layoutPageByRows(page, fillPage);
+    else if (orientation === 'columns')
+      layoutPageByColumns(page, fillPage);
+  }
+
+  function layoutSidebar(sidebar, content) {
+
+    // get it out of the header hierarchy
+    sidebar = sidebar.first();
+    if (sidebar.hasClass('level1')) {
+      sidebar.removeClass('level1');
+      sidebar.children('h1').remove();
+    } else if (sidebar.hasClass('level2')) {
+      sidebar.removeClass('level2');
+      sidebar.children('h2').remove();
+    }
+
+    // determine width
+    var sidebarWidth = isTablet() ? 220 : 250;
+    var dataWidth = parseInt(sidebar.attr('data-width'));
+    if (dataWidth)
+      sidebarWidth = dataWidth;
+
+    // set the width and shift the page right to accomodate the sidebar
+    sidebar.css('width', sidebarWidth + 'px');
+    content.css('padding-left', sidebarWidth + 'px');
+
+    // wrap it's contents in a form
+    sidebar.wrapInner($('<form></form>'));
+  }
+
+  function layoutPageAsStoryboard(page) {
+
+    // create storyboard navigation
+    var nav = $('<div class="storyboard-nav"></div>');
+
+    // add navigation buttons
+    var prev = $('<button class="sbprev"><i class="fa fa-angle-left"></i></button>');
+    nav.append(prev);
+    var next= $('<button class="sbnext"><i class="fa fa-angle-right"></i></button>');
+    nav.append(next);
+
+    // add navigation frame
+    var frameList = $('<div class="sbframelist"></div>');
+    nav.append(frameList);
+    var ul = $('<ul></ul>');
+    frameList.append(ul);
+
+     // find all the level3 sections (those are the storyboard frames)
+    var frames = page.find('div.section.level3');
+    frames.each(function() {
+
+      // mark it
+      $(this).addClass('sbframe');
+
+      // divide it into chart content and (optional) commentary
+      $(this).addClass('dashboard-column-orientation');
+
+      // stuff the chart into it's own div w/ flex
+      $(this).wrapInner('<div class="sbframe-component"></div>');
+      setFlex($(this), 1);
+      var frame = $(this).children('.sbframe-component');
+
+      // extract the title from the h3
+      var li = $('<li></li>');
+      var h3 = frame.children('h3');
+      li.append(h3.contents());
+      h3.detach();
+      ul.append(li);
+
+      // extract commentary
+      var hr = frame.children('hr');
+      if (hr.length) {
+        var commentary = hr.nextAll().detach();
+        hr.remove();
+        var commentaryFrame = $('<div class="sbframe-commentary"></div>');
+        commentaryFrame.addClass('flowing-content-shim');
+        commentaryFrame.addClass('flowing-content-container');
+        commentaryFrame.append(commentary);
+        $(this).append(commentaryFrame);
+
+        // look for a data-commentary-width attribute
+        var commentaryWidth = $(this).attr('data-commentary-width');
+        if (commentaryWidth)
+          commentaryFrame.css('width', commentaryWidth + 'px');
+      }
+
+      // layout the chart (force flex)
+      var result = layoutChart(frame, true);
+
+      // ice the notes if there are none
+      if (!result.notes)
+        frame.find('.chart-notes').remove();
+
+      // set flex on chart
+      setFlex(frame, 1);
+    });
+
+    // create a div to hold all the frames
+    var frameContent = $('<div class="sbframe-content"></div>');
+    frameContent.addClass('dashboard-row-orientation');
+    frameContent.append(frames.detach());
+
+    // row orientation to stack nav and frame content
+    page.addClass('dashboard-row-orientation');
+    page.append(nav);
+    page.append(frameContent);
+    setFlex(frameContent, 1);
+
+    // initialize sly
+    var sly = new Sly(frameList, {
+    		horizontal: true,
+    		itemNav: 'basic',
+    		smart: true,
+    		activateOn: 'click',
+    		startAt: 0,
+    		scrollBy: 1,
+    		activatePageOn: 'click',
+    		speed: 200,
+    		moveBy: 600,
+    		dragHandle: true,
+    		dynamicHandle: true,
+    		clickBar: true,
+    		keyboardNavBy: 'items',
+    		next: next,
+    		prev: prev
+    	}).init();
+
+    // make first frame active
+    frames.removeClass('active');
+    frames.first().addClass('active');
+
+    // subscribe to frame changed events
+    sly.on('active', function (eventName, itemIndex) {
+      frames.removeClass('active');
+      frames.eq(itemIndex).addClass('active')
+                          .trigger('shown');
+    });
+  }
+
+  function layoutPageByRows(page, fillPage) {
+
+    // row orientation
+    page.addClass('dashboard-row-orientation');
+
+    // find all the level2 sections (those are the rows)
+    var rows = page.find('div.section.level2');
+
+    // if there are no level2 sections then treat the
+    // entire page as if it's a level 2 section
+    if (rows.length === 0) {
+      page.wrapInner('<div class="section level2"></div>');
+      rows = page.find('div.section.level2');
+    }
+
+    rows.each(function () {
+
+      // flags
+      var haveNotes = false;
+      var haveFlexHeight = true;
+
+      // remove the h2
+      $(this).children('h2').remove();
+
+      // check for a tabset
+      var isTabset = $(this).hasClass('tabset');
+      if (isTabset)
+        layoutTabset($(this));
+
+      // give it row layout semantics if it's not a tabset
+      if (!isTabset)
+        $(this).addClass('dashboard-row');
+
+      // find all of the level 3 subheads
+      var columns = $(this).find('div.section.level3');
+
+      // determine figureSizes sizes
+      var figureSizes = chartFigureSizes(columns);
+
+      // fixup the columns
+      columns.each(function(index) {
+
+        // layout the chart (force flex if we are in a tabset)
+        var result = layoutChart($(this), isTabset);
+
+        // update flexHeight state
+        if (!result.flex)
+          haveFlexHeight = false;
+
+        // update state
+        if (result.notes)
+          haveNotes = true;
+
+        // set the column flex based on the figure width
+        // (value boxes will just get the default figure width)
+        var chartWidth = figureSizes[index].width;
+        setFlex($(this), chartWidth + ' ' + chartWidth + ' 0px');
+
+      });
+
+      // remove empty chart note divs
+      if (isTabset)
+        $(this).find('.chart-notes').filter(function() {
+            return $(this).html() === "&nbsp;";
+        }).remove();
+      if (!haveNotes)
+        $(this).find('.chart-notes').remove();
+
+       // make it a flexbox row
+      if (haveFlexHeight)
+        $(this).addClass('dashboard-row-flex');
+
+      // now we can set the height on all the wrappers (based on maximum
+      // figure height + room for title and notes, or data-height on the
+      // container if specified). However, don't do this if there is
+      // no flex on any of the constituent columns
+      var flexHeight = null;
+      var dataHeight = parseInt($(this).attr('data-height'));
+      if (dataHeight)
+        flexHeight = adjustedHeight(dataHeight, columns.first());
+      else if (haveFlexHeight)
+        flexHeight = maxChartHeight(figureSizes, columns);
+      if (flexHeight) {
+        if (fillPage)
+          setFlex($(this), flexHeight + ' ' + flexHeight + ' 0px');
+        else {
+          $(this).css('height', flexHeight + 'px');
+          setFlex($(this), '0 0 ' + flexHeight + 'px');
+        }
+      }
+
+    });
+  }
+
+  function layoutPageByColumns(page, fillPage) {
+
+    // column orientation
+    page.addClass('dashboard-column-orientation');
+
+    // find all the level2 sections (those are the columns)
+    var columns = page.find('div.section.level2');
+
+    // if there are no level2 sections then treat the
+    // entire page as if it's a level 2 section
+    if (columns.length === 0) {
+      page.wrapInner('<div class="section level2"></div>');
+      columns = page.find('div.section.level2');
+    }
+
+    // layout each column
+    columns.each(function (index) {
+
+      // remove the h2
+      $(this).children('h2').remove();
+
+      // make it a flexbox column
+      $(this).addClass('dashboard-column');
+
+      // check for a tabset
+      var isTabset = $(this).hasClass('tabset');
+      if (isTabset)
+        layoutTabset($(this));
+
+      // find all the h3 elements
+      var rows = $(this).find('div.section.level3');
+
+      // get the figure sizes for the rows
+      var figureSizes = chartFigureSizes(rows);
+
+      // column flex is the max row width (or data-width if specified)
+      var flexWidth;
+      var dataWidth = parseInt($(this).attr('data-width'));
+      if (dataWidth)
+        flexWidth = dataWidth;
+      else
+        flexWidth = maxChartWidth(figureSizes);
+      setFlex($(this), flexWidth + ' ' + flexWidth + ' 0px');
+
+      // layout each chart
+      rows.each(function(index) {
+
+        // perform the layout
+        var result = layoutChart($(this), false);
+
+        // ice the notes if there are none
+        if (!result.notes)
+          $(this).find('.chart-notes').remove();
+
+        // set flex height based on figHeight, then adjust
+        if (result.flex) {
+          var chartHeight = figureSizes[index].height;
+          chartHeight = adjustedHeight(chartHeight, $(this));
+          if (fillPage)
+            setFlex($(this), chartHeight + ' ' + chartHeight + ' 0px');
+          else {
+            $(this).css('height', chartHeight + 'px');
+            setFlex($(this), chartHeight + ' ' + chartHeight + ' ' + chartHeight + 'px');
+          }
+        }
+      });
+    });
+  }
+
+  function chartFigureSizes(charts) {
+
+    // sizes
+    var figureSizes = new Array(charts.length);
+
+    // check each chart
+    charts.each(function(index) {
+
+      // start with default
+      figureSizes[index] = {
+        width: _options.defaultFigWidth,
+        height: _options.defaultFigHeight
+      };
+
+      // look for data-height or data-width then knit options
+      var dataWidth = parseInt($(this).attr('data-width'));
+      var dataHeight = parseInt($(this).attr('data-height'));
+      var knitrOptions = $(this).find('.knitr-options:first');
+      var knitrWidth, knitrHeight;
+      if (knitrOptions) {
+        knitrWidth = parseInt(knitrOptions.attr('data-fig-width'));
+        knitrHeight =  parseInt(knitrOptions.attr('data-fig-height'));
+      }
+
+      // width
+      if (dataWidth)
+        figureSizes[index].width = dataWidth;
+      else if (knitrWidth)
+        figureSizes[index].width = knitrWidth;
+
+      // height
+      if (dataHeight)
+        figureSizes[index].height = dataHeight;
+      else if (knitrHeight)
+        figureSizes[index].height = knitrHeight;
+    });
+
+    // return sizes
+    return figureSizes;
+  }
+
+  function maxChartHeight(figureSizes, charts) {
+
+    // first compute the maximum height
+    var maxHeight = _options.defaultFigHeight;
+    for (var i = 0; i<figureSizes.length; i++)
+      if (figureSizes[i].height > maxHeight)
+        maxHeight = figureSizes[i].height;
+
+    // now add offests for chart title and chart notes
+    if (charts.length)
+      maxHeight = adjustedHeight(maxHeight, charts.first());
+
+    return maxHeight;
+  }
+
+  function adjustedHeight(height, chart) {
+    if (chart.length > 0) {
+      var chartTitle = chart.find('.chart-title');
+      if (chartTitle.length)
+        height += chartTitle.first().outerHeight();
+      var chartNotes = chart.find('.chart-notes');
+      if (chartNotes.length)
+        height += chartNotes.first().outerHeight();
+    }
+    return height;
+  }
+
+  function maxChartWidth(figureSizes) {
+    var maxWidth = _options.defaultFigWidth;
+    for (var i = 0; i<figureSizes.length; i++)
+      if (figureSizes[i].width > maxWidth)
+        maxWidth = figureSizes[i].width;
+    return maxWidth;
+  }
+
+  // layout a chart
+  function layoutChart(chart, forceFlex) {
+
+    // state to return
+    var result = {
+      notes: false,
+      flex: false
+    };
+
+    // extract the title
+    var title = extractTitle(chart);
+
+    // find components that apply to this container
+    var components = componentsFind(chart);
+
+    // if it's a custom component then call it and return
+    var customComponents = componentsCustom(components);
+    if (customComponents.length) {
+      componentsLayout(customComponents, title, chart);
+      result.notes = false;
+      result.flex = forceFlex || componentsFlex(customComponents);
+      return result;
+    }
+
+    // put all the content in a chart wrapper div
+    chart.addClass('chart-wrapper');
+    chart.wrapInner('<div class="chart-stage"></div>');
+    var chartContent = chart.children('.chart-stage');
+
+    // flex the content if appropriate
+    result.flex = forceFlex || componentsFlex(components);
+    if (result.flex) {
+      // add flex classes
+      chart.addClass('chart-wrapper-flex');
+      chartContent.addClass('chart-stage-flex');
+
+      // additional shim to break out of flexbox sizing
+      chartContent.wrapInner('<div class="chart-shim"></div>');
+      chartContent = chartContent.children('.chart-shim');
+    }
+
+    // set custom data-padding attribute
+    var pad = chart.attr('data-padding');
+    if (pad) {
+      if (pad === "0")
+        chart.addClass('no-padding');
+      else {
+        pad = pad + 'px';
+        chartContent.css('left', pad)
+                    .css('top', pad)
+                    .css('right', pad)
+                    .css('bottom', pad)
+      }
+    }
+
+    // call compoents
+    componentsLayout(components, title, chartContent);
+
+    // also activate components on shiny output
+    findShinyOutput(chartContent).on('shiny:value',
+      function(event) {
+        var element = $(event.target);
+        setTimeout(function() {
+
+          // see if we opted out of flex based on our output (for shiny
+          // we can't tell what type of output we have until after the
+          // value is bound)
+          var components = componentsFind(element);
+          var flex = forceFlex || componentsFlex(components);
+          if (!flex) {
+            chart.css('height', "");
+            setFlex(chart, "");
+            chart.removeClass('chart-wrapper-flex');
+            chartContent.removeClass('chart-stage-flex');
+            chartContent.children().unwrap();
+          }
+
+          // perform layout
+          componentsLayout(components, title, element.parent());
+        }, 10);
+      });
+
+    // add the title
+    var chartTitle = $('<div class="chart-title"></div>');
+    chartTitle.append(title);
+    chart.prepend(chartTitle);
+
+    // add the notes section
+    var chartNotes = $('<div class="chart-notes"></div>');
+    chartNotes.html('&nbsp;');
+    chart.append(chartNotes);
+
+    // attempt to extract notes if we have a component
+    if (components.length)
+      result.notes = extractChartNotes(chartContent, chartNotes);
+
+    // return result
+    return result;
+  }
+
+  // build a tabset from a section div with the .tabset class
+  function layoutTabset(tabset) {
+
+    // check for fade option
+    var fade = tabset.hasClass("tabset-fade");
+    var navClass = "nav-tabs";
+
+    // determine the heading level of the tabset and tabs
+    var match = tabset.attr('class').match(/level(\d) /);
+    if (match === null)
+      return;
+    var tabsetLevel = Number(match[1]);
+    var tabLevel = tabsetLevel + 1;
+
+    // find all subheadings immediately below
+    var tabs = tabset.find("div.section.level" + tabLevel);
+    if (!tabs.length)
+      return;
+
+    // create tablist and tab-content elements
+    var tabList = $('<ul class="nav ' + navClass + '" role="tablist"></ul>');
+    $(tabs[0]).before(tabList);
+    var tabContent = $('<div class="tab-content"></div>');
+    $(tabs[0]).before(tabContent);
+
+    // build the tabset
+    tabs.each(function(i) {
+
+      // get the tab div
+      var tab = $(tabs[i]);
+
+      // get the id then sanitize it for use with bootstrap tabs
+      var id = tab.attr('id');
+
+      // sanitize the id for use with bootstrap tabs
+      id = id.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_');
+      tab.attr('id', id);
+
+      // get the heading element within it and grab it's text
+      var heading = tab.find('h' + tabLevel + ':first');
+      var headingDom = heading.contents();
+
+      // build and append the tab list item
+      var a = $('<a role="tab" data-toggle="tab"></a>');
+      a.append(headingDom);
+      a.attr('href', '#' + id);
+      a.attr('aria-controls', id);
+      var li = $('<li role="presentation"></li>');
+      li.append(a);
+      if (i === 0)
+        li.attr('class', 'active');
+      tabList.append(li);
+
+      // set it's attributes
+      tab.attr('role', 'tabpanel');
+      tab.addClass('tab-pane');
+      tab.addClass('tabbed-pane');
+      tab.addClass('no-title');
+      if (fade)
+        tab.addClass('fade');
+      if (i === 0) {
+        tab.addClass('active');
+        if (fade)
+          tab.addClass('in');
+      }
+
+      // move it into the tab content div
+      tab.detach().appendTo(tabContent);
+    });
+
+    // add nav-tabs-custom
+    tabset.addClass('nav-tabs-custom');
+
+    // internal layout is dashboard-column with tab-content flexing
+    tabset.addClass('dashboard-column');
+    setFlex(tabContent, 1);
+  }
+
+  // one time global initialization for components
+  function componentsInit(dashboardContainer) {
+    for (var i=0; i<window.FlexDashboardComponents.length; i++) {
+      var component = window.FlexDashboardComponents[i];
+      if (component.init)
+        component.init(dashboardContainer);
+    }
+  }
+
+  // find components that apply within a container
+  function componentsFind(container) {
+
+    // look for components
+    var components = [];
+    for (var i=0; i<window.FlexDashboardComponents.length; i++) {
+      var component = window.FlexDashboardComponents[i];
+      if (component.find(container).length)
+        components.push(component);
+    }
+
+    // if there were none then use a special flowing content component
+    // that just adds a scrollbar in fillPage mode
+    if (components.length == 0) {
+      components.push({
+        find: function(container) {
+          return container;
+        },
+
+        flex: function(fillPage) {
+          return fillPage;
+        },
+
+        layout: function(title, container, element, fillPage) {
+          if (fillPage) {
+            container.addClass('flowing-content-shim');
+            container.addClass('flowing-content-container');
+          }
+        }
+      });
+    }
+
+    return components;
+  }
+
+  // if there is a custom component then pick it out
+  function componentsCustom(components) {
+    var customComponent = [];
+    for (var i=0; i<components.length; i++)
+      if (components[i].type === "custom") {
+        customComponent.push(components[i]);
+        break;
+      }
+    return customComponent;
+  }
+
+  // query all components for flex
+  function componentsFlex(components) {
+
+    // no components at all means no flex
+    if (components.length === 0)
+      return false;
+
+    // otherwise query components (assume true unless we see false)
+    var isMobile = isMobilePhone();
+    for (var i=0; i<components.length; i++)
+      if (components[i].flex && !components[i].flex(_options.fillPage))
+        return false;
+    return true;
+  }
+
+  // layout all components
+  function componentsLayout(components, title, container) {
+    var isMobile = isMobilePhone();
+    for (var i=0; i<components.length; i++) {
+      var element = components[i].find(container);
+      if (components[i].layout) {
+        // call layout (don't call other components if it returns false)
+        var result = components[i].layout(title, container, element, _options.fillPage);
+        if (result === false)
+          return;
+      }
+    }
+  }
+
+  // get a reference to the h3, discover it's inner html, and remove it
+  function extractTitle(container) {
+    var h3 = container.children('h3').first();
+    var title = '';
+    if (!container.hasClass('no-title'))
+      title = h3.contents();
+    h3.detach();
+    return title;
+  }
+
+  // extract chart notes
+  function extractChartNotes(chartContent, chartNotes) {
+    // look for a terminating blockquote or image caption
+    var blockquote = chartContent.children('blockquote:last-child');
+    var caption = chartContent.children('div.image-container')
+                              .children('p.caption');
+    if (blockquote.length) {
+      chartNotes.empty().append(blockquote.children('p:first-child').contents());
+      blockquote.remove();
+      return true;
+    } else if (caption.length) {
+      chartNotes.empty().append(caption.contents());
+      caption.remove();
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function findShinyOutput(chartContent) {
+    return chartContent.find('.shiny-text-output, .shiny-html-output');
+  }
+
+  // safely detect rendering on a mobile phone
+  function isMobilePhone() {
+    try
+    {
+      return ! window.matchMedia("only screen and (min-width: 768px)").matches;
+    }
+    catch(e) {
+      return false;
+    }
+  }
+
+  function isFillPage() {
+    return _options.fillPage;
+  }
+
+  // detect portrait mode
+  function isPortrait() {
+    return ($(window).width() < $(window).height());
+  }
+
+  // safely detect rendering on a tablet
+  function isTablet() {
+    try
+    {
+      return window.matchMedia("only screen and (min-width: 769px) and (max-width: 992px)").matches;
+    }
+    catch(e) {
+      return false;
+    }
+  }
+
+  // test whether this is a shiny doc
+  function isShinyDoc() {
+    return (typeof(window.Shiny) !== "undefined" && !!window.Shiny.outputBindings);
+  }
+
+  // set flex using vendor specific prefixes
+  function setFlex(el, flex) {
+    el.css('-webkit-box-flex', flex)
+      .css('-webkit-flex', flex)
+      .css('-ms-flex', flex)
+      .css('flex', flex);
+  }
+
+  // support bookmarking of pages
+  function handleLocationHash() {
+
+    // restore tab/page from bookmark
+    var hash = window.decodeURIComponent(window.location.hash);
+    if (hash.length > 0)
+      $('ul.nav a[href="' + hash + '"]').tab('show');
+    FlexDashboardUtils.manageActiveNavbarMenu();
+
+    // navigate to a tab when the history changes
+    window.addEventListener("popstate", function(e) {
+      var hash = window.decodeURIComponent(window.location.hash);
+      var activeTab = $('ul.nav a[href="' + hash + '"]');
+      if (activeTab.length) {
+        activeTab.tab('show');
+      } else {
+        $('ul.nav a:first').tab('show');
+      }
+      FlexDashboardUtils.manageActiveNavbarMenu();
+    });
+
+    // add a hash to the URL when the user clicks on a tab/page
+    $('.navbar-nav a[data-toggle="tab"]').on('click', function(e) {
+      var baseUrl = FlexDashboardUtils.urlWithoutHash(window.location.href);
+      var hash = FlexDashboardUtils.urlHash($(this).attr('href'));
+      var href = baseUrl + hash;
+      FlexDashboardUtils.setLocation(href);
+    });
+
+    // handle clicks of other links that should activate pages
+    var navPages = $('ul.navbar-nav li a[data-toggle=tab]');
+    navPages.each(function() {
+      var href =  $(this).attr('href');
+      var links = $('a[href="' + href + '"][data-toggle!=tab]');
+      links.each(function() {
+        $(this).on('click', function(e) {
+          window.FlexDashboardUtils.showPage(href);
+        });
+      });
+    });
+  }
+
+  // tweak Prism highlighting
+  function initPrismHighlighting() {
+
+    if (window.Prism) {
+      Prism.languages.insertBefore('r', 'comment', {
+        'heading': [
+          {
+            // title 1
+        	  // =======
+
+        	  // title 2
+        	  // -------
+        	  pattern: /\w+.*(?:\r?\n|\r)(?:====+|----+)/,
+            alias: 'operator'
+          },
+          {
+            // ### title 3
+            pattern: /(^\s*)###[^#].+/m,
+            lookbehind: true,
+            alias: 'operator'
+          }
+        ]
+      });
+
+      // prism highlight
+      Prism.highlightAll();
+    }
+  }
+
+
+  // get theme color
+  var themeColors = {
+    bootstrap: {
+      primary: "rgba(51, 122, 183, 0.4)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    cerulean: {
+      primary: "rgb(47, 164, 231)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    journal: {
+      primary: "rgba(235, 104, 100, 0.70)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    flatly: {
+      primary: "rgba(44, 62, 80, 0.70)",
+      info: "rgba(52, 152, 219, 0.70)",
+      success: "rgba(24, 188, 156, 0.70)",
+      warning: "rgba(243, 156, 18, 0.70)",
+      danger: "rgba(231, 76, 60, 0.70)"
+    },
+    readable: {
+      primary: "rgba(69, 130, 236, 0.4)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    spacelab: {
+      primary: "rgba(68, 110, 155, 0.25)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    united: {
+      primary: "rgba(221, 72, 20, 0.30)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    cosmo: {
+      primary: "rgba(39, 128, 227, 0.7)",
+      info: "rgba(153, 84, 187, 0.7)",
+      success: "rgba(63, 182, 24, 0.7)",
+      warning: "rgba(255, 117, 24, 0.7)",
+      danger: "rgba(255, 0, 57, 0.7)"
+    },
+    lumen: {
+      primary: "rgba(21, 140, 186, 0.70)",
+      info: "rgba(117, 202, 235, 0.90)",
+      success: "rgba(40, 182, 44, 0.70)",
+      warning: "rgba(255, 133, 27, 0.70)",
+      danger: "rgba(255, 65, 54, 0.70)"
+    },
+    paper: {
+      primary: "rgba(33, 150, 243, 0.35)",
+      info: "rgb(225, 190, 231)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(255, 224, 178)",
+      danger: "rgb(249, 189, 187)"
+    },
+    sandstone: {
+      primary: "rgba(50, 93, 136, 0.3)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    simplex: {
+      primary: "rgba(217, 35, 15, 0.25)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    },
+    yeti: {
+      primary: "rgba(0, 140, 186, 0.298039)",
+      info: "rgb(217, 237, 247)",
+      success: "rgb(223, 240, 216)",
+      warning: "rgb(252, 248, 227)",
+      danger: "rgb(242, 222, 222)"
+    }
+  }
+  function themeColor(color) {
+    return themeColors[_options.theme][color];
+  }
+
+  FlexDashboard.prototype = {
+    constructor: FlexDashboard,
+    init: init,
+    isMobilePhone: isMobilePhone,
+    isFillPage: isFillPage,
+    themeColor: themeColor
+  };
+
+  return FlexDashboard;
+
+})();
+
+// utils
+window.FlexDashboardUtils = {
+  resizableImage: function(img) {
+    var src = img.attr('src');
+    var url = 'url("' + src + '")';
+    img.parent().css('background', url)
+                .css('background-size', 'contain')
+                .css('background-repeat', 'no-repeat')
+                .css('background-position', 'center')
+                .addClass('image-container');
+  },
+  setLocation: function(href) {
+    if (history && history.pushState) {
+      history.pushState(null, null, href);
+    } else {
+      window.location.replace(href);
+    }
+    setTimeout(function() {
+        window.scrollTo(0, 0);
+    }, 10);
+    this.manageActiveNavbarMenu();
+  },
+  showPage: function(href) {
+    $('ul.navbar-nav li a[href="' + href + '"]').tab('show');
+    var baseUrl = this.urlWithoutHash(window.location.href);
+    var loc = baseUrl + href;
+    this.setLocation(loc);
+  },
+  showLinkedValue: function(href) {
+    // check for a page link
+    if ($('ul.navbar-nav li a[data-toggle=tab][href="' + href + '"]').length > 0)
+      this.showPage(href);
+    else
+      window.open(href);
+  },
+  urlWithoutHash: function(url) {
+    var hashLoc = url.indexOf('#');
+    if (hashLoc != -1)
+      return url.substring(0, hashLoc);
+    else
+      return url;
+  },
+  urlHash: function(url) {
+    var hashLoc = url.indexOf('#');
+    if (hashLoc != -1)
+      return url.substring(hashLoc);
+    else
+      return "";
+  },
+  manageActiveNavbarMenu: function () {
+    // remove active from anyone currently active
+    $('.navbar ul.nav').find('li').removeClass('active');
+    // find the active tab
+    var activeTab = $('.dashboard-page-wrapper.tab-pane.active');
+    if (activeTab.length > 0) {
+      var tabId = activeTab.attr('id');
+      if (tabId)
+        $(".navbar ul.nav a[href='#" + tabId + "']").parents('li').addClass('active');
+    }
+  }
+};
+
+window.FlexDashboard = new FlexDashboard();
+
+// empty content
+window.FlexDashboardComponents.push({
+  find: function(container) {
+    if (container.find('p').length == 0)
+      return container;
+    else
+      return $();
+  }
+})
+
+// plot image
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.children('p')
+                    .children('img:only-child');
+  },
+
+  layout: function(title, container, element, fillPage) {
+    FlexDashboardUtils.resizableImage(element);
+  }
+});
+
+// plot image (figure style)
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.children('div.figure').children('img');
+  },
+
+  layout: function(title, container, element, fillPage) {
+    FlexDashboardUtils.resizableImage(element);
+  }
+});
+
+// htmlwidget
+window.FlexDashboardComponents.push({
+
+  init: function(dashboardContainer) {
+    // trigger "shown" after initial layout to force static htmlwidgets
+    // in runtime: shiny to be resized after the dom has been transformed
+    dashboardContainer.on('flexdashboard:layoutcomplete', function(event) {
+      setTimeout(function() {
+        dashboardContainer.trigger('shown');
+      }, 200);
+    });
+  },
+
+  find: function(container) {
+    return container.children('div[id^="htmlwidget-"],div.html-widget');
+  }
+});
+
+// gauge
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.children('div.html-widget.gauge');
+  },
+
+  flex: function(fillPage) {
+    return false;
+  },
+
+  layout: function(title, container, element, fillPage) {
+
+
+  }
+
+});
+
+// shiny output
+window.FlexDashboardComponents.push({
+  find: function(container) {
+    return container.children('div[class^="shiny-"]');
+  }
+});
+
+// datatables
+window.FlexDashboardComponents.push({
+  find: function(container) {
+    return container.find('.datatables');
+  },
+  flex: function(fillPage) {
+    return fillPage;
+  }
+});
+
+// bootstrap table
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    var bsTable = container.find('table.table');
+    if (bsTable.length !== 0)
+      return bsTable;
+    else
+      return container.find('tr.header').parent('thead').parent('table');
+  },
+
+  flex: function(fillPage) {
+    return fillPage;
+  },
+
+  layout: function(title, container, element, fillPage) {
+
+    // alias variables
+    var bsTable = element;
+
+    // fixup xtable generated tables with a proper thead
+    var headerRow = bsTable.find('tbody > tr:first-child > th').parent();
+    if (headerRow.length > 0) {
+      var thead = $('<thead></thead>');
+      bsTable.prepend(thead);
+      headerRow.detach().appendTo(thead);
+    }
+
+    // improve appearance
+    container.addClass('bootstrap-table');
+
+    // for fill page provide scrolling w/ sticky headers
+    if (fillPage) {
+      // force scrollbar on overflow
+      container.addClass('flowing-content-shim');
+
+      // stable table headers when scrolling
+      bsTable.stickyTableHeaders({
+        scrollableArea: container
+      });
+    }
+  }
+});
+
+// embedded shiny app
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.find('iframe.shiny-frame');
+  },
+
+  flex: function(fillPage) {
+    return fillPage;
+  },
+
+  layout: function(title, container, element, fillPage) {
+    if (fillPage) {
+      element.attr('height', '100%');
+    } else {
+      // provide default height if necessary
+      var height = element.get(0).style.height;
+      if (!height)
+        height = element.attr('height');
+      if (!height)
+        element.attr('height', 500);
+    }
+  }
+});
+
+// shiny fillRow or fillCol
+window.FlexDashboardComponents.push({
+
+  find: function(container) {
+    return container.find('.flexfill-container');
+  },
+
+  flex: function(fillPage) {
+    return fillPage;
+  },
+
+  layout: function(title, container, element, fillPage) {
+    if (fillPage)
+      element.css('height', '100%');
+    else {
+      // provide default height if necessary
+      var height = element.get(0).style.height;
+      if (height === "100%" || height === "auto" || height === "initial" ||
+          height === "inherit" || !height) {
+        element.css('height', 500);
+      }
+    }
+  }
+});
+
+// valueBox
+window.FlexDashboardComponents.push({
+
+  type: "custom",
+
+  find: function(container) {
+    if (container.find('span.value-output, .shiny-valuebox-output').length)
+      return container;
+    else
+      return $();
+  },
+
+  flex: function(fillPage) {
+    return false;
+  },
+
+  layout: function(title, container, element, fillPage) {
+
+    // alias variables
+    var chartTitle = title;
+    var valueBox = element;
+
+    // add value-box class to container
+    container.addClass('value-box');
+
+    // value paragraph
+    var value = $('<p class="value"></p>');
+
+    // if we have shiny-text-output then just move it in
+    var valueOutputSpan = [];
+    var shinyOutput = valueBox.find('.shiny-valuebox-output').detach();
+    if (shinyOutput.length) {
+      valueBox.children().remove();
+      shinyOutput.html("&mdash;");
+      value.append(shinyOutput);
+    } else {
+      // extract the value (remove leading vector index)
+      var chartValue = valueBox.text().trim();
+      chartValue = chartValue.replace("[1] ", "");
+      valueOutputSpan = valueBox.find('span.value-output').detach();
+      valueBox.children().remove();
+      value.text(chartValue);
+    }
+
+    // caption
+    var caption = $('<p class="caption"></p>');
+    caption.append(chartTitle);
+
+    // build inner div for value box and add it
+    var inner = $('<div class="inner"></div>');
+    inner.append(value);
+    inner.append(caption);
+    valueBox.append(inner);
+
+    // add icon if specified
+    var icon = $('<div class="icon"><i></i></div>');
+    valueBox.append(icon);
+    function setIcon(chartIcon) {
+      var iconLib = "";
+      var iconSplit = chartIcon.split(" ");
+      if (iconSplit.length > 1) {
+        iconLib = iconSplit[0];
+        chartIcon = iconSplit.slice(1).join(" ");
+      } else {
+        var components = chartIcon.split("-");
+        if (components.length > 1)
+          iconLib = components[0];
+      }
+      icon.children('i').attr('class', iconLib + ' ' + chartIcon);
+    }
+    var chartIcon = valueBox.attr('data-icon');
+    if (chartIcon)
+      setIcon(chartIcon);
+
+    // set color based on data-background if necessary
+    var dataBackground = valueBox.attr('data-background');
+    if (dataBackground)
+      valueBox.css('background-color', bgColor);
+    else {
+      // default to bg-primary if no other background is specified
+      if (!valueBox.hasClass('bg-primary') &&
+          !valueBox.hasClass('bg-info') &&
+          !valueBox.hasClass('bg-warning') &&
+          !valueBox.hasClass('bg-success') &&
+          !valueBox.hasClass('bg-danger')) {
+        valueBox.addClass('bg-primary');
+      }
+    }
+
+    // handle data attributes in valueOutputSpan
+    function handleValueOutput(valueOutput) {
+
+      // caption
+      var dataCaption = valueOutput.attr('data-caption');
+      if (dataCaption)
+        caption.html(dataCaption);
+
+      // icon
+      var dataIcon = valueOutput.attr('data-icon');
+      if (dataIcon)
+        setIcon(dataIcon);
+
+      // color
+      var dataColor = valueOutput.attr('data-color');
+      if (dataColor) {
+        if (dataColor.indexOf('bg-') === 0) {
+          valueBox.css('background-color', '');
+          if (!valueBox.hasClass(dataColor)) {
+             valueBox.removeClass('bg-primary bg-info bg-warning bg-danger bg-success');
+             valueBox.addClass(dataColor);
+          }
+        } else {
+          valueBox.removeClass('bg-primary bg-info bg-warning bg-danger bg-success');
+          valueBox.css('background-color', dataColor);
+        }
+      }
+
+      // url
+      var dataHref = valueOutput.attr('data-href');
+      if (dataHref) {
+        valueBox.addClass('linked-value');
+        valueBox.off('click.value-box');
+        valueBox.on('click.value-box', function(e) {
+          window.FlexDashboardUtils.showLinkedValue(dataHref);
+        });
+      }
+    }
+
+    // check for a valueOutputSpan
+    if (valueOutputSpan.length > 0) {
+      handleValueOutput(valueOutputSpan);
+    }
+
+    // if we have a shinyOutput then bind a listener to handle
+    // new valueOutputSpan values
+    shinyOutput.on('shiny:value',
+      function(event) {
+        var element = $(event.target);
+        setTimeout(function() {
+          var valueOutputSpan = element.find('span.value-output');
+          if (valueOutputSpan.length > 0)
+            handleValueOutput(valueOutputSpan);
+        }, 10);
+      }
+    );
+  }
+});
+</script>
+
+<div id="dashboard-container">
+
+<style type="text/css">
+
+body{
+  font-family: Verdana;
+  font-size: 12pt;
+}
+
+.navbar {
+  background-color:#00A590;
+}
+
+.bggreen {
+  background-color: #00A590;
+}
+
+/* Headers */
+h1{
+  font-family: Verdana;
+  font-size: 16pt;
+  font-weight: bold; 
+  color: white;
+}
+
+.chart-title {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li.active a {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li:not(.active) a {
+    font-size: 16pt;
+}
+
+
+</style>
+<div id="row" class="section level2 bggreen" data-height="60">
+<h2 class="bggreen" data-height="60">Row</h2>
+<h1>
+     Studies where insectides/repellents were applied to hosts
+</h1>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#main">
+<img src=../../assets/css/images/info.png>
+</button>
+<!-- Modal -->
+<div id="main" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<p>The plots below give an overview of substances for which experimental assessments of efficacy against ticks are available. Please note that experimental protocols differed greatly: studies could have many different substance application methods, from different doses and frequencies, to different time of exposure. The box-plots give an overview of the range of efficacy reported, but direct comparisons can only be drawn by looking at the full details available on the data for each experiment (the full datasets are available, see left panel).</p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">
+Close
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="row-1" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section" class="section level3 bggreen" data-width="200">
+<h3 class="bggreen" data-width="200"></h3>
+<h1>
+External use - collar/ear tag
+</h1>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#collar">
+<img src=../../assets/css/images/info.png>
+</button>
+<!-- Modal -->
+<div id="collar" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<p>You can click on the species names on the legend to the right to choose which species to hide/show. <br><br> Plots are interactive, drag the mouse to zoom.</p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">
+Close
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="section-1" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-74390594cccdf84d00dd" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-74390594cccdf84d00dd">{"x":{"visdat":{"47841d03d89":["function () ","plotlyVisDat"]},"cur_data":"47841d03d89","attrs":{"47841d03d89":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["deltamethrin","fipronil","imidacloprid+OTHERS","OTHERS","OTHERS+Piperonyl butoxide (PBO)"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Efficacy %"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(102,194,165,0.5)","x":["imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS"],"y":[70.8,93.3,88.2,94.8,100,100,100,100,100,100,99.5,100,100,100,100,94,94,99.3,97.9,100,99.4,99.6,100,100,100,99.6,96.3,90.7,90,90,96.6,100,96.3,100,100],"type":"box","name":"Cat","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(252,141,98,0.5)","x":["fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","OTHERS+Piperonyl butoxide (PBO)","OTHERS+Piperonyl butoxide (PBO)","OTHERS+Piperonyl butoxide (PBO)","OTHERS+Piperonyl butoxide (PBO)","OTHERS+Piperonyl butoxide (PBO)","OTHERS+Piperonyl butoxide (PBO)","OTHERS+Piperonyl butoxide (PBO)","OTHERS+Piperonyl butoxide (PBO)","OTHERS+Piperonyl butoxide (PBO)","OTHERS+Piperonyl butoxide (PBO)","OTHERS+Piperonyl butoxide (PBO)","OTHERS+Piperonyl butoxide (PBO)"],"y":[97,99,97,100,99,92,79,0,0,92.1,0,34.9,86.6,13,22.8,87.1,44.8,53.7,100],"type":"box","name":"Cattle","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(141,160,203,0.5)","x":["deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","imidacloprid+OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS"],"y":[29,46,78,78,52,99,100,90,94,96,84,92,100,100,94,96,97,99.4,90,97,100,100,99.4,98,98,98,93,93,100,100,94,97,99,99.5,79,82,100,100,90,90,86,91,91,88,82,100,100,95,85,68,58,79.9,70.2,96.4,99.3,93.4,100,100,100,91.6,89.4,94,72.7,96.8,99.7,99.7,97.8,88.9,91.6,96.6,90.9,95.2,100,98.8,81.6,89.6,96.4,71.9,93.5,99.1,98.2,64.3,73.2,77.8,98.8,81.6,89.7,95.8,98.5,46.1,48,79.9,97.9,32.2,37.5,65.5,91.2,99.8,86.6,85.2,81.4,81.1,86.9,83.4,88,88,79.9],"type":"box","name":"Dog","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-2" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section-2" class="section level3 bggreen" data-width="200">
+<h3 class="bggreen" data-width="200"></h3>
+<h1>
+External use - topic/spray
+</h1>
+</div>
+<div id="section-3" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-ff5e33dc955055060101" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ff5e33dc955055060101">{"x":{"visdat":{"478457a79bc":["function () ","plotlyVisDat"]},"cur_data":"478457a79bc","attrs":{"478457a79bc":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["deltamethrin","fipronil","fipronil+fluazuron","fipronil+Methoprene","fipronil+permethrin","fluazuron","imidacloprid+imidacloprid","imidacloprid+permethrin","Ivermectin","OTHER - oil combinations","OTHERS","OTHERS+OTHERS","permethrin","permethrin+fipronil","permethrin+pyriproxyfen","pyrethroid+pyriproxyfen"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Efficacy %"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(102,194,165,0.5)","x":["fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene"],"y":[97.2,99.4,100,73.8,99.7,0,95,100,100,99.8,100,100,16.7,100,14.5,96.7,98.8,98.8,98.5,98.5,99.3,11.5,83.2,98.8,98.3,88.7,94.61,100],"type":"box","name":"Cat","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(252,141,98,0.5)","x":["fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil+fluazuron","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","fluazuron","Ivermectin","OTHERS","permethrin","permethrin","permethrin","permethrin"],"y":[96.3,86.7,0,95.5,100,99.3,77.2,95.5,98.2,99.9,90.8,97,100,99.8,99.5,96.8,99.6,97.2,100,95.2,97.8,92.7,100,91.4,88.8,88,100,73.6,36.9,82.1,99.7,58.5,46.3,78.2,97.8,97.7,97,94.6,88.3,47.4,78,95,66.8,96,97,89.7,0,96,98,99.6,60.2,97,99,99.3,56.6,86.2,94.3,99.7,98,99,99.5,66.3,94,94,96.8,62,58,78,90.3,55,47,61,71,67.5,57.8,42.9,52.4,33.9,69.6,0,97.1,14.8,99.4,88.3,99.2,99.3,97.7,100,90,100,81.6,100,64.7,98.8,54.9,92.3,88,89.5,89.4,88.4,81.5,12,21.22,13.99,85,96.2,98.2,99.3],"type":"box","name":"Cattle","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(141,160,203,0.5)","x":["fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil+Methoprene","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","fipronil+permethrin","imidacloprid+imidacloprid","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","imidacloprid+permethrin","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","OTHERS+OTHERS","permethrin+fipronil","permethrin+fipronil","permethrin+fipronil","permethrin+fipronil","permethrin+fipronil","permethrin+fipronil","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin+pyriproxyfen","permethrin+pyriproxyfen","permethrin+pyriproxyfen","permethrin+pyriproxyfen","permethrin+pyriproxyfen","pyrethroid+pyriproxyfen","pyrethroid+pyriproxyfen","pyrethroid+pyriproxyfen","pyrethroid+pyriproxyfen","pyrethroid+pyriproxyfen","pyrethroid+pyriproxyfen","pyrethroid+pyriproxyfen"],"y":[48.9,72,85.4,0,0,100,15,93.2,98.6,100,82.4,86,98.7,99.1,100,92.4,100,92,98.9,100,100,98.7,99.7,100,99.3,100,100,96.1,86,99.1,100,100,99.7,100,98.2,100,99.7,90.2,100,100,97.1,100,100,96.6,86,99.6,100,85.8,99.6,100,100,96.6,77.5,99.8,99.4,99.4,95.6,96.5,99.7,90,98.6,100,99.7,99.5,98.2,98,98.9,99.4,86.6,96.2,100,63.9,70.1,89,93.1,77,99.5,96.5,97,93.4,47.7,38,100,97.2,90.1,96.4,98.3,62.3,83.9,90,78.6,93.1,99,91.6,97,92.8,89.4,57.2,97,98,90.9,83,100,65,79,94,94,91.9,94.7,96.2,98.7,96.7,61.38,100,96.03,100,51.58,100,100,100,100,97.6,100,100,76.9,84.4,36.99,94.1,100,100,100,100,91.84,100,33.65,100,98.5,95.1,100,93.8,90.21,100,77.8,77.6,11,97.7,92.5,95,99.7,86.3,97.9,88.5,99.5,18.41,15.82,89.2,83.5,100,89.2,81.5,89.9,100,98.1,100,100,100,100,100,100,95.1,97.7,99.6,95.1,99.5,97.7,96.7,99.2,97.4,0,5,25,31,50,44.6,75,75.4,67,74,85,91,93,99,85,91,95,98.2,93,100,94,95,94,98,94.8,97,100,97.6,94,67.8,27.3,97,97,89.1,87,99.5,92,97,98,96,79.8,98.6,81.4,76,98.7,95.9,83.9,90.1,96,90.4,97.2,62.5,29.3,78,91.6,91.5,98,92.9,93.7,58.8,52,98.9,99,96.8,95.7,99,92.1,94.4,80.5,79.8,97.7,99.1,89.7,84.3,94.6,99.2,93.5,96.5,100,99,100,100,100,100,100,100,100,96.5,99,93.8,100,100,79,89,100,100,82,75.6,86.5,89.8,89.7,98.5,70,62.1,96.7,93.9,36,52.1,87.9,68.2,83.7,97.3,7,88.4,99.7,98,100,100,100,93,95,99.13,99.05,95.91,88.47,87.08,74.14,48,98.4,98.4,92.6,95.3,93.2,83.1,99.2,100,96.5,97.5,96.7,86.3],"type":"box","name":"Dog","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(231,138,195,0.5)","x":["permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","permethrin"],"y":[0,17.6,70.8,79.5,86.4,86.3,88.7,87.1],"type":"box","name":"Goat","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"line":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(166,216,84,0.5)","x":["OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","permethrin"],"y":[95,81,82,82,75,83,75,68,65,63,76],"type":"box","name":"Humans","marker":{"color":"rgba(166,216,84,1)","line":{"color":"rgba(166,216,84,1)"}},"line":{"color":"rgba(166,216,84,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(255,217,47,0.5)","x":["deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS"],"y":[79.5,100,100,100,100,87.2,90.4,98,96.4,100,100,98,100,93.7,100],"type":"box","name":"Sheep","marker":{"color":"rgba(255,217,47,1)","line":{"color":"rgba(255,217,47,1)"}},"line":{"color":"rgba(255,217,47,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(229,196,148,0.5)","x":["deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin"],"y":[97.3,96.5,100,100,100,100,100,100,100,100,100,97.6,100,91.6,86.3,77.4,50.7,52.1],"type":"box","name":"Zebu","marker":{"color":"rgba(229,196,148,1)","line":{"color":"rgba(229,196,148,1)"}},"line":{"color":"rgba(229,196,148,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-3" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section-4" class="section level3 bggreen" data-width="200">
+<h3 class="bggreen" data-width="200"></h3>
+<h1>
+Subcutaneous application
+</h1>
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#cs">
+<img src=../../assets/css/images/info.png>
+</button>
+<!-- Modal -->
+<div id="cs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+<p>Boxes with a dark blue contour refer to studies reporting vector MORTALITY, rather than substance efficacy (which is calculated as the mortality in the experimental group in comparison to a control group). <br><br> Efficacy = 1 - (mortality in the control group / mortality in the experimental group))</p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">
+Close
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="section-5" class="section level3">
+<h3></h3>
+<p>blue colored box = mortality, not efficacy</p>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-d1f6d48d618cfa0c89d6" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d1f6d48d618cfa0c89d6">{"x":{"visdat":{"47845b041d9e":["function () ","plotlyVisDat"]},"cur_data":"47845b041d9e","attrs":{"47845b041d9e":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"},"47845b041d9e.1":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box","line":{"color":"rgb(7,40,89)"},"inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["fipronil","Ivermectin","OTHERS"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Efficacy %"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(102,194,165,0.5)","x":["fipronil","fipronil","fipronil","fipronil","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS"],"y":[1.63,94.67,99.38,73.83,13,63,32,62.91,44,64,37,92.71,55,62,26,99,90.76,83.21,28,34,33,85.96,33,33,33,70.4,79.72,34,2,17,84.17,46.5,75.53,3,2,28,54.6,44.1,23.55,2,6,10,53.6,32,30.6,7.4,46.16,68.82,94.38,94.78,95.55,95.78,93.33,91.35,92.39,91.86,95.47,97.33,97.27,96.13,89.24,74.98,60.51,36.03,66.21,35.43,51.21],"type":"box","name":"Cattle","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(252,141,98,0.5)","x":["OTHERS"],"y":[96.63],"type":"box","name":"Chickens","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(231,138,195,0.5)","x":["Ivermectin","Ivermectin","Ivermectin","Ivermectin","Ivermectin"],"y":[72.7,91,92,91.8,79.8],"type":"box","name":"Sheep","marker":{"color":"rgba(231,138,195,1)","line":{"color":"rgba(231,138,195,1)"}},"line":{"color":"rgba(231,138,195,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(141,160,203,0.5)","x":["Ivermectin","OTHERS","OTHERS"],"y":[55,10,35.7],"type":"box","line":{"color":"rgb(7,40,89)"},"name":"Rabbit","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-4" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section-6" class="section level3 bggreen" data-width="200">
+<h3 class="bggreen" data-width="200"></h3>
+<h1>
+Oral administration
+</h1>
+</div>
+<div id="section-7" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-68288353349e862990a9" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-68288353349e862990a9">{"x":{"visdat":{"478455ac4a5d":["function () ","plotlyVisDat"]},"cur_data":"478455ac4a5d","attrs":{"478455ac4a5d":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["afoxolaner","fluralaner","Ivermectin","OTHERS","sarolaner"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Efficacy %"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(102,194,165,0.5)","x":["Ivermectin","Ivermectin","Ivermectin"],"y":[96,99,99],"type":"box","name":"Cattle","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(141,160,203,0.5)","x":["afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","afoxolaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","fluralaner","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","sarolaner","sarolaner","sarolaner","sarolaner","sarolaner"],"y":[23,31.9,23.3,22.1,19.3,22.5,15.1,2.1,4,12.4,0,19.5,39.5,10.9,24.4,8.3,2.5,0,0,99,99,0,36.2,23.2,48.8,97.2,49.8,15.8,56.3,12,29.7,99.7,21.7,34.6,15.2,31.6,15.4,5.6,28.9,22.8,100,3.9,0,94.8,97.2,67.8,88.6,49.1,70.6,52.1,61.9,5,71.3,97.4,97.6,53.3,99.8,100],"type":"box","name":"Dog","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-5" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section-8" class="section level3 bggreen" data-width="200">
+<h3 class="bggreen" data-width="200"></h3>
+<h1>
+Impregnated clothing
+</h1>
+</div>
+<div id="section-9" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-123c8101000bbcf79bd9" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-123c8101000bbcf79bd9">{"x":{"visdat":{"4784377d621e":["function () ","plotlyVisDat"]},"cur_data":"4784377d621e","attrs":{"4784377d621e":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["OTHER - oil combinations","OTHERS","permethrin"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Efficacy %"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(252,141,98,0.5)","x":["OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS","permethrin"],"y":[94.5,100,96.4,90,91,86.3,68.4,65.2,100,100,100,53.8,97.8,84.6,97.8,97.5,100,91.6,67.5,97.6,87.5,100,96,64.1,68.6,69.2,92.2,75.8,89.1,35.8,36.9,72.6,84.7,93],"type":"box","name":"Humans","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-6" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section-10" class="section level3 bggreen" data-width="200">
+<h3 class="bggreen" data-width="200"></h3>
+<h1>
+Vector exposed to treated nets
+</h1>
+</div>
+<div id="section-11" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-5f4fabc060ae71c5e1fe" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5f4fabc060ae71c5e1fe">{"x":{"visdat":{"4784639a38f1":["function () ","plotlyVisDat"]},"cur_data":"4784639a38f1","attrs":{"4784639a38f1":{"x":{},"y":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["fipronil","OTHERS+OTHERS"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"Efficacy %"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":false},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(252,141,98,0.5)","x":["fipronil","OTHERS+OTHERS"],"y":[82.2,97.3],"type":"box","name":"Dog","marker":{"color":"rgba(252,141,98,1)","line":{"color":"rgba(252,141,98,1)"}},"line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-7" class="section level2 bggreen" data-height="60">
+<h2 class="bggreen" data-height="60">Row</h2>
+<h1>
+     Studies where vectors were targeted directly (not host specific)
+</h1>
+</div>
+<div id="row-8" class="section level2">
+<h2>Row</h2>
+<div id="section-12" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-300829ccf5c49418938b" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-300829ccf5c49418938b">{"x":{"visdat":{"478458c83204":["function () ","plotlyVisDat"]},"cur_data":"478458c83204","attrs":{"478458c83204":{"x":{},"y":{},"name":"efficacy","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"},"478458c83204.1":{"x":{},"y":{},"name":"mortality","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box","inherit":true}},"layout":{"margin":{"b":160,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":"Substance or combination of substances tested","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["alpha-cypermethrin+Piperonyl butoxide (PBO)","Beauveria bassiana","Crescentia cujete+Triton X-100","cypermethrin","DEET","deltamethrin","OTHER - oil combinations","OTHERS","OTHERS - plant (non-oil)","permethrin","permethrin+OTHERS"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"% Mortality or Efficacy"},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"showSendToCloud":false},"data":[{"fillcolor":"rgba(31,119,180,0.5)","x":["DEET"],"y":[100],"name":"efficacy","type":"box","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(255,127,14,0.5)","x":["alpha-cypermethrin+Piperonyl butoxide (PBO)","alpha-cypermethrin+Piperonyl butoxide (PBO)","Beauveria bassiana","Beauveria bassiana","Beauveria bassiana","Beauveria bassiana","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","Crescentia cujete+Triton X-100","cypermethrin","cypermethrin","cypermethrin","cypermethrin","cypermethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","deltamethrin","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHER - oil combinations","OTHERS","OTHERS","OTHERS","OTHERS","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","OTHERS - plant (non-oil)","permethrin","permethrin","permethrin","permethrin","permethrin+OTHERS","permethrin+OTHERS"],"y":[100,86.7,50,50,50,50,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,100,50,95,10,10,10,10,10,1,38.5,1,95,50,65,91.7,70,50,50,95,100,100,100,100,100,100,100,100,51.7,78.3,100,100,4.3,5,5.3,5.7,6.6,98.9,94.1,92.2,93.1,92.5,29.7,25.5,23.3,20.1,18.7,99.4,98.3,97.7,96.9,96.6,100,100,100,100,26.7,40],"name":"mortality","type":"box","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-9" class="section level2 bggreen" data-height="60">
+<h2 class="bggreen" data-height="60">Row</h2>
+<h1>
+     Other types of outcomes
+</h1>
+</div>
+<div id="row-10" class="section level2">
+<h2>Row</h2>
+<div id="section-13" class="section level3">
+<h3></h3>
+<p>Efficacy and mortality were the most common types of outcomes reported, and these studies have been presented above. In the table below, we have listed all studies in which other types of outcomes were reported.</p>
+</div>
+</div>
+<div id="row-11" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div id="section-14" class="section level3">
+<h3></h3>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-420aece2aa605d71eb51" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-420aece2aa605d71eb51">{"x":{"filter":"none","vertical":false,"fillContainer":true,"data":[["355","361","362","363","364","365","366","367","368","369","370","371","372","373","374"],[13973,13973,13973,13973,13973,13973,13973,13973,13973,13973,13973,13973,13973,13973,13973],[4,2,2,2,2,2,2,2,3,3,3,4,4,4,4],["Dog","Dog","Dog","Dog","Dog","Dog","Dog","Dog","Dog","Dog","Dog","Dog","Dog","Dog","Dog"],["External use - topic/spray","External use - topic/spray","External use - topic/spray","External use - topic/spray","External use - topic/spray","External use - topic/spray","External use - topic/spray","External use - topic/spray","External use - topic/spray","External use - topic/spray","External use - topic/spray","External use - topic/spray","External use - topic/spray","External use - topic/spray","External use - topic/spray"],["permethrin","permethrin","permethrin","permethrin","permethrin","permethrin","fipronil","fipronil","fipronil","fipronil","fipronil","permethrin","permethrin","permethrin","permethrin"],["imidacloprid","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","pyriproxyfen","Methoprene","Methoprene","Methoprene","Methoprene","Methoprene","imidacloprid","imidacloprid","imidacloprid","imidacloprid"],["Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence ","Number of sampling units with vectors presence "],[8,8,1,1,3,4,8,3,3,5,5,8,6,5,8],["absolute number","absolute number","absolute number","absolute number","absolute number","absolute number","absolute number","absolute number","absolute number","absolute number","absolute number","absolute number","absolute number","absolute number","absolute number"],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display fill-container\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>refID<\/th>\n      <th>Exp.Group<\/th>\n      <th>Target Host<\/th>\n      <th>roue of vector exposure<\/th>\n      <th>Substance1<\/th>\n      <th>Substance2<\/th>\n      <th>Outcome measured<\/th>\n      <th>Outcome Value<\/th>\n      <th>Outcome Unit<\/th>\n      <th># tested<\/th>\n      <th>#NEG<\/th>\n      <th>#POS<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollY":"100vh","pageLength":5,"columnDefs":[{"className":"dt-right","targets":[1,2,8,10,11,12]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div id="row-12" class="section level2 bggreen" data-height="60">
+<h2 class="bggreen" data-height="60">Row</h2>
+<h1>
+     REFERENCES
+</h1>
+</div>
+<div id="row-13" class="section level2">
+<h2>Row</h2>
+<div id="section-15" class="section level3">
+<h3></h3>
+<p>In the left panel you can find information about the entire systematic literature review. The specific references for this agent, and used in this section of the story map are listed below.</p>
+</div>
+</div>
+<div id="row-14" class="section level2" data-height="600">
+<h2 data-height="600">Row</h2>
+<div class="knitr-options" data-fig-width="960" data-fig-height="576">
+
+</div>
+<div id="htmlwidget-f069a6d903e2e3927c68" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f069a6d903e2e3927c68">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"9690\" data-max=\"70576\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"1987\" data-max=\"2017\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","fillContainer":true,"data":[[9690,13408,13947,13949,13953,13959,13961,13965,13973,13974,13975,13980,13987,13989,14036,14043,14049,14058,14093,14102,14104,14114,14118,14120,14143,14182,14185,14187,14196,14201,14202,14207,14222,14223,14230,14231,14232,14233,14265,14269,14272,14275,14278,14281,14296,14309,14360,14365,14366,14367,14436,14439,14459,14468,14478,14479,14504,14508,14537,14581,14582,14616,70049,70051,70104,70229,70531,70555,70576],[" Filipe Dantas-Torres, et al. 2013."," Soll MD, et al. 1987."," Six RobertH, et al. 2016."," Frederic Beugnet, et al. 2016."," Pascal Dumont, et al. 2015."," Fourie JosephusJ, et al. 2015."," Ohmes CameonM, et al. 2015."," Doug Carithers, et al. 2015."," Marie Varloud, et al. 2015."," Stephane Bonneau, et al. 2015."," Gutierrez L, et al. 2015."," Marie Varloud, et al. 2015."," Pascal Dumont, et al. 2015."," Pascal Dumont, et al. 2015."," Welber Daniel Zanetti Lopes, et al. 2014."," Tielemans E, et al. 2014."," Nadja Rohdich, et al. 2014."," Bernd Rossbach, et al. 2014."," Mekonnen Sileshi. 2014."," Welber Daniel Zanetti Lopes, et al. 2013."," Smith WarwickM, et al. 2013."," Sonthaya Tiawsirisup, et al. 2013."," Davey RonaldB, et al. 2013."," Jernej Kuzner, et al. 2013."," Doan Huong Thi Thanh, et al. 2013."," Dorothee Stanneck, et al. 2012."," Dorothee Stanneck, et al. 2012."," Constantin T, et al. 2012."," Dryden MichaelW, et al. 2012."," Kunkle BN, et al. 2012."," Kunkle BN, et al. 2012."," Jordan RobertA, et al. 2012."," Fourie JJ, et al. 2011."," Webster MC, et al. 2011."," Prullage JosephB, et al. 2011."," Hunter JamesS, et al. 2011."," Baker ChristineF, et al. 2011."," Derek Baggott, et al. 2011."," Vaughn MeaganF, et al. 2011."," Tielemans E, et al. 2010."," Stephane Bonneau, et al. 2010."," Emanuele Brianti, et al. 2010."," Davey RonaldB, et al. 2010."," Fourie JJ, et al. 2010."," Snyder DanielE, et al. 2009."," Huseyin Cetin, et al. 2009."," Schwantes U, et al. 2008."," Rugg D, et al. 2007."," Rugg D, et al. 2007."," Hellmann K, et al. 2007."," Hagimori I, et al. 2005."," Otranto D, et al. 2005."," Bahiense TC, et al. 2004."," McCall JW, et al. 2004."," Epe C, et al. 2003."," Hellmann K, et al. 2003."," Endris RG, et al. 2002."," van den Bos RHC, et al. 2002."," Cruthers L, et al. 2001."," Ahrens EH, et al. 1998."," Davey RB, et al. 1998."," Sonenshine DE, et al. 1996."," Sharma N, et al. 2017."," Machtinger ET, et al. 2017."," Lopes WDZ, et al. 2017."," Pereira SG, et al. 2017."," Jongejan F, et al. 2016."," Becskei C, et al. 2016."," Cid YP, et al. 2016."],[" Filipe Dantas-Torres, Gioia Capelli, Alessio Giannelli, Rafael Antonio Nascimento Ramos, Riccardo Paolo Lia, Cinzia Cantacessi, Donato de Caprariis, Anna Sara De Tommasi, Maria Stefania Latrofa, Vita Lacasella, Viviana Domenica Tarallo, Giancarlo Di Paola, Barbara Qurollo, Edward Breitschwerdt, Dorothee Stanneck, Domenico Otranto (2013).  Efficacy of an imidacloprid/flumethrin collar against fleas, ticks and tick-borne pathogens in dogs Parasites &amp; Vectors, 6(#issue#),  #Pages#"," M. D. Soll, I. H. Carmichael, S. J. Gross (1987).  Control of induced infestations of adult Amblyomma hebraeum with sustained release ivermectin The Onderstepoort journal of veterinary research, 54(#issue#),  17-20"," Robert H. Six, David R. Young, Melanie R. Myers, Sean P. Mahabir (2016).  Comparative speed of kill of sarolaner (Simparica (TM)) and afoxolaner (NexGard (R)) against induced infestations of Ixodes scapularis on dogs Parasites &amp; Vectors, 9(#issue#),  #Pages#"," Frederic Beugnet, Lenaig Halos, Julian Liebenberg, Josephus Fourie (2016).  Assessment of the prophylactic speed of kill of Frontline Tri-Act (R) against ticks (Ixodes ricinus and Rhipicephalus sanguineus) on dogs Parasite, 23(#issue#),  #Pages#"," Pascal Dumont, Julian Liebenberg, Frederic Beugnet, Becky Fankhauser (2015).  Repellency and acaricidal efficacy of a new combination of fipronil and permethrin against Ixodes ricinus and Rhipicephalus sanguineus ticks on dogs Parasites &amp; Vectors, 8(#issue#),  #Pages#"," Josephus J. Fourie, Ivan G. Horak, Christa de Vos, Katrin Deuster, Bettina Schunack (2015).  Comparative Speed of Kill, Repellent (anti-feeding) and Acaricidal Efficacy of an Imidacloprid/Flumethrin Collar (Seresto (R)) and a Fipronil/(S)-Methoprene/Eprinomectin/Praziquantel Spot-on (Broadline (R)) against Ixodes ricinus (Linne, 1758) on Cats Parasitology Research, 114(#issue#),  S109-S116"," Cameon M. Ohmes, Joe Hostetler, Wendell L. Davis, Terry Settje, Amy McMinn, William R. Everett (2015).  Comparative Efficacy of an Imidacloprid/Flumethrin Collar (Seresto (R)) and an Oral Fluralaner Chewable Tablet (Bravecto (R)) against Tick (Dermacentor variabilis and Amblyomma americanum) Infestations on Dogs: a Randomised Controlled Trial Parasitology Research, 114(#issue#),  S95-S108"," Doug Carithers, William Russell Everett, Sheila J. Gross, Ruchika Solanki (2015).  Efficacy of a proprietary formulation of fipronil/(S)-methoprene/cyphenothrin against Ixodes scapularis tick infestations on dogs Parasites &amp; Vectors, 8(#issue#),  #Pages#"," Marie Varloud, Josephus J. Fourie (2015).  One-month comparative efficacy of three topical ectoparasiticides against adult brown dog ticks (Rhipicephalus sanguineus sensu lato) on mixed-bred dogs in controlled environment Parasitology Research, 114(#issue#),  1711-1719"," Stephane Bonneau, Nadege Reymond, Sandeep Gupta, Christelle Navarro (2015).  Efficacy of a fixed combination of permethrin 54.5% and fipronil 6.1% (Effitix (R)) in dogs experimentally infested with Ixodes ricinus Parasites &amp; Vectors, 8(#issue#),  #Pages#"," L. Gutierrez, H. Sumano, F. Rivero, Y. Alcala-Canto (2015).  Ixodicide activity of Eysenhardtia polystachya against Rhipicephalus (Boophilus) microplus Journal of Animal Science, 93(#issue#),  1980-1986"," Marie Varloud, Elizabeth Hodgkins (2015).  Five-month comparative efficacy evaluation of three ectoparasiticides against adult cat fleas (Ctenocephalides felis), flea egg hatch and emergence, and adult brown dog ticks (Rhipicephalus sanguineus sensu lato) on dogs housed outdoors Parasitology Research, 114(#issue#),  965-973"," Pascal Dumont, Josephus J. Fourie, Mark Soll, Frederic Beugnet (2015).  Repellency, prevention of attachment and acaricidal efficacy of a new combination of fipronil and permethrin against the main vector of canine babesiosis in Europe, Dermacentor reticulatus ticks Parasites &amp; Vectors, 8(#issue#),  #Pages#"," Pascal Dumont, Theodore S. Chester, Boyd Gale, Mark Soll, Josephus J. Fourie, Frederic Beugnet (2015).  Acaricidal efficacy of a new combination of fipronil and permethrin against Ixodes ricinus and Rhipicephalus sanguineus ticks Parasites &amp; Vectors, 8(#issue#),  #Pages#"," Welber Daniel Zanetti Lopes, Breno Cayeiro Cruz, Weslen Fabricio Pires Teixeira, Gustavo Felippelli, Willian Giquelin Maciel, Carolina Buzzulini, Lucas V. Costa Gomes, Flavia Favero, Vando Edesio Soares, Murilo A. Bichuette, Gilson Pereira de Oliveira, Alvirnar Jose da Costa (2014).  Efficacy of fipronil (1.0 mg/kg) against Rhipicephalus (Boophilus) microplus strains resistant to ivermectin (0.63 mg/kg) Preventive Veterinary Medicine, 115(#issue#),  88-93"," E. Tielemans, J. Prullage, M. Knaus, M. Visser, C. Manavella, S. T. Chester, David Young, William R. Everett, J. Rosentel (2014).  Efficacy of a novel topical combination of fipronil, (S)-methoprene, eprinomectin, and praziquantel, against the ticks, Ixodes ricinus and Ixodes scapularis, on cats Veterinary Parasitology, 202(#issue#),  59-63"," Nadja Rohdich, Rainer K. A. Roepke, Eva Zschiesche (2014).  A randomized, blinded, controlled and multi-centered field study comparing the efficacy and safety of Bravecto (TM) (fluralaner) against Frontline (TM) (fipronil) in flea-and tick-infested dogs Parasites &amp; Vectors, 7(#issue#),  #Pages#"," Bernd Rossbach, Peter Kegel, Ulrike Zier, Adrian Niemietz, Stephan Letzel (2014).  Protective efficacy of permethrin-treated trousers against tick infestation in forestry workers Annals of Agricultural and Environmental Medicine, 21(#issue#),  712-717"," Mekonnen Sileshi (2014).  Assessment of the efficacy of Deltamethrin 1% pourson (Smash) and Deltamethrin 1% SC (Pali) and comparison of their mode of applications against ticks in Ethiopia Ethiopian Veterinary Journal, 18(#issue#),  17-27"," Welber Daniel Zanetti Lopes, Weslen Fabricio Pires Teixeira, Lucas Vinicius Shigaki de Matos, Gustavo Felippelli, Breno Cayeiro Cruz, Willian Giquelin Maciel, Carolina Buzzulini, Flavia Carolina Favero, Vando Edesio Soares, Gilson Pereira de Oliveira, Alvimar Jose da Costa (2013).  Effects of macrocyclic lactones on the reproductive parameters of engorged Rhipicephalus (Boophilus) microplus females detached from experimentally infested cattle Experimental Parasitology, 135(#issue#),  72-78"," Warwick M. Smith, Liisa A. Ahlstrom, Robert Rees (2013).  Long-Term Efficacy of an Imidacloprid 10%/Flumethrin 4.5% Polymer Matrix Collar (Seresto (R), Bayer) against the Australian Paralysis Tick (Ixodes holocyclus) in Dogs Parasitology Research, 112(#issue#),  1-10"," Sonthaya Tiawsirisup, Kanokwan Thiansirikhun, Kanoksak Thanadumkerng, Nuttika Pastarapatee, Nunaree Trirattananuwong, Wilai Rattanatayarom (2013).  Antiparasitic Efficacy of 10% w/v Fipronil Spot-on (Fiproline Spot-on) against Experimental Tick (Rhipicephalus sanguineus) Infestations on Dogs Thai Journal of Veterinary Medicine, 43(#issue#),  279-284"," Ronald B. Davey, J. Mathews Pound, Kimberly H. Lohmeyer (2013).  Suppression of Rhipicephalus (Boophilus) microplus (Acari: Ixodidae) on Pastured Cattle Using an Abamectin-Impregnated Cattle Ear Tag Journal of Entomological Science, 48(#issue#),  99-113"," Jernej Kuzner, Sandra Turk, Sarah Grace, Jyoti Soni-Gupta, Josephus J. Fourie, Alan A. Marchiondo, Douglas Rugg (2013).  Confirmation of the efficacy of a novel fipronil spot-on for the treatment and control of fleas, ticks and chewing lice on dogs Veterinary Parasitology, 193(#issue#),  245-251"," Doan Huong Thi Thanh, JinHyeong Noh, YoungHa Kim, MiSun Yoo, K. E. Reddy, SukChan Jung, SeungWon Kang (2013).  The efficacy of avermectins (ivermectin, doramectin and abamectin) as treatments for infestation with the tick Haemaphysalis longicornis on rabbits in Korea Veterinary Parasitology, 198(#issue#),  406-409"," Dorothee Stanneck, Eva M. Kruedewagen, Josephus J. Fourie, Ivan G. Horak, Wendell Davis, Klemens J. Krieger (2012).  Efficacy of an imidacloprid/flumethrin collar against fleas and ticks on cats Parasites &amp; Vectors, 5(#issue#),  #Pages#"," Dorothee Stanneck, Julia Rass, Isabel Radeloff, Eva Kruedewagen, Christophe Le Sueur, Klaus Hellmann, Klemens Krieger (2012).  Evaluation of the long-term efficacy and safety of an imidacloprid 10%/flumethrin 4.5% polymer matrix collar (Seresto (R)) in dogs and cats naturally infested with fleas and/or ticks in multicentre clinical field studies in Europe Parasites &amp; Vectors, 5(#issue#),  #Pages#"," T. Constantin, I. Paraschiv, M. Ionita, I. L. Mitrea (2012).  The efficacy of different acaricides against the hard tick Dermacentor marginatus on infested sheep Scientific Works - University of Agronomical Sciences and Veterinary Medicine, Bucharest Series C, Veterinary Medicine, 58(#issue#),  359-366"," Michael W. Dryden, Vicki Smith, Bruce Kunkle, Doug Carithers (2012).  A Study to Evaluate the Acaricidal Efficacy of a Single Topical Treatment with a Topical Combination of Fipronil/Amitraz/(S)-Methoprene Against Dermacentor Variabilis on Dogs International Journal of Applied Research in Veterinary Medicine, 10(#issue#),  125-131"," B. N. Kunkle, W. R. Everett, S. S. Yoon, F. Beugnet, M. Pollmeier (2012).  Comparative Curative Efficacy of Two Spot On Formulations, Fipronil/Amitraz/(S)-Methoprene and Imidacloprid/Permethrin, on Two Tick Species in Dogs International Journal of Applied Research in Veterinary Medicine, 10(#issue#),  8-13"," B. N. Kunkle, W. R. Everett, S. S. Yoon, F. Beugnet, M. Pollmeier (2012).  Study of the Sustained Speed of Kill of the Combination Fipronil/Amitraz/(S)-methoprene and the Combination Imidacloprid/Permethrin Against Newly Acquired Dermacentor variabilis (American Dog rilick) International Journal of Applied Research in Veterinary Medicine, 10(#issue#),  42-47"," Robert A. Jordan, Terry L. Schulze, Marc C. Dolan (2012).  Efficacy of Plant-Derived and Synthetic Compounds on Clothing as Repellents Against Ixodes scapularis and Amblyomma americanum (Acari: Ixodidae) Journal of Medical Entomology, 49(#issue#),  101-106"," J. J. Fourie, F. Beugnet, C. Ollagnier, M. G. Pollmeier (2011).  STUDY OF THE SUSTAINED SPEED OF KILL OF THE COMBINATION OF FIPRONIL/AMITRAZ/(S)-METHOPRENE AND THE COMBINATION OF IMIDACLOPRIID/PERMETHRIN AGAINST DERMACENTOR RETICULATUS, THE EUROPEAN DOG TICK Parasite-Journal De La Societe Francaise De Parasitologie, 18(#issue#),  319-323"," M. C. Webster, P. Fisara, R. M. Sargent (2011).  Long-term efficacy of a deltamethrin-impregnated collar for the control of the Australian paralysis tick, Ixodes holocyclus, on dogs Australian Veterinary Journal, 89(#issue#),  439-443"," Joseph B. Prullage, Jakie A. Hair, William R. Everett, Stephen S. Yoon, Luiz G. Cramer, Shawn Franke, Katie Cornelison, James S. Hunter (2011).  The prevention of attachment and the detachment effects of a novel combination of fipronil, amitraz and (S)-methoprene for Rhipicephalus sanguineus and Dermacentor variabilis on dogs Veterinary Parasitology, 179(#issue#),  311-317"," James S. Hunter, Derek Baggott, William R. Everett, Josephus J. Fourie, Luiz G. Cramer, Stephen S. Yoon, Nadia Collidor, Yasmina Mallouk, Lorne Lee, Jeffrey Blair, Joseph B. Prullage (2011).  Efficacy of a novel topical combination of fipronil, amitraz and (S)-methoprene for treatment and control of induced infestations of brown dog ticks (Rhipicephalus sanguineus) on dogs Veterinary Parasitology, 179(#issue#),  318-323"," Christine F. Baker, James S. Hunter, John W. McCall, David R. Young, Jakie A. Hair, William R. Everett, Stephen S. Yoon, Jennifer P. Irwin, Stephanie L. Young, Luiz G. Cramer, Matthias G. Pollmeier, Joseph B. Prullage (2011).  Efficacy of a novel topical combination of fipronil, amitraz and (S)-methoprene for treatment and control of induced infestations with four North American tick species (Dermacentor variabilis, Ixodes scapularis, Amblyomma americanum and Amblyomma maculatum) on dogs Veterinary Parasitology, 179(#issue#),  324-329"," Derek Baggott, Catherine Ollagnier, Stephen S. Yoon, Nadia Collidor, Yasmina Mallouk, Luiz G. Cramer (2011).  Efficacy of a novel combination of fipronil, amitraz and (S)-methoprene for treatment and control of tick species infesting dogs in Europe Veterinary Parasitology, 179(#issue#),  330-334"," Meagan F. Vaughn, Steven R. Meshnick (2011).  Pilot Study Assessing the Effectiveness of Long-Lasting Permethrin-Impregnated Clothing for the Prevention of Tick Bites Vector-Borne and Zoonotic Diseases, 11(#issue#),  869-875"," E. Tielemans, C. Manavella, M. Pollmeier, T. Chester, M. Murphy, B. Gale (2010).  COMPARATIVE ACARICIDAL EFFICACY OF THE TOPICALLY APPLIED COMBINATIONS FIPRONIL/(S)-METHOPRENE, PERMETHRIN/IMIDACLOPRID AND METAFLUMIZONE/AMITRAZ AGAINST DERMACENTOR RETICULATUS, THE EUROPEAN DOG TICK (ORNATE DOG TICK, FABRICIUS, 1794) IN DOGS Parasite-Journal De La Societe Francaise De Parasitologie, 17(#issue#),  343-348"," Stephane Bonneau, Sandeep Gupta, Marie-Christine Cadiergues (2010).  Comparative efficacy of two fipronil spot-on formulations against experimental tick infestations (Ixodes ricinus) in dogs Parasitology Research, 107(#issue#),  735-739"," Emanuele Brianti, Maria Grazia Pennisi, Giuseppina Brucato, Anna Lia Risitano, Gabriella Gaglio, Gabriella Lombardo, Daniela Malara, Alessandro Fogliazza, Salvatore Giannetto (2010).  Efficacy of the fipronil 10% + (S)-methoprene 9% combination against Rhipicephalus sanguineus in naturally infested dogs: Speed of kill, persistent efficacy on immature and adult stages and effect of water Veterinary Parasitology, 170(#issue#),  96-103"," Ronald B. Davey, J. Mathews Pound, J. Allen Miller, Jerome A. Klavons (2010).  Therapeutic and persistent efficacy of a long-acting (LA) formulation of ivermectin against Rhipicephalus (Boophilus) microplus (Acari: Ixodidae) and sera concentration through time in treated cattle Veterinary Parasitology, 169(#issue#),  149-156"," J. J. Fourie, L. J. Fourie, I. G. Horak, M. G. Snyman (2010).  The efficacy of a topically applied combination of cyphenothrin and pyriproxyfen against the southern African yellow dog tick, Haemaphysalis elliptica, and the cat flea, Ctenocephalides felis, on dogs Journal of the South African Veterinary Association-Tydskrif Van Die Suid-Afrikaanse Veterinere Vereniging, 81(#issue#),  33-36"," Daniel E. Snyder, Larry R. Cruthers, Robyn L. Slone (2009).  Preliminary study on the acaricidal efficacy of spinosad administered orally to dogs infested with the brown dog tick, Rhipicephalus sanguineus (Latreille, 1806) (Acari: Ixodidae) Veterinary Parasitology, 166(#issue#),  131-135"," Huseyin Cetin, James E. Cilek, Emre Oz, Levent Aydin, Onder Deveci, Atila Yanikoglu (2009).  Comparative efficacy of spinosad with conventional acaricides against hard and soft tick populations from Antalya, Turkey Veterinary Parasitology, 163(#issue#),  101-104"," U. Schwantes, H. Dautel, G. Jung (2008).  Prevention of infectious tick-borne diseases in humans: comparative studies of the repellency of different dodecanoic acid-formulations against Ixodes ricinus ticks (Acari: Ixodidae) Parasites and Vectors, 1(#issue#),  (8 April 2008)-(8 April 2008)"," D. Rugg, J. A. Hair (2007).  Dose determination of a novel formulation of metaflumizone plus amitraz for control of cat fleas (Ctenocephalides felis felis) and brown dog ticks (Rhipicephalus sanguineus) on dogs Veterinary Parasitology, 150(#issue#),  203-208"," D. Rugg, J. A. Hair, R. E. Everett, J. R. Cunningham, L. Carter (2007).  Confirmation of the efficacy of a novel formulation of metaflumizone plus amitraz for the treatment and control of fleas and ticks on dogs Veterinary Parasitology, 150(#issue#),  209-218"," K. Hellmann, K. Adler, L. Parker, K. Pfister, R. L. DeLay, D. Rugg (2007).  Evaluation of the efficacy and safety of a novel formulation of metaflumizone plus amitraz in dogs naturally infested with fleas and ticks in Europe Veterinary Parasitology, 150(#issue#),  239-245"," I. Hagimori, H. Machida, R. Goi, N. Mencke (2005).  Efficacy of imidacloprid/permethrin and fipronil/(S)-methoprene combinations against Haemaphysalis longicornis ticks evaluated under in vitro and in vivo conditions Parasitology research, 97 Suppl 1(#issue#),  S120-6"," D. Otranto, R. P. Lia, C. Cantacessi, G. Galli, P. Paradies, E. Mallia, G. Capelli (2005).  Efficacy of a combination of imidacloprid 10%/permethrin 50% versus fipronil 10%/(S)-methoprene 12%, against ticks in naturally infected dogs Veterinary Parasitology, 130(#issue#),  293-304"," T. C. Bahiense, Vrep Bittencourt (2004).  Laboratory evaluation of the compatibility and the synergism between the entomopathogenic fungus Beauveria bassiana and deltamethrin to resistant strains of Boophilus microplus Impact of Ecological Changes on Tropical Animal Health and Disease Control, 1026(#issue#),  319-322"," J. W. McCall, R. Alva, J. P. Irwin, D. Carithers, A. Boeckh (2004).  Comparative efficacy of a combination of fipronil/( S)-methoprene, a combination of imidacloprid/permethrin, and imidacloprid against fleas and ticks when administered topically to dogs International Journal of Applied Research in Veterinary Medicine, 2(#issue#),  74-77"," C. Epe, N. Coati, D. Stanneck (2003).  Efficacy of the compound preparation Imidacloprid 10% (w/v)/Permethnin 50% (w/v) spot-on against ticks (I-ricinus, R-sanguineus) and fleas (C-felis) on dogs Parasitology Research, 90(#issue#),  S122-S124"," K. Hellmann, T. Knoppe, K. Krieger, D. Stanneck (2003).  European multicenter field trial on the efficacy and safety of a topical formulation of Imidacloprid and Permethrin (Advantix (TM)) in dogs naturally infested with ticks and/or fleas Parasitology Research, 90(#issue#),  S125-S126"," R. G. Endris, M. D. Matthewson, D. Cooke, D. Amodie (2002).  Repellency and efficacy of 65% Permethrin and 9,7 % Fipronil against Ixodes ricinus Tierarztliche Umschau, 57(#issue#),  556-+"," R. H. C. van den Bos, R. J. Curtis (2002).  The use of a 4% (w/w) deltamethrin collar (Scalibor ProtectorBand) in the extended control of ticks on dogs Experimental and Applied Acarology, 28(#issue#),  297-303"," L. Cruthers, R. L. Slone, A. J. Guerrero, C. Robertson-Plouch (2001).  Evaluation of the speed of kill of fleas and ticks with Frontline Top Spot in dogs Veterinary therapeutics : research in applied veterinary medicine, 2(#issue#),  170-4"," E. H. Ahrens, R. B. Davey, J. E. George, J. S. Hunter (1998).  Microencapsulated permethrin for controlling Boophilus microplus on cattle in south Texas Southwestern Entomologist, 23(#issue#),  25-30"," R. B. Davey, E. H. Ahrens, J. E. George, J. S. Hunter, P. Jeannin (1998).  Therapeutic and persistent efficacy of fipronil against Boophilus microplus (Acari : Ixodidae) on cattle Veterinary Parasitology, 74(#issue#),  261-276"," D. E. Sonenshine, S. A. Allan, R. A. I. Norval, M. J. Burridge (1996).  A self-medicating applicator for control of ticks on deer Medical and Veterinary Entomology, 10(#issue#),  149-154"," N. Sharma, V. Singh, K.P. Shyma, H.R. Parsani (2017).  Comparative efficacy of commercial preparation of deltamethrin and cypermethrin against Ornithodoros spp. of North Gujarat Journal of Parasitic Diseases, 41(4),  1139"," E.T. Machtinger, A.Y. Li (2017).  Evaluation of four commercial natural products for repellency and toxicity against the lone star tick, Amblyomma americanum (Acari: Ixodidae) Experimental and Applied Acarology, 73(3-4),  451"," W.D.Z. Lopes, R.M. Chiummo, L.F. Vettorato, D. de Castro Rodrigues, R.B. Sonada (2017).  The effectiveness of a fixed-dose combination pour-on formulation of 1.25% fipronil and 2.5% fluazuron against economically important ectoparasites and associated pharmacokinetics in cattle Parasitology International, 66(5),  627"," S.G. Pereira, S.A. de AraÃºjo, G.M.S.P. Guilhon, L.S. Santos, L.M.C. Junior (2017).  In vitro acaricidal activity of Crescentia cujete L. fruit pulp against Rhipicephalus microplus Parasitology Research, 116(5),  1487"," F. Jongejan, D. Crafford, H. Erasmus, J.J. Fourie, B. Schunack (2016).  Comparative efficacy of oral administrated afoxolaner (NexGardâ„¢) and fluralaner (Bravectoâ„¢) with topically applied permethrin/imidacloprid (AdvantixÂ®) against transmission of Ehrlichia canis by infected Rhipicephalus sanguineus ticks to dogs Parasites and Vectors, 9(1),  #Pages#"," C. Becskei, F. De Bock, J. Illambas, S.P. Mahabir, R. Farkas, R.H. Six (2016).  Efficacy and safety of a novel oral isoxazoline, sarolaner (Simparicaâ„¢) in the treatment of naturally occurring flea and tick infestations in dogs presented as veterinary patients in Europe Veterinary Parasitology, 222(#issue#),  49"," Y.P. Cid, T.P. Ferreira, V.S. MagalhÃ£es, T.R. Correia, F.B. Scott (2016).  Injectable fipronil for cattle: Plasma disposition and efficacy against Rhipicephalus microplus Veterinary Parasitology, 220(#issue#),  4"],[2013,1987,2016,2016,2015,2015,2015,2015,2015,2015,2015,2015,2015,2015,2014,2014,2014,2014,2014,2013,2013,2013,2013,2013,2013,2012,2012,2012,2012,2012,2012,2012,2011,2011,2011,2011,2011,2011,2011,2010,2010,2010,2010,2010,2009,2009,2008,2007,2007,2007,2005,2005,2004,2004,2003,2003,2002,2002,2001,1998,1998,1996,2017,2017,2017,2017,2016,2016,2016]],"container":"<table class=\"display fill-container\">\n  <thead>\n    <tr>\n      <th>Refid<\/th>\n      <th>ShortBibliography<\/th>\n      <th>FullBibliography<\/th>\n      <th>publicationYear<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollY":"100vh","pageLength":5,"columnDefs":[{"className":"dt-right","targets":[0,3]}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+
+</div>
+
+<script>
+
+$(document).ready(function () {
+
+  // add bootstrap table styles to pandoc tables
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+
+  // initialize mathjax
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+  document.getElementsByTagName("head")[0].appendChild(script);
+
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  FlexDashboard.init({
+    theme: "cosmo",
+    fillPage: false,
+    orientation: "rows",
+    storyboard: false,
+    defaultFigWidth: 576,
+    defaultFigHeight: 460,
+    defaultFigWidthMobile: 360,
+    defaultFigHeightMobile: 460,
+    resize_reload: true
+  });
+});
+</script>
+
+</body>
+</html>

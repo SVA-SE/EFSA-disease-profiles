@@ -1,0 +1,597 @@
+"Refid","refID"
+"Bibliography","FullReference"
+"User","user"
+"Ris Code","risCode"
+"Level","level"
+" Experimental infection_k","experimentalInfection"
+"studyGroupID","groupID"
+"sampY
+Year the study was conducted
+(use -1 when not reported)","year"
+"agent
+Causative agent of vector borne diseases","agent"
+"agentSubtypeType 
+What type of further detailed information is given regarding the agent. select here, and type below.","agentSubtypeType"
+"agentSubtypeType 
+What type of further detailed information is given regarding the agent. select here, and type below._comment","agentSubtypeTypeC"
+"agentDetails
+Type here any  detailed information about the pathogen, such as specific seritype, genotype, strain, etc","agentDetails"
+"agentSubtype
+(question from DACRAH1 - NO NEED TO ANSWER)","agentSubtype"
+"studyTargetSpecies
+Species used in study","targetSpecies"
+"studyTargetSpecies
+Species used in study_comment","targetSpeciesC"
+"minAgeMonths
+The minimum age of the animals in this study group, in MONTHS.
+(use -1 when not reported)","minAgeMonths"
+"maxAgeMonths
+The maximum age of the animals in this study group, in MONTHS.
+(use -1 when not reported)","maxAgeMonths"
+"ageMonths
+(question from DACRAH 1 - NO NEED TO ANSWER)","ageMonths"
+"sampUnitSize
+Number of animals infected
+(use -1 when not reported)","sampUnitSize"
+"route
+Route of exposure  -> DERMAL","routeDermal"
+"route
+Route of exposure  -> INTRAMUSCULAR","routeIntramuscular"
+"route
+Route of exposure  -> INTRAPERITONEAL","routeIntraperitonial"
+"route
+Route of exposure  -> INTRATRACHEAL","routeIntratracheal"
+"route
+Route of exposure  -> INTRAVENEOUS","routeIntravenous"
+"route
+Route of exposure  -> SUBCUTANEOUS","routeSubcutaneous"
+"route
+Route of exposure  -> INHALATION: UNSPECIFIED","routeInhhalationUnespecified"
+"route
+Route of exposure  -> INHALATION: AEROSOL","routeInhalationAerosol"
+"route
+Route of exposure  -> INHALATION: DUST","routInhalationDust"
+"route
+Route of exposure  -> INHALATION: GAS","routeInhalationGas"
+"route
+Route of exposure  -> INHALATION: VAPOUR","routeInhalationVapour"
+"route
+Route of exposure  -> ORAL: DRINKING WATER","routeInhalationWater"
+"route
+Route of exposure  -> ORAL: FEED","routeOralFeed"
+"route
+Route of exposure  -> ORAL: UNSPECIFIED","routeOralUnespecified"
+"route
+Route of exposure  -> INTRAVAGINAL","routeIntravaginal"
+"route
+Route of exposure  -> VECTOR BITE","routeVectorBite"
+"route
+Route of exposure  -> INFUSION","routeInfusion"
+"route
+Route of exposure  -> Direct contact with an infected animal","routeDirectContact"
+"route
+Route of exposure  -> Indirect contact with an infected animals","routeIndirectContact"
+"route
+Route of exposure  -> Intradermal","routeIntradermal"
+"route
+Route of exposure  -> Fertilization with an infected embryo","routeFertilizationInfectedEmbryo"
+"route
+Route of exposure  -> Inoculation of foetus in uterus","routeInculationFaetusInUterus"
+"route
+Route of exposure  -> oral ingestion of infected vectors","routeIngestionInfectedVector"
+"route
+Route of exposure  -> Infected semen","routeInfectedSemen"
+"route
+Route of exposure  -> Intraepithelial in tongue","routeIntraEphitelialTongue"
+"route
+Route of exposure  -> Intranasal","routeIntraNasal"
+"route
+Route of exposure  -> Intrauterine","routeIntraUterine"
+"route
+Route of exposure  -> Sexual","routeSexual"
+"route
+Route of exposure  -> Transplacental","routeTransplacental"
+"route
+Route of exposure  -> Scarification of oral mucosa","routeScarificationOralMucosa"
+"route
+Route of exposure  -> Oronasal","routeOronasal"
+"route
+Route of exposure  -> Scarification","routeScarification"
+"route
+Route of exposure  -> Intrathecal","routeIntrathecal"
+"route
+Route of exposure  -> Intracerebral","routeIntracerebral"
+"route
+Route of exposure  -> Intracardial","routeIntracardial"
+"route
+Route of exposure  -> Intraocular","routeIntraocular"
+"route
+Route of exposure  -> Colostrum","routeColostrum"
+"route
+Route of exposure  -> not mentioned","routeNotMentioned"
+"route
+Route of exposure  -> Other:specify","routeOther"
+"route
+Route of exposure  -> Other:specify (COMMENT)","routeOtherC"
+"route
+Route of exposure  -> Injection into yolk sac","routeInjectionYolkSac"
+"route
+Route of exposure  -> intra subarachnoid","routeIntraSubarachnoid"
+"Transplac
+Evidence of transplacental transmission through detection of the virus in the foetus or in the neonate, excluding experimental infection in utero and vectorial infection in neonates","transplac"
+"HostHost
+Evidence of direct host-to-host transmission trhough experiments including contact animals and excluding vectorial transmission","hostHost"
+"durationPI
+How many days, after inoculation, the animals were kept (if reported)
+(use -1 if not reported)","durationPI"
+"minIncub
+Minimum number of days post inoculation to observe clinical signs
+(use -1 if not reported)","minIncub"
+"maxIncub
+Maximum number of days post inoculation to observe clinical signs
+(use -1 if not reported)","maxIncub"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Dead during experiment because of illnes, caused by the infection","deadInfection"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Dead during experiment because of illnes, caused by the infection (COMMENT)","nrDeadInfection"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Dead during experiment because of other reason","deadOther"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Dead during experiment because of other reason (COMMENT)","nrDeadOther"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Euthanised during experiment because of illness due to the infection","eutInfection"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Euthanised during experiment because of illness due to the infection (COMMENT)","nrEutInfection"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Euthanised during experiment because of other reasons/other illnesses","eutOther"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Euthanised during experiment because of other reasons/other illnesses (COMMENT)","nrEutOther"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Euthanised during experiment because of protocol (for example collecting samples)","eutProtocol"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Euthanised during experiment because of protocol (for example collecting samples) (COMMENT)","nrEutProtocol"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Euthanised at the end of the experiment period","eutEnd"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Euthanised at the end of the experiment period (COMMENT)","nrEutEnd"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Other: describe AND give number","deadNotInPickList"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> Other: describe AND give number (COMMENT)","nrDeadNotInPickList"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> NO ANIMALS DIED during the study period","NoDeath"
+"dead
+Number of dead animals (or percentage), by reason (CHECK box for any relevant reason reportd, AND add the number of animals at the end) -> NOT REPORTED","deathNotReported"
+"deadUnits
+whether mortality was reported as number of dead, or percentage","unitDead"
+"minMortalityTime
+Report the time between experimental infection and recorded mortality – minimum reported for the animal group","minMortTime"
+"maxMortalityTime
+Report the time between experimental infection and recorded mortality – maximum reported for the animal group","maxMortTime"
+"MortalityTimeUnits
+The units for the reported time to mortality","unitMortTime"
+"MortalityTimeUnits
+The units for the reported time to mortality_comment","unitMortTimeC"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign, a","CS_Fever"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign2","CSnr_Fever"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign3","CS_Diarrhea"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign4","CSnr_Diarrhea"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign5","CS_Anemia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign6","CSnr_Anemia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign7","CS_Recumbent"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign8","CSnr_Recumbent"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign9","CS_ExternalHemorrhages"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign10","CSnr_ExternalHemorrhages"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign11","CS_InternalHemorrhages"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign12","CSnr_InternalHemorrhages"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign13","CS_NasalDischarge"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign14","CSnr_NasalDischarge"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign15","CS_Coughing"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign16","CSnr_Coughing"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign17","CS_AbscessFistula"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign18","CSnr_AbscessFistula"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign19","CS_UlcerVesiculae"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign20","CSnr_UlcerVesiculae"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign21","CS_CKD"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign22","CSnr_CKD"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign23","CS_Infertility"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign24","CSnr_Infertility"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign25","CS_VaginalDischarge"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign26","CSnr_VaginalDischarge"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign27","CS_Mastitis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign28","CSnr_Mastitis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign29","CS_Encephalopathy"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign30","CSnr_Encephalopathy"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign31","CS_Vertigo"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign32","CSnr_Vertigo"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign33","CS_CongestionSkin"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign34","CSnr_CongestionSkin"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign35","CS_Oedema"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign36","CSnr_Oedema"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign37","CS_Conjunctivitis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign38","CSnr_Conjunctivitis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign39","CS_DepressionApathyProstration"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign40","CSnr_DepressionApathyProstration"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign41","CS_LocomotionProblems"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign42","CSnr_LocomotionProblems"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign43","CS_Abscence"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign44","CSnr_Abscence"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign45","CS_RespDistressLowerAirwaysSymp"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign46","CSnr_RespDistressLowerAirwaysSymp"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign47","CS_Salivation"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign48","CSnr_Salivation"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign49","CS_Anorexia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign50","CSnr_Anorexia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign51","CS_CyanosisBT"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign52","CSnr_CyanosisBT"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign53","CS_AbortionStillbirthMumified"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign54","CSnr_AbortionStillbirthMumified"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign55","CS_Malformation"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign56","CSnr_Malformation"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign57","CS_StuntedGrowth"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign58","CSnr_StuntedGrowth"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign59","CS_JointSwellingArthritis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign60","CSnr_JointSwellingArthritis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign61","CS_Convulsion"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign62","CSnr_Convulsion"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign63","CS_Nystagmus"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign64","CSnr_Nystagmus"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign65","CS_Dysentery"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign66","CSnr_Dysentery"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign67","CS_Lymphadenopathy"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign68","CSnr_Lymphadenopathy"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign69","CS_Hepatitis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign70","CSnr_Hepatitis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign71","CS_Splenomegaly"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign72","CSnr_Splenomegaly"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign73","CS_Onycogryphosis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign74","CSnr_Onycogryphosis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign75","CS_FurFeathersChanges"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign76","CSnr_FurFeathersChanges"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign77","CS_Dermatitis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign78","CSnr_Dermatitis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign79","CS_FoamingMouth"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign80","CSnr_FoamingMouth"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign81","CS_Rhinitis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign82","CSnr_Rhinitis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign83","CS_BehavioralChanges"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign84","CSnr_BehavioralChanges"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign85","CS_Shivering"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign86","CSnr_Shivering"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign87","CS_TwitchingTremors"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign88","CSnr_TwitchingTremors"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign89","CS_Erythema"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign90","CSnr_Erythema"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign91","CS_Neurological"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign92","CSnr_Neurological"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign93","CS_Hyperesthesia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign94","CSnr_Hyperesthesia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign95","CS_MuscleAtrophy"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign96","CSnr_MuscleAtrophy"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign97","CS_MucosaPaleness"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign98","CSnr_MucosaPaleness"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign99","CS_MucosaReddening"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign100","CSnr_MucosaReddening"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign101","CS_Opisthotonus"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign102","CSnr_Opisthotonus"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign103","CS_TongueEpithelialSloughing"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign104","CSnr_TongueEpithelialSloughing"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign105","CS_Colic"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign106","CSnr_Colic"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign107","CS_ScoreTypical"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign108","CSnr_ScoreTypical"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign109","CS_Lachrymation"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign110","CSnr_Lachrymation"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign111","CS_Regurgitation"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign112","CSnr_Regurgitation"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign113","CS_Other"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign114","CSnr_Other"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign115","CS_Ataxia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign116","CSnr_Ataxia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign117","CS_Alopecia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign118","CSnr_Alopecia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign119","CS_Huddling"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign120","CSnr_Huddling"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign121","CS_Lameness"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign122","CSnr_Lameness"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign123","CS_Vomiting"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign124","CSnr_Vomiting"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign125","CS_EyelidsOedema"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign126","CSnr_EyelidsOedema"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign127","CS_OralLesions"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign128","CSnr_OralLesions"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign129","CS_Lymphocytopenia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign130","CSnr_Lymphocytopenia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign131","CS_EncephalomyelitisEncephalitis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign132","CSnr_EncephalomyelitisEncephalitis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign133","CS_OcularLesions"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign134","CSnr_OcularLesions"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign135","CS_OroNasalLesions"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign136","CSnr_OroNasalLesions"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign137","CS_LimbsParalysis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign138","CSnr_LimbsParalysis"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign139","CS_NotReported"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign140","CS_SkinLesions"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign141","CSnr_SkinLesions"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign142","CS_Leucopenia"
+"ClinicalSigns
+Particular health status of animal. Please check any box with reported clinical signs, and then use the text box to enter HOW MANY animals showed that specific clinical sign. If using \Other\, please remember to describe the clinical sign143","CSnr_Leucopenia"
+"sampledMatrix
+Tissue sampled for testing -> adrenal gland","matrixAdrenalGland"
+"sampledMatrix
+Tissue sampled for testing -> artery","matrixArtery"
+"sampledMatrix
+Tissue sampled for testing -> bladder","matrixBladder"
+"sampledMatrix
+Tissue sampled for testing -> blood (Animal blood)","matrixBlood"
+"sampledMatrix
+Tissue sampled for testing -> Blood serum","matrixSerum"
+"sampledMatrix
+Tissue sampled for testing -> Bone marrow","matrixBoneMarrow"
+"sampledMatrix
+Tissue sampled for testing -> Brain","matrixBrain"
+"sampledMatrix
+Tissue sampled for testing -> Carcass (Animal carcase)","matrixCarcass"
+"sampledMatrix
+Tissue sampled for testing -> cervix","matrixCervix"
+"sampledMatrix
+Tissue sampled for testing -> coronary band","matrixCoronaryBand"
+"sampledMatrix
+Tissue sampled for testing -> CSF","matrixCSF"
+"sampledMatrix
+Tissue sampled for testing -> Esophagus/esophageal swab","matrixEsophagusEsophagealSwab"
+"sampledMatrix
+Tissue sampled for testing -> eye/ eye swab","matrixEyeEyeSwab"
+"sampledMatrix
+Tissue sampled for testing -> Faeces","matrixFaeces"
+"sampledMatrix
+Tissue sampled for testing -> follicular fluid","matrixFollicularFluid"
+"sampledMatrix
+Tissue sampled for testing -> heart","matrixHeart"
+"sampledMatrix
+Tissue sampled for testing -> intestines","matrixIntestines"
+"sampledMatrix
+Tissue sampled for testing -> kidney","matrixKidney"
+"sampledMatrix
+Tissue sampled for testing -> lesion swab","matrixLesionSwab"
+"sampledMatrix
+Tissue sampled for testing -> liver","matrixLiver"
+"sampledMatrix
+Tissue sampled for testing -> lung","matrixLung"
+"sampledMatrix
+Tissue sampled for testing -> Lymph node","matrixLimphonode"
+"sampledMatrix
+Tissue sampled for testing -> mammary tissue","matrixMammaryTissue"
+"sampledMatrix
+Tissue sampled for testing -> Milk","matrixMilk"
+"sampledMatrix
+Tissue sampled for testing -> muscle","matrixMuscle"
+"sampledMatrix
+Tissue sampled for testing -> Non-food animal-related matrices","matrixNonFoodAnimalRelated"
+"sampledMatrix
+Tissue sampled for testing -> Nose/nasal swab","matrixNoseNasalSwab"
+"sampledMatrix
+Tissue sampled for testing -> (oro)pharyngeal swab","matrixOroparhyngealSwab"
+"sampledMatrix
+Tissue sampled for testing -> ovary","matrixOvary"
+"sampledMatrix
+Tissue sampled for testing -> pancreas","matrixPancreas"
+"sampledMatrix
+Tissue sampled for testing -> peyer's patches","matrixPeyerPatches"
+"sampledMatrix
+Tissue sampled for testing -> Placenta","matrixPlacenta"
+"sampledMatrix
+Tissue sampled for testing -> Rectum-anal swab/cloacal swab","matrixRectumAnalCloacalSwab"
+"sampledMatrix
+Tissue sampled for testing -> Saliva / saliva swab","matrixSaliva"
+"sampledMatrix
+Tissue sampled for testing -> salivary gland","matrixSalivaryGland"
+"sampledMatrix
+Tissue sampled for testing -> Secreta","matrixSecreta"
+"sampledMatrix
+Tissue sampled for testing -> Semen","matrixSemen"
+"sampledMatrix
+Tissue sampled for testing -> Skin","matrixSkin"
+"sampledMatrix
+Tissue sampled for testing -> spinal cord","matrixSpinalCord"
+"sampledMatrix
+Tissue sampled for testing -> spleen","matrixSpleen"
+"sampledMatrix
+Tissue sampled for testing -> stomach","matrixStomach"
+"sampledMatrix
+Tissue sampled for testing -> testicles","matrixTesticles"
+"sampledMatrix
+Tissue sampled for testing -> thymus","matrixThymus"
+"sampledMatrix
+Tissue sampled for testing -> thyroid","matrixThyroid"
+"sampledMatrix
+Tissue sampled for testing -> Tissues juice","matrixTissuesJuice"
+"sampledMatrix
+Tissue sampled for testing -> tongue","matrixTongue"
+"sampledMatrix
+Tissue sampled for testing -> Tonsil / tonsil swab","matrixTonsil"
+"sampledMatrix
+Tissue sampled for testing -> trachea","matrixTrachea"
+"sampledMatrix
+Tissue sampled for testing -> urine","matrixUrine"
+"sampledMatrix
+Tissue sampled for testing -> uterus","matrixUterus"
+"sampledMatrix
+Tissue sampled for testing -> Vagina / vaginal swab","matrixVagina"
+"sampledMatrix
+Tissue sampled for testing -> Wool","matrixWool"
+"sampledMatrix
+Tissue sampled for testing -> Foetus / stillbirth / neonatus","matrixFoetusStillbirthNeonatus"
+"sampledMatrix
+Tissue sampled for testing -> not sampled","matrixNotSampled"
+"sampledMatrix
+Tissue sampled for testing -> not reported","matrixNotReported"
+"sampledMatrix
+Tissue sampled for testing -> Other: specify","matrixOther"
+"sampledMatrix
+Tissue sampled for testing -> Other: specify (COMMENT)","matrixOtherC"
+"sampledMatrix
+Tissue sampled for testing -> oviduct","matrixOviduct"
+"sampledMatrix
+Tissue sampled for testing -> feathers","matrixFeathers"
+"sampledMatrix
+Tissue sampled for testing -> bursa fabricius","matrixBursaFabricius"
+"anMatText
+Target of laboratory test","targetLabTest"
+"anMatText
+Target of laboratory test_comment","targetLabTestC"
+"anMethCode
+Laboratory test used to analyse for virus or antigens associated with the VBD","labTestUsed"
+"anMethCode
+Laboratory test used to analyse for virus or antigens associated with the VBD_comment","labTestUsedC"
+"minDetect
+Minimum number of days post inoculation to detect pathogen or nucleic acid
+(use -1 if not reported)","minDetect"
+"maxDetect
+Maximum number of days post inoculation to observe pathogen or nucleic acid
+(use -1 if not reported)","maxDetect"
+"Study design WEAKNESSES
+Add any notes on the study design weaknesses - lack of proper controls, lack of proper analyses methods, flaws in the way data were reported, etc. What is the impact of these flaws on the use of the data collected?","weakeness"
+"Any additional notes you want to leave.","Notes"

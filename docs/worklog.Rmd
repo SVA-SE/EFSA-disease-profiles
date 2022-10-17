@@ -1,0 +1,13 @@
+---
+title: "Storymap - Work log"
+author: "Hyeyoung Kim, Wiktor Gustafsson"
+date: "1/27/2021"
+output: html_document
+---
+
+1. The EU/Swedish law basically maps to level AA of the WCAG 2.1 standard:
+Web Content Accessibility Guidelines (WCAG) 2.1 (w3.org) https://www.w3.org/TR/WCAG21/
+
+
+2. Work flow
+![workprocess](flowchart.png)

@@ -1,0 +1,61 @@
+---
+title: "Evidence from systematic literature review"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    orientation: rows
+    self_contained: false
+
+---
+<style type="text/css">
+
+body{
+  font-family: Verdana;
+  font-size: 12pt;
+}
+
+.navbar {
+  background-color:#00A590;
+}
+
+.bggreen {
+  background-color: #00A590;
+}
+
+/* Headers */
+h1{
+  font-family: Verdana;
+  font-size: 16pt;
+  font-weight: bold; 
+  color: white;
+}
+
+.chart-title {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li.active a {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li:not(.active) a {
+    font-size: 16pt;
+}
+
+
+</style>
+
+
+Row
+-----------------------------------------------------------------------
+
+
+###  {.bggreen data-width=150}
+<h1>No eligible papers found</h1>
+
+
+###
+
+Up to the latest update, the systematic literature review (SLR) of experimental infection studies found no  papers investigating the disease impact and transmission in animals which met the inclusion criteria. The next update is planned for 2022. 
+
+Detailed information about the SLR, including a link to the review protocol, is available in the left panel. 

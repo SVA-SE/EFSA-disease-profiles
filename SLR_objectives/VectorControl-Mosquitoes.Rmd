@@ -1,0 +1,391 @@
+---
+title: "Vector control studies - Evidence from systematic literature review"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    orientation: rows
+    self_contained: false
+---
+<style type="text/css">
+
+body{
+  font-family: Verdana;
+  font-size: 12pt;
+}
+
+.navbar {
+  background-color:#1DAF8E;
+}
+
+.bggreen {
+  background-color: #1DAF8E;
+}
+
+/* Headers */
+h1{
+  font-family: Verdana;
+  font-size: 16pt;
+  font-weight: bold; 
+  color: white;
+}
+
+.chart-title {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li.active a {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li:not(.active) a {
+    font-size: 16pt;
+}
+
+
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message=FALSE, fig.width=10,fig.height=6)
+library(plotly)
+library(dplyr)
+library(stringr)
+library(knitr)
+library(gdata)
+library(kableExtra)
+library(DT)
+library(RColorBrewer)
+library(htmltools)
+
+
+source("Functions.r") #source("SLR_objectives/Functions.r")
+
+#source("Metaanalysis_functions.r")
+
+# dfvc <- params$dfvc
+# agent <- params$agent 
+# references <- params$references
+# styling <- params$styling #
+styling=T
+# min.groups.plot <- params$min.groups.plot #
+min.groups.plot=1
+
+
+dfvc <- read.csv("../data/FilesDownload/VectorControl_cleaned.csv")
+references <- read.csv("../data/FilesDownload/VectorControl_refid.csv")
+
+dfvc$studyTarget_host <- gsub("\\s*\\([^\\)]+\\)","",as.character(dfvc$studyTarget_host))
+
+dfvc$route <- gsub("\\s*\\([^\\)]+\\)","",as.character(dfvc$route))
+#dfvc$route[dfvc$route=="not investigated/not given/not relevant"]<-"not given"
+
+
+dfvc$groupIDunique <- paste(dfvc$refID,dfvc$groupID,sep="_")
+
+dfvc$studyTarget_host[dfvc$route=="Vector directly exposed"] <- "NOT HOST SPECIFIC"
+
+
+# table(dfvc$studyTarget_host)
+# table(dfvc$route)
+# table(dfvc$studyTarget_vector)
+
+vector <- "mosquitoes"
+dfVCmosq <- dfvc[dfvc$studyTarget_vector==vector,]
+dfVCmosq$studyTarget_host <- as.factor(as.character(dfVCmosq$studyTarget_host))
+
+
+plots.font <- list(
+  family="Verdana",
+  size=16
+)
+
+```
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Studies where insectides/repellents were applied to hosts </h1>
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#main">
+<img src=../../../../templates/assets/css/images/info.png>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="main" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+The plots below give an overview of substances for which experimental assessments of  efficacy against mosquitoes are available. Please note that experimental protocols differed greatly: studies could have many different substance application methods, from different doses and frequencies, to different time of exposure. The box-plots give an overview of the range of efficacy reported, but direct comparisons can only be drawn by looking at the full details available on the data for each experiment (the full datasets are available, see left panel).
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+###  {.bggreen data-width=200}
+<h1>External use - collar/ear tag</h1>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#collar">
+<img src=../../../../templates/assets/css/images/info.png>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="collar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+You can click on the species names on the legend to the right to choose which species to hide/show. 
+<br><br>
+Plots are interactive, drag the mouse to zoom.
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+
+### 
+
+
+```{r, message=FALSE, warning=FALSE}
+df1 <- dfVCmosq %>% filter (studyTarget_host != "NOT HOST SPECIFIC")
+df1 <- prepare.df.for.barplots (df1)
+df1$route <- as.character(df1$route)
+#table(df1$route)
+
+df1$substanceDisplay <-  df1$testSubstance1_cat
+combined <- paste(df1$testSubstance1_cat,df1$testSubstance2_cat,sep="+")
+df1$substanceDisplay[!is.na(df1$testSubstance2_cat)]<- combined[!is.na(df1$testSubstance2_cat)]
+#table(df1$substanceDisplay)
+
+#summary(df1$efficacy)
+#summary(df1$mortPerc)
+
+
+
+efficacy.route.species.boxplots(df1 %>% filter (route == "External use - collar/ear tag") %>%drop.levels())%>% layout(font=plots.font)
+
+```
+
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+###  {.bggreen data-width=200}
+<h1>External use - topic/spray</h1>
+
+### 
+
+
+```{r, message=FALSE, warning=FALSE}
+
+efficacy.route.species.boxplots(df1 %>% filter (route == "External use - topic/spray") %>%drop.levels())%>% layout(font=plots.font)
+
+
+```
+
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+###  {.bggreen data-width=200}
+<h1>Subcutaneous application</h1>
+
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#cs">
+<img src=../../../../templates/assets/css/images/info.png>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="cs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+Boxes with a dark blue contour refer to studies reporting vector MORTALITY, rather than substance efficacy (which is calculated as the mortality in the experimental group in comparison to a control group). 
+    <br><br>
+Efficacy = 1 - (mortality in the control group / mortality in the experimental group))
+
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+### 
+
+
+blue colored box = mortality, not efficacy
+
+```{r, message=FALSE, warning=FALSE}
+
+efficacy.route.species.boxplots(df1 %>% filter (route == "SUBCUTANEOUS") %>%drop.levels())%>% layout(font=plots.font)
+
+```
+
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+###  {.bggreen data-width=200}
+<h1>Oral administration</h1>
+
+### 
+
+```{r, message=FALSE, warning=FALSE}
+
+efficacy.route.species.boxplots(df1 %>% filter (route == "ORAL: UNSPECIFIED") %>%drop.levels())%>% layout(font=plots.font)
+```
+
+
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+###  {.bggreen data-width=200}
+<h1>Impregnated clothing</h1>
+
+### 
+
+
+```{r, message=FALSE, warning=FALSE}
+
+df=df1 %>% filter (route == "Impregnated clothing") %>%drop.levels()
+efficacy.route.species.boxplots(df)%>% layout(font=plots.font)
+
+```
+
+
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+###  {.bggreen data-width=200}
+<h1>Vector exposed to treated nets</h1>
+
+### 
+
+```{r, message=FALSE, warning=FALSE}
+   
+efficacy.route.species.boxplots(df1 %>% filter (route == "Vector exposed to treated nets") %>%drop.levels())%>% layout(font=plots.font)
+
+
+```
+
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Studies where vectors were targeted directly (not host specific)  </h1>
+
+
+Row
+-----------------------------------------------------------------------
+###
+
+```{r, message=FALSE, warning=FALSE}
+
+df2 <- dfVCmosq %>% filter (studyTarget_host == "NOT HOST SPECIFIC")
+df2 <- prepare.df.for.barplots (df2)
+
+#table(df2$route)
+
+
+df2$substanceDisplay <-  df2$testSubstance1_cat
+combined <- paste(df2$testSubstance1_cat,df2$testSubstance2_cat,sep="+")
+df2$substanceDisplay[!is.na(df2$testSubstance2_cat)]<- combined[!is.na(df2$testSubstance2_cat)]
+#table(df2$substanceDisplay)
+
+df2<-df2[!df2$substanceDisplay=="CONTROL",]
+
+
+
+efficacy.direct.boxplots(df2 %>%drop.levels())%>% layout(font=plots.font)
+
+
+
+
+
+```
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other types of outcomes</h1>
+
+Row
+-----------------------------------------------------------------------
+
+### 
+
+
+Efficacy and mortality were the most common types of outcomes reported, and these studies have been presented above. In the table below, we have listed all studies in which other types of outcomes were reported.
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+
+### 
+
+```{r}
+#remember to count the row ids and table all the non used rowIDs
+
+left.overs <- dfVCmosq%>% 
+  filter(is.na(efficacy))%>% 
+  filter(is.na(mortPerc))%>% 
+  filter(intervention != "Control")%>% 
+  filter (intervention != "No intervention")%>% 
+  filter (intervention != "Placebo")%>% 
+  filter (testSubstance1_cat != "CONTROL")%>% 
+  filter (testSubstance2_cat != "CONTROL")
+  
+table.left.overs <- dfVCmosq[dfVCmosq$rowID%in%left.overs$rowID,]  %>%
+  select (refID,groupID,studyTarget_host,route,
+          testSubstance1_cat,testSubstance2_cat,
+          outcomeType,outcomeNumber,outcomeUnit,nTested,nNegative,nPositive)
+
+colnames(table.left.overs) <- c("refID","Exp.Group","Target Host","roue of vector exposure",
+                                "Substance1","Substance2","Outcome measured",
+                                "Outcome Value","Outcome Unit",
+                                "# tested","#NEG","#POS")
+
+
+#kable(table.left.overs)%>%kable_styling()
+options(DT.options = list(scrollY="100vh",pageLength =5))
+datatable(table.left.overs)
+
+```
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REFERENCES </h1>
+
+
+Row
+-----------------------------------------------------------------------
+###
+In the left panel you can find information about the entire systematic literature review. The specific references for this agent, and used in this section of the story map are listed below.
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+
+```{r references}
+options(DT.options = list(scrollY="100vh",pageLength =5))
+datatable(unique(references[references$Refid%in%dfVCmosq$refID,c(1,4,5,9)]), filter = 'top', rownames=FALSE)
+
+```
+ 
