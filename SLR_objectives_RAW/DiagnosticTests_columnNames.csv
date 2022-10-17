@@ -1,0 +1,334 @@
+"Refid","refID"
+"Bibliography","FullReference"
+"User","user"
+"Ris Code","empty"
+"Level","level"
+"DE_DACRAH_OB3_Covetlab_k","empty2"
+"
+
+
+
+
+studyID
+Unique ID to link all observations from the same study or experiment
+
+","studyID"
+"studyContext
+Type of study being reported","context"
+"
+
+
+
+
+sampY
+Year the study was conducted
+(use -1 if not reported)
+
+","year"
+"agent
+Causative agent of vector borne diseases","agent"
+"agentSubtypeTypeWhat type of further detailed information is given regarding the agent.Select here, and type below.","agentSubtype"
+"agentSubtypeTypeWhat type of further detailed information is given regarding the agent.Select here, and type below._comment","agentSubtype_C"
+"agentDetails
+The details provided for the type given above","agentDetails"
+"agentSubtype
+question from DACRAH1, no need to answer","agentSuptypeDC1"
+"studyTargetSpecies
+Species used in study","targetSpecies"
+"studyTargetSpecies
+Species used in study_comment","targetSpecies_C"
+"age
+Age class of animals (question from DACRAH1)","ageDC1"
+"
+
+
+
+
+ageMonths
+Age of animals in months
+(-1 if not reported, -2 if not relevant)
+
+","ageMonths"
+"infMode
+How were animals infected","infMode"
+"sampStrategy
+Strategy used to select sampling units for inclusion in the study","sampStrategy"
+"sampStrategy
+Strategy used to select sampling units for inclusion in the study_comment","sampStrategy_C"
+"sampUnit
+Type of unit sampled in the study and reported in sampUnitSize","sampUnit"
+"sampUnit
+Type of unit sampled in the study and reported in sampUnitSize_comment","sampUnit_C"
+"sampUnitSize
+Number of units in the group","sampUnitSize"
+"Route
+route of exposure where known","route"
+"Route
+route of exposure where known_comment","route_C"
+"Dose
+dose of administered infectious agent where known","dose"
+"Intervention
+Status of evaluated test","intervention"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Animal carcase","matrixCarcass"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Animal blood","matrixBlood"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Blood serum (as part-nature)","matrixSerum"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Bone marrow (as part-nature)","matrixBoneMarrow"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Brain (as part-nature)","matrixBrain"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Faeces (as part-nature)","matrixFaeces"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Foetus / stillbirth / neonatus (as part-nature)","MatrixFoetusStillbirthNeonatus"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Mammals and birds meat","matrixMammalsBirdsMeat"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Tissues juice (as part-nature)","matrixTissuesJuice"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Vagina / vaginal swab (as part-nature)","matrixVagina"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Animal offal and other slaughtering products","MatrixOffalOthers"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Nose/nasal swab (as part-nature)","matrixNose"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Esophagus/esophageal swab (as part-nature)","matrixEsophagus"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Placenta (as part-nature)","matrixPlacenta"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Rectum-anal swab (as part-nature)","matrixRectum"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Saliva / saliva swab (as part-nature)","matrixSaliva"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Lymph node (as part-nature)","matrixLymphNode"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Secreta (as part-nature)","matrixSecreta"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Semen (as part-nature)","matrixSemen"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Skin (as part-nature)","matrixSkin"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Tonsil (as part-nature)","matrixTonsil"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Milk","matrixMilk"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Other: specify","matrixOther"
+"
+
+
+
+
+sampledMatrix
+Tissue sampled for testing
+
+ -> Other: specify (COMMENT)","matrixOther_C"
+"anMatText
+Target of laboratory test","targetLab"
+"anMethCode
+Laboratory test used","labTest"
+"anMethCode.Laboratory.test.used_comment","labTest_others"
+"anMethText
+Description of laboratory method (where relevant include method of calculation of cut-offs)","labTest_C"
+"reagents
+Describe the specific reagent which defines the test (e.g. primer set or monoclonal antibody)","reagents"
+"methodLimit
+For methods report either the limit of detection or threshold or cut-off for positive results","testLimit"
+"timePoint
+Indicate time point in days from the DAY OF INFECTION when the tests were performed. If not known or not reported, report as -1","timePoint"
+"nTested
+Number of samples tested","nTested"
+"nTruePositive
+Number of animals that are known to be truly positives (use -1 for not reported or not known)","nTruePositive"
+"nTrueNegative
+Number of animals that are known to be truly positives (use -1 for not reported or not known)","nTrueNegative"
+"nPositive
+Number of animals positive","nPositive"
+"nNegative
+Number of animals negative","nNegative"
+"
+
+
+
+
+sensitivity
+Sensitivity of test
+(report as percentage - for instance 90 for 90%)
+
+","sensitivity"
+"specificity
+Specificity of test","specificity"
+"UCI_SE
+Upper confidence interval-sensitivity","UCI_Sen"
+"LCI_SE
+Lower Confidence interval-sensitivity","LCI_Sen"
+"UCI_SP
+Upper confidence interval-specificity","UCI_Spe"
+"LCI_SP
+Lower Confidence interval-specificity","LCI_Spe"
+"crossReactivity
+Describe any evidence of cross reactivity with other viruses","crossReactivity"
+"Study design STRENGTHSAdd notes on the strengths of the study design.","Strengths"
+"Study design WEAKNESSESAdd any notes on the study design weaknesses - lack of proper controls, lack of proper analyses methods, flaws in the way data were reported, etc. What is the impact of these flaws on the use of the data collected?","Weaknesses"
