@@ -3,13 +3,26 @@ source("SLR_objectives/RUN-list-header.r")
 
 local.dir <- "C:/Users/fernanda.dorea/Documents/AzureDevOps/storymaps/"
 
-
+a=10
 
 # impact ---- 
     i=1
     for (a in 1:length(agents)){ 
+      
+      dfei <- read.csv("data/FilesDownload/ExperimentalInfections_cleaned.csv")
+      agent <- agents[a] 
+      dfDZ <- dfei[dfei$agent==agent,]
+      n.papers <- length(unique(dfDZ$refID))
+      
+      file.input <- paste0("SLR_objectives/",input.files[i])
+      if(n.papers==0)(file.input <- "SLR_objectives/1impact-NOPAPER.Rmd" )
+      if(n.papers==1)(file.input <- "SLR_objectives/1impact-onlyREF.Rmd" )
+  
+  if(n.papers > 1){
   source("SLR_objectives/1impact_MA.r")
-  rmarkdown::render(paste0("SLR_objectives/",input.files[i]),
+  }
+      
+  rmarkdown::render(file.input,
                     params = list(agent = agents[a],
                                   agent.subtype = agent.subtypes[a],
                                   styling = TRUE,
