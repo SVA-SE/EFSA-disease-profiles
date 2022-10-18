@@ -21,13 +21,13 @@
 window.FlexDashboardComponents = [];
 </script>
 
-<script src="../../assets/flexdash_libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="../../assets/flexdash_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="Impact-ASFV_files/header-attrs-2.15/header-attrs.js"></script>
+<script src="Impact-ASFV_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="../../assets/flexdash_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
-<script src="../../assets/flexdash_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="../../assets/flexdash_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="../../assets/flexdash_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<link href="Impact-ASFV_files/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="Impact-ASFV_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Impact-ASFV_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Impact-ASFV_files/bootstrap-3.3.5/shim/respond.min.js"></script>
 <style>h1 {font-size: 34px;}
        h1.title {font-size: 38px;}
        h2 {font-size: 30px;}
@@ -37,385 +37,34 @@ window.FlexDashboardComponents = [];
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="../../assets/flexdash_libs/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
-<script src="../../assets/flexdash_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<script src="../../assets/flexdash_libs/plotly-binding-4.10.0/plotly.js"></script>
-<script src="../../assets/flexdash_libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="../../assets/flexdash_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="../../assets/flexdash_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="../../assets/flexdash_libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="../../assets/flexdash_libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
-<script src="../../assets/flexdash_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="../../assets/flexdash_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="../../assets/flexdash_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="../../assets/flexdash_libs/datatables-binding-0.20/datatables.js"></script>
-<link href="../../assets/flexdash_libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="../../assets/flexdash_libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="../../assets/flexdash_libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
-<link href="../../assets/flexdash_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
-<script src="../../assets/flexdash_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
-<link href="../../assets/flexdash_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
-<script src="../../assets/flexdash_libs/selectize-0.12.0/selectize.min.js"></script>
+<script src="Impact-ASFV_files/stickytableheaders-0.1.19/jquery.stickytableheaders.min.js"></script>
+<link href="Impact-ASFV_files/value-box-accent-static-0.6.0/theme-cosmo-value-box.css" rel="stylesheet" />
+<link href="Impact-ASFV_files/flexdashboard-css-0.6.0/flexdashboard.min.css" rel="stylesheet" />
+<link href="Impact-ASFV_files/flexdashboard-css-0.6.0/theme-cosmo.css" rel="stylesheet" />
+<script src="Impact-ASFV_files/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="Impact-ASFV_files/plotly-binding-4.10.0/plotly.js"></script>
+<script src="Impact-ASFV_files/typedarray-0.1/typedarray.min.js"></script>
+<link href="Impact-ASFV_files/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="Impact-ASFV_files/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<link href="Impact-ASFV_files/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="Impact-ASFV_files/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<script src="Impact-ASFV_files/kePrint-0.0.1/kePrint.js"></script>
+<link href="Impact-ASFV_files/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="Impact-ASFV_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="Impact-ASFV_files/datatables-binding-0.24/datatables.js"></script>
+<link href="Impact-ASFV_files/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="Impact-ASFV_files/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="Impact-ASFV_files/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="Impact-ASFV_files/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="Impact-ASFV_files/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="Impact-ASFV_files/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="Impact-ASFV_files/selectize-0.12.0/selectize.min.js"></script>
 <style type="text/css">
-
 /*
- Dashboard CSS from Keen IO Dashboards
- (https://github.com/keen/dashboards)
+  CSS for flexdashboard.js' use of Sly(). The sizing/position of this CSS needs to be
+  applied _before_ flexdashboard.js initializes, which is why this CSS has been pulled
+  out from flexdashboard.scss and inlined in the document's head.
 */
-
-body {
-  background: #f2f2f2;
-  padding: 60px 0 0 8px; /* padding-top overridden by theme */
-}
-
-body hr {
-  border-color: #d7d7d7;
-  margin: 10px 0;
-}
-
-.navbar-inverse .navbar-nav > li > a,
-.navbar .navbar-brand {
-  text-decoration: none;
-}
-
-.navbar-logo {
-  margin-top: 1px;
-}
-
-.navbar-logo img {
-  margin-right: 12px;
-}
-
-.navbar-author {
-  margin-left: 10px;
-  font-size: 15px;
-}
-
-.navbar .dropdown-menu .fa {
-  min-width: 20px;
-}
-
-.navbar .dropdown-menu {
-  min-width: 150px;
-  max-height: 500px;
-  overflow: auto;
-}
-
-.chart-wrapper,
-.nav-tabs-custom,
-.sbframe-commentary
-{
-  background: #fff;
-  border: 1px solid #e2e2e2;
-  border-radius: 3px;
-  margin-bottom: 8px;
-  margin-right: 8px;
-}
-
-.chart-title {
-  border-bottom: 1px solid #d7d7d7;
-  color: #666;
-  font-size: 14px;
-  font-weight: 300;
-  padding: 7px 10px 4px;
-}
-
-.chart-wrapper .chart-title:empty {
-  display: none;
-}
-
-.chart-wrapper .chart-stage {
-  overflow: hidden;
-  padding: 5px 10px;
-  position: relative;
-}
-
-.chart-wrapper .chart-notes {
-  background: #fbfbfb;
-  border-top: 1px solid #e2e2e2;
-  color: #808080;
-  font-size: 12px;
-  padding: 8px 10px 5px;
-}
-
-/*
- CSS for handling flexbox layout
-*/
-
-#dashboard-container {
-  visibility: hidden;
-}
-
-.tab-content>.dashboard-page-wrapper.active {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.dashboard-page-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.dashboard-row-orientation {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.dashboard-row {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.dashboard-row-flex {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.dashboard-column-orientation {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.dashboard-column {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.chart-wrapper-flex {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.chart-stage-flex {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  position: relative;
-}
-
-.chart-shim {
-  position: absolute;
-  left: 8px; top: 8px; right: 8px; bottom: 8px;
-}
-
-.no-padding .chart-shim {
-  left: 0; top: 0; right: 0; bottom: 0;
-}
-
-.flowing-content-shim {
-  overflow: auto;
-  left: 0; top: 0; right: 0; bottom: 0;
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.flowing-content-container {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
-
-.chart-stage .table-bordered {
-  border: none;
-}
-
-.chart-stage .table-bordered > tbody > tr > th,
-.chart-stage .table-bordered > tfoot > tr > th,
-.chart-stage .table-bordered > tbody > tr > td,
-.chart-stage .table-bordered > tfoot > tr > td {
-  border: none;
-}
-
-.chart-stage .table-bordered > tbody > tr > td {
-  border-top: 1px solid #dddddd;
-}
-
-.chart-stage .table-bordered > thead > tr > th {
-  border: none;
-  border-bottom: 2px solid #dddddd;
-}
-
-.bootstrap-table table>thead {
-  background-color: #fff;
-}
-
-.bootstrap-table table.data,
-.bootstrap-table table.shiny-table {
-  width: inherit !important;
-}
-
-.bootstrap-table table.data>tbody>tr>th,
-.bootstrap-table table.shiny-table>tbody>tr>th {
-  border-top: none;
-  border-bottom: 2px solid #dddddd;
-  padding: 5px;
-}
-
-.bootstrap-table .data td[align=right] {
-  font-family: inherit;
-}
-
-.chart-wrapper form {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.shiny-input-container label {
-  font-weight: normal;
-}
-
-.chart-stage .html-widget {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.chart-stage .html-widget-static-bound {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.chart-stage .shiny-bound-output {
-  width: 100% !important;
-  height: 100% !important;
-}
-
-/* Omit display of empty paragraphs */
-
-.chart-shim>p:empty {
-  display: none;
-}
-
-.chart-stage>p:empty {
-  display: none;
-}
-
-/* Omit display of special knitr options div*/
-
-.chart-stage .knitr-options {
-  display: none;
-}
-
-/* Automatically resizing images */
-
-.image-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-}
-
-.image-container img {
-  opacity: 0;
-  overflow: hidden;
-}
-
-/* Value box */
-
-.value-box {
-  border-radius: 2px;
-  position: relative;
-  display: block;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-
-.value-box > .inner {
-  padding: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.value-box .value {
-  font-size: 38px;
-  font-weight: bold;
-  margin: 0 0 3px 0;
-  white-space: nowrap;
-  padding: 0;
-}
-
-.value-box .caption {
-  font-size: 15px;
-}
-.value-box .caption > small {
-  display: block;
-  font-size: 13px;
-  margin-top: 5px;
-}
-
-.value-box .icon i {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 80px;
-  color: rgba(0, 0, 0, 0.15);
-}
-
-.linked-value:hover {
-  cursor: pointer;
-}
-
-.value-box.linked-value:hover {
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-/* STORYBOARD */
 
 .storyboard-nav button {
   background: transparent;
@@ -440,7 +89,6 @@ body hr {
   float: left;
   width: 2%;
   height: 120px;
-  font-size: 50px;
 }
 
 .storyboard-nav .sbprev {
@@ -476,12 +124,7 @@ body hr {
   height: 100%;
   padding: 10px 10px 10px 10px;
   margin-right: 8px;
-  background: #fff;
-  border: 1px solid #e2e2e2;
-  border-radius: 3px;
-  color: #3a3c47;
   text-align: left;
-  font-size: 14px;
   cursor: pointer;
 }
 
@@ -489,15 +132,8 @@ body hr {
   margin-right: 0px;
 }
 
-.storyboard-nav .sbframelist ul li.active {
-  color: #fff;
-  background: #B8B8B8;
-}
-
 .sbframe-commentary {
   width: 300px;
-  background: #fbfbfb;
-  font-size: 14px;
 }
 
 .sbframe-commentary ul {
@@ -511,297 +147,6 @@ body hr {
 .sbframe:not(.active) {
   display: none;
 }
-
-/* NAV TABS */
-
-.nav-tabs-custom > .nav-tabs {
-  margin: 0;
-  border-bottom: 1px solid #d7d7d7;
-  color: #666;
-  font-size: 14px;
-  font-weight: 300;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
-}
-.nav-tabs-custom > .nav-tabs > li {
-  border-top: 3px solid transparent;
-  margin-bottom: -1px;
-  margin-right: 5px;
-}
-.nav-tabs-custom > .nav-tabs > li > a,
-.nav-tabs-custom > .nav-tabs > li > a:active {
-  color: #666;
-  font-weight: 300;
-  font-size: 14px;
-  border-radius: 0;
-  padding: 3px 10px 5px;
-  text-transform: none;
-}
-
-.nav-tabs-custom > .nav-tabs > li:not(.active) > a {
-  border-bottom-color: transparent;
-}
-
-.nav-tabs-custom > .nav-tabs > li > a.text-muted {
-  color: #999;
-}
-.nav-tabs-custom > .nav-tabs > li > a,
-.nav-tabs-custom > .nav-tabs > li > a:hover {
-  background: transparent;
-  margin: 0;
-}
-.nav-tabs-custom > .nav-tabs > li > a:hover {
-  color: #999;
-}
-.nav-tabs-custom > .nav-tabs > li:not(.active) > a:hover,
-.nav-tabs-custom > .nav-tabs > li:not(.active) > a:focus,
-.nav-tabs-custom > .nav-tabs > li:not(.active) > a:active {
-  border-color: transparent;
-}
-.nav-tabs-custom > .nav-tabs > li.active {
-  border-top-color: #3c8dbc;
-}
-.nav-tabs-custom > .nav-tabs > li.active > a,
-.nav-tabs-custom > .nav-tabs > li.active:hover > a {
-  background-color: #fff;
-  color: #666;
-}
-.nav-tabs-custom > .nav-tabs > li.active > a {
-  border-top-color: transparent;
-  border-left-color: #d7d7d7;
-  border-right-color: #d7d7d7;
-}
-.nav-tabs-custom > .nav-tabs > li:first-of-type {
-  margin-left: 0;
-}
-.nav-tabs-custom > .nav-tabs > li:first-of-type.active > a {
-  border-left-color: transparent;
-}
-.nav-tabs-custom > .nav-tabs.pull-right {
-  float: none !important;
-}
-.nav-tabs-custom > .nav-tabs.pull-right > li {
-  float: right;
-}
-.nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type {
-  margin-right: 0;
-}
-.nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type > a {
-  border-left-width: 1px;
-}
-.nav-tabs-custom > .nav-tabs.pull-right > li:first-of-type.active > a {
-  border-left-color: #d7d7d7;
-  border-right-color: transparent;
-}
-.nav-tabs-custom > .nav-tabs > li.header {
-  line-height: 35px;
-  padding: 0 10px;
-  font-size: 20px;
-  color: #666;
-}
-.nav-tabs-custom > .nav-tabs > li.header > .fa,
-.nav-tabs-custom > .nav-tabs > li.header > .glyphicon,
-.nav-tabs-custom > .nav-tabs > li.header > .ion {
-  margin-right: 5px;
-}
-.nav-tabs-custom > .tab-content {
-  background: #fff;
-  padding: 0;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.nav-tabs-custom > .tab-content > .chart-wrapper {
-  background: #fff;
-  border: none;
-  margin: 0;
-}
-
-
-.nav-tabs-custom > .tab-content > .active {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.nav-tabs-custom .dropdown.open > a:active,
-.nav-tabs-custom .dropdown.open > a:focus {
-  background: transparent;
-  color: #999;
-}
-
-
-@media (max-width: 767px) {
-  .value-box {
-    text-align: center;
-    margin-right: 8px;
-  }
-  .value-box .icon {
-    display: none;
-  }
-}
-
-/* Fixed position sidebar */
-
-.section.sidebar {
-  position: fixed;
-  top: 51px; /* overridden by theme */
-  left: 0;
-  bottom: 0;
-  border-right: 1px solid #e2e2e2;
-  background-color: white; /* overridden by theme */
-  padding-left: 10px;
-  padding-right: 10px;
-  visibility: hidden;
-  overflow: auto;
-}
-
-.section.sidebar form p:first-child {
-  margin-top: 10px;
-}
-
-/* Embedded source code */
-
-#flexdashboard-source-code {
-  display: none;
-}
-
-.featherlight-content #flexdashboard-source-code {
-  display: inline-block;
-}
-
-.featherlight-content {
-  width: 80%;
-  max-width: 800px;
-  padding: 0 !important;
-  border-bottom: none !important;
-}
-
-.featherlight:last-of-type {
-  background: rgba(0, 0, 0, 0.7);
-}
-
-.featherlight-inner {
-  width: 100%;
-}
-
-.featherlight-content pre {
-  margin: 0;
-  border: 0;
-  background: #fff;
-  font-size: 12px;
-}
-
-.unselectable {
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: -moz-none;
-  -o-user-select: none;
-  user-select: none;
-}
-
-#flexdashboard-source-code code {
-  -ms-user-select: text;
-  -webkit-user-select: text;
-  -khtml-user-select: text;
-  -moz-user-select: text;
-  -o-user-select: text;
-  user-select: text;
-}
-
-/* DataTables Tweaks */
-
-.dataTables_filter input[type="search"] {
-  -webkit-appearance: searchfield;
-  outline: none;
-}
-
-.dataTables_wrapper.no-footer
-.dataTables_info {
-  padding-top: 0;
-}
-
-
-table.dataTable thead th {
-  border-bottom: 1px solid #d7d7d7;
-}
-
-.dataTables_wrapper.no-footer .dataTables_scrollBody {
-  border-bottom: 1px solid #d7d7d7;
-}
-
-/* Mobile phone only CSS */
-
-.desktop-layout div.section.mobile {
-  display: none;
-}
-
-.mobile-layout div.section.no-mobile {
-  display: none;
-}
-
-.mobile-figure {
-  display: none;
-}
-
-
-
-body {
-  padding-top: 60px;
-}
-
-.section.sidebar {
-  top: 51px;
-  background-color: rgba(39, 128, 227, 0.1);
-}
-
-.value-box {
-  color: #f9f9f9;
-}
-
-.bg-primary {
-  background-color: rgba(39, 128, 227, 0.7);
-}
-
-.storyboard-nav .sbframelist ul li.active {
-  background-color: rgba(39, 128, 227, 0.7);
-}
-
-.nav-tabs-custom > .nav-tabs > li.active {
-  border-top-color: rgba(39, 128, 227, 0.7);
-}
-
-.bg-info {
-  background-color: rgba(153, 84, 187, 0.7);
-}
-
-.bg-warning {
-  background-color: rgba(255, 117, 24, 0.7);
-}
-
-.bg-danger {
-  background-color: rgba(255, 0, 57, 0.7);
-}
-
-.bg-success {
-  background-color: rgba(63, 182, 24, 0.7);
-}
-
-.chart-title {
-  font-weight: 500;
-}
-
-.nav-tabs-custom > .nav-tabs > li > a,
-.nav-tabs-custom > .nav-tabs > li > a:active {
-  font-weight: 500;
-}
-
 </style>
 
 
@@ -814,13 +159,7 @@ body {
 <div class="container-fluid">
 <div class="navbar-header">
 
-<button id="navbar-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-
-<span class="navbar-logo pull-left">
+<span class="navbar-logo">
   
 </span>
 <span class="navbar-brand">
@@ -828,6 +167,12 @@ body {
   <span class="navbar-author">
         </span>
 </span>
+
+<button id="navbar-button" type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
 
 </div>
 <div id="navbar" class="navbar-collapse collapse">
@@ -1045,11 +390,13 @@ var FlexDashboard = (function () {
         for (var j = 0; j<item.items.length; j++) {
           var subItem = item.items[j];
           var li = $('<li></li>');
-          li.append(navbarLink(subItem.icon, subItem.title, subItem.href, subItem.target));
+          var a = navbarLink(subItem.icon, subItem.title, subItem.href, subItem.target);
+          a.removeClass("nav-link").addClass("dropdown-item");
+          li.append(a);
           menu.append(li);
         }
       } else {
-        var li = $('<li></li>');
+        var li = $('<li class="nav-item"></li>');
         li.append(navbarLink(item.icon, item.title, item.href, item.target));
         container.append(li);
       }
@@ -1064,7 +411,7 @@ var FlexDashboard = (function () {
     if (existingMenu.length > 0) {
       return existingMenu.children('ul');
     } else {
-      var li = $('<li></li>');
+      var li = $('<li class="nav-item"></li>');
       if (id)
         li.attr('id', id);
       li.addClass('dropdown');
@@ -1077,6 +424,7 @@ var FlexDashboard = (function () {
       var a = navbarLink(icon, title, "#");
       a.addClass('dropdown-toggle');
       a.attr('data-toggle', 'dropdown');
+      a.attr('data-bs-toggle', 'dropdown');
       a.attr('role', 'button');
       a.attr('aria-expanded', 'false');
       li.append(a);
@@ -1131,8 +479,10 @@ var FlexDashboard = (function () {
     if (navmenu) {
       var menuId = navmenu.replace(/\s+/g, '');
       var menu = navbarMenu(menuId, null, navmenu, container);
+      li.find("> a").removeClass("nav-link").addClass("dropdown-item");
       menu.append(li);
     } else {
+      li.addClass("nav-item")
       container.append(li);
     }
 
@@ -1143,7 +493,7 @@ var FlexDashboard = (function () {
 
   function navbarLink(icon, title, href, target) {
 
-    var a = $('<a></a>');
+    var a = $('<a class="nav-link"></a>');
     if (icon) {
 
       // get the name of the icon set and icon
@@ -1201,7 +551,6 @@ var FlexDashboard = (function () {
      var serviceLinks = {
       "twitter": "https://twitter.com/share?text=" + encodeURIComponent(document.title) + "&url="+encodeURIComponent(location.href),
       "facebook": "https://www.facebook.com/sharer/sharer.php?s=100&p[url]="+encodeURIComponent(location.href),
-      "google-plus": "https://plus.google.com/share?url="+encodeURIComponent(location.href),
       "linkedin": "https://www.linkedin.com/shareArticle?mini=true&url="+encodeURIComponent(location.href) + "&title=" + encodeURIComponent(document.title),
       "pinterest": "https://pinterest.com/pin/create/link/?url="+encodeURIComponent(location.href) + "&description=" + encodeURIComponent(document.title)
     };
@@ -1818,7 +1167,8 @@ var FlexDashboard = (function () {
 
     // check for fade option
     var fade = tabset.hasClass("tabset-fade");
-    var navClass = "nav-tabs";
+    var pills = tabset.hasClass("tabset-pills");
+    var navClass = pills ? "nav-pills" : "nav-tabs";
 
     // determine the heading level of the tabset and tabs
     var match = tabset.attr('class').match(/level(\d) /);
@@ -1839,6 +1189,7 @@ var FlexDashboard = (function () {
     $(tabs[0]).before(tabContent);
 
     // build the tabset
+    var activeTab = 0;
     tabs.each(function(i) {
 
       // get the tab div
@@ -1846,6 +1197,10 @@ var FlexDashboard = (function () {
 
       // get the id then sanitize it for use with bootstrap tabs
       var id = tab.attr('id');
+
+      // see if this is marked as the active tab
+      if (tab.hasClass('active'))
+        activeTab = i;
 
       // sanitize the id for use with bootstrap tabs
       id = id.replace(/[.\/?&!#<>]/g, '').replace(/\s/g, '_');
@@ -1856,14 +1211,12 @@ var FlexDashboard = (function () {
       var headingDom = heading.contents();
 
       // build and append the tab list item
-      var a = $('<a role="tab" data-toggle="tab"></a>');
+      var a = $('<a role="tab" data-toggle="tab" class="nav-link"></a>');
       a.append(headingDom);
       a.attr('href', '#' + id);
       a.attr('aria-controls', id);
-      var li = $('<li role="presentation"></li>');
+      var li = $('<li role="presentation" class="nav-item"></li>');
       li.append(a);
-      if (i === 0)
-        li.attr('class', 'active');
       tabList.append(li);
 
       // set it's attributes
@@ -1873,15 +1226,17 @@ var FlexDashboard = (function () {
       tab.addClass('no-title');
       if (fade)
         tab.addClass('fade');
-      if (i === 0) {
-        tab.addClass('active');
-        if (fade)
-          tab.addClass('in');
-      }
 
       // move it into the tab content div
       tab.detach().appendTo(tabContent);
     });
+
+    // set active tab
+    $(tabList.children()[activeTab]).tab("show");
+    var active = $(tabContent.children('div.section')[activeTab]);
+    active.addClass('active');
+    if (fade)
+      active.addClass('in');
 
     // add nav-tabs-custom
     tabset.addClass('nav-tabs-custom');
@@ -2123,111 +1478,11 @@ var FlexDashboard = (function () {
     }
   }
 
-
-  // get theme color
-  var themeColors = {
-    bootstrap: {
-      primary: "rgba(51, 122, 183, 0.4)",
-      info: "rgb(217, 237, 247)",
-      success: "rgb(223, 240, 216)",
-      warning: "rgb(252, 248, 227)",
-      danger: "rgb(242, 222, 222)"
-    },
-    cerulean: {
-      primary: "rgb(47, 164, 231)",
-      info: "rgb(217, 237, 247)",
-      success: "rgb(223, 240, 216)",
-      warning: "rgb(252, 248, 227)",
-      danger: "rgb(242, 222, 222)"
-    },
-    journal: {
-      primary: "rgba(235, 104, 100, 0.70)",
-      info: "rgb(217, 237, 247)",
-      success: "rgb(223, 240, 216)",
-      warning: "rgb(252, 248, 227)",
-      danger: "rgb(242, 222, 222)"
-    },
-    flatly: {
-      primary: "rgba(44, 62, 80, 0.70)",
-      info: "rgba(52, 152, 219, 0.70)",
-      success: "rgba(24, 188, 156, 0.70)",
-      warning: "rgba(243, 156, 18, 0.70)",
-      danger: "rgba(231, 76, 60, 0.70)"
-    },
-    readable: {
-      primary: "rgba(69, 130, 236, 0.4)",
-      info: "rgb(217, 237, 247)",
-      success: "rgb(223, 240, 216)",
-      warning: "rgb(252, 248, 227)",
-      danger: "rgb(242, 222, 222)"
-    },
-    spacelab: {
-      primary: "rgba(68, 110, 155, 0.25)",
-      info: "rgb(217, 237, 247)",
-      success: "rgb(223, 240, 216)",
-      warning: "rgb(252, 248, 227)",
-      danger: "rgb(242, 222, 222)"
-    },
-    united: {
-      primary: "rgba(221, 72, 20, 0.30)",
-      info: "rgb(217, 237, 247)",
-      success: "rgb(223, 240, 216)",
-      warning: "rgb(252, 248, 227)",
-      danger: "rgb(242, 222, 222)"
-    },
-    cosmo: {
-      primary: "rgba(39, 128, 227, 0.7)",
-      info: "rgba(153, 84, 187, 0.7)",
-      success: "rgba(63, 182, 24, 0.7)",
-      warning: "rgba(255, 117, 24, 0.7)",
-      danger: "rgba(255, 0, 57, 0.7)"
-    },
-    lumen: {
-      primary: "rgba(21, 140, 186, 0.70)",
-      info: "rgba(117, 202, 235, 0.90)",
-      success: "rgba(40, 182, 44, 0.70)",
-      warning: "rgba(255, 133, 27, 0.70)",
-      danger: "rgba(255, 65, 54, 0.70)"
-    },
-    paper: {
-      primary: "rgba(33, 150, 243, 0.35)",
-      info: "rgb(225, 190, 231)",
-      success: "rgb(223, 240, 216)",
-      warning: "rgb(255, 224, 178)",
-      danger: "rgb(249, 189, 187)"
-    },
-    sandstone: {
-      primary: "rgba(50, 93, 136, 0.3)",
-      info: "rgb(217, 237, 247)",
-      success: "rgb(223, 240, 216)",
-      warning: "rgb(252, 248, 227)",
-      danger: "rgb(242, 222, 222)"
-    },
-    simplex: {
-      primary: "rgba(217, 35, 15, 0.25)",
-      info: "rgb(217, 237, 247)",
-      success: "rgb(223, 240, 216)",
-      warning: "rgb(252, 248, 227)",
-      danger: "rgb(242, 222, 222)"
-    },
-    yeti: {
-      primary: "rgba(0, 140, 186, 0.298039)",
-      info: "rgb(217, 237, 247)",
-      success: "rgb(223, 240, 216)",
-      warning: "rgb(252, 248, 227)",
-      danger: "rgb(242, 222, 222)"
-    }
-  }
-  function themeColor(color) {
-    return themeColors[_options.theme][color];
-  }
-
   FlexDashboard.prototype = {
     constructor: FlexDashboard,
     init: init,
     isMobilePhone: isMobilePhone,
-    isFillPage: isFillPage,
-    themeColor: themeColor
+    isFillPage: isFillPage
   };
 
   return FlexDashboard;
@@ -2284,14 +1539,14 @@ window.FlexDashboardUtils = {
       return "";
   },
   manageActiveNavbarMenu: function () {
-    // remove active from anyone currently active
-    $('.navbar ul.nav').find('li').removeClass('active');
+    // remove active from currently active tabs
+    $('.navbar ul.nav .active').removeClass('active');
     // find the active tab
     var activeTab = $('.dashboard-page-wrapper.tab-pane.active');
     if (activeTab.length > 0) {
       var tabId = activeTab.attr('id');
       if (tabId)
-        $(".navbar ul.nav a[href='#" + tabId + "']").parents('li').addClass('active');
+        $(".navbar ul.nav a[href='#" + tabId + "']").tab("show");
     }
   }
 };
@@ -2373,16 +1628,6 @@ window.FlexDashboardComponents.push({
 window.FlexDashboardComponents.push({
   find: function(container) {
     return container.children('div[class^="shiny-"]');
-  }
-});
-
-// datatables
-window.FlexDashboardComponents.push({
-  find: function(container) {
-    return container.find('.datatables');
-  },
-  flex: function(fillPage) {
-    return fillPage;
   }
 });
 
@@ -2554,21 +1799,6 @@ window.FlexDashboardComponents.push({
     if (chartIcon)
       setIcon(chartIcon);
 
-    // set color based on data-background if necessary
-    var dataBackground = valueBox.attr('data-background');
-    if (dataBackground)
-      valueBox.css('background-color', bgColor);
-    else {
-      // default to bg-primary if no other background is specified
-      if (!valueBox.hasClass('bg-primary') &&
-          !valueBox.hasClass('bg-info') &&
-          !valueBox.hasClass('bg-warning') &&
-          !valueBox.hasClass('bg-success') &&
-          !valueBox.hasClass('bg-danger')) {
-        valueBox.addClass('bg-primary');
-      }
-    }
-
     // handle data attributes in valueOutputSpan
     function handleValueOutput(valueOutput) {
 
@@ -2582,19 +1812,30 @@ window.FlexDashboardComponents.push({
       if (dataIcon)
         setIcon(dataIcon);
 
-      // color
+      // If valueBox(color=) was an accent color, this attr should
+      // be populated with the accent color and the relevant CSS comes
+      // in through HTML dependencies
+      var dataColorAccent = valueOutput.attr('data-color-accent');
+      var valueBoxClasses = "value-box-" + (["primary", "info", "danger", "warning", "success"].join(" value-box-"));
+      if (dataColorAccent) {
+        valueBox.removeClass(valueBoxClasses);
+        valueBox.addClass('value-box-' + dataColorAccent);
+      }
+
+      // If valueBox(color=) was a CSS color, these other data-color-*
+      // attrs will be populated
       var dataColor = valueOutput.attr('data-color');
       if (dataColor) {
-        if (dataColor.indexOf('bg-') === 0) {
-          valueBox.css('background-color', '');
-          if (!valueBox.hasClass(dataColor)) {
-             valueBox.removeClass('bg-primary bg-info bg-warning bg-danger bg-success');
-             valueBox.addClass(dataColor);
-          }
-        } else {
-          valueBox.removeClass('bg-primary bg-info bg-warning bg-danger bg-success');
-          valueBox.css('background-color', dataColor);
-        }
+        valueBox.removeClass(valueBoxClasses);
+        valueBox.css('background-color', dataColor);
+      }
+      var dataColorText = valueOutput.attr('data-color-text');
+      if (dataColorText) {
+        valueBox.find(".inner").css('color', dataColorText);
+      }
+      var dataColorIcon = valueOutput.attr('data-color-icon');
+      if (dataColorIcon) {
+        valueBox.find(".icon").css('color', dataColorIcon);
       }
 
       // url
@@ -2639,11 +1880,11 @@ body{
 }
 
 .navbar {
-  background-color:#00A590;
+  background-color:#1DAF8E;
 }
 
 .bggreen {
-  background-color: #00A590;
+  background-color: #1DAF8E;
 }
 
 /* Headers */
@@ -2671,36 +1912,64 @@ h1{
 <div id="row" class="section level2">
 <h2>Row</h2>
 <div id="section" class="section level3 bggreen" data-width="150">
-<h3 class="bggreen" data-width="150"></h3>
+<h3 class="bggreen"></h3>
 <h1>
 Host species
 </h1>
 </div>
 <div id="section-1" class="section level3">
 <h3></h3>
-<p>Experimental infection was demonstrated in the following animal species:</p>
+<p>Experimental infection was demonstrated in the following animal
+species:</p>
 <p><b> Pigs, Wild boar</b></p>
 </div>
 </div>
 <div id="row-1" class="section level2" data-height="500">
-<h2 data-height="500">Row</h2>
+<h2>Row</h2>
 <div id="section-2" class="section level3 bggreen" data-width="150">
-<h3 class="bggreen" data-width="150"></h3>
+<h3 class="bggreen"></h3>
 <p><a name="CS_duration"></a></p>
 <h1>
 Duration of clinical signs
 </h1>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#cs">
-<img src=../../assets/css/images/info.png>
+<img src=../../../../templates/assets/css/images/info.png>
 </button>
 <!-- Modal -->
-<div id="cs" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div id="cs" class="modal fade" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
 <div class="modal-body">
-<p>Please note that experimental infections are generally conducted in ANIMAL GROUPS. <br><br> As data are recorded per animal group (not for individual animals), two separate values are reported: the first day in which any animal in the group started showing clinical signs; and the last day in which clinical signs were observed in any animal in the group. The results therefore are not a true distribution of the length of the clinical signs period in any single animal, but two distributions representing the range of minimum (shortest number of days until start) and maximum possible days after infection during which clinical signs can manifest. <br><br><br />
-For each host species in which experimental infections were reported in literature, the plots show the distribution of all values reported for the start and end of clinical signs, per animal group studied. Boxes represent the “interquartile range”, that is, the range between the first quartile and the third quartile, with a vertical line representing the median. “Median” is the middle value of the dataset. The first quartile (Q1/25th Percentile) is the middle number between the smallest number and the median of the dataset.The third quartile (Q3/75th Percentile) is the middle value between the median and the highest value of the dataset. The dots represent the “outliers”, that is, values which are below the Q1 minus 1.5 times the interquartile range, or above Q3 plus 1.5 times the interquartile range (Q3-Q1). <br><br> Animals could still be showing clinical signs on the last day of the experiment. Data in this case is censored - the maximum represents the maximum observed, not the true maximum. Meta-analysis presented in the dedicated section recalculated the incubation period accounting for censoring (lack of information about true maximum when experiments ended while the agent was still detectable).</p>
+<p>Please note that experimental infections are generally conducted in
+ANIMAL GROUPS. <br><br> As data are recorded per animal group (not for
+individual animals), two separate values are reported: the first day in
+which any animal in the group started showing clinical signs; and the
+last day in which clinical signs were observed in any animal in the
+group. The results therefore are not a true distribution of the length
+of the clinical signs period in any single animal, but two distributions
+representing the range of minimum (shortest number of days until start)
+and maximum possible days after infection during which clinical signs
+can manifest. <br><br><br />
+For each host species in which experimental infections were reported in
+literature, the plots show the distribution of all values reported for
+the start and end of clinical signs, per animal group studied. Boxes
+represent the “interquartile range”, that is, the range between the
+first quartile and the third quartile, with a vertical line representing
+the median. “Median” is the middle value of the dataset. The first
+quartile (Q1/25th Percentile) is the middle number between the smallest
+number and the median of the dataset.The third quartile (Q3/75th
+Percentile) is the middle value between the median and the highest value
+of the dataset. The dots represent the “outliers”, that is, values which
+are below the Q1 minus 1.5 times the interquartile range, or above Q3
+plus 1.5 times the interquartile range (Q3-Q1). <br><br> Animals could
+still be showing clinical signs on the last day of the experiment. Data
+in this case is censored - the maximum represents the maximum observed,
+not the true maximum. Meta-analysis presented in the dedicated section
+recalculated the incubation period accounting for censoring (lack of
+information about true maximum when experiments ended while the agent
+was still detectable).</p>
 </div>
 <div class="modal-footer">
 <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -2716,14 +1985,14 @@ Close
 <div class="knitr-options" data-fig-width="960" data-fig-height="384">
 
 </div>
-<div id="htmlwidget-d3419a25e917ce5f75bc" style="width:960px;height:384px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d3419a25e917ce5f75bc">{"x":{"visdat":{"6ecc5726351f":["function () ","plotlyVisDat"]},"cur_data":"6ecc5726351f","attrs":{"6ecc5726351f":{"y":{},"x":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"boxmode":"group","legend":{"traceorder":"reversed","x":0.7,"y":0.9},"font":{"family":"Verdana","size":16},"xaxis":{"domain":[0,1],"automargin":true,"title":"Days"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Species","type":"category","categoryorder":"array","categoryarray":["Pigs ","Wild boar"]},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"fillcolor":"rgba(102,194,165,0.5)","y":["Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs "],"x":[8,23,36,7,7,18,12,12,11,12,9,70,37,70,70,70,27,7,8,8,5,7,7,10,5,6,6,5,14,19,8,24,32,19,22,15,13,8,16,7,7,20,5,5,8,11,18,12,12,14,11,16,14,12,7,19,22,5,4,4,9,5,8,25,15,10,5,7,7,7,6,8,8,8,7,5,7,7,6,8,17,23,36,23,6,6,7,7,30,30,8,9,8,14,10,10,7,11,9,11,8,7,7,7,5,10,7,4,7,29,8,10,6,11,5,6,5,6,5,5,6,45,16,14,9,6,8,29,9,17,40,7,25,11,78,78,11,5],"type":"box","orientation":"h","name":"End of Clinical Signs","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(141,160,203,0.5)","y":["Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs "],"x":[1,14,30,2,12,2,2,3,4,4,3,3,3,3,13,5,3,8,3,10,2,2,5,2,3,12,6,5,10,4,14,3,5,1,3,4,3,8,3,3,3,9,4,1,4,5,2,3,2,3,3,3,3,3,2,10,3,4,3,3,3,9,4,4,4,5,4,3,4,4,14,6,8,11,5,11,11,7,2,7,4,4,3,3,4,3,3,5,5,3,3,3,3,3,3,3,6,5,2,3,4.8,5,4,4,2,12,23,0,2,2,2,2,2,4.3,4,4,3,4,4,4,3,3,4,5,4,4,4,3,4,4,3,5,4,6,3,2,3,9,4,5,2,3,3,3,3,4,8,7,9,3,3,7,4,3,3,4,5,5,2,9,6,9],"type":"box","orientation":"h","name":"Start of Clinical Signs","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-3a4c3ec3ba9630e38a10" style="width:960px;height:384px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3a4c3ec3ba9630e38a10">{"x":{"visdat":{"396c39f3436b":["function () ","plotlyVisDat"]},"cur_data":"396c39f3436b","attrs":{"396c39f3436b":{"y":{},"x":{},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"boxmode":"group","legend":{"traceorder":"reversed","x":0.7,"y":0.9},"font":{"family":"Verdana","size":16},"xaxis":{"domain":[0,1],"automargin":true,"title":"Days"},"yaxis":{"domain":[0,1],"automargin":true,"title":"Species","type":"category","categoryorder":"array","categoryarray":["Pigs ","Wild boar"]},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"fillcolor":"rgba(102,194,165,0.5)","y":["Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs "],"x":[8,23,36,7,7,18,11,12,12,12,9,37,70,70,70,70,27,7,8,5,8,7,5,10,7,6,6,5,14,19,8,24,32,22,19,15,13,8,16,7,20,5,5,8,14,18,11,12,12,14,11,16,12,7,19,22,5,4,4,8,5,9,25,15,10,5,7,7,6,7,8,8,8,7,5,8,17,36,23,23,7,7,30,30,8,9,8,14,10,10,7,11,9,11,8,7,7,7,5,10,7,4,7,29,8,10,6,11,5,5,5,6,5,6,6,45,16,14,9,6,8,29,9,17,40,7,25,78,11,78,11,5,6,6,8,6,7,9,7,11,16,9,8,20,10,25,6,7,6,9,9,20,15,7],"type":"box","orientation":"h","name":"End of Clinical Signs","marker":{"color":"rgba(102,194,165,1)","line":{"color":"rgba(102,194,165,1)"}},"line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(141,160,203,0.5)","y":["Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs "],"x":[1,14,30,2,12,2,2,3,3,4,13,5,4,3,3,3,3,3,8,10,5,2,2,2,3,6,12,5,10,4,14,3,1,3,5,4,3,8,3,3,3,4,9,1,4,3,5,2,2,3,3,3,3,3,2,10,3,4,3,3,3,9,4,4,4,4,4,3,11,14,4,6,8,11,5,11,7,2,7,4,4,3,3,3,3,4,5,5,3,3,3,3,3,3,3,5,6,2,3,4,2,23,0,12,2,2,2,4.3,4,4,3,4,4,4,3,3,4,5,4,4,4,3,4,4,3,5,4,6,3,2,3,9,4,2,3,5,3,3,3,4,8,7,9,3,3,7,4,3,3,4,5,5,9,9,6,2,5,4,1,4,4,1,3,3,4,5,4,8,5,13,9,3,4,11,2,8,5,7,4,10,3,5,4,4],"type":"box","orientation":"h","name":"Start of Clinical Signs","marker":{"color":"rgba(141,160,203,1)","line":{"color":"rgba(141,160,203,1)"}},"line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="row-2" class="section level2" data-height="600">
-<h2 data-height="600">Row</h2>
+<h2>Row</h2>
 <div id="section-4" class="section level3 bggreen" data-width="150">
-<h3 class="bggreen" data-width="150"></h3>
+<h3 class="bggreen"></h3>
 <h1>
 Clinical signs observed
 </h1>
@@ -2733,28 +2002,53 @@ Clinical signs observed
 <div class="knitr-options" data-fig-width="960" data-fig-height="576">
 
 </div>
-<div id="htmlwidget-d728cafb082ea8a92897" style="width:960px;height:576px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d728cafb082ea8a92897">{"x":{"visdat":{"6ecc4d1e3e43":["function () ","plotlyVisDat"]},"cur_data":"6ecc4d1e3e43","attrs":{"6ecc4d1e3e43":{"x":{},"y":{},"hoverinfo":"text","text":["AbortionStillbirthMumified<br>1% (2/185)","Absence<br>6% (12/185)","Anorexia<br>39% (72/185)","Ataxia<br>9% (17/185)","CongestionSkin<br>8% (14/185)","Conjunctivitis<br>4% (8/185)","Convulsion<br>2% (4/185)","Coughing<br>1% (1/185)","CyanosisBT<br>7% (13/185)","DepressionApathyProstration<br>33% (61/185)","Dermatitis<br>2% (3/185)","Diarrhoea<br>19% (35/185)","Dysentery<br>2% (3/185)","Erythema<br>3% (5/185)","ExternalHemorrhages<br>1% (1/185)","Fever<br>82% (152/185)","Huddling<br>1% (2/185)","InternalHemorrhages<br>7% (13/185)","JointSwellingArthritis<br>5% (9/185)","Lameness<br>2% (3/185)","Leucopenia<br>1% (1/185)","LocomotionProblems<br>4% (7/185)","Lymphadenopathy<br>1% (1/185)","NasalDischarge<br>2% (4/185)","Neurological<br>1% (2/185)","Nystagmus<br>1% (2/185)","Other<br>5% (10/185)","Recumbent<br>4% (8/185)","RespDistressLowerAirwaysSymp<br>14% (25/185)","Shivering<br>2% (3/185)","SkinLesions<br>2% (3/185)","Splenomegaly<br>1% (1/185)","StuntedGrowth<br>1% (2/185)","Vomiting<br>3% (5/185)"],"name":"Pigs","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"6ecc4d1e3e43.1":{"x":{},"y":{},"hoverinfo":"text","text":["AbortionStillbirthMumified<br>0% (0/13)","Absence<br>0% (0/13)","Anorexia<br>92% (12/13)","Ataxia<br>38% (5/13)","CongestionSkin<br>0% (0/13)","Conjunctivitis<br>15% (2/13)","Convulsion<br>0% (0/13)","Coughing<br>0% (0/13)","CyanosisBT<br>0% (0/13)","DepressionApathyProstration<br>77% (10/13)","Dermatitis<br>0% (0/13)","Diarrhoea<br>31% (4/13)","Dysentery<br>0% (0/13)","Erythema<br>0% (0/13)","ExternalHemorrhages<br>0% (0/13)","Fever<br>38% (5/13)","Huddling<br>8% (1/13)","InternalHemorrhages<br>0% (0/13)","JointSwellingArthritis<br>0% (0/13)","Lameness<br>0% (0/13)","Leucopenia<br>0% (0/13)","LocomotionProblems<br>0% (0/13)","Lymphadenopathy<br>0% (0/13)","NasalDischarge<br>8% (1/13)","Neurological<br>0% (0/13)","Nystagmus<br>0% (0/13)","Other<br>8% (1/13)","Recumbent<br>0% (0/13)","RespDistressLowerAirwaysSymp<br>77% (10/13)","Shivering<br>0% (0/13)","SkinLesions<br>0% (0/13)","Splenomegaly<br>0% (0/13)","StuntedGrowth<br>0% (0/13)","Vomiting<br>8% (1/13)"],"name":"Wildboar","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"% animal groups reporting sign"},"xaxis":{"domain":[0,1],"automargin":true,"tickangle":-45,"title":"ClinicalSigns","type":"category","categoryorder":"array","categoryarray":["AbortionStillbirthMumified","Absence","Anorexia","Ataxia","CongestionSkin","Conjunctivitis","Convulsion","Coughing","CyanosisBT","DepressionApathyProstration","Dermatitis","Diarrhoea","Dysentery","Erythema","ExternalHemorrhages","Fever","Huddling","InternalHemorrhages","JointSwellingArthritis","Lameness","Leucopenia","LocomotionProblems","Lymphadenopathy","NasalDischarge","Neurological","Nystagmus","Other","Recumbent","RespDistressLowerAirwaysSymp","Shivering","SkinLesions","Splenomegaly","StuntedGrowth","Vomiting"]},"barmode":"group","font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["AbortionStillbirthMumified","Absence","Anorexia","Ataxia","CongestionSkin","Conjunctivitis","Convulsion","Coughing","CyanosisBT","DepressionApathyProstration","Dermatitis","Diarrhoea","Dysentery","Erythema","ExternalHemorrhages","Fever","Huddling","InternalHemorrhages","JointSwellingArthritis","Lameness","Leucopenia","LocomotionProblems","Lymphadenopathy","NasalDischarge","Neurological","Nystagmus","Other","Recumbent","RespDistressLowerAirwaysSymp","Shivering","SkinLesions","Splenomegaly","StuntedGrowth","Vomiting"],"y":[1,6,39,9,8,4,2,1,7,33,2,19,2,3,1,82,1,7,5,2,1,4,1,2,1,1,5,4,14,2,2,1,1,3],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["AbortionStillbirthMumified<br>1% (2/185)","Absence<br>6% (12/185)","Anorexia<br>39% (72/185)","Ataxia<br>9% (17/185)","CongestionSkin<br>8% (14/185)","Conjunctivitis<br>4% (8/185)","Convulsion<br>2% (4/185)","Coughing<br>1% (1/185)","CyanosisBT<br>7% (13/185)","DepressionApathyProstration<br>33% (61/185)","Dermatitis<br>2% (3/185)","Diarrhoea<br>19% (35/185)","Dysentery<br>2% (3/185)","Erythema<br>3% (5/185)","ExternalHemorrhages<br>1% (1/185)","Fever<br>82% (152/185)","Huddling<br>1% (2/185)","InternalHemorrhages<br>7% (13/185)","JointSwellingArthritis<br>5% (9/185)","Lameness<br>2% (3/185)","Leucopenia<br>1% (1/185)","LocomotionProblems<br>4% (7/185)","Lymphadenopathy<br>1% (1/185)","NasalDischarge<br>2% (4/185)","Neurological<br>1% (2/185)","Nystagmus<br>1% (2/185)","Other<br>5% (10/185)","Recumbent<br>4% (8/185)","RespDistressLowerAirwaysSymp<br>14% (25/185)","Shivering<br>2% (3/185)","SkinLesions<br>2% (3/185)","Splenomegaly<br>1% (1/185)","StuntedGrowth<br>1% (2/185)","Vomiting<br>3% (5/185)"],"name":"Pigs","type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["AbortionStillbirthMumified","Absence","Anorexia","Ataxia","CongestionSkin","Conjunctivitis","Convulsion","Coughing","CyanosisBT","DepressionApathyProstration","Dermatitis","Diarrhoea","Dysentery","Erythema","ExternalHemorrhages","Fever","Huddling","InternalHemorrhages","JointSwellingArthritis","Lameness","Leucopenia","LocomotionProblems","Lymphadenopathy","NasalDischarge","Neurological","Nystagmus","Other","Recumbent","RespDistressLowerAirwaysSymp","Shivering","SkinLesions","Splenomegaly","StuntedGrowth","Vomiting"],"y":[0,0,92,38,0,15,0,0,0,77,0,31,0,0,0,38,8,0,0,0,0,0,0,8,0,0,8,0,77,0,0,0,0,8],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["AbortionStillbirthMumified<br>0% (0/13)","Absence<br>0% (0/13)","Anorexia<br>92% (12/13)","Ataxia<br>38% (5/13)","CongestionSkin<br>0% (0/13)","Conjunctivitis<br>15% (2/13)","Convulsion<br>0% (0/13)","Coughing<br>0% (0/13)","CyanosisBT<br>0% (0/13)","DepressionApathyProstration<br>77% (10/13)","Dermatitis<br>0% (0/13)","Diarrhoea<br>31% (4/13)","Dysentery<br>0% (0/13)","Erythema<br>0% (0/13)","ExternalHemorrhages<br>0% (0/13)","Fever<br>38% (5/13)","Huddling<br>8% (1/13)","InternalHemorrhages<br>0% (0/13)","JointSwellingArthritis<br>0% (0/13)","Lameness<br>0% (0/13)","Leucopenia<br>0% (0/13)","LocomotionProblems<br>0% (0/13)","Lymphadenopathy<br>0% (0/13)","NasalDischarge<br>8% (1/13)","Neurological<br>0% (0/13)","Nystagmus<br>0% (0/13)","Other<br>8% (1/13)","Recumbent<br>0% (0/13)","RespDistressLowerAirwaysSymp<br>77% (10/13)","Shivering<br>0% (0/13)","SkinLesions<br>0% (0/13)","Splenomegaly<br>0% (0/13)","StuntedGrowth<br>0% (0/13)","Vomiting<br>8% (1/13)"],"name":"Wildboar","type":"bar","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d08969a4324e3dd8d600" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d08969a4324e3dd8d600">{"x":{"visdat":{"396c69972fb9":["function () ","plotlyVisDat"]},"cur_data":"396c69972fb9","attrs":{"396c69972fb9":{"x":{},"y":{},"hoverinfo":"text","text":["AbortionStillbirthMumified<br>1% (2/205)","Absence<br>5% (10/205)","Anorexia<br>39% (80/205)","Ataxia<br>9% (19/205)","CongestionSkin<br>8% (17/205)","Conjunctivitis<br>5% (10/205)","Convulsion<br>2% (5/205)","CyanosisBT<br>10% (20/205)","DepressionApathyProstration<br>38% (77/205)","Dermatitis<br>1% (3/205)","Diarrhoea<br>20% (41/205)","Dysentery<br>1% (3/205)","Erythema<br>2% (5/205)","ExternalHemorrhages<br>2% (4/205)","Fever<br>85% (175/205)","Huddling<br>1% (2/205)","InternalHemorrhages<br>6% (13/205)","JointSwellingArthritis<br>5% (10/205)","Lameness<br>1% (3/205)","LocomotionProblems<br>4% (8/205)","NasalDischarge<br>3% (7/205)","Neurological<br>2% (5/205)","Nystagmus<br>1% (2/205)","Other<br>7% (14/205)","Recumbent<br>5% (11/205)","RespDistressLowerAirwaysSymp<br>16% (33/205)","Shivering<br>1% (3/205)","SkinLesions<br>1% (3/205)","StuntedGrowth<br>1% (2/205)","Vomiting<br>4% (8/205)"],"name":"Pigs","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"396c69972fb9.1":{"x":{},"y":{},"hoverinfo":"text","text":["AbortionStillbirthMumified<br>0% (0/14)","Absence<br>0% (0/14)","Anorexia<br>93% (13/14)","Ataxia<br>36% (5/14)","CongestionSkin<br>0% (0/14)","Conjunctivitis<br>14% (2/14)","Convulsion<br>0% (0/14)","CyanosisBT<br>0% (0/14)","DepressionApathyProstration<br>79% (11/14)","Dermatitis<br>0% (0/14)","Diarrhoea<br>29% (4/14)","Dysentery<br>0% (0/14)","Erythema<br>0% (0/14)","ExternalHemorrhages<br>0% (0/14)","Fever<br>43% (6/14)","Huddling<br>7% (1/14)","InternalHemorrhages<br>0% (0/14)","JointSwellingArthritis<br>0% (0/14)","Lameness<br>0% (0/14)","LocomotionProblems<br>0% (0/14)","NasalDischarge<br>7% (1/14)","Neurological<br>0% (0/14)","Nystagmus<br>0% (0/14)","Other<br>7% (1/14)","Recumbent<br>0% (0/14)","RespDistressLowerAirwaysSymp<br>71% (10/14)","Shivering<br>0% (0/14)","SkinLesions<br>0% (0/14)","StuntedGrowth<br>0% (0/14)","Vomiting<br>7% (1/14)"],"name":"Wildboar","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"% animal groups reporting sign"},"xaxis":{"domain":[0,1],"automargin":true,"tickangle":-45,"title":"ClinicalSigns","type":"category","categoryorder":"array","categoryarray":["AbortionStillbirthMumified","Absence","Anorexia","Ataxia","CongestionSkin","Conjunctivitis","Convulsion","CyanosisBT","DepressionApathyProstration","Dermatitis","Diarrhoea","Dysentery","Erythema","ExternalHemorrhages","Fever","Huddling","InternalHemorrhages","JointSwellingArthritis","Lameness","LocomotionProblems","NasalDischarge","Neurological","Nystagmus","Other","Recumbent","RespDistressLowerAirwaysSymp","Shivering","SkinLesions","StuntedGrowth","Vomiting"]},"barmode":"group","font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["AbortionStillbirthMumified","Absence","Anorexia","Ataxia","CongestionSkin","Conjunctivitis","Convulsion","CyanosisBT","DepressionApathyProstration","Dermatitis","Diarrhoea","Dysentery","Erythema","ExternalHemorrhages","Fever","Huddling","InternalHemorrhages","JointSwellingArthritis","Lameness","LocomotionProblems","NasalDischarge","Neurological","Nystagmus","Other","Recumbent","RespDistressLowerAirwaysSymp","Shivering","SkinLesions","StuntedGrowth","Vomiting"],"y":[1,5,39,9,8,5,2,10,38,1,20,1,2,2,85,1,6,5,1,4,3,2,1,7,5,16,1,1,1,4],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["AbortionStillbirthMumified<br>1% (2/205)","Absence<br>5% (10/205)","Anorexia<br>39% (80/205)","Ataxia<br>9% (19/205)","CongestionSkin<br>8% (17/205)","Conjunctivitis<br>5% (10/205)","Convulsion<br>2% (5/205)","CyanosisBT<br>10% (20/205)","DepressionApathyProstration<br>38% (77/205)","Dermatitis<br>1% (3/205)","Diarrhoea<br>20% (41/205)","Dysentery<br>1% (3/205)","Erythema<br>2% (5/205)","ExternalHemorrhages<br>2% (4/205)","Fever<br>85% (175/205)","Huddling<br>1% (2/205)","InternalHemorrhages<br>6% (13/205)","JointSwellingArthritis<br>5% (10/205)","Lameness<br>1% (3/205)","LocomotionProblems<br>4% (8/205)","NasalDischarge<br>3% (7/205)","Neurological<br>2% (5/205)","Nystagmus<br>1% (2/205)","Other<br>7% (14/205)","Recumbent<br>5% (11/205)","RespDistressLowerAirwaysSymp<br>16% (33/205)","Shivering<br>1% (3/205)","SkinLesions<br>1% (3/205)","StuntedGrowth<br>1% (2/205)","Vomiting<br>4% (8/205)"],"name":"Pigs","type":"bar","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["AbortionStillbirthMumified","Absence","Anorexia","Ataxia","CongestionSkin","Conjunctivitis","Convulsion","CyanosisBT","DepressionApathyProstration","Dermatitis","Diarrhoea","Dysentery","Erythema","ExternalHemorrhages","Fever","Huddling","InternalHemorrhages","JointSwellingArthritis","Lameness","LocomotionProblems","NasalDischarge","Neurological","Nystagmus","Other","Recumbent","RespDistressLowerAirwaysSymp","Shivering","SkinLesions","StuntedGrowth","Vomiting"],"y":[0,0,93,36,0,14,0,0,79,0,29,0,0,0,43,7,0,0,0,0,7,0,0,7,0,71,0,0,0,7],"hoverinfo":["text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text","text"],"text":["AbortionStillbirthMumified<br>0% (0/14)","Absence<br>0% (0/14)","Anorexia<br>93% (13/14)","Ataxia<br>36% (5/14)","CongestionSkin<br>0% (0/14)","Conjunctivitis<br>14% (2/14)","Convulsion<br>0% (0/14)","CyanosisBT<br>0% (0/14)","DepressionApathyProstration<br>79% (11/14)","Dermatitis<br>0% (0/14)","Diarrhoea<br>29% (4/14)","Dysentery<br>0% (0/14)","Erythema<br>0% (0/14)","ExternalHemorrhages<br>0% (0/14)","Fever<br>43% (6/14)","Huddling<br>7% (1/14)","InternalHemorrhages<br>0% (0/14)","JointSwellingArthritis<br>0% (0/14)","Lameness<br>0% (0/14)","LocomotionProblems<br>0% (0/14)","NasalDischarge<br>7% (1/14)","Neurological<br>0% (0/14)","Nystagmus<br>0% (0/14)","Other<br>7% (1/14)","Recumbent<br>0% (0/14)","RespDistressLowerAirwaysSymp<br>71% (10/14)","Shivering<br>0% (0/14)","SkinLesions<br>0% (0/14)","StuntedGrowth<br>0% (0/14)","Vomiting<br>7% (1/14)"],"name":"Wildboar","type":"bar","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="row-3" class="section level2" data-height="500">
-<h2 data-height="500">Row</h2>
+<h2>Row</h2>
 <div id="section-6" class="section level3 bggreen" data-width="150">
-<h3 class="bggreen" data-width="150"></h3>
+<h3 class="bggreen"></h3>
 <p><a name="CF"></a></p>
 <h1>
 Reported Case Fatality
 </h1>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#cfr">
-<img src=../../assets/css/images/info.png>
+<img src=../../../../templates/assets/css/images/info.png>
 </button>
 <!-- Modal -->
-<div id="cfr" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div id="cfr" class="modal fade" tabindex="-1" role="dialog"
+aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
 <div class="modal-body">
-<p>Case fatality was calculated as the percentage of animals, within a group of animals experimentally infected with the agent, which were later reported dead or euthanised due to advanced clinical signs. Fatality was recorded as 0% when the study specifically reported that no animals died due to the infection. <br><br> The data available for all animal groups extracted from the systematic literature review is summarized in this plot. The grey dots correspond to individual animal groups reported in the studies reviewed (unique data points). The fatality reported for each of these individual groups is shown in the plot in the Y-axis, and points are aggregated by animal species (and when appropriate, agent subtype) in the X-axis. The coloured box-plots behind the points represent the distribution of the observed fatality for each combination of agent subtype and animal host species. Hover the box-plots to see the distribution metrics (median and interquartile ranges).<b> You can see these detailed metrics when hovering the mouse over the coloured bars </b>. <br><br> Please note that, when considered relevant, data are presented aggregated by pathogen subtype in order to provide one more layer of detail regarding the data available. Particularly in cases where pathogen subtypes are well known and may be associated with different geographical distributions. However, pathogenicity of an organism (its ability to cause disease) is not determined by its subtype, and this should not be interpreted as a causal relationship between subtype and fatality. <br><br> Further details about the case fatality data are provided in the meta-analysis section.</p>
+<p>Case fatality was calculated as the percentage of animals, within a
+group of animals experimentally infected with the agent, which were
+later reported dead or euthanised due to advanced clinical signs.
+Fatality was recorded as 0% when the study specifically reported that no
+animals died due to the infection. <br><br> The data available for all
+animal groups extracted from the systematic literature review is
+summarized in this plot. The grey dots correspond to individual animal
+groups reported in the studies reviewed (unique data points). The
+fatality reported for each of these individual groups is shown in the
+plot in the Y-axis, and points are aggregated by animal species (and
+when appropriate, agent subtype) in the X-axis. The coloured box-plots
+behind the points represent the distribution of the observed fatality
+for each combination of agent subtype and animal host species. Hover the
+box-plots to see the distribution metrics (median and interquartile
+ranges).<b> You can see these detailed metrics when hovering the mouse
+over the coloured bars </b>. <br><br> Please note that, when considered
+relevant, data are presented aggregated by pathogen subtype in order to
+provide one more layer of detail regarding the data available.
+Particularly in cases where pathogen subtypes are well known and may be
+associated with different geographical distributions. However,
+pathogenicity of an organism (its ability to cause disease) is not
+determined by its subtype, and this should not be interpreted as a
+causal relationship between subtype and fatality. <br><br> Further
+details about the case fatality data are provided in the meta-analysis
+section.</p>
 </div>
 <div class="modal-footer">
 <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -2770,12 +2064,12 @@ Close
 <div class="knitr-options" data-fig-width="960" data-fig-height="576">
 
 </div>
-<div id="htmlwidget-65fcca603596e1261d88" style="width:960px;height:576px;" class="plotly html-widget"></div>
-<script type="application/json" data-for="htmlwidget-65fcca603596e1261d88">{"x":{"visdat":{"6ecc70e49aa":["function () ","plotlyVisDat"]},"cur_data":"6ecc70e49aa","attrs":{"6ecc70e49aa":{"x":{},"y":{},"boxpoints":"all","jitter":1,"pointpos":0,"marker":{"color":"grey"},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"% dead within experimentally infected groups","range":[0,100]},"xaxis":{"domain":[0,1],"automargin":true,"title":"Host species","type":"category","categoryorder":"array","categoryarray":["Pigs ","Wild boar"]},"boxmode":"group","legend":{"title":{"text":"<b> Agent subtype <\/b>"}},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"fillcolor":"rgba(102,194,165,0.5)","x":["Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs "],"y":[100,100,100,100,50,90,100,100,100,100,33.33,70,0,33.33],"boxpoints":"all","jitter":1,"pointpos":0,"marker":{"color":"grey","line":{"color":"rgba(102,194,165,1)"}},"type":"box","name":"ASFV I","line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(252,141,98,0.5)","x":["Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar"],"y":[90,100,100,90,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,33.33,33.33,100,100,100,100,100,100,60,100,100,100,100,100,100,100,100,25,100,100],"boxpoints":"all","jitter":1,"pointpos":0,"marker":{"color":"grey","line":{"color":"rgba(252,141,98,1)"}},"type":"box","name":"ASFV II","line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(141,160,203,0.5)","x":["Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs "],"y":[100,33.33,100,100,75,100,50,100,100,82.35,66.67,0,0,100,8.33,100,100,100,100,100,100,90.91,100,100,100,100,100,100,100,100,50,50,100],"boxpoints":"all","jitter":1,"pointpos":0,"marker":{"color":"grey","line":{"color":"rgba(141,160,203,1)"}},"type":"box","name":"notGiven","line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-612eef52e35f235ecac4" style="width:960px;height:576px;" class="plotly html-widget"></div>
+<script type="application/json" data-for="htmlwidget-612eef52e35f235ecac4">{"x":{"visdat":{"396c79303060":["function () ","plotlyVisDat"]},"cur_data":"396c79303060","attrs":{"396c79303060":{"x":{},"y":{},"boxpoints":"all","jitter":1,"pointpos":0,"marker":{"color":"grey"},"color":{},"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"box"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"yaxis":{"domain":[0,1],"automargin":true,"title":"% dead within experimentally infected groups","range":[0,100]},"xaxis":{"domain":[0,1],"automargin":true,"title":"Host species","type":"category","categoryorder":"array","categoryarray":["Pigs ","Wild boar"]},"boxmode":"group","legend":{"title":{"text":"<b> Agent subtype <\/b>"}},"font":{"family":"Verdana","size":16},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"fillcolor":"rgba(102,194,165,0.5)","x":["Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs "],"y":[100,100,100,100,50,90,100,100,100,100,70,33.33,0,33.33],"boxpoints":"all","jitter":1,"pointpos":0,"marker":{"color":"grey","line":{"color":"rgba(102,194,165,1)"}},"type":"box","name":"ASFV I","line":{"color":"rgba(102,194,165,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(252,141,98,0.5)","x":["Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar"],"y":[90,100,100,90,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,100,33.33,33.33,100,100,100,100,100,100,60,100,100,100,100,100,100,100,100,25,100,100],"boxpoints":"all","jitter":1,"pointpos":0,"marker":{"color":"grey","line":{"color":"rgba(252,141,98,1)"}},"type":"box","name":"ASFV II","line":{"color":"rgba(252,141,98,1)"},"xaxis":"x","yaxis":"y","frame":null},{"fillcolor":"rgba(141,160,203,0.5)","x":["Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs "],"y":[100,33.33,100,100,100,75,100,50,100,82.35,66.67,0,0,100,8.33,100,100,100,100,100,100,90.91,100,100,100,100,100,100,100,50,100,50,100,100,100,100,100,100,100,50,100,100,100,100,50,8.7,100,100,100,100,100,100,80,100,100,80],"boxpoints":"all","jitter":1,"pointpos":0,"marker":{"color":"grey","line":{"color":"rgba(141,160,203,1)"}},"type":"box","name":"notGiven","line":{"color":"rgba(141,160,203,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.2,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="row-4" class="section level2 bggreen" data-height="60">
-<h2 class="bggreen" data-height="60">Row</h2>
+<h2 class="bggreen">Row</h2>
 <h1>
      META-ANALYSIS
 </h1>
@@ -2785,19 +2079,30 @@ Close
 </div>
 <div id="row-5" class="section level2">
 <h2>Row</h2>
-<div id="duration-of-clinical-signs-meta-analysis-accounting-for-censoring" class="section level3">
-<h3>Duration of clinical signs: Meta-analysis accounting for censoring</h3>
-<p>Kaplan-Meier curves were fit to the data,in order to estimate confidence intervals (CI) and interquartile ranges (IQ) that explicitly take into account the data censoring issue (lack of information about true maximum when experiments ended while the agent was still detectable). The results are the survival curves shown below, first with confidence intervals (parametric assumption), and then with interquartile ranges (non-parametric). Further below you will find a table with the exact calculated CI and IQ.</p>
+<div
+id="duration-of-clinical-signs-meta-analysis-accounting-for-censoring"
+class="section level3">
+<h3>Duration of clinical signs: Meta-analysis accounting for
+censoring</h3>
+<p>Kaplan-Meier curves were fit to the data,in order to estimate
+confidence intervals (CI) and interquartile ranges (IQ) that explicitly
+take into account the data censoring issue (lack of information about
+true maximum when experiments ended while the agent was still
+detectable). The results are the survival curves shown below, first with
+confidence intervals (parametric assumption), and then with
+interquartile ranges (non-parametric). Further below you will find a
+table with the exact calculated CI and IQ.</p>
 </div>
 </div>
 <div id="row-6" class="section level2">
 <h2>Row</h2>
-<div id="kaplan-meier-curves-with-parametric-confidence-intervals" class="section level3">
+<div id="kaplan-meier-curves-with-parametric-confidence-intervals"
+class="section level3">
 <h3>Kaplan-Meier curves with parametric Confidence Intervals</h3>
 <div class="knitr-options" data-fig-width="960" data-fig-height="576">
 
 </div>
-<p><img src="impact_ma1.png" width="960" data-figure-id=fig1 /></p>
+<p><img src="C:/GitHub/DiseaseProfiles/SLR_objectives/impact_ma1.png" width="960" data-figure-id=fig1 /></p>
 <div class="knitr-options" data-fig-width="960" data-fig-height="576">
 
 </div>
@@ -2805,12 +2110,13 @@ Close
 </div>
 <div id="row-7" class="section level2">
 <h2>Row</h2>
-<div id="kaplan-meier-curves-with-inter-quartile-intervals" class="section level3">
+<div id="kaplan-meier-curves-with-inter-quartile-intervals"
+class="section level3">
 <h3>Kaplan-Meier curves with Inter-Quartile Intervals</h3>
 <div class="knitr-options" data-fig-width="960" data-fig-height="576">
 
 </div>
-<p><img src="impact_ma2.png" width="960" data-figure-id=fig1 /></p>
+<p><img src="C:/GitHub/DiseaseProfiles/SLR_objectives/impact_ma2.png" width="960" data-figure-id=fig1 /></p>
 <div class="knitr-options" data-fig-width="960" data-fig-height="576">
 
 </div>
@@ -2818,10 +2124,17 @@ Close
 </div>
 <div id="row-8" class="section level2">
 <h2>Row</h2>
-<div id="duration-of-clinical-signs-calculated-confidence-interval-and-interquartile-ranges-accounting-for-censoring" class="section level3">
-<h3>Duration of clinical signs: Calculated confidence interval and interquartile ranges accounting for censoring</h3>
-<p>LCL and UCL stand for the lower and upper control limit of a 95% confidence interval accounting for censoring (lack of information about true maximum when experiments ended while the agent was still detectable).</p>
-<p>N.groups is the number of animal groups from which experimental infection data was available.</p>
+<div
+id="duration-of-clinical-signs-calculated-confidence-interval-and-interquartile-ranges-accounting-for-censoring"
+class="section level3">
+<h3>Duration of clinical signs: Calculated confidence interval and
+interquartile ranges accounting for censoring</h3>
+<p>LCL and UCL stand for the lower and upper control limit of a 95%
+confidence interval accounting for censoring (lack of information about
+true maximum when experiments ended while the agent was still
+detectable).</p>
+<p>N.groups is the number of animal groups from which experimental
+infection data was available.</p>
 </div>
 </div>
 <div id="row-9" class="section level2">
@@ -2866,7 +2179,7 @@ Pigs
 START Clinical Signs
 </td>
 <td style="text-align:right;">
-155
+177
 </td>
 <td style="text-align:right;">
 4
@@ -2892,10 +2205,10 @@ Pigs
 END Clinical Signs
 </td>
 <td style="text-align:right;">
-155
+177
 </td>
 <td style="text-align:right;">
-30
+29
 </td>
 <td style="text-align:right;">
 25
@@ -2904,7 +2217,7 @@ END Clinical Signs
 NA
 </td>
 <td style="text-align:right;">
-22.0
+20.0
 </td>
 <td style="text-align:right;">
 NA
@@ -2918,7 +2231,7 @@ Wild boar
 START Clinical Signs
 </td>
 <td style="text-align:right;">
-12
+13
 </td>
 <td style="text-align:right;">
 3
@@ -2944,7 +2257,7 @@ Wild boar
 END Clinical Signs
 </td>
 <td style="text-align:right;">
-12
+13
 </td>
 <td style="text-align:right;">
 20
@@ -2956,7 +2269,7 @@ END Clinical Signs
 NA
 </td>
 <td style="text-align:right;">
-9.0
+10.0
 </td>
 <td style="text-align:right;">
 23
@@ -2967,7 +2280,7 @@ NA
 </div>
 </div>
 <div id="row-10" class="section level2 bggreen" data-height="60">
-<h2 class="bggreen" data-height="60">Row</h2>
+<h2 class="bggreen">Row</h2>
 <h1>
      Case-fatality in further details
 </h1>
@@ -2976,12 +2289,27 @@ NA
 <h2>Row</h2>
 <div id="section-9" class="section level3">
 <h3></h3>
-<p>The table below details the number of groups (N.groups) for which experimental infection data was available, and gives a summary of the fatality observed within these experimentally infected groups.</p>
-<p>For each combination of animal species and, when relevant, agent subtype, three rows of information are available:</p>
+<p>The table below details the number of groups (N.groups) for which
+experimental infection data was available, and gives a summary of the
+fatality observed within these experimentally infected groups.</p>
+<p>For each combination of animal species and, when relevant, agent
+subtype, three rows of information are available:</p>
 <ol style="list-style-type: decimal">
-<li><p>The within group fatality, summarized for all animal groups in which the reference explicitly gave information about whether deaths were observed (or animals were euthanised due to advanced clinical signs). This therefore can include groups in which no animals died or were euthanised, as long as this information was explicitily observed and reported. The within group percentage displayed in the table is the median of all observations available (one observation = % dead within one animal group experimentally infected and followed).</p></li>
-<li><p>the within group fatality only for groups in which mortality was observed. That is, when disease was observed to cause deathes, what was the percentage fatality within animal groups.</p></li>
-<li><p>the number of animal groups for which no fatality information is available (the reference did not report deaths, but it was not possible to determine whether no deaths were observed, or this information was simply not reported).</p></li>
+<li><p>The within group fatality, summarized for all animal groups in
+which the reference explicitly gave information about whether deaths
+were observed (or animals were euthanised due to advanced clinical
+signs). This therefore can include groups in which no animals died or
+were euthanised, as long as this information was explicitily observed
+and reported. The within group percentage displayed in the table is the
+median of all observations available (one observation = % dead within
+one animal group experimentally infected and followed).</p></li>
+<li><p>the within group fatality only for groups in which mortality was
+observed. That is, when disease was observed to cause deathes, what was
+the percentage fatality within animal groups.</p></li>
+<li><p>the number of animal groups for which no fatality information is
+available (the reference did not report deaths, but it was not possible
+to determine whether no deaths were observed, or this information was
+simply not reported).</p></li>
 </ol>
 </div>
 </div>
@@ -3058,7 +2386,7 @@ ASFV I
 no mortality information
 </td>
 <td style="text-align:center;">
-7
+6
 </td>
 <td style="text-align:center;">
 –
@@ -3075,7 +2403,7 @@ ASFV II
 groups with mortality information
 </td>
 <td style="text-align:center;">
-44
+42
 </td>
 <td style="text-align:center;">
 100%
@@ -3092,7 +2420,7 @@ ASFV II
 only groups with death
 </td>
 <td style="text-align:center;">
-44
+42
 </td>
 <td style="text-align:center;">
 100%
@@ -3109,7 +2437,7 @@ ASFV II
 no mortality information
 </td>
 <td style="text-align:center;">
-19
+17
 </td>
 <td style="text-align:center;">
 –
@@ -3143,7 +2471,7 @@ notGiven
 groups with mortality information
 </td>
 <td style="text-align:center;">
-32
+54
 </td>
 <td style="text-align:center;">
 100%
@@ -3160,7 +2488,7 @@ notGiven
 only groups with death
 </td>
 <td style="text-align:center;">
-30
+52
 </td>
 <td style="text-align:center;">
 100%
@@ -3177,7 +2505,7 @@ notGiven
 no mortality information
 </td>
 <td style="text-align:center;">
-99
+102
 </td>
 <td style="text-align:center;">
 –
@@ -3245,10 +2573,10 @@ notGiven
 groups with mortality information
 </td>
 <td style="text-align:center;">
-2
+3
 </td>
 <td style="text-align:center;">
-83.3%
+100%
 </td>
 </tr>
 <tr>
@@ -3262,10 +2590,10 @@ notGiven
 only groups with death
 </td>
 <td style="text-align:center;">
-2
+3
 </td>
 <td style="text-align:center;">
-83.3%
+100%
 </td>
 </tr>
 </tbody>
@@ -3273,7 +2601,7 @@ only groups with death
 </div>
 </div>
 <div id="row-13" class="section level2 bggreen" data-height="60">
-<h2 class="bggreen" data-height="60">Row</h2>
+<h2 class="bggreen">Row</h2>
 <h1>
      REFERENCES
 </h1>
@@ -3282,26 +2610,26 @@ only groups with death
 <h2>Row</h2>
 <div id="section-11" class="section level3">
 <h3></h3>
-<p>In the left panel you can find information about the entire systematic literature review. The specific references for this agent, and used in this section of the story map are listed below.</p>
+<p>In the left panel you can find information about the entire
+systematic literature review. The specific references for this agent,
+and used in this section of the story map are listed below.</p>
 </div>
 </div>
 <div id="row-15" class="section level2" data-height="600">
-<h2 data-height="600">Row</h2>
+<h2>Row</h2>
 <div class="knitr-options" data-fig-width="960" data-fig-height="576">
 
 </div>
-<div id="htmlwidget-3a3352c7bb2d39360ec4" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3a3352c7bb2d39360ec4">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"15\" data-max=\"230584\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","fillContainer":true,"data":[[15,36,92,92,131,140,238,251,388,460,667,832,902,996,996,1442,1588,1930,1959,2008,2053,2227,2347,2513,2545,2577,2595,2693,2903,3123,3146,3187,3220,3298,3339,3356,3358,3359,3360,3364,3856,3987,6567,202062,202100,202104,202142,202143,202204,202305,202334,202387,202388,202401,202414,202415,202416,202559,202577,202608,202639,202670,202763,202804,204000,210027,210074,210213,210298,210298,210318,210578,210630,210663,210721,210783,210800,210806,210808,210821,230430,230432,230434,230435,230437,230437,230438,230440,230440,230442,230446,230447,230454,230457,230457,230461,230462,230465,230465,230470,230476,230477,230480,230481,230491,230498,230505,230507,230510,230512,230523,230526,230532,230536,230540,230547,230548,230551,230555,230555,230559,230562,230563,230565,230568,230576,230584],["Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs "],[" Jennifer Bernard, Evelyne Hutet, Frederic Paboeuf, Tantely Randriamparany, Philippe Holzmuller, Renaud Lancelot, Valerie Rodrigues, Laurence Vial, Marie-Frederique Le Potier (2016).  Effect of O. porcinus Tick Salivary Gland Extract on the African Swine Fever Virus Infection in Domestic Pig PloS one, 11(#issue#),  e0147869-e0147869"," C. Gallardo, A. Soler, R. Nieto, M. A. Sanchez, C. Martins, V. Pelayo, A. Carrascosa, Y. Revilla, A. Simon, V. Briones, J. M. Sanchez-Vizcaino, M. Arias (2015).  Experimental Transmission of African Swine Fever (ASF) Low Virulent Isolate NH/P68 by Surviving Pigs Transboundary and Emerging Diseases, 62(#issue#),  612-622"," Jana Pietschmann, Claire Guinat, Martin Beer, Valery Pronin, Kerstin Tauscher, Anja Petrov, Guenther Keil, Sandra Blome (2015).  Course and transmission characteristics of oral low-dose infection of domestic pigs and European wild boar with a Caucasian African swine fever virus isolate Archives of Virology, 160(#issue#),  1657-1667"," Jana Pietschmann, Claire Guinat, Martin Beer, Valery Pronin, Kerstin Tauscher, Anja Petrov, Guenther Keil, Sandra Blome (2015).  Course and transmission characteristics of oral low-dose infection of domestic pigs and European wild boar with a Caucasian African swine fever virus isolate Archives of Virology, 160(#issue#),  1657-1667"," Frederic R. Grau, Megan E. Schroeder, Erin L. Mulhern, Michael T. McIntosh, Mangkey A. Bounpheng (2015).  Detection of African swine fever, classical swine fever, and foot-and-mouth disease viruses in swine oral fluids by multiplex reverse transcription real-time polymerase chain reaction Journal of Veterinary Diagnostic Investigation, 27(#issue#),  140-149"," U. C. Braae, M. V. Johansen, H. A. Ngowi, T. B. Rasmussen, J. Nielsen, A. Uttenthal (2015).  Detection of African Swine Fever Virus DNA in Blood Samples Stored on FTA Cards from Asymptomatic Pigs in Mbeya Region, Tanzania Transboundary and Emerging Diseases, 62(#issue#),  87-90"," N. N. Vlasova, A. A. Varentsova, I. V. Shevchenko, I. Yu Zhukov, S. G. Remyga, V. L. Gavrilova, O. S. Puzankova, A. A. Shevtsov, N. G. Zinyakov, K. N. Gruzdev (2015).  Comparative analysis of clinical and biological characteristics of African swine fever virus isolates from 2013 year Russian Federation British Microbiology Research Journal, 5(#issue#),  203-215"," Hovakim Zakaryan, Elena Karalova, Henrik Voskanyan, Zarine Ter-Pogossyan, Narek Nersisyan, Astghik Hakobyan, David Saroyan, Zaven Karalyan (2014).  Evaluation of hemostaseological status of pigs experimentally infected with African swine fever virus Veterinary Microbiology, 174(#issue#),  223-228"," C. Guinat, A. L. Reis, C. L. Netherton, L. Goatley, D. U. Pfeiffer, L. Dixon (2014).  Dynamics of African swine fever virus shedding and excretion in domestic pigs infected by intramuscular inoculation and contact transmission Veterinary Research, 45(#issue#),  (26 September 2014)-(26 September 2014)"," Erin B. Howey, Vivian O'Donnell, Helena C. de Carvalho Ferreira, Manuel V. Borca, Jonathan Arzt (2013).  Pathogenesis of highly virulent African swine fever virus in domestic pigs exposed via intraoropharyngeal, intranasopharyngeal, and intramuscular inoculation, and by direct contact with infected pigs Virus Research, 178(#issue#),  328-339"," H. C. de Carvalho Ferreira, E. Weesendorp, A. R. W. Elbers, A. Bouma, S. Quak, J. A. Stegeman, W. L. A. Loeffen (2012).  African swine fever virus excretion patterns in persistently infected animals: A quantitative approach Veterinary Microbiology, 160(#issue#),  327-340"," Z. Karalyan, H. Zakaryan, K. Sargsyan, H. Voskanyan, L. Hakobyan, L. Abroyan, A. Avetisyan, H. Arzumanyan, E. Karalova (2012).  Pathology of porcine peripheral white blood cells during infection with African swine fever virus BMC Veterinary Research, 8(#issue#),  (28 February 2012)-(28 February 2012)"," Katherine King, Dave Chapman, Jordi M. Argilaguet, Emma Fishbourne, Evelyne Hutet, Roland Cariolet, Geoff Hutchings, Christopher A. L. Oura, Christopher L. Netherton, Katy Moffat, Geraldine Taylor, Marie-Frederique Le Potier, Linda K. Dixon, Haru- H. Takamatsu (2011).  Protection of European domestic pigs from virulent African isolates of African swine fever virus by experimental immunisation Vaccine, 29(#issue#),  4593-4600"," Claudia Gabriel, Sandra Blome, Alexander Malogolovkin, Stanislav Parilov, Denis Kolbasov, Jens P. Teifke, Martin Beer (2011).  Characterization of African Swine Fever Virus Caucasus Isolate in European Wild Boars Emerging Infectious Diseases, 17(#issue#),  2342-2345"," Claudia Gabriel, Sandra Blome, Alexander Malogolovkin, Stanislav Parilov, Denis Kolbasov, Jens P. Teifke, Martin Beer (2011).  Characterization of African Swine Fever Virus Caucasus Isolate in European Wild Boars Emerging Infectious Diseases, 17(#issue#),  2342-2345"," F. J. Salguero, S. Gil, Y. Revilla, C. Gallardo, M. Arias, C. Martins (2008).  Cytokine mRNA expression and pathological findings in pigs inoculated with African swine fever virus (E-70) deleted on A238L Veterinary Immunology and Immunopathology, 124(#issue#),  107-119"," Rakel Carpintero, Covadonga Alonso, Matilde Pineiro, Maria Iturralde, Marta Andres, Marie-Frederique Le Potier, Francois Madec, Maria A. Alava, Andres Pineiro, Fermin Lampreave (2007).  Pig major acute-phase protein and apolipoprotein A-I responses correlate with the clinical course of experimentally induced African swine fever and Aujeszky's disease Veterinary Research, 38(#issue#),  741-753"," L. Zsak, M. V. Borca, G. R. Risatti, A. Zsak, R. A. French, Z. Lu, G. F. Kutish, J. G. Neilan, J. D. Callahan, W. M. Nelson, D. L. Rock (2005).  Preclinical diagnosis of African swine fever in contact-exposed swine by a real-time PCR assay Journal of Clinical Microbiology, 43(#issue#),  112-119"," E. B. Otesile, A. T. P. Ajuwape, S. O. Odemuyiwa, S. O. Akpavie, A. K. Olaifa, G. N. Odaibo, O. D. Olaleye, A. I. Adetosoye (2005).  Field and experimental investigations of an outbreak of African Swine Fever in Nigeria Revue d'Elevage et de Medecine Veterinaire des Pays Tropicaux, 58(#issue#),  21-26"," M. Aguero, J. Fernandez, L. J. Romero, M. J. Zamora, C. Sanchez, S. Belak, M. Arias, J. M. Sanchez-Vizcaino (2004).  A highly sensitive and specific gel-based multiplex RT-PCR assay for the simultaneous and differential diagnosis of African swine fever and Classical swine fever in clinical samples Veterinary Research, 35(#issue#),  551-563"," F. S. Boinas, G. H. Hutchings, L. K. Dixon, P. J. Wilkinson (2004).  Characterization of pathogenic and non-pathogenic African swine fever virus isolates from Ornithodoros erraticus inhabiting pig premises in Portugal Journal of General Virology, 85(#issue#),  2177-2187"," L. Carrasco, A. Nunez, F. J. Salguero, F. D. San Segundo, P. Sanchez-Cordon, J. C. Gomez-Villamandos, M. A. Sierra (2002).  African swine fever: Expression of interleukin-1 alpha and tumour necrosis factor-alpha by pulmonary intravascular macrophages Journal of Comparative Pathology, 126(#issue#),  194-201"," A. Leitao, C. Cartaxeiro, R. Coelho, B. Cruz, R. M. E. Parkhouse, F. C. Portugal, J. D. Vigario, C. L. V. Martins (2001).  The non-haemadsorbing African swine fever virus isolate ASFV/NH/P68 provides a model for defining the protective anti-virus immune response Journal of General Virology, 82(#issue#),  513-523"," N. F. Ekue, P. J. Wilkinson (1999).  The pathogenicity of two groups of African swine fever virus isolates from Cameroon in domestic pigs Revue d'Elevage et de Medecine Veterinaire des Pays Tropicaux, 52(#issue#),  202-208"," A. Childerstone, H. Takamatsu, H. Yang, M. Denyer, R. M. E. Parkhouse (1998).  Modulation of T cell and monocyte function in the spleen following infection of pigs with African swine fever virus Veterinary Immunology and Immunopathology, 62(#issue#),  281-296"," C. A. L. Oura, P. P. Powell, R. M. E. Parkhouse (1998).  African swine fever: a disease characterized by apoptosis Journal of General Virology, 79(#issue#),  1427-1438"," E. C. Anderson, G. H. Hutchings, N. Mukarati, P. J. Wilkinson (1998).  African swine fever virus infection of the bushpig (Potamochoerus porcus) and its significance in the epidemiology of the disease Veterinary Microbiology, 62(#issue#),  1-15"," F. Rodriguez, A. Fernandez, J. Perez, J. M. delasMulas, M. A. Sierra, A. Jover (1996).  African swine fever: Morphopathology of a viral haemorrhagic disease Veterinary Record, 139(#issue#),  249-254"," C. J. Villeda, S. M. Williams, P. J. Wilkinson, E. Vinuela (1993).  Consumption coagulopathy associated with shock in acute African swine fever Archives of virology, 133(#issue#),  467-75"," N. F. Ekue, P. J. Wilkinson, R. C. Wardley (1989).  Infection of pigs with the Cameroon isolate (Cam/82) of African swine fever virus Journal of comparative pathology, 100(#issue#),  145-54"," E. V. Genovesi, R. C. Knudsen, T. C. Whyard, C. A. Mebus (1988).  Moderately virulent African swine fever virus infection: blood cell changes and infective virus distribution among blood components American journal of veterinary research, 49(#issue#),  338-44"," D. H. Schlafer, C. A. Mebus (1987).  Abortion in sows experimentally infected with African swine fever virus: pathogenesis studies American journal of veterinary research, 48(#issue#),  246-54"," R. C. Knudsen, E. V. Genovesi (1987).  In vivo and in vitro effects of moderately virulent African swine fever virus on mitogenesis of pig lymphocytes Veterinary immunology and immunopathology, 15(#issue#),  323-36"," J. F. Edwards, W. J. Dodds, D. O. Slauson (1985).  Mechanism of thrombocytopenia in African swine fever American journal of veterinary research, 46(#issue#),  2058-63"," J. F. Edwards, W. J. Dodds, D. O. Slauson (1985).  Megakaryocytic infection and thrombocytopenia in African swine fever Veterinary pathology, 22(#issue#),  171-6"," F. M. Hamdy, A. H. Dardiri (1984).  Clinical and immunologic responses of pigs to African swine fever virus isolated from the Western Hemisphere American journal of veterinary research, 45(#issue#),  711-4"," D. H. Schlafer, C. A. Mebus (1984).  Abortion in sows experimentally infected with African swine fever virus: clinical features American journal of veterinary research, 45(#issue#),  1353-60"," D. H. Schlafer, J. W. McVicar, C. A. Mebus (1984).  African swine fever convalescent sows: subsequent pregnancy and the effect of colostral antibody on challenge inoculation of their pigs American journal of veterinary research, 45(#issue#),  1361-6"," D. H. Schlafer, C. A. Mebus, J. W. McVicar (1984).  African swine fever in neonatal pigs: passively acquired protection from colostrum or serum of recovered pigs American journal of veterinary research, 45(#issue#),  1367-72"," J. F. Edwards, W. J. Dodds, D. O. Slauson (1984).  Coagulation changes in African swine fever virus infection American journal of veterinary research, 45(#issue#),  2414-20"," S. Konno, W. D. Taylor, A. H. Dardiri (1971).  Acute African swine fever. Proliferative phase in lymphoreticular tissue and the reticuloendothelial system The Cornell veterinarian, 61(#issue#),  71-84"," W. P. Heuschele (1967).  Studies on the pathogenesis of African swine fever. I. Quantitative studies on the sequential development of virus in pig tissues Archiv fur die gesamte Virusforschung, 21(#issue#),  349-56"," P. Boulanger, G. L. Bannister, D. P. Gray, G. M. Ruckerbauer, N. G. Willis (1967).  African swine fever. 3. The use of the agar double-diffusion precipitation test for the detection of the virus in swine tissue Canadian journal of comparative medicine and veterinary science, 31(#issue#),  12-5"," A.S. Olesen, L. Lohse, A. Boklund, T. Halasa, G.J. Belsham, T.B. Rasmussen, A. Bøtner (2018).  Short time window for transmissibility of African swine fever virus from a contaminated environment Transboundary and Emerging Diseases, #volume#(#issue#),  #Pages#"," I. Nurmoja, A. Petrov, C. Breidenstein, L. Zani, J.H. Forth, M. Beer, M. Kristian, A. Viltrop, S. Blome (2017).  Biological characterization of African swine fever virus genotype II strains from north-eastern Estonia in European wild boar Transboundary and Emerging Diseases, 64(6),  2034"," A.L. Reis, L.C. Goatley, T. Jabbar, P.J. Sanchez-Cordon, C.L. Netherton, D.A.G. Chapman, L.K. Dixon (2017).  Deletion of the African swine fever virus gene DP148R does not reduce virus replication in culture but reduces virus virulence in pigs and induces high levels of protection against challenge Journal of Virology, 91(24),  #Pages#"," P.L. Monteagudo, A. Lacasta, E. López, L. Bosch, J. Collado, S. Pina-Pedrero, F. Correa-Fiz, F. Accensi, M.J. Navas, E. Vidal, M.J. Bustos, J.M. Rodríguez, A. Gallei, V. Nikolin, M.L. Salas, F. Rodríguez (2017).  BA71&lt;U+0394&gt;CD2: A new recombinant live attenuated African swine fever virus with cross-protective capabilities Journal of Virology, 91(21),  #Pages#"," A.S. Olesen, L. Lohse, A. Boklund, T. Halasa, C. Gallardo, Z. Pejsak, G.J. Belsham, T.B. Rasmussen, A. Bøtner (2017).  Transmission of African swine fever virus from infected pigs by direct contact and aerosol routes Veterinary Microbiology, 211(#issue#),  92"," E. Fernández-Carrión, M. Martínez-Avilés, B. Ivorra, B. Martínez-López, Á.M. Ramos, J.M. Sánchez-Vizcaíno (2017).  Motion-based video monitoring for early detection of livestock diseases: The case of African swine fever PLoS ONE, 12(9),  #Pages#"," Z.R. Karalyan, Z.R. Ter-Pogossyan, N.Y. Karalyan, Z.B. Semerjyan, M.R. Tatoyan, S.A. Karapetyan, E.M. Karalova (2017).  Hemophagocytic lymphohistiocytosis in acute African swine fever clinic Veterinary Immunology and Immunopathology, 187(#issue#),  64"," M. Martínez-Avilés, E. Fernández-Carrión, J.M. López García-Baones, J.M. Sánchez-Vizcaíno (2017).  Early Detection of Infection in Pigs through an Online Monitoring System Transboundary and Emerging Diseases, 64(2),  364"," C. Gallardo, A. Soler, R. Nieto, C. Cano, V. Pelayo, M.A. Sánchez, G. Pridotkas, J. Fernandez-Pinero, V. Briones, M. Arias (2017).  Experimental Infection of Domestic Pigs with African Swine Fever Virus Lithuania 2014 Genotype II Field Isolate Transboundary and Emerging Diseases, 64(1),  300"," P.J. Sánchez-Cordón, D. Chapman, T. Jabbar, A.L. Reis, L. Goatley, C.L. Netherton, G. Taylor, M. Montoya, L. Dixon (2017).  Different routes and doses influence protection in pigs immunised with the naturally attenuated African swine fever virus isolate OURT88/3 Antiviral Research, 138(#issue#),  1"," L. Popescu, N.N. Gaudreault, K.M. Whitworth, M.V. Murgia, J.C. Nietfeld, A. Mileham, M. Samuel, K.D. Wells, R.S. Prather, R.R.R. Rowland (2017).  Genetically edited pigs lacking CD163 show no resistance following infection with the African swine fever virus isolate, Georgia 2007/1 Virology, 501(#issue#),  102"," V. O'Donnell, G.R. Risatti, L.G. Holinka, P.W. Krug, J. Carlson, L. Velazquez-Salinas, P.A. Azzinaro, D.P. Gladue, M.V. Borca (2017).  Simultaneous deletion of the 9GL and UK genes from the African swine fever virus Georgia 2007 isolate offers increased safety and protection against homologous challenge Journal of Virology, 91(1),  #Pages#"," J. Post, E. Weesendorp, M. Montoya, W.L. Loeffen (2017).  Influence of Age and Dose of African Swine Fever Virus Infections on Clinical Outcome and Blood Parameters in Pigs Viral Immunology, 30(1),  58"," P.J. Sánchez-Cordón, T. Jabbar, M. Berrezaie, D. Chapman, A. Reis, P. Sastre, P. Rueda, L. Goatley, L.K. Dixon (2017).  Evaluation of protection induced by immunisation of domestic pigs with deletion mutant African swine fever virus Benin&lt;U+0394&gt;MGF by different doses and routes Vaccine, #volume#(#issue#),  #Pages#"," J. Carlson, V. O’Donnell, M. Alfano, L.V. Salinas, L.G. Holinka, P.W. Krug, D.P. Gladue, S. Higgs, M.V. Borca (2016).  Association of the host immune response with protection using a live attenuated African swine fever virus model Viruses, 8(10),  #Pages#"," A.L. Reis, C.C. Abrams, L.C. Goatley, C. Netherton, D.G. Chapman, P. Sanchez-Cordon, L.K. Dixon (2016).  Deletion of African swine fever virus interferon inhibitors from the genome of a virulent isolate reduces virulence in domestic pigs and induces a protective response Vaccine, 34(39),  4698"," V. O'Donnell, L.G. Holinka, B. Sanford, P.W. Krug, J. Carlson, J.M. Pacheco, B. Reese, G.R. Risatti, D.P. Gladue, M.V. Borca (2016).  African swine fever virus Georgia isolate harboring deletions of 9GL and MGF360/505 genes is highly attenuated in swine but does not confer protection against parental virus challenge Virus Research, 221(#issue#),  8"," G. Burmakina, A. Malogolovkin, E.R. Tulman, L. Zsak, G. Delhon, D.G. Diel, N.M. Shobogorov, Y.P. Morgunov, S.Y. Morgunov, G.F. Kutish, D. Kolbasov, D.L. Rock (2016).  African swine fever virus serotype-specific proteins are significant protective antigens for African swine fever Journal of General Virology, 97(7),  1670"," J.P. Golding, L. Goatley, S. Goodbourn, L.K. Dixon, G. Taylor, C.L. Netherton (2016).  Sensitivity of African swine fever virus to type I interferon is linked to genes within multigene families 360 and 505 Virology, 493(#issue#),  154"," B. Sanford, L.G. Holinka, V. O'Donnell, P.W. Krug, J. Carlson, M. Alfano, C. Carrillo, P. Wu, A. Lowe, G.R. Risatti, D.P. Gladue, M.V. Borca (2016).  Deletion of the thymidine kinase gene induces complete attenuation of the Georgia isolate of African swine fever virus Virus Research, 213(#issue#),  165"," Z. Karalyan, H. Zakaryan, E. Arakelova, V. Aivazyan, M. Tatoyan, A. Kotsinyan, R. Izmailyan, E. Karalova (2016).  Evidence of hemolysis in pigs infected with highly virulent African swine fever virus Veterinary World, 9(12),  1413"," P.J. Wilkinson, R.C. Wardley, S.M. Williams (1981).  African swine fever virus (Malta/78) in pigs #journal#, 91(2),  277","Borca, M.V., Ramirez-Medina, E., Silva, E., Vuono, E., Rai, A., Pruitt, S., Holinka, L.G., Velazquez-Salinas, L., Zhu, J., Gladue, D.P. (2020).  Development of a highly effective african swine fever virus vaccine by deletion of the I177L gene results in sterile immunity against the current epidemic eurasia strain Journal of Virology, 94(7),  #Pages#","Jelsma, T., Wijnker, J.J., Smid, B., Verheij, E., van der Poel, W.H.M., Wisselink, H.J. (2019).  Salt inactivation of classical swine fever virus and African swine fever virus in porcine intestines confirms the existing in vitro casings model Veterinary Microbiology, 238(#issue#),  #Pages#","Cabezón, O., Muñoz-González, S., Colom-Cadena, A., Pérez-Simó, M., Rosell, R., Lavín, S., Marco, I., Fraile, L., de la Riva, P.M., Rodríguez, F., Domínguez, J., Ganges, L. (2017).  African swine fever virus infection in Classical swine fever subclinically infected wild boars BMC Veterinary Research, 13(1),  #Pages#","Pietschmann, J., Guinat, C., Beer, M., Pronin, V., Tauscher, K., Petrov, A., Keil, G., Blome, S. (2015).  Course and transmission characteristics of oral low-dose infection of domestic pigs and European wild boar with a Caucasian African swine fever virus isolate Archives of Virology, 160(7),  1657","Pietschmann, J., Guinat, C., Beer, M., Pronin, V., Tauscher, K., Petrov, A., Keil, G., Blome, S. (2015).  Course and transmission characteristics of oral low-dose infection of domestic pigs and European wild boar with a Caucasian African swine fever virus isolate Archives of Virology, 160(7),  1657","Grau, F.R., Schroeder, M.E., Mulhern, E.L., McIntosh, M.T., Bounpheng, M.A. (2015).  Detection of African swine fever, classical swine fever, and foot-and-mouth disease viruses in swine oral fluids by multiplex reverse transcription real-time polymerase chain reaction Journal of Veterinary Diagnostic Investigation, 27(2),  140","Sánchez-Cordón, P.J., Cerón, J.J., Núñez, A., Martínez-Subiela, S., Pedrera, M., Romero-Trevejo, J.L., Garrido, M.R., Gómez-Villamandos, J.C. (2007).  Serum concentrations of C-reactive protein, serum amyloid A, and haptoglobin in pigs inoculated with African swine fever or classical swine fever viruses American Journal of Veterinary Research, 68(7),  772","Salguero, F.J., Sánchez-Cordón, P.J., Núñez, A., Fernández de Marco, M., Gómez-Villamandos, J.C. (2005).  Proinflammatory cytokines induce lymphocyte apoptosis in acute African swine fever infection Journal of Comparative Pathology, 132(4),  289","Salguero, F.J., Sánchez-Cordón, P.J., Sierra, M.A., Jover, A., Núñez, A., Gómez-Villamandos, J.C. (2004).  Apoptosis of thymocytes in experimental African swine fever virus infection Histology and Histopathology, 19(1),  77","Leitão, A., Cartaxeiro, C., Coelho, R., Cruz, B., Parkhouse, R.M.E., Portugal, F.C., Vigário, J.D., Martins, C.L.V. (2001).  The non-haemadsorbing African swine fever virus isolate ASFV/NH/P68 provides a model for defining the protective anti-virus immune response Journal of General Virology, 82(3),  513","Neilan, J.G., Lu, Z., Kutish, G.F., Zsak, L., Lewis, T.L., Rock, D.L. (1997).  A conserved African swine fever virus I&lt;U+03BA&gt;B homolog, 5EL, is nonessential for growth in vitro and virulence in domestic swine Virology, 235(2),  377","Rodríguez, F., Fernández, A., Pérez, J., Martín De Las Mulas, J., Sierra, M.A., Jover, A. (1996).  African swine fever: Morphopathology of a viral haemorrhagic disease Veterinary Record, 139(11),  249","Carrasco, L., Gómez-Villamandos, J.C., Bautista, M.J., Martín De Las Mulas, J., Villeda, C.J., Wilkinson, P.J., Sierra, M.A. (1996).  In vivo replication of African swine fever virus (Malawi '83) in neutrophils Veterinary Research, 27(1),  55","Ramiro-Ibáñez, F., Ortega, A., Brun, A., Escribano, J.M., Alonso, C. (1996).  Apoptosis: A mechanism of cell killing and lymphoid organ impairment during acute African swine fever virus infection Journal of General Virology, 77(9),  2209","Ramiro-Ibáñez, F., Escribano, J.M., Alonso, C. (1995).  Application of a monoclonal antibody recognizing protein p30 to detect African swine fever virus-infected cells in peripheral blood Journal of Virological Methods, 55(3),  339","Walczak, M., Wasiak, M., Dudek, K., Kycko, A., Szacawa, E., Olech, M., Wozniakowski, G., Szczotka-Bochniarz, A. (2021).  Blood Counts, Biochemical Parameters, Inflammatory, and Immune Responses in Pigs Infected Experimentally with the African Swine Fever Virus Isolate Pol18_28298_O111 Viruses, 13(3),  #Pages#","Cadenas-Fernández, E., Sánchez-Vizcaíno, J.M., van den Born, E., Kosowska, A., van Kilsdonk, E., Fernández-Pacheco, P., Gallardo, C., Arias, M., Barasona, J.A. (2021).  High doses of inactivated african swine fever virus are safe, but do not confer protection against a virulent challenge Vaccines, 9(3),  #Pages#","Ramirez-Medina, E., Vuono, E., Pruitt, S., Rai, A., Silva, E., Espinoza, N., Zhu, J., Velazquez-Salinas, L., Borca, M.V., Gladue, D.P. (2021).  Development and In Vivo Evaluation of a MGF110-1L Deletion Mutant in African Swine Fever Strain Georgia Viruses, 13(2),  #Pages#","Zhang, J., Zhang, Y., Chen, T., Yang, J., Yue, H., Wang, L., Zhou, X., Qi, Y., Han, X., Ke, J., Wang, S., Yang, J., Miao, F., Zhang, S., Zhang, F., Wang, Y., Li, M., Hu, R. (2021).  Deletion of the L7L-L11L Genes Attenuates ASFV and Induces Protection against Homologous Challenge Viruses, 13(2),  #Pages#","Pikalo, J., Deutschmann, P., Fischer, M., Roszyk, H., Beer, M., Blome, S. (2021).  African swine fever laboratory diagnosis—lessons learned from recent animal trials Pathogens, 10(2),  1","Pikalo, J., Deutschmann, P., Fischer, M., Roszyk, H., Beer, M., Blome, S. (2021).  African swine fever laboratory diagnosis—lessons learned from recent animal trials Pathogens, 10(2),  1","Wang, S., Zhang, J., Zhang, Y., Yang, J., Wang, L., Qi, Y., Han, X., Zhou, X., Miao, F., Chen, T., Wang, Y., Zhang, F., Zhang, S., Hu, R. (2021).  Cytokine Storm in Domestic Pigs Induced by Infection of Virulent African Swine Fever Virus Frontiers in Veterinary Science, 7(#issue#),  #Pages#","Schäfer, A., Zani, L., Pikalo, J., Hühr, J., Sehl, J., Mettenleiter, T.C., Breithaupt, A., Blome, S., Blohm, U. (2021).  T-cell responses in domestic pigs and wild boar upon infection with the moderately virulent African swine fever virus strain ‘Estonia2014’ Transboundary and Emerging Diseases, #volume#(#issue#),  #Pages#","Schäfer, A., Zani, L., Pikalo, J., Hühr, J., Sehl, J., Mettenleiter, T.C., Breithaupt, A., Blome, S., Blohm, U. (2021).  T-cell responses in domestic pigs and wild boar upon infection with the moderately virulent African swine fever virus strain ‘Estonia2014’ Transboundary and Emerging Diseases, #volume#(#issue#),  #Pages#","Vuono, E., Ramirez-Medina, E., Pruitt, S., Rai, A., Silva, E., Espinoza, N., Zhu, J., Velazquez-Salinas, L., Gladue, D.P., Borca, M.V. (2020).  Evaluation in Swine of a Recombinant Georgia 2010 African Swine Fever Virus Lacking the I8L Gene Viruses, 13(1),  #Pages#","Teklue, T., Wang, T., Luo, Y., Hu, R., Sun, Y., Qiu, H.-J. (2020).  Generation and evaluation of an African swine fever virus mutant with deletion of the CD2v and UK genes Vaccines, 8(4),  1","Borca, M.V., O’Donnell, V., Holinka, L.G., Risatti, G.R., Ramirez-Medina, E., Vuono, E.A., Shi, J., Pruitt, S., Rai, A., Silva, E., Velazquez-Salinas, L., Gladue, D.P. (2020).  Deletion of CD2-like gene from the genome of African swine fever virus strain Georgia does not attenuate virulence in swine Scientific Reports, 10(1),  #Pages#","Flannery, J., Ashby, M., Moore, R., Wells, S., Rajko-Nenow, P., Netherton, C.L., Batten, C. (2020).  Identification of novel testing matrices for African swine fever surveillance Journal of Veterinary Diagnostic Investigation, 32(6),  961","Hühr, J., Schäfer, A., Schwaiger, T., Zani, L., Sehl, J., Mettenleiter, T.C., Blome, S., Blohm, U. (2020).  Impaired T-cell responses in domestic pigs and wild boar upon infection with a highly virulent African swine fever virus strain Transboundary and Emerging Diseases, 67(6),  3016","Hühr, J., Schäfer, A., Schwaiger, T., Zani, L., Sehl, J., Mettenleiter, T.C., Blome, S., Blohm, U. (2020).  Impaired T-cell responses in domestic pigs and wild boar upon infection with a highly virulent African swine fever virus strain Transboundary and Emerging Diseases, 67(6),  3016","Ramirez-Medina, E., Vuono, E.A., Rai, A., Pruitt, S., Silva, E., Velazquez-Salinas, L., Zhu, J., Gladue, D.P., Borca, M.V. (2020).  Evaluation in swine of a recombinant african swine fever virus lacking the MGF-360-1L gene Viruses, 12(10),  #Pages#","Gladue, D.P., O’Donnell, V., Ramirez-Medina, E., Rai, A., Pruitt, S., Vuono, E.A., Silva, E., Velazquez-Salinas, L., Borca, M.V. (2020).  Deletion of CD2-like (CD2v) and C-type lectin-like (EP153R) genes from african swine fever virus georgia-&lt;U+2206&gt;9GL abrogates its effectiveness as an experimental vaccine Viruses, 12(10),  #Pages#","Fischer, M., Hühr, J., Blome, S., Conraths, F.J., Probst, C. (2020).  Stability of African swine fever virus in carcasses of domestic pigs and wild boar experimentally infected with the ASFV “Estonia 2014” isolate Viruses, 12(10),  #Pages#","Fischer, M., Hühr, J., Blome, S., Conraths, F.J., Probst, C. (2020).  Stability of African swine fever virus in carcasses of domestic pigs and wild boar experimentally infected with the ASFV “Estonia 2014” isolate Viruses, 12(10),  #Pages#","Ramirez-Medina, E., Vuono, E., Pruitt, S., Rai, A., Silva, E., Zhu, J., Velazquez-Salinas, L., Gladue, D.P., Borca, M.V. (2020).  X69R is a non-essential gene that, when deleted from African swine fever, does not affect virulence in swine Viruses, 12(9),  #Pages#","Sánchez-Cordón, P.J., Jabbar, T., Chapman, D., Dixon, L.K., Montoya, M. (2020).  Absence of long-term protection in domestic pigs immunized with attenuated african swine fever virus isolate OURT88/3 or Benin&lt;U+2206&gt;MGF correlates with increased levels of regulatory T cells and interleukin-10 Journal of Virology, 94(14),  #Pages#","Pikalo, J., Schoder, M.-E., Sehl, J., Breithaupt, A., Tignon, M., Cay, A.B., Gager, A.M., Fischer, M., Beer, M., Blome, S. (2020).  The African swine fever virus isolate Belgium 2018/1 shows high virulence in European wild boar Transboundary and Emerging Diseases, 67(4),  1654","Ramirez-Medina, E., Ramirez-Medina, E., Vuono, E.A., Vuono, E.A., Rai, A., Rai, A., Pruitt, S., Pruitt, S., Silva, E., Silva, E., Velazquez-Salinas, L., Velazquez-Salinas, L., Zhu, J., Borca, M.V., Gladue, D.P. (2020).  The C962R ORF of African swine fever strain georgia is non-essential and not required for virulence in swine Viruses, 12(6),  #Pages#","Reis, A.L., Goatley, L.C., Jabbar, T., Lopez, E., Rathakrishnan, A., Dixon, L.K. (2020).  Deletion of the gene for the type I interferon inhibitor I329L from the attenuated african swine fever virus ourt88/3 strain reduces protection induced in pigs Vaccines, 8(2),  #Pages#","Borca, M.V., Ramirez-Medina, E., Silva, E., Vuono, E., Rai, A., Pruitt, S., Holinka, L.G., Velazquez-Salinas, L., Zhu, J., Gladue, D.P. (2020).  Development of a highly effective african swine fever virus vaccine by deletion of the I177L gene results in sterile immunity against the current epidemic eurasia strain Journal of Virology, 94(7),  #Pages#","Walczak, M., Zmudzki, J., Mazur-Panasiuk, N., Juszkiewicz, M., Wozniakowski, G. (2020).  Analysis of the clinical course of experimental infection with highly pathogenic african swine fever strain, isolated from an outbreak in poland. Aspects related to the disease suspicion at the farm level Pathogens, 9(3),  #Pages#","Ramírez-Medina, E., Vuono, E.A., Velazquez-Salinas, L., Silva, E., Rai, A., Pruitt, S., Berggren, K.A., Zhu, J., Borca, M.V., Gladue, D.P. (2020).  The MGF360-16R ORF of African swine fever virus strain Georgia encodes for a nonessential gene that interacts with host proteins SERTAD3 and SDCBP Viruses, 12(1),  #Pages#","de Oliveira, R.P., Hutet, E., Duhayon, M., Guionnet, J.-M., Paboeuf, F., Vial, L., Le Potier, M.-F. (2020).  Successful infection of domestic pigs by ingestion of the European soft tick O. Erraticus that fed on African swine fever virus infected pig Viruses, 12(3),  #Pages#","Yamada, M., Masujin, K., Kameyama, K.-I., Yamazoe, R., Kubo, T., Iwata, K., Tamura, A., Hibi, H., Shiratori, T., Koizumi, S., Ohashi, K., Ikezawa, M., Kokuho, T., Yamakawa, M. (2020).  Experimental infection of pigs with different doses of the african swine fever virus armenia 07 strain by intramuscular injection and direct contact Journal of Veterinary Medical Science, 82(12),  1835","Portugal, R., Goatley, L.C., Husmann, R., Zuckermann, F.A., Dixon, L.K. (2020).  A porcine macrophage cell line that supports high levels of replication of OURT88/3, an attenuated strain of African swine fever virus Emerging Microbes and Infections, 9(1),  1245","de Oliveira, R.P., Hutet, E., Paboeuf, F., Duhayon, M., Boinas, F., de Leon, A.P., Filatov, S., Vial, L., Potier, M.-F.L. (2019).  Comparative vector competence of the Afrotropical soft tick Ornithodoros moubata and Palearctic species, O. Erraticus and O. Verrucosus, for African swine fever virus strains circulating in Eurasia PLoS ONE, 14(11),  #Pages#","Eblé, P.L., Hagenaars, T.J., Weesendorp, E., Quak, S., Moonen-Leusen, H.W., Loeffen, W.L.A. (2019).  Transmission of African Swine Fever Virus via carrier (survivor) pigs does occur Veterinary Microbiology, 237(#issue#),  #Pages#","Lokhandwala, S., Petrovan, V., Popescu, L., Sangewar, N., Elijah, C., Stoian, A., Olcha, M., Ennen, L., Bray, J., Bishop, R.P., Waghela, S.D., Sheahan, M., Rowland, R.R.R., Mwangi, W. (2019).  Adenovirus-vectored African Swine Fever Virus antigen cocktails are immunogenic but not protective against intranasal challenge with Georgia 2007/1 isolate Veterinary Microbiology, 235(#issue#),  10","Ramirez-Medina, E., Vuono, E., O’donnell, V., Holinka, L.G., Silva, E., Rai, A., Pruitt, S., Carrillo, C., Gladue, D.P., Borca, M.V. (2019).  Differential effect of the deletion of african swine fever virus virulence-associated genes in the induction of attenuation of the highly virulent Georgia strain Viruses, 11(7),  #Pages#","Gallardo, C., Soler, A., Rodze, I., Nieto, R., Cano-Gómez, C., Fernandez-Pinero, J., Arias, M. (2019).  Attenuated and non-haemadsorbing (non-HAD) genotype II African swine fever virus (ASFV) isolated in Europe, Latvia 2017 Transboundary and Emerging Diseases, 66(3),  1399","Zhao, D., Liu, R., Zhang, X., Li, F., Wang, J., Zhang, J., Liu, X., Wang, L., Zhang, J., Wu, X., Guan, Y., Chen, W., Wang, X., He, X., Bu, Z. (2019).  Replication and virulence in pigs of the first African swine fever virus isolated in China Emerging Microbes and Infections, 8(1),  438","Petrini, S., Feliziani, F., Casciari, C., Giammarioli, M., Torresi, C., De Mia, G.M. (2019).  Survival of African swine fever virus (ASFV) in various traditional Italian dry-cured meat products Preventive Veterinary Medicine, 162(#issue#),  126","Sunwoo, S.-Y., Pérez-Núñez, D., Morozov, I., Sánchez, E.G., Gaudreault, N.N., Trujillo, J.D., Mur, L., Nogal, M., Madden, D., Urbaniak, K., Kim, I.J., Ma, W., Revilla, Y., Richt, J.A. (2019).  Dna-protein vaccination strategy does not protect from challenge with African swine fever virus Armenia 2007 strain Vaccines, 7(1),  #Pages#","Zani, L., Forth, J.H., Forth, L., Nurmoja, I., Leidenberger, S., Henke, J., Carlson, J., Breidenstein, C., Viltrop, A., Höper, D., Sauter-Louis, C., Beer, M., Blome, S. (2018).  Deletion at the 5'-end of Estonian ASFV strains associated with an attenuated phenotype Scientific Reports, 8(1),  #Pages#","Zani, L., Forth, J.H., Forth, L., Nurmoja, I., Leidenberger, S., Henke, J., Carlson, J., Breidenstein, C., Viltrop, A., Höper, D., Sauter-Louis, C., Beer, M., Blome, S. (2018).  Deletion at the 5'-end of Estonian ASFV strains associated with an attenuated phenotype Scientific Reports, 8(1),  #Pages#","Olesen, A.S., Lohse, L., Dalgaard, M.D., Wozniakowski, G., Belsham, G.J., Bøtner, A., Rasmussen, T.B. (2018).  Complete genome sequence of an African swine fever virus (ASFV POL/2015/Podlaskie) determined directly from pig erythrocyte-associated nucleic acid Journal of Virological Methods, 261(#issue#),  14","Olesen, A.S., Lohse, L., Hansen, M.F., Boklund, A., Halasa, T., Belsham, G.J., Rasmussen, T.B., Bøtner, A., Bødker, R. (2018).  Infection of pigs with African swine fever virus via ingestion of stable flies (Stomoxys calcitrans) Transboundary and Emerging Diseases, 65(5),  1152","Petrov, A., Forth, J.H., Zani, L., Beer, M., Blome, S. (2018).  No evidence for long-term carrier status of pigs after African swine fever virus infection Transboundary and Emerging Diseases, 65(5),  1318","Núñez-Hernández, F., Vera, G., Sánchez, A., Rodríguez, F., Núñez, J.I. (2018).  African swine fever virus does not express viral microRNAs in experimentally infected pigs BMC Veterinary Research, 14(1),  #Pages#","Olesen, A.S., Lohse, L., Boklund, A., Halasa, T., Belsham, G.J., Rasmussen, T.B., Bøtner, A. (2018).  Short time window for transmissibility of African swine fever virus from a contaminated environment Transboundary and Emerging Diseases, 65(4),  1024","Gallardo, C., Nurmoja, I., Soler, A., Delicado, V., Simón, A., Martin, E., Perez, C., Nieto, R., Arias, M. (2018).  Evolution in Europe of African swine fever genotype II viruses from highly to moderately virulent Veterinary Microbiology, 219(#issue#),  70","Sánchez-Cordón, P.J., Jabbar, T., Berrezaie, M., Chapman, D., Reis, A., Sastre, P., Rueda, P., Goatley, L., Dixon, L.K. (2018).  Evaluation of protection induced by immunisation of domestic pigs with deletion mutant African swine fever virus Benin&lt;U+0394&gt;MGF by different doses and routes Vaccine, 36(5),  707"]],"container":"<table class=\"display fill-container\">\n  <thead>\n    <tr>\n      <th>Refid<\/th>\n      <th>targetSpecies<\/th>\n      <th>FullBibliography<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollY":"100vh","pageLength":5,"columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fa8e1d9ac53289975d18" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fa8e1d9ac53289975d18">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td data-type=\"integer\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"15\" data-max=\"234544\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","fillContainer":true,"data":[[15,36,92,92,131,140,238,251,388,460,667,832,902,996,996,1442,1588,1930,1959,2008,2053,2227,2347,2513,2545,2577,2595,2693,2903,3123,3146,3187,3220,3298,3339,3356,3358,3359,3360,3364,3856,3987,6567,202100,202104,202142,202143,202204,202305,202334,202387,202388,202401,202414,202415,202559,202577,202608,202639,202670,202763,202804,204000,210213,210298,210298,210578,210630,210663,210721,210783,210800,210806,210808,210821,230430,230432,230434,230435,230437,230437,230438,230440,230440,230442,230446,230447,230454,230457,230457,230461,230462,230465,230465,230470,230476,230477,230480,230481,230491,230498,230505,230507,230510,230512,230523,230526,230532,230536,230540,230547,230548,230551,230555,230555,230559,230562,230563,230565,230568,230576,230584,234356,234379,234427,234437,234442,234450,234457,234458,234460,234465,234485,234488,234502,234503,234506,234510,234544],["Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Pigs ","Wild boar","Pigs ","Pigs ","Pigs "],[" Jennifer Bernard, Evelyne Hutet, Frederic Paboeuf, Tantely Randriamparany, Philippe Holzmuller, Renaud Lancelot, Valerie Rodrigues, Laurence Vial, Marie-Frederique Le Potier (2016).  Effect of O. porcinus Tick Salivary Gland Extract on the African Swine Fever Virus Infection in Domestic Pig PloS one, 11(#issue#),  e0147869-e0147869"," C. Gallardo, A. Soler, R. Nieto, M. A. Sanchez, C. Martins, V. Pelayo, A. Carrascosa, Y. Revilla, A. Simon, V. Briones, J. M. Sanchez-Vizcaino, M. Arias (2015).  Experimental Transmission of African Swine Fever (ASF) Low Virulent Isolate NH/P68 by Surviving Pigs Transboundary and Emerging Diseases, 62(#issue#),  612-622"," Jana Pietschmann, Claire Guinat, Martin Beer, Valery Pronin, Kerstin Tauscher, Anja Petrov, Guenther Keil, Sandra Blome (2015).  Course and transmission characteristics of oral low-dose infection of domestic pigs and European wild boar with a Caucasian African swine fever virus isolate Archives of Virology, 160(#issue#),  1657-1667"," Jana Pietschmann, Claire Guinat, Martin Beer, Valery Pronin, Kerstin Tauscher, Anja Petrov, Guenther Keil, Sandra Blome (2015).  Course and transmission characteristics of oral low-dose infection of domestic pigs and European wild boar with a Caucasian African swine fever virus isolate Archives of Virology, 160(#issue#),  1657-1667"," Frederic R. Grau, Megan E. Schroeder, Erin L. Mulhern, Michael T. McIntosh, Mangkey A. Bounpheng (2015).  Detection of African swine fever, classical swine fever, and foot-and-mouth disease viruses in swine oral fluids by multiplex reverse transcription real-time polymerase chain reaction Journal of Veterinary Diagnostic Investigation, 27(#issue#),  140-149"," U. C. Braae, M. V. Johansen, H. A. Ngowi, T. B. Rasmussen, J. Nielsen, A. Uttenthal (2015).  Detection of African Swine Fever Virus DNA in Blood Samples Stored on FTA Cards from Asymptomatic Pigs in Mbeya Region, Tanzania Transboundary and Emerging Diseases, 62(#issue#),  87-90"," N. N. Vlasova, A. A. Varentsova, I. V. Shevchenko, I. Yu Zhukov, S. G. Remyga, V. L. Gavrilova, O. S. Puzankova, A. A. Shevtsov, N. G. Zinyakov, K. N. Gruzdev (2015).  Comparative analysis of clinical and biological characteristics of African swine fever virus isolates from 2013 year Russian Federation British Microbiology Research Journal, 5(#issue#),  203-215"," Hovakim Zakaryan, Elena Karalova, Henrik Voskanyan, Zarine Ter-Pogossyan, Narek Nersisyan, Astghik Hakobyan, David Saroyan, Zaven Karalyan (2014).  Evaluation of hemostaseological status of pigs experimentally infected with African swine fever virus Veterinary Microbiology, 174(#issue#),  223-228"," C. Guinat, A. L. Reis, C. L. Netherton, L. Goatley, D. U. Pfeiffer, L. Dixon (2014).  Dynamics of African swine fever virus shedding and excretion in domestic pigs infected by intramuscular inoculation and contact transmission Veterinary Research, 45(#issue#),  (26 September 2014)-(26 September 2014)"," Erin B. Howey, Vivian O'Donnell, Helena C. de Carvalho Ferreira, Manuel V. Borca, Jonathan Arzt (2013).  Pathogenesis of highly virulent African swine fever virus in domestic pigs exposed via intraoropharyngeal, intranasopharyngeal, and intramuscular inoculation, and by direct contact with infected pigs Virus Research, 178(#issue#),  328-339"," H. C. de Carvalho Ferreira, E. Weesendorp, A. R. W. Elbers, A. Bouma, S. Quak, J. A. Stegeman, W. L. A. Loeffen (2012).  African swine fever virus excretion patterns in persistently infected animals: A quantitative approach Veterinary Microbiology, 160(#issue#),  327-340"," Z. Karalyan, H. Zakaryan, K. Sargsyan, H. Voskanyan, L. Hakobyan, L. Abroyan, A. Avetisyan, H. Arzumanyan, E. Karalova (2012).  Pathology of porcine peripheral white blood cells during infection with African swine fever virus BMC Veterinary Research, 8(#issue#),  (28 February 2012)-(28 February 2012)"," Katherine King, Dave Chapman, Jordi M. Argilaguet, Emma Fishbourne, Evelyne Hutet, Roland Cariolet, Geoff Hutchings, Christopher A. L. Oura, Christopher L. Netherton, Katy Moffat, Geraldine Taylor, Marie-Frederique Le Potier, Linda K. Dixon, Haru- H. Takamatsu (2011).  Protection of European domestic pigs from virulent African isolates of African swine fever virus by experimental immunisation Vaccine, 29(#issue#),  4593-4600"," Claudia Gabriel, Sandra Blome, Alexander Malogolovkin, Stanislav Parilov, Denis Kolbasov, Jens P. Teifke, Martin Beer (2011).  Characterization of African Swine Fever Virus Caucasus Isolate in European Wild Boars Emerging Infectious Diseases, 17(#issue#),  2342-2345"," Claudia Gabriel, Sandra Blome, Alexander Malogolovkin, Stanislav Parilov, Denis Kolbasov, Jens P. Teifke, Martin Beer (2011).  Characterization of African Swine Fever Virus Caucasus Isolate in European Wild Boars Emerging Infectious Diseases, 17(#issue#),  2342-2345"," F. J. Salguero, S. Gil, Y. Revilla, C. Gallardo, M. Arias, C. Martins (2008).  Cytokine mRNA expression and pathological findings in pigs inoculated with African swine fever virus (E-70) deleted on A238L Veterinary Immunology and Immunopathology, 124(#issue#),  107-119"," Rakel Carpintero, Covadonga Alonso, Matilde Pineiro, Maria Iturralde, Marta Andres, Marie-Frederique Le Potier, Francois Madec, Maria A. Alava, Andres Pineiro, Fermin Lampreave (2007).  Pig major acute-phase protein and apolipoprotein A-I responses correlate with the clinical course of experimentally induced African swine fever and Aujeszky's disease Veterinary Research, 38(#issue#),  741-753"," L. Zsak, M. V. Borca, G. R. Risatti, A. Zsak, R. A. French, Z. Lu, G. F. Kutish, J. G. Neilan, J. D. Callahan, W. M. Nelson, D. L. Rock (2005).  Preclinical diagnosis of African swine fever in contact-exposed swine by a real-time PCR assay Journal of Clinical Microbiology, 43(#issue#),  112-119"," E. B. Otesile, A. T. P. Ajuwape, S. O. Odemuyiwa, S. O. Akpavie, A. K. Olaifa, G. N. Odaibo, O. D. Olaleye, A. I. Adetosoye (2005).  Field and experimental investigations of an outbreak of African Swine Fever in Nigeria Revue d'Elevage et de Medecine Veterinaire des Pays Tropicaux, 58(#issue#),  21-26"," M. Aguero, J. Fernandez, L. J. Romero, M. J. Zamora, C. Sanchez, S. Belak, M. Arias, J. M. Sanchez-Vizcaino (2004).  A highly sensitive and specific gel-based multiplex RT-PCR assay for the simultaneous and differential diagnosis of African swine fever and Classical swine fever in clinical samples Veterinary Research, 35(#issue#),  551-563"," F. S. Boinas, G. H. Hutchings, L. K. Dixon, P. J. Wilkinson (2004).  Characterization of pathogenic and non-pathogenic African swine fever virus isolates from Ornithodoros erraticus inhabiting pig premises in Portugal Journal of General Virology, 85(#issue#),  2177-2187"," L. Carrasco, A. Nunez, F. J. Salguero, F. D. San Segundo, P. Sanchez-Cordon, J. C. Gomez-Villamandos, M. A. Sierra (2002).  African swine fever: Expression of interleukin-1 alpha and tumour necrosis factor-alpha by pulmonary intravascular macrophages Journal of Comparative Pathology, 126(#issue#),  194-201"," A. Leitao, C. Cartaxeiro, R. Coelho, B. Cruz, R. M. E. Parkhouse, F. C. Portugal, J. D. Vigario, C. L. V. Martins (2001).  The non-haemadsorbing African swine fever virus isolate ASFV/NH/P68 provides a model for defining the protective anti-virus immune response Journal of General Virology, 82(#issue#),  513-523"," N. F. Ekue, P. J. Wilkinson (1999).  The pathogenicity of two groups of African swine fever virus isolates from Cameroon in domestic pigs Revue d'Elevage et de Medecine Veterinaire des Pays Tropicaux, 52(#issue#),  202-208"," A. Childerstone, H. Takamatsu, H. Yang, M. Denyer, R. M. E. Parkhouse (1998).  Modulation of T cell and monocyte function in the spleen following infection of pigs with African swine fever virus Veterinary Immunology and Immunopathology, 62(#issue#),  281-296"," C. A. L. Oura, P. P. Powell, R. M. E. Parkhouse (1998).  African swine fever: a disease characterized by apoptosis Journal of General Virology, 79(#issue#),  1427-1438"," E. C. Anderson, G. H. Hutchings, N. Mukarati, P. J. Wilkinson (1998).  African swine fever virus infection of the bushpig (Potamochoerus porcus) and its significance in the epidemiology of the disease Veterinary Microbiology, 62(#issue#),  1-15"," F. Rodriguez, A. Fernandez, J. Perez, J. M. delasMulas, M. A. Sierra, A. Jover (1996).  African swine fever: Morphopathology of a viral haemorrhagic disease Veterinary Record, 139(#issue#),  249-254"," C. J. Villeda, S. M. Williams, P. J. Wilkinson, E. Vinuela (1993).  Consumption coagulopathy associated with shock in acute African swine fever Archives of virology, 133(#issue#),  467-75"," N. F. Ekue, P. J. Wilkinson, R. C. Wardley (1989).  Infection of pigs with the Cameroon isolate (Cam/82) of African swine fever virus Journal of comparative pathology, 100(#issue#),  145-54"," E. V. Genovesi, R. C. Knudsen, T. C. Whyard, C. A. Mebus (1988).  Moderately virulent African swine fever virus infection: blood cell changes and infective virus distribution among blood components American journal of veterinary research, 49(#issue#),  338-44"," D. H. Schlafer, C. A. Mebus (1987).  Abortion in sows experimentally infected with African swine fever virus: pathogenesis studies American journal of veterinary research, 48(#issue#),  246-54"," R. C. Knudsen, E. V. Genovesi (1987).  In vivo and in vitro effects of moderately virulent African swine fever virus on mitogenesis of pig lymphocytes Veterinary immunology and immunopathology, 15(#issue#),  323-36"," J. F. Edwards, W. J. Dodds, D. O. Slauson (1985).  Mechanism of thrombocytopenia in African swine fever American journal of veterinary research, 46(#issue#),  2058-63"," J. F. Edwards, W. J. Dodds, D. O. Slauson (1985).  Megakaryocytic infection and thrombocytopenia in African swine fever Veterinary pathology, 22(#issue#),  171-6"," F. M. Hamdy, A. H. Dardiri (1984).  Clinical and immunologic responses of pigs to African swine fever virus isolated from the Western Hemisphere American journal of veterinary research, 45(#issue#),  711-4"," D. H. Schlafer, C. A. Mebus (1984).  Abortion in sows experimentally infected with African swine fever virus: clinical features American journal of veterinary research, 45(#issue#),  1353-60"," D. H. Schlafer, J. W. McVicar, C. A. Mebus (1984).  African swine fever convalescent sows: subsequent pregnancy and the effect of colostral antibody on challenge inoculation of their pigs American journal of veterinary research, 45(#issue#),  1361-6"," D. H. Schlafer, C. A. Mebus, J. W. McVicar (1984).  African swine fever in neonatal pigs: passively acquired protection from colostrum or serum of recovered pigs American journal of veterinary research, 45(#issue#),  1367-72"," J. F. Edwards, W. J. Dodds, D. O. Slauson (1984).  Coagulation changes in African swine fever virus infection American journal of veterinary research, 45(#issue#),  2414-20"," S. Konno, W. D. Taylor, A. H. Dardiri (1971).  Acute African swine fever. Proliferative phase in lymphoreticular tissue and the reticuloendothelial system The Cornell veterinarian, 61(#issue#),  71-84"," W. P. Heuschele (1967).  Studies on the pathogenesis of African swine fever. I. Quantitative studies on the sequential development of virus in pig tissues Archiv fur die gesamte Virusforschung, 21(#issue#),  349-56"," P. Boulanger, G. L. Bannister, D. P. Gray, G. M. Ruckerbauer, N. G. Willis (1967).  African swine fever. 3. The use of the agar double-diffusion precipitation test for the detection of the virus in swine tissue Canadian journal of comparative medicine and veterinary science, 31(#issue#),  12-5"," I. Nurmoja, A. Petrov, C. Breidenstein, L. Zani, J.H. Forth, M. Beer, M. Kristian, A. Viltrop, S. Blome (2017).  Biological characterization of African swine fever virus genotype II strains from north-eastern Estonia in European wild boar Transboundary and Emerging Diseases, 64(6),  2034"," A.L. Reis, L.C. Goatley, T. Jabbar, P.J. Sanchez-Cordon, C.L. Netherton, D.A.G. Chapman, L.K. Dixon (2017).  Deletion of the African swine fever virus gene DP148R does not reduce virus replication in culture but reduces virus virulence in pigs and induces high levels of protection against challenge Journal of Virology, 91(24),  #Pages#"," P.L. Monteagudo, A. Lacasta, E. López, L. Bosch, J. Collado, S. Pina-Pedrero, F. Correa-Fiz, F. Accensi, M.J. Navas, E. Vidal, M.J. Bustos, J.M. Rodríguez, A. Gallei, V. Nikolin, M.L. Salas, F. Rodríguez (2017).  BA71ΔCD2: A new recombinant live attenuated African swine fever virus with cross-protective capabilities Journal of Virology, 91(21),  #Pages#"," A.S. Olesen, L. Lohse, A. Boklund, T. Halasa, C. Gallardo, Z. Pejsak, G.J. Belsham, T.B. Rasmussen, A. Bøtner (2017).  Transmission of African swine fever virus from infected pigs by direct contact and aerosol routes Veterinary Microbiology, 211(#issue#),  92"," E. Fernández-Carrión, M. Martínez-Avilés, B. Ivorra, B. Martínez-López, Á.M. Ramos, J.M. Sánchez-Vizcaíno (2017).  Motion-based video monitoring for early detection of livestock diseases: The case of African swine fever PLoS ONE, 12(9),  #Pages#"," Z.R. Karalyan, Z.R. Ter-Pogossyan, N.Y. Karalyan, Z.B. Semerjyan, M.R. Tatoyan, S.A. Karapetyan, E.M. Karalova (2017).  Hemophagocytic lymphohistiocytosis in acute African swine fever clinic Veterinary Immunology and Immunopathology, 187(#issue#),  64"," M. Martínez-Avilés, E. Fernández-Carrión, J.M. López García-Baones, J.M. Sánchez-Vizcaíno (2017).  Early Detection of Infection in Pigs through an Online Monitoring System Transboundary and Emerging Diseases, 64(2),  364"," C. Gallardo, A. Soler, R. Nieto, C. Cano, V. Pelayo, M.A. Sánchez, G. Pridotkas, J. Fernandez-Pinero, V. Briones, M. Arias (2017).  Experimental Infection of Domestic Pigs with African Swine Fever Virus Lithuania 2014 Genotype II Field Isolate Transboundary and Emerging Diseases, 64(1),  300"," P.J. Sánchez-Cordón, D. Chapman, T. Jabbar, A.L. Reis, L. Goatley, C.L. Netherton, G. Taylor, M. Montoya, L. Dixon (2017).  Different routes and doses influence protection in pigs immunised with the naturally attenuated African swine fever virus isolate OURT88/3 Antiviral Research, 138(#issue#),  1"," L. Popescu, N.N. Gaudreault, K.M. Whitworth, M.V. Murgia, J.C. Nietfeld, A. Mileham, M. Samuel, K.D. Wells, R.S. Prather, R.R.R. Rowland (2017).  Genetically edited pigs lacking CD163 show no resistance following infection with the African swine fever virus isolate, Georgia 2007/1 Virology, 501(#issue#),  102"," V. O'Donnell, G.R. Risatti, L.G. Holinka, P.W. Krug, J. Carlson, L. Velazquez-Salinas, P.A. Azzinaro, D.P. Gladue, M.V. Borca (2017).  Simultaneous deletion of the 9GL and UK genes from the African swine fever virus Georgia 2007 isolate offers increased safety and protection against homologous challenge Journal of Virology, 91(1),  #Pages#"," J. Post, E. Weesendorp, M. Montoya, W.L. Loeffen (2017).  Influence of Age and Dose of African Swine Fever Virus Infections on Clinical Outcome and Blood Parameters in Pigs Viral Immunology, 30(1),  58"," J. Carlson, V. O’Donnell, M. Alfano, L.V. Salinas, L.G. Holinka, P.W. Krug, D.P. Gladue, S. Higgs, M.V. Borca (2016).  Association of the host immune response with protection using a live attenuated African swine fever virus model Viruses, 8(10),  #Pages#"," A.L. Reis, C.C. Abrams, L.C. Goatley, C. Netherton, D.G. Chapman, P. Sanchez-Cordon, L.K. Dixon (2016).  Deletion of African swine fever virus interferon inhibitors from the genome of a virulent isolate reduces virulence in domestic pigs and induces a protective response Vaccine, 34(39),  4698"," V. O'Donnell, L.G. Holinka, B. Sanford, P.W. Krug, J. Carlson, J.M. Pacheco, B. Reese, G.R. Risatti, D.P. Gladue, M.V. Borca (2016).  African swine fever virus Georgia isolate harboring deletions of 9GL and MGF360/505 genes is highly attenuated in swine but does not confer protection against parental virus challenge Virus Research, 221(#issue#),  8"," G. Burmakina, A. Malogolovkin, E.R. Tulman, L. Zsak, G. Delhon, D.G. Diel, N.M. Shobogorov, Y.P. Morgunov, S.Y. Morgunov, G.F. Kutish, D. Kolbasov, D.L. Rock (2016).  African swine fever virus serotype-specific proteins are significant protective antigens for African swine fever Journal of General Virology, 97(7),  1670"," J.P. Golding, L. Goatley, S. Goodbourn, L.K. Dixon, G. Taylor, C.L. Netherton (2016).  Sensitivity of African swine fever virus to type I interferon is linked to genes within multigene families 360 and 505 Virology, 493(#issue#),  154"," B. Sanford, L.G. Holinka, V. O'Donnell, P.W. Krug, J. Carlson, M. Alfano, C. Carrillo, P. Wu, A. Lowe, G.R. Risatti, D.P. Gladue, M.V. Borca (2016).  Deletion of the thymidine kinase gene induces complete attenuation of the Georgia isolate of African swine fever virus Virus Research, 213(#issue#),  165"," Z. Karalyan, H. Zakaryan, E. Arakelova, V. Aivazyan, M. Tatoyan, A. Kotsinyan, R. Izmailyan, E. Karalova (2016).  Evidence of hemolysis in pigs infected with highly virulent African swine fever virus Veterinary World, 9(12),  1413"," P.J. Wilkinson, R.C. Wardley, S.M. Williams (1981).  African swine fever virus (Malta/78) in pigs #journal#, 91(2),  277","Cabezón, O., Muñoz-González, S., Colom-Cadena, A., Pérez-Simó, M., Rosell, R., Lavín, S., Marco, I., Fraile, L., de la Riva, P.M., Rodríguez, F., Domínguez, J., Ganges, L. (2017).  African swine fever virus infection in Classical swine fever subclinically infected wild boars BMC Veterinary Research, 13(1),  #Pages#","Pietschmann, J., Guinat, C., Beer, M., Pronin, V., Tauscher, K., Petrov, A., Keil, G., Blome, S. (2015).  Course and transmission characteristics of oral low-dose infection of domestic pigs and European wild boar with a Caucasian African swine fever virus isolate Archives of Virology, 160(7),  1657","Pietschmann, J., Guinat, C., Beer, M., Pronin, V., Tauscher, K., Petrov, A., Keil, G., Blome, S. (2015).  Course and transmission characteristics of oral low-dose infection of domestic pigs and European wild boar with a Caucasian African swine fever virus isolate Archives of Virology, 160(7),  1657","Sánchez-Cordón, P.J., Cerón, J.J., Núñez, A., Martínez-Subiela, S., Pedrera, M., Romero-Trevejo, J.L., Garrido, M.R., Gómez-Villamandos, J.C. (2007).  Serum concentrations of C-reactive protein, serum amyloid A, and haptoglobin in pigs inoculated with African swine fever or classical swine fever viruses American Journal of Veterinary Research, 68(7),  772","Salguero, F.J., Sánchez-Cordón, P.J., Núñez, A., Fernández de Marco, M., Gómez-Villamandos, J.C. (2005).  Proinflammatory cytokines induce lymphocyte apoptosis in acute African swine fever infection Journal of Comparative Pathology, 132(4),  289","Salguero, F.J., Sánchez-Cordón, P.J., Sierra, M.A., Jover, A., Núñez, A., Gómez-Villamandos, J.C. (2004).  Apoptosis of thymocytes in experimental African swine fever virus infection Histology and Histopathology, 19(1),  77","Leitão, A., Cartaxeiro, C., Coelho, R., Cruz, B., Parkhouse, R.M.E., Portugal, F.C., Vigário, J.D., Martins, C.L.V. (2001).  The non-haemadsorbing African swine fever virus isolate ASFV/NH/P68 provides a model for defining the protective anti-virus immune response Journal of General Virology, 82(3),  513","Neilan, J.G., Lu, Z., Kutish, G.F., Zsak, L., Lewis, T.L., Rock, D.L. (1997).  A conserved African swine fever virus IκB homolog, 5EL, is nonessential for growth in vitro and virulence in domestic swine Virology, 235(2),  377","Rodríguez, F., Fernández, A., Pérez, J., Martín De Las Mulas, J., Sierra, M.A., Jover, A. (1996).  African swine fever: Morphopathology of a viral haemorrhagic disease Veterinary Record, 139(11),  249","Carrasco, L., Gómez-Villamandos, J.C., Bautista, M.J., Martín De Las Mulas, J., Villeda, C.J., Wilkinson, P.J., Sierra, M.A. (1996).  In vivo replication of African swine fever virus (Malawi '83) in neutrophils Veterinary Research, 27(1),  55","Ramiro-Ibáñez, F., Ortega, A., Brun, A., Escribano, J.M., Alonso, C. (1996).  Apoptosis: A mechanism of cell killing and lymphoid organ impairment during acute African swine fever virus infection Journal of General Virology, 77(9),  2209","Ramiro-Ibáñez, F., Escribano, J.M., Alonso, C. (1995).  Application of a monoclonal antibody recognizing protein p30 to detect African swine fever virus-infected cells in peripheral blood Journal of Virological Methods, 55(3),  339","Walczak, M., Wasiak, M., Dudek, K., Kycko, A., Szacawa, E., Olech, M., Woźniakowski, G., Szczotka-Bochniarz, A. (2021).  Blood Counts, Biochemical Parameters, Inflammatory, and Immune Responses in Pigs Infected Experimentally with the African Swine Fever Virus Isolate Pol18_28298_O111 Viruses, 13(3),  #Pages#","Cadenas-Fernández, E., Sánchez-Vizcaíno, J.M., van den Born, E., Kosowska, A., van Kilsdonk, E., Fernández-Pacheco, P., Gallardo, C., Arias, M., Barasona, J.A. (2021).  High doses of inactivated african swine fever virus are safe, but do not confer protection against a virulent challenge Vaccines, 9(3),  #Pages#","Ramirez-Medina, E., Vuono, E., Pruitt, S., Rai, A., Silva, E., Espinoza, N., Zhu, J., Velazquez-Salinas, L., Borca, M.V., Gladue, D.P. (2021).  Development and In Vivo Evaluation of a MGF110-1L Deletion Mutant in African Swine Fever Strain Georgia Viruses, 13(2),  #Pages#","Zhang, J., Zhang, Y., Chen, T., Yang, J., Yue, H., Wang, L., Zhou, X., Qi, Y., Han, X., Ke, J., Wang, S., Yang, J., Miao, F., Zhang, S., Zhang, F., Wang, Y., Li, M., Hu, R. (2021).  Deletion of the L7L-L11L Genes Attenuates ASFV and Induces Protection against Homologous Challenge Viruses, 13(2),  #Pages#","Pikalo, J., Deutschmann, P., Fischer, M., Roszyk, H., Beer, M., Blome, S. (2021).  African swine fever laboratory diagnosis—lessons learned from recent animal trials Pathogens, 10(2),  1","Pikalo, J., Deutschmann, P., Fischer, M., Roszyk, H., Beer, M., Blome, S. (2021).  African swine fever laboratory diagnosis—lessons learned from recent animal trials Pathogens, 10(2),  1","Wang, S., Zhang, J., Zhang, Y., Yang, J., Wang, L., Qi, Y., Han, X., Zhou, X., Miao, F., Chen, T., Wang, Y., Zhang, F., Zhang, S., Hu, R. (2021).  Cytokine Storm in Domestic Pigs Induced by Infection of Virulent African Swine Fever Virus Frontiers in Veterinary Science, 7(#issue#),  #Pages#","Schäfer, A., Zani, L., Pikalo, J., Hühr, J., Sehl, J., Mettenleiter, T.C., Breithaupt, A., Blome, S., Blohm, U. (2021).  T-cell responses in domestic pigs and wild boar upon infection with the moderately virulent African swine fever virus strain ‘Estonia2014’ Transboundary and Emerging Diseases, #volume#(#issue#),  #Pages#","Schäfer, A., Zani, L., Pikalo, J., Hühr, J., Sehl, J., Mettenleiter, T.C., Breithaupt, A., Blome, S., Blohm, U. (2021).  T-cell responses in domestic pigs and wild boar upon infection with the moderately virulent African swine fever virus strain ‘Estonia2014’ Transboundary and Emerging Diseases, #volume#(#issue#),  #Pages#","Vuono, E., Ramirez-Medina, E., Pruitt, S., Rai, A., Silva, E., Espinoza, N., Zhu, J., Velazquez-Salinas, L., Gladue, D.P., Borca, M.V. (2020).  Evaluation in Swine of a Recombinant Georgia 2010 African Swine Fever Virus Lacking the I8L Gene Viruses, 13(1),  #Pages#","Teklue, T., Wang, T., Luo, Y., Hu, R., Sun, Y., Qiu, H.-J. (2020).  Generation and evaluation of an African swine fever virus mutant with deletion of the CD2v and UK genes Vaccines, 8(4),  1","Borca, M.V., O’Donnell, V., Holinka, L.G., Risatti, G.R., Ramirez-Medina, E., Vuono, E.A., Shi, J., Pruitt, S., Rai, A., Silva, E., Velazquez-Salinas, L., Gladue, D.P. (2020).  Deletion of CD2-like gene from the genome of African swine fever virus strain Georgia does not attenuate virulence in swine Scientific Reports, 10(1),  #Pages#","Flannery, J., Ashby, M., Moore, R., Wells, S., Rajko-Nenow, P., Netherton, C.L., Batten, C. (2020).  Identification of novel testing matrices for African swine fever surveillance Journal of Veterinary Diagnostic Investigation, 32(6),  961","Hühr, J., Schäfer, A., Schwaiger, T., Zani, L., Sehl, J., Mettenleiter, T.C., Blome, S., Blohm, U. (2020).  Impaired T-cell responses in domestic pigs and wild boar upon infection with a highly virulent African swine fever virus strain Transboundary and Emerging Diseases, 67(6),  3016","Hühr, J., Schäfer, A., Schwaiger, T., Zani, L., Sehl, J., Mettenleiter, T.C., Blome, S., Blohm, U. (2020).  Impaired T-cell responses in domestic pigs and wild boar upon infection with a highly virulent African swine fever virus strain Transboundary and Emerging Diseases, 67(6),  3016","Ramirez-Medina, E., Vuono, E.A., Rai, A., Pruitt, S., Silva, E., Velazquez-Salinas, L., Zhu, J., Gladue, D.P., Borca, M.V. (2020).  Evaluation in swine of a recombinant african swine fever virus lacking the MGF-360-1L gene Viruses, 12(10),  #Pages#","Gladue, D.P., O’Donnell, V., Ramirez-Medina, E., Rai, A., Pruitt, S., Vuono, E.A., Silva, E., Velazquez-Salinas, L., Borca, M.V. (2020).  Deletion of CD2-like (CD2v) and C-type lectin-like (EP153R) genes from african swine fever virus georgia-∆9GL abrogates its effectiveness as an experimental vaccine Viruses, 12(10),  #Pages#","Fischer, M., Hühr, J., Blome, S., Conraths, F.J., Probst, C. (2020).  Stability of African swine fever virus in carcasses of domestic pigs and wild boar experimentally infected with the ASFV “Estonia 2014” isolate Viruses, 12(10),  #Pages#","Fischer, M., Hühr, J., Blome, S., Conraths, F.J., Probst, C. (2020).  Stability of African swine fever virus in carcasses of domestic pigs and wild boar experimentally infected with the ASFV “Estonia 2014” isolate Viruses, 12(10),  #Pages#","Ramirez-Medina, E., Vuono, E., Pruitt, S., Rai, A., Silva, E., Zhu, J., Velazquez-Salinas, L., Gladue, D.P., Borca, M.V. (2020).  X69R is a non-essential gene that, when deleted from African swine fever, does not affect virulence in swine Viruses, 12(9),  #Pages#","Sánchez-Cordón, P.J., Jabbar, T., Chapman, D., Dixon, L.K., Montoya, M. (2020).  Absence of long-term protection in domestic pigs immunized with attenuated african swine fever virus isolate OURT88/3 or Benin∆MGF correlates with increased levels of regulatory T cells and interleukin-10 Journal of Virology, 94(14),  #Pages#","Pikalo, J., Schoder, M.-E., Sehl, J., Breithaupt, A., Tignon, M., Cay, A.B., Gager, A.M., Fischer, M., Beer, M., Blome, S. (2020).  The African swine fever virus isolate Belgium 2018/1 shows high virulence in European wild boar Transboundary and Emerging Diseases, 67(4),  1654","Ramirez-Medina, E., Ramirez-Medina, E., Vuono, E.A., Vuono, E.A., Rai, A., Rai, A., Pruitt, S., Pruitt, S., Silva, E., Silva, E., Velazquez-Salinas, L., Velazquez-Salinas, L., Zhu, J., Borca, M.V., Gladue, D.P. (2020).  The C962R ORF of African swine fever strain georgia is non-essential and not required for virulence in swine Viruses, 12(6),  #Pages#","Reis, A.L., Goatley, L.C., Jabbar, T., Lopez, E., Rathakrishnan, A., Dixon, L.K. (2020).  Deletion of the gene for the type I interferon inhibitor I329L from the attenuated african swine fever virus ourt88/3 strain reduces protection induced in pigs Vaccines, 8(2),  #Pages#","Borca, M.V., Ramirez-Medina, E., Silva, E., Vuono, E., Rai, A., Pruitt, S., Holinka, L.G., Velazquez-Salinas, L., Zhu, J., Gladue, D.P. (2020).  Development of a highly effective african swine fever virus vaccine by deletion of the I177L gene results in sterile immunity against the current epidemic eurasia strain Journal of Virology, 94(7),  #Pages#","Walczak, M., Żmudzki, J., Mazur-Panasiuk, N., Juszkiewicz, M., Woźniakowski, G. (2020).  Analysis of the clinical course of experimental infection with highly pathogenic african swine fever strain, isolated from an outbreak in poland. Aspects related to the disease suspicion at the farm level Pathogens, 9(3),  #Pages#","Ramírez-Medina, E., Vuono, E.A., Velazquez-Salinas, L., Silva, E., Rai, A., Pruitt, S., Berggren, K.A., Zhu, J., Borca, M.V., Gladue, D.P. (2020).  The MGF360-16R ORF of African swine fever virus strain Georgia encodes for a nonessential gene that interacts with host proteins SERTAD3 and SDCBP Viruses, 12(1),  #Pages#","de Oliveira, R.P., Hutet, E., Duhayon, M., Guionnet, J.-M., Paboeuf, F., Vial, L., Le Potier, M.-F. (2020).  Successful infection of domestic pigs by ingestion of the European soft tick O. Erraticus that fed on African swine fever virus infected pig Viruses, 12(3),  #Pages#","Yamada, M., Masujin, K., Kameyama, K.-I., Yamazoe, R., Kubo, T., Iwata, K., Tamura, A., Hibi, H., Shiratori, T., Koizumi, S., Ohashi, K., Ikezawa, M., Kokuho, T., Yamakawa, M. (2020).  Experimental infection of pigs with different doses of the african swine fever virus armenia 07 strain by intramuscular injection and direct contact Journal of Veterinary Medical Science, 82(12),  1835","Portugal, R., Goatley, L.C., Husmann, R., Zuckermann, F.A., Dixon, L.K. (2020).  A porcine macrophage cell line that supports high levels of replication of OURT88/3, an attenuated strain of African swine fever virus Emerging Microbes and Infections, 9(1),  1245","de Oliveira, R.P., Hutet, E., Paboeuf, F., Duhayon, M., Boinas, F., de Leon, A.P., Filatov, S., Vial, L., Potier, M.-F.L. (2019).  Comparative vector competence of the Afrotropical soft tick Ornithodoros moubata and Palearctic species, O. Erraticus and O. Verrucosus, for African swine fever virus strains circulating in Eurasia PLoS ONE, 14(11),  #Pages#","Eblé, P.L., Hagenaars, T.J., Weesendorp, E., Quak, S., Moonen-Leusen, H.W., Loeffen, W.L.A. (2019).  Transmission of African Swine Fever Virus via carrier (survivor) pigs does occur Veterinary Microbiology, 237(#issue#),  #Pages#","Lokhandwala, S., Petrovan, V., Popescu, L., Sangewar, N., Elijah, C., Stoian, A., Olcha, M., Ennen, L., Bray, J., Bishop, R.P., Waghela, S.D., Sheahan, M., Rowland, R.R.R., Mwangi, W. (2019).  Adenovirus-vectored African Swine Fever Virus antigen cocktails are immunogenic but not protective against intranasal challenge with Georgia 2007/1 isolate Veterinary Microbiology, 235(#issue#),  10","Ramirez-Medina, E., Vuono, E., O’donnell, V., Holinka, L.G., Silva, E., Rai, A., Pruitt, S., Carrillo, C., Gladue, D.P., Borca, M.V. (2019).  Differential effect of the deletion of african swine fever virus virulence-associated genes in the induction of attenuation of the highly virulent Georgia strain Viruses, 11(7),  #Pages#","Gallardo, C., Soler, A., Rodze, I., Nieto, R., Cano-Gómez, C., Fernandez-Pinero, J., Arias, M. (2019).  Attenuated and non-haemadsorbing (non-HAD) genotype II African swine fever virus (ASFV) isolated in Europe, Latvia 2017 Transboundary and Emerging Diseases, 66(3),  1399","Zhao, D., Liu, R., Zhang, X., Li, F., Wang, J., Zhang, J., Liu, X., Wang, L., Zhang, J., Wu, X., Guan, Y., Chen, W., Wang, X., He, X., Bu, Z. (2019).  Replication and virulence in pigs of the first African swine fever virus isolated in China Emerging Microbes and Infections, 8(1),  438","Petrini, S., Feliziani, F., Casciari, C., Giammarioli, M., Torresi, C., De Mia, G.M. (2019).  Survival of African swine fever virus (ASFV) in various traditional Italian dry-cured meat products Preventive Veterinary Medicine, 162(#issue#),  126","Sunwoo, S.-Y., Pérez-Núñez, D., Morozov, I., Sánchez, E.G., Gaudreault, N.N., Trujillo, J.D., Mur, L., Nogal, M., Madden, D., Urbaniak, K., Kim, I.J., Ma, W., Revilla, Y., Richt, J.A. (2019).  Dna-protein vaccination strategy does not protect from challenge with African swine fever virus Armenia 2007 strain Vaccines, 7(1),  #Pages#","Zani, L., Forth, J.H., Forth, L., Nurmoja, I., Leidenberger, S., Henke, J., Carlson, J., Breidenstein, C., Viltrop, A., Höper, D., Sauter-Louis, C., Beer, M., Blome, S. (2018).  Deletion at the 5′-end of Estonian ASFV strains associated with an attenuated phenotype Scientific Reports, 8(1),  #Pages#","Zani, L., Forth, J.H., Forth, L., Nurmoja, I., Leidenberger, S., Henke, J., Carlson, J., Breidenstein, C., Viltrop, A., Höper, D., Sauter-Louis, C., Beer, M., Blome, S. (2018).  Deletion at the 5′-end of Estonian ASFV strains associated with an attenuated phenotype Scientific Reports, 8(1),  #Pages#","Olesen, A.S., Lohse, L., Dalgaard, M.D., Woźniakowski, G., Belsham, G.J., Bøtner, A., Rasmussen, T.B. (2018).  Complete genome sequence of an African swine fever virus (ASFV POL/2015/Podlaskie) determined directly from pig erythrocyte-associated nucleic acid Journal of Virological Methods, 261(#issue#),  14","Olesen, A.S., Lohse, L., Hansen, M.F., Boklund, A., Halasa, T., Belsham, G.J., Rasmussen, T.B., Bøtner, A., Bødker, R. (2018).  Infection of pigs with African swine fever virus via ingestion of stable flies (Stomoxys calcitrans) Transboundary and Emerging Diseases, 65(5),  1152","Petrov, A., Forth, J.H., Zani, L., Beer, M., Blome, S. (2018).  No evidence for long-term carrier status of pigs after African swine fever virus infection Transboundary and Emerging Diseases, 65(5),  1318","Núñez-Hernández, F., Vera, G., Sánchez, A., Rodríguez, F., Núñez, J.I. (2018).  African swine fever virus does not express viral microRNAs in experimentally infected pigs BMC Veterinary Research, 14(1),  #Pages#","Olesen, A.S., Lohse, L., Boklund, A., Halasa, T., Belsham, G.J., Rasmussen, T.B., Bøtner, A. (2018).  Short time window for transmissibility of African swine fever virus from a contaminated environment Transboundary and Emerging Diseases, 65(4),  1024","Gallardo, C., Nurmoja, I., Soler, A., Delicado, V., Simón, A., Martin, E., Perez, C., Nieto, R., Arias, M. (2018).  Evolution in Europe of African swine fever genotype II viruses from highly to moderately virulent Veterinary Microbiology, 219(#issue#),  70","Sánchez-Cordón, P.J., Jabbar, T., Berrezaie, M., Chapman, D., Reis, A., Sastre, P., Rueda, P., Goatley, L., Dixon, L.K. (2018).  Evaluation of protection induced by immunisation of domestic pigs with deletion mutant African swine fever virus BeninΔMGF by different doses and routes Vaccine, 36(5),  707","Borca, M.V., Ramirez-Medina, E., Silva, E., Vuono, E., Rai, A., Pruitt, S., Espinoza, N., Velazquez-Salinas, L., Gay, C.G., Gladue, D.P. (2021).  Asfv-g-∆i177l as an effective oral nasal vaccine against the eurasia strain of africa swine fever Viruses, 13(5),  #Pages#","Ramirez-Medina, E., Vuono, E., Pruitt, S., Rai, A., Silva, E., Espinoza, N., Zhu, J., Velazquez-Salinas, L., Borca, M.V., Gladue, D.P. (2021).  Development and in vivo evaluation of a mgf110-1l deletion mutant in african swine fever strain Georgia Viruses, 13(2),  #Pages#","Lee, H.S., Bui, V.N., Dao, D.T., Bui, N.A., Le, T.D., Kieu, M.A., Nguyen, Q.H., Tran, L.H., Roh, J.-H., So, K.-M., Hur, T.-Y., Oh, S.-I. (2021).  Pathogenicity of an African swine fever virus strain isolated in Vietnam and alternative diagnostic specimens for early detection of viral infection Porcine Health Management, 7(1),  #Pages#","Olesen, A.S., Kodama, M., Lohse, L., Accensi, F., Rasmussen, T.B., Lazov, C.M., Limborg, M.T., Gilbert, M.T.P., Bøtner, A., Belsham, G.J. (2021).  Identification of African swine fever virus transcription within peripheral blood mononuclear cells of acutely infected pigs Viruses, 13(11),  #Pages#","Gladue, D.P., Ramirez-Medina, E., Vuono, E., Silva, E., Rai, A., Pruitt, S., Espinoza, N., Velazquez-Salinas, L., Borca, M.V. (2021).  Deletion of the A137R gene from the pandemic strain of african swine fever virus attenuates the strain and offers protection against the virulent pandemic virus Journal of Virology, 95(21),  #Pages#","Liu, Y., Li, Y., Xie, Z., Ao, Q., Di, D., Yu, W., Lv, L., Zhong, Q., Song, Y., Liao, X., Song, Q., Wang, H., Chen, H. (2021).  Development and in vivo evaluation of MGF100-1R deletion mutant in an African swine fever virus Chinese strain Veterinary Microbiology, 261(#issue#),  #Pages#","Onyilagha, C., Nash, M., Perez, O., Goolia, M., Clavijo, A., Richt, J.A., Ambagala, A. (2021).  Meat exudate for detection of african swine fever virus genomic material and anti-asfv antibodies Viruses, 13(9),  #Pages#","Pikalo, J., Schoder, M.-E., Sehl-Ewert, J., Breithaupt, A., Cay, A.B., Lhoëst, C., van Campe, W., Mostin, L., Deutschmann, P., Roszyk, H., Beer, M., Blome, S., Tignon, M. (2021).  Towards efficient early warning: Pathobiology of african swine fever virus “Belgium 2018/1” in domestic pigs of different age classes Animals, 11(9),  #Pages#","Gallardo, C., Soler, A., Nurmoja, I., Cano-Gómez, C., Cvetkova, S., Frant, M., Woźniakowski, G., Simón, A., Pérez, C., Nieto, R., Arias, M. (2021).  Dynamics of African swine fever virus (ASFV) infection in domestic pigs infected with virulent, moderate virulent and attenuated genotype II ASFV European isolates Transboundary and Emerging Diseases, 68(5),  2826","Goonewardene, K.B., Chung, C.J., Goolia, M., Blakemore, L., Fabian, A., Mohamed, F., Nfon, C., Clavijo, A., Dodd, K.A., Ambagala, A. (2021).  Evaluation of oral fluid as an aggregate sample for early detection of African swine fever virus using four independent pen-based experimental studies Transboundary and Emerging Diseases, 68(5),  2867","Babikian, H.Y., Jha, R.K., Truong, Q.L., Nguyen, L.T., Babikyan, Y., Nguyen, H.T., To, T.L., Agus, A. (2021).  Novel formulation with essential oils as a potential agent to minimize african swine fever virus transmission in an in vivo trial in swine Veterinary World, 14(7),  1853","Koltsova, G., Koltsov, A., Krutko, S., Kholod, N., Tulman, E.R., Kolbasov, D. (2021).  Growth kinetics and protective efficacy of attenuated ASFV strain congo with deletion of the EP402 gene Viruses, 13(7),  #Pages#","Sánchez-Cordón, P.J., Floyd, T., Hicks, D., Crooke, H.R., McCleary, S., McCarthy, R.R., Strong, R., Dixon, L.K., Neimanis, A., Wikström-Lassa, E., Gavier-Widén, D., Núñez, A. (2021).  Evaluation of lesions and viral antigen distribution in domestic pigs inoculated intranasally with african swine fever virus ken05/tk1 (Genotype x) Pathogens, 10(6),  #Pages#","Barroso-Arévalo, S., Barasona, J.A., Cadenas-Fernández, E., Sánchez-Vizcaíno, J.M. (2021).  The role of interleukine-10 and interferon-γ as potential markers of the evolution of african swine fever virus infection in wild boar Pathogens, 10(6),  #Pages#","Vuono, E.A., Ramirez-Medina, E., Pruitt, S., Rai, A., Espinoza, N., Velazquez-Salinas, L., Gladue, D.P., Borca, M.V. (2021).  Evaluation of the function of the asfv kp177r gene, encoding for structural protein p22, in the process of virus replication and in swine virulence Viruses, 13(6),  #Pages#","Bosch-Camós, L., López, E., Collado, J., Navas, M.J., Blanco-Fuertes, M., Pina-Pedrero, S., Accensi, F., Salas, M.L., Mundt, E., Nikolin, V., Rodríguez, F. (2021).  M448r and mgf505-7r: Two african swine fever virus antigens commonly recognized by asfv-specific t-cells and with protective potential Vaccines, 9(5),  #Pages#","Niederwerder, M.C., Hefley, T.J. (2021).  Diagnostic sensitivity of porcine biological samples for detecting African swine fever virus infection after natural consumption in feed and liquid Transboundary and Emerging Diseases, #volume#(#issue#),  #Pages#"]],"container":"<table class=\"display fill-container\">\n  <thead>\n    <tr>\n      <th>Refid<\/th>\n      <th>targetSpecies<\/th>\n      <th>FullBibliography<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollY":"100vh","pageLength":5,"columnDefs":[{"className":"dt-right","targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 
 </div>
 
 <script>
-
-$(document).ready(function () {
-
+$(document).ready(function() {
   // add bootstrap table styles to pandoc tables
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed table-sm');
 
   // initialize mathjax
   var script = document.createElement("script");
@@ -3315,7 +2643,6 @@ $(document).ready(function () {
 <script type="text/javascript">
 $(document).ready(function () {
   FlexDashboard.init({
-    theme: "cosmo",
     fillPage: false,
     orientation: "rows",
     storyboard: false,
@@ -3324,6 +2651,21 @@ $(document).ready(function () {
     defaultFigWidthMobile: 360,
     defaultFigHeightMobile: 460,
     resize_reload: true
+  });
+  var navbar = $(".navbar").first();
+  var body = $("body").first();
+  var sidebar = $(".section.sidebar").first();
+  function addNavbarPadding() {
+    var navHeight = navbar.outerHeight();
+    body.css("padding-top", (navHeight + 8) + "px");
+    sidebar.css("top", navHeight + "px");
+    var resizeEvent = window.document.createEvent("UIEvents");
+    resizeEvent.initUIEvent("resize", true, false, window, 0);
+    window.dispatchEvent(resizeEvent);
+  }
+  if (!window.Shiny) setTimeout(addNavbarPadding, 100);
+  $(document).on("shiny:idle", function() {
+    setTimeout(addNavbarPadding, 50);
   });
 });
 </script>
