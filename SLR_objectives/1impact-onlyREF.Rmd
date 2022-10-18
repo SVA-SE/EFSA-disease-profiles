@@ -1,5 +1,10 @@
 ---
 title: "Evidence from systematic literature review"
+params:
+    styling: TRUE
+    agent: "agent"
+    min.groups.plot: 1
+    agent.subtype: "agentSubtype"
 output:
   flexdashboard::flex_dashboard:
     vertical_layout: scroll
@@ -57,7 +62,10 @@ Row
 ###
 
 <br>
-The references reviewed up to date are listed below. No clinical signs or host mortality were reported. 
+The references reviewed up to date are listed below. There are not enough animal groups to 
+generate summary plots. The next update is planned for 2023.
+
+Detailed information about the systematic literature review, including a link to the review protocol, is available in the left panel. 
 <br>
 <br>
 
@@ -83,6 +91,23 @@ Row{data-height=600}
 
 ```{r references}
 source("Functions.r")
+
+dfei <- read.csv("../data/FilesDownload/ExperimentalInfections_cleaned.csv")
+references <- read.csv("../data/FilesDownload/ExperimentalInfections_refid.csv")
+
+agent <- params$agent 
+#agent <- agents[a]
+dfDZ <- dfei[dfei$agent==agent,]
+
+dfDZ$targetSpecies <- gsub("\\s*\\([^\\)]+\\)","",as.character(dfDZ$targetSpecies))
+dfDZ <- species.name.cleanup(data=dfDZ)
+
+references$targetSpecies<- gsub("\\s*\\([^\\)]+\\)","",as.character(references$targetSpecies))
+references <- species.name.cleanup(data=references)
+
+
+dfDZ$targetSpecies <- as.factor(dfDZ$targetSpecies)
+
 references$targetSpecies<- gsub("\\s*\\([^\\)]+\\)","",as.character(references$targetSpecies))
 references <- species.name.cleanup(data=references)
 
