@@ -5,7 +5,7 @@ source("SLR_objectives/RUN-list-header.r")
 
 a=21
 
-# impact ---- 
+# ExperimentalInfections ---- 
     i=1
  #   for (a in 1:length(agents)){ 
       
@@ -15,11 +15,11 @@ a=21
       n.papers <- length(unique(dfDZ$refID))
       
       file.input <- paste0("SLR_objectives/",input.files[i])
-      if(n.papers==0)(file.input <- "SLR_objectives/1impact-NOPAPER.Rmd" )
-      if(n.papers==1)(file.input <- "SLR_objectives/1impact-onlyREF.Rmd" )
+      if(n.papers==0)(file.input <- "SLR_objectives/ExperimentalInfections-NOPAPER.Rmd" )
+      if(n.papers==1)(file.input <- "SLR_objectives/ExperimentalInfections-onlyREF.Rmd" )
   
   if(n.papers > 1){
-  source("SLR_objectives/1impact_MA.r")
+  source("SLR_objectives/ExperimentalInfections_MA.r")
   }
       
   rmarkdown::render(file.input,

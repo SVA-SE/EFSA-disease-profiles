@@ -17,8 +17,8 @@ for (a in c(1:38,40:48)){
     # text_to_look <- "\\(true positive and negative samples\\)"
     # text_to_replace <- "\\(samples from truly infected and non-infected animals\\)"
 
-     text_to_look <- "OIE"
-     text_to_replace <- "WOAH"
+     text_to_look <- "Impact-"
+     text_to_replace <- "ExperimentalInfections-"
 
 
 

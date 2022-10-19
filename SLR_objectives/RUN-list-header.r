@@ -105,7 +105,7 @@ midges.dz <- c(2,16,17,20,24,26,31,33,36,38,40,44)
 mosquitoes.dz <- c(3,16,17,21,23,27,29,30,34,37,40,41,43,44,45,46,47,48)
 sandflies.dz <- c(32)
 
-input.files = c("1impact.Rmd",
+input.files = c("ExperimentalInfections.Rmd",
                 "2transmission_Virus.Rmd",
                 "3survival.Rmd",
                 "4diagnosis.Rmd",
@@ -115,7 +115,7 @@ input.files = c("1impact.Rmd",
 
 
 
-output.files = c("Impact-",
+output.files = c("ExperimentalInfections-",
                  "Transmission-",
                  "Survival-",
                  "Diagnostic-",

@@ -78,7 +78,7 @@ if(oie.list[a]==T){
 
 for (a in a){
     i=1
-    source("SLR_objectives/1impact_MA.r")
+    source("SLR_objectives/ExperimentalInfections_MA.r")
     rmarkdown::render(paste0("SLR_objectives/",input.files[i]),
                       params = list(agent = agents[a],
                                     agent.subtype = agent.subtypes[a],
@@ -88,7 +88,7 @@ for (a in a){
                                            "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
     )
     # i=1
-    # rmarkdown::render(paste0("SLR_objectives/","1impact-NOPAPER.Rmd"),
+    # rmarkdown::render(paste0("SLR_objectives/","ExperimentalInfections-NOPAPER.Rmd"),
     #                   output_file = paste0("../agents/",agent.folder.names[a],
     #                                        "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
     # )
@@ -120,7 +120,7 @@ for (a in a){
     )
 
     # i=2
-    # rmarkdown::render(paste0("SLR_objectives/","1impact-NOPAPER.Rmd"),
+    # rmarkdown::render(paste0("SLR_objectives/","ExperimentalInfections-NOPAPER.Rmd"),
     #                   output_file = paste0("../agents/",agent.folder.names[a],
     #                                        "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
     # )
@@ -190,7 +190,7 @@ for (a in a){
 
 for (a in a){
     i=1
-    source("SLR_objectives/1impact_MA.r")
+    source("SLR_objectives/ExperimentalInfections_MA.r")
     rmarkdown::render(paste0("SLR_objectives/",input.files[i]),
                       params = list(agent = agents[a],
                                     agent.subtype = agent.subtypes[a],
