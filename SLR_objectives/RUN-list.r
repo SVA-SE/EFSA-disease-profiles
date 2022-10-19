@@ -1,13 +1,13 @@
 source("SLR_objectives/RUN-list-header.r")
 
 
-local.dir <- "C:/Users/fernanda.dorea/Documents/AzureDevOps/storymaps/"
+#local.dir <- "C:/Users/fernanda.dorea/Documents/AzureDevOps/storymaps/"
 
 a=10
 
 # impact ---- 
     i=1
-    for (a in 1:length(agents)){ 
+ #   for (a in 1:length(agents)){ 
       
       dfei <- read.csv("data/FilesDownload/ExperimentalInfections_cleaned.csv")
       agent <- agents[a] 
