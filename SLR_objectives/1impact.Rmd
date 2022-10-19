@@ -245,10 +245,10 @@ cf$deadsum <- rowSums(cf[,c("nrDeadInfection", "nrEutInfection")], na.rm=TRUE)
 cf$cf <- round(cf$deadsum/cf$sampUnitSize*100,2)
 cf$cf[which(cf$NoDeath=="NO ANIMALS DIED during the study period")] <- 0
 
-cf$death.inf <- NA
+cf$death.inf <- "NO"
 cf$death.inf[which(cf$deadInfection=="yes"|cf$eutInfection=="yes")]<- "YES"
-cf$death.inf[which(cf$NoDeath=="NO ANIMALS DIED during the study period")]<- "NO"
-#cf$death.inf[which(is.na(cf$deadInfection)&is.na(cf$eutInfection))]<- NA
+#cf$death.inf[which(cf$NoDeath=="NO ANIMALS DIED during the study period")]<- "NO"
+cf$death.inf[which(is.na(cf$deadInfection)&is.na(cf$eutInfection))]<- NA
 
 
 cf$cf[which(is.na(cf$death.inf))] <- NA
