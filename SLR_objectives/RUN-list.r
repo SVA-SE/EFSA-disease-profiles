@@ -3,7 +3,7 @@ source("SLR_objectives/RUN-list-header.r")
 
 #local.dir <- "C:/Users/fernanda.dorea/Documents/AzureDevOps/storymaps/"
 
-a=21
+a=1
 
 # ExperimentalInfections ---- 
     i=1
@@ -50,7 +50,7 @@ a=21
   i=2
   for (a in 1:length(agents)){ 
     
-  source("SLR_objectives/2transmission_MA.r")
+  source("SLR_objectives/Transmission_MA.r")
   file.input <- input.files[i]
   if(agent.types[a]=="b")(file.input <- "2transmission_Bact.Rmd" )
   if(agent.types[a]=="p")(file.input <- "2transmission_Paras.Rmd" )
@@ -77,7 +77,7 @@ a=21
 
 
 
-  # survival ----
+  # PathogenSurvival  ----
   
   i=3
 
@@ -85,10 +85,10 @@ a=21
     
   file.input <- input.files[i]
   if(agent.types[a]!="v"){
-    (file.input <- "3survival_Bact.Rmd" )
-    source("SLR_objectives/3survival_MA_Bact.r")
+    (file.input <- "PathogenSurvival_Bact.Rmd" )
+    source("SLR_objectives/PathogenSurvival_MA_Bact.r")
   }else{
-    source("SLR_objectives/3survival_MA.r")
+    source("SLR_objectives/PathogenSurvival_MA.r")
     }
 
   rmarkdown::render(paste0("SLR_objectives/",file.input),

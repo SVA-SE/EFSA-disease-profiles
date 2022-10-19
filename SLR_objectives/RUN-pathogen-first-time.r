@@ -105,10 +105,10 @@ for (a in a){
 
 
     i=2
-    source("SLR_objectives/2transmission_MA.r")
+    source("SLR_objectives/Transmission_MA.r")
     file.input <- input.files[i]
-    if(agent.types[a]=="b")(file.input <- "2transmission_Bact.Rmd" )
-    if(agent.types[a]=="p")(file.input <- "2transmission_Paras.Rmd" )
+    if(agent.types[a]=="b")(file.input <- "Transmission_Bact.Rmd" )
+    if(agent.types[a]=="p")(file.input <- "Transmission_Paras.Rmd" )
 
     rmarkdown::render(paste0("SLR_objectives/",file.input),
                       params = list(agent = agents[a],
@@ -140,10 +140,10 @@ for (a in a){
     i=3
     file.input <- input.files[i]
     if(agent.types[a]!="v"){
-        (file.input <- "3survival_Bact.Rmd" )
-        source("SLR_objectives/3survival_MA_Bact.r")
+        (file.input <- "PathogenSurvival_Bact.Rmd" )
+        source("SLR_objectives/PathogenSurvival_MA_Bact.r")
     }else{
-        source("SLR_objectives/3survival_MA.r")
+        source("SLR_objectives/PathogenSurvival_MA.r")
     }
     rmarkdown::render(paste0("SLR_objectives/",file.input),
                       params = list(agent = agents[a],
@@ -214,10 +214,10 @@ for (a in a){
 
 
     i=2
-    source("SLR_objectives/2transmission_MA.r")
+    source("SLR_objectives/Transmission_MA.r")
     file.input <- input.files[i]
-    if(agent.types[a]=="b")(file.input <- "2transmission_Bact.Rmd" )
-    if(agent.types[a]=="p")(file.input <- "2transmission_Paras.Rmd" )
+    if(agent.types[a]=="b")(file.input <- "Transmission_Bact.Rmd" )
+    if(agent.types[a]=="p")(file.input <- "Transmission_Paras.Rmd" )
 
     rmarkdown::render(paste0("SLR_objectives/",file.input),
                       params = list(agent = agents[a],
@@ -244,10 +244,10 @@ for (a in a){
 
     file.input <- input.files[i]
     if(agent.types[a]!="v"){
-        (file.input <- "3survival_Bact.Rmd" )
-        source("SLR_objectives/3survival_MA_Bact.r")
+        (file.input <- "PathogenSurvival_Bact.Rmd" )
+        source("SLR_objectives/PathogenSurvival_MA_Bact.r")
     }else{
-        source("SLR_objectives/3survival_MA.r")
+        source("SLR_objectives/PathogenSurvival_MA.r")
     }
 
     rmarkdown::render(paste0("SLR_objectives/",file.input),

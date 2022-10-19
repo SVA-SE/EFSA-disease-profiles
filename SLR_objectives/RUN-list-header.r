@@ -106,8 +106,8 @@ mosquitoes.dz <- c(3,16,17,21,23,27,29,30,34,37,40,41,43,44,45,46,47,48)
 sandflies.dz <- c(32)
 
 input.files = c("ExperimentalInfections.Rmd",
-                "2transmission_Virus.Rmd",
-                "3survival.Rmd",
+                "Transmission.Rmd",
+                "PathogenSurvival.Rmd",
                 "4diagnosis.Rmd",
                 "5treatment.Rmd",
                 "6vaccines.Rmd")
@@ -117,7 +117,7 @@ input.files = c("ExperimentalInfections.Rmd",
 
 output.files = c("ExperimentalInfections-",
                  "Transmission-",
-                 "Survival-",
+                 "PathogenSurvival-",
                  "Diagnostic-",
                  "Treatment-",
                  "Vaccines-")
