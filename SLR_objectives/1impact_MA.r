@@ -33,8 +33,12 @@ min.groups <- 4
 data.set <- prepare.data.MA(datainput=dfDZ)
 
 # Incubation ----
+
+if(sum(!is.na(data.set$minIncub),!is.na(data.set$maxIncub))>0){
+
 result.list.incub.ci <- list()
 dd.plot <- prepare.data.INCUB(datainput=data.set, agent=agent)
+
 
 if(dim(dd.plot)[1]>0){
 
@@ -57,9 +61,13 @@ dev.off()
 # auto_pdf=FALSE)
 }
 
+}
+
 ### Kaplan-Meier curves with Inter-Quartile Intervals ----
 
 
+if(sum(!is.na(data.set$minIncub),!is.na(data.set$maxIncub))>0){
+  
 result.list.incub.iq <- list()
 dd.plot <- prepare.data.INCUB(datainput=data.set, agent=agent)
 if(dim(dd.plot)[1]>0){
@@ -76,6 +84,7 @@ print(km.incub.ci())
 dev.off()
 }
 
+}
 
 # include_graphics(paste0("../agents/",agent.folder.name,
 #                         "/AgentAssets/images/impact_ma2.png"),

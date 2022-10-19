@@ -3,7 +3,7 @@ source("SLR_objectives/RUN-list-header.r")
 
 #local.dir <- "C:/Users/fernanda.dorea/Documents/AzureDevOps/storymaps/"
 
-a=10
+a=21
 
 # impact ---- 
     i=1
@@ -41,7 +41,7 @@ a=10
   # cat(x, file=f, sep="\n")
   unlink("SLR_objectives/*.png")
 
-}
+#}
 
 
     

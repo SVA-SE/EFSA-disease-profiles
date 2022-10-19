@@ -80,9 +80,6 @@ agent.subtype <- params$agent.subtype
 # styling=T
 # min.groups.plot=1
 # agent = agents[a]
-# #agent=agent.list[1]
-# #agent <- "African horse sickness virus"
-# #agent <-"Rift Valley fever virus"
 # agent.subtype <- agent.subtypes[a]
 
 
@@ -169,10 +166,16 @@ Animals could still be showing clinical signs on the last day of the experiment.
 ### 
 
 ```{r CSduration.plot,fig.height=4,  message=FALSE, warning=FALSE}
+if(sum(!is.na(dfDZ$minIncub),!is.na(dfDZ$maxIncub))>0){
 cs.plot <- CS.plots(dataset=dfDZ,
                 category="targetSpecies",
                 min.groups.plot=min.groups.plot)#min.groups.plot is set in the settings file, set to 1 to run ALL categories
 cs.plot %>% layout(font=plots.font)
+}else{
+  cat("None of the reviewed papers reported information on the onset or duration of observed clinical signs.\n")
+
+}
+
 ```
 
 
