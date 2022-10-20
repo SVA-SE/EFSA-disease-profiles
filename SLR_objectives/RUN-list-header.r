@@ -108,9 +108,9 @@ sandflies.dz <- c(32)
 input.files = c("ExperimentalInfections.Rmd",
                 "Transmission.Rmd",
                 "PathogenSurvival.Rmd",
-                "4diagnosis.Rmd",
+                "DiagnosticTests.Rmd",
                 "5treatment.Rmd",
-                "6vaccines.Rmd")
+                "Vaccines.Rmd")
 #input.files=input.files[4]
 
 

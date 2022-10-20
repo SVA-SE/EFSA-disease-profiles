@@ -79,9 +79,11 @@ a=1
 
   # PathogenSurvival  ----
   
+  #source("SLR_objectives/RUN-list-header.r")
+  
   i=3
 
-  for (a in 1:length(agents)){ 
+  for (a in 1:length(agents)){ #a=1
     
   file.input <- input.files[i]
   if(agent.types[a]!="v"){
@@ -112,12 +114,12 @@ a=1
 }
 
   
-# diagnosis ----
+# DiagnosticTests ----
 
 
   i=4
   
-  for (a in 1:length(agents)){ 
+  for (a in 1:length(agents)){ #a=1
     
   rmarkdown::render(paste0("SLR_objectives/",input.files[i]),
                     params = list(agent = agents[a],

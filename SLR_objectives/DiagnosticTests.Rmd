@@ -1,0 +1,343 @@
+---
+title: "Evidence from systematic literature review"
+params:
+    styling: TRUE
+    agent: "agent"
+    min.groups.plot: 1
+    agent.subtype: "agentSubtype"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    orientation: rows
+    self_contained: false
+    
+---
+
+<style type="text/css">
+
+body{
+  font-family: Verdana;
+  font-size: 12pt;
+}
+
+.navbar {
+  background-color:#1DAF8E;
+}
+
+.bggreen {
+  background-color: #1DAF8E;
+}
+
+/* Headers */
+h1{
+  font-family: Verdana;
+  font-size: 16pt;
+  font-weight: bold; 
+  color: white;
+}
+
+.chart-title {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li.active a {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li:not(.active) a {
+    font-size: 16pt;
+}
+
+
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message=FALSE, fig.width=10,fig.height=6)
+library(plotly)
+library(dplyr)
+library(stringr)
+library(knitr)
+library(gdata)
+library(kableExtra)
+library(DT)
+library(grid)
+library(lattice)
+library(latticeExtra)
+library(survival)
+
+
+source("Functions.r")
+
+
+agent <- params$agent 
+styling <- params$styling 
+min.grpsoups.plot <- params$min.groups.plot 
+agent.subtype <- params$agent.subtype
+
+# source("SLR_objectives/Functions.r")
+# dfdt <- read.csv("data/FilesDownload/DiagnosticTests_cleaned.csv")
+# references <- read.csv("data/FilesDownload/DiagnosticTests_refid.csv")
+# styling=T
+# min.groups.plot=1
+# a=1
+# agent = agents[a]
+
+
+dfdt <- read.csv("../data/FilesDownload/DiagnosticTests_cleaned.csv")
+references <- read.csv("../data/FilesDownload/DiagnosticTests_refid.csv")
+
+#agent <- "African swine fever virus"
+dfDZ <- dfdt[dfdt$agent==agent,]
+
+
+dfDZ$targetSpecies <- gsub("\\s*\\([^\\)]+\\)","",as.character(dfDZ$targetSpecies))
+dfDZ <- species.name.cleanup(data=dfDZ)
+dfDZ$targetSpecies <- as.factor(dfDZ$targetSpecies)
+
+references$targetSpecies<- gsub("\\s*\\([^\\)]+\\)","",as.character(references$targetSpecies))
+references <- species.name.cleanup(data=references)
+
+
+```
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Diagnostic test studies which reported sensitivity and/or specificity </h1>
+
+
+Row
+-----------------------------------------------------------------------
+###
+
+
+```{r SeSp.index, message=FALSE, warning=FALSE, results='asis'}
+
+reftestIDs <- dfDZ$refID[which(dfDZ$intervention=="Reference test"|
+                      dfDZ$intervention=="Reference test OIE certified")]
+
+dfDZindex <- dfDZ %>% filter (! refID %in%  reftestIDs)
+
+if(dim(dfDZindex)[1]>0){
+
+dfDZindex$sensitivity[is.na(dfDZindex$sensitivity)]<- round((dfDZindex$nTruePositive[is.na(dfDZindex$sensitivity)])*100/
+                                                        (dfDZindex$nPositive[is.na(dfDZindex$sensitivity)]),1)
+
+dfDZindex$specificity[is.na(dfDZindex$specificity)]<- round((dfDZindex$nTrueNegative[is.na(dfDZindex$specificity)])*100/
+                                                        (dfDZindex$nNegative[is.na(dfDZindex$specificity)]),1)
+
+
+dfDZindex$sensitivity[dfDZindex$sensitivity>100]<- 100      
+dfDZindex$specificity[dfDZindex$specificity>100]<- 100
+
+
+df1 <- dfDZindex[,c("refID","ShortBibliography","groupID","targetSpecies","labTest",
+                    "sensitivity","specificity",
+                   # "sampUnit","sampUnitSize",
+                    "testLimit","timePoint",
+                    "nTested","nTruePositive","nTrueNegative","nPositive","nNegative",
+                    "route","dose",
+                    "context","infMode","sampStrategy")]
+
+df1$labTest <-(as.character(df1$labTest))
+df1$targetSpecies <-(as.character(df1$targetSpecies))
+
+df1 <- df1[order(df1$targetSpecies,
+                 df1$labTest)
+                 ,]
+
+df1[df1=="not investigated/not given/not relevant"]<-"not given/not relevant"
+df1[is.na(df1)]<-""
+colnames(df1) <- c("refID","Reference","groupID","Target Species",
+                       "Lab Test",
+                    "Sensitivity","Specificity",
+                  #  "Sampling Unit","Sample Size",
+                    "Test Limit","Time Point",
+                    "nTested","nTruePOS","nTrueNEG","nPOS","nNEG",
+                    "Route","Dose","infMode",
+                    "Context","Sampl. Strategy")
+
+
+cat("\nThe table below presents all the results from studies in which the performance of a test (the \"index test\") was reported. In these cases, it is assumed that sensitivity and specificity were calculated based on a known infectious status of the animal. The numbers reported are the sensitivity and specificity directly reported by authors. Sensitivity and specificity have been calculated during data analysis only when the number of true positives and true negatives were explicitly reported. The refID can be used to consult references in the reference tables further below.\n")
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### \n")
+
+
+if(styling=="word"){
+
+  datatable(df1,filter = 'top', rownames=FALSE,
+            colnames=c("refID","Reference","groupID","Target Species",
+                       "Lab Test",
+                    "Sensitivity","Specificity",
+                    "Sampling Unit","Sample Size",
+                    "Test Limit","Time Point",
+                    "nTested","nTruePOS","nTrueNEG","nPOS","nNEG",
+                    "Route","Dose","infMode",
+                    "Context","Sampl. Strategy"))
+}else{
+    
+kable(df1)%>%kable_styling()
+  }
+
+  
+  
+  
+}else{
+  cat("\nNo articles included in the systematic literature reviews for this agent/disease contained this type of evaluation.\n")
+}
+
+```
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Diagnostic tests evaluated in comparison to a REFERENCE test</h1>
+
+
+Row
+-----------------------------------------------------------------------
+###
+
+
+```{r SeSp.comparison,  message=FALSE, warning=FALSE, results='asis'}
+
+#dfDZcomp <- dfDZ %>% filter (studyType == "comparison")
+dfDZcomp <- dfDZ %>% filter ( refID %in%  reftestIDs)
+
+
+if(dim(dfDZcomp)[1]>0){
+
+dfDZcomp$percPOS <- dfDZcomp$nPositive/dfDZcomp$nTested
+dfDZcomp$percNEG <- dfDZcomp$nNegative/dfDZcomp$nTested
+dfDZcomp$refPOS <- NA
+dfDZcomp$refNEG <- NA
+dfDZcomp$evalTEST <- NA
+dfDZcomp$refTest <- NA
+
+for (r in 1:dim(dfDZcomp)[1]){
+  if(dfDZcomp$intervention[r]=="Index test"){
+    
+    reference.rows <- which(dfDZcomp$refID==dfDZcomp$refID[r]&
+                              dfDZcomp$intervention=="Reference test"&
+                              dfDZcomp$targetSpecies==dfDZcomp$targetSpecies[r])
+    
+    ##if want to label which test is being evaluated (useful when presenting the reference test results as own row)
+    dfDZcomp$evalTEST[r] <- dfDZcomp$labTest[r]
+    
+    ##or instead add the reference test here and present ONLY the index test
+    dfDZcomp$refTest[r]<-
+      dfDZcomp$labTest[min(reference.rows)]
+    
+    dfDZcomp$refPOS[r] <-  dfDZcomp$nPositive[reference.rows[1]]/dfDZcomp$nTested[reference.rows[1]]
+    dfDZcomp$refNEG[r] <-  dfDZcomp$nNegative[reference.rows[1]]/dfDZcomp$nTested[reference.rows[1]]
+    
+  }
+  #add if want to also show the rows of the reference test
+  else{
+    dfDZcomp$evalTEST[r]<-
+      dfDZcomp$labTest[min(which(dfDZcomp$refID==dfDZcomp$refID[r]&
+                    dfDZcomp$groupID==dfDZcomp$groupID[r]&
+                      dfDZcomp$intervention=="Index test"))]
+  }
+}
+
+## run this line if want to display ONY index tests
+#df1.display <-dfDZcomp[dfDZcomp$intervention=="Index test",]
+
+df1.display <- dfDZcomp[,c("refID","ShortBibliography","targetSpecies",
+                              "intervention","labTest","refTest",
+                    "sensitivity","specificity",
+                  #  "sampUnit","sampUnitSize",
+                    "testLimit","timePoint",
+                    "nTested","nTruePositive","nTrueNegative","nPositive","nNegative",
+                    "route","dose","infMode",
+                    "context","sampStrategy","evalTEST")] #evalTEST
+
+
+df1.display$labTest <-(as.character(df1.display$labTest))
+df1.display$targetSpecies <-(as.character(df1.display$targetSpecies))
+
+df1.display <- df1.display[order(df1.display$targetSpecies,
+                 df1.display$evalTEST,
+                 df1.display$labTest,
+                 df1.display$refID)
+                 ,]
+#df1.display[,"evalTEST"]<-NULL
+
+df1.display[df1.display=="not investigated/not given/not relevant"]<-"not given/not relevant"
+df1.display[is.na(df1.display)]<-"not given/not relevant"
+
+colnames(df1.display)<- c("refID","Reference","Target Species",
+                     "Intervention",
+                     "Lab Test","Reference Test",
+                    "Sensitivity","Specificity",
+                  #  "Sampling Unit","Sample Size",
+                    "Test Limit","Time Point",
+                    "nTested","nTruePOS","nTrueNEG","nPOS","nNEG",
+                    "Route","Dose","Infection Mode",
+                    "Context","Samp. Strategy","Evaluation Test")
+
+cat("\nThe table below presents all the results from studies in which the performance of a test (the \"index test\") was reported in comparison to a gold standard or reference test. In these cases, the number of true positive and negative animals is generally not known, but the percentage of positive and negative animals is compared to the results of the reference test (the reference test used is given in the table).\n")
+cat("<br>")
+cat("<br>")
+cat("\nFor a given article (unique refID and reference), the results for the test being evaluated (the \"index test\" in the Intervention column) and the reference test are given in individual rows. In the rows referring to an index test, the reference test is specifically given in the column \"Reference Test\". In the rows referring to an evaluation test, if the same article also provided an index test, the name of that test is given in the  \"Evaluation Test\" column.\n")
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### \n")
+
+if(styling=="word"){
+datatable(df1.display,filter = 'top', rownames=FALSE,
+          colnames=c("refID","Reference","Target Species",
+                     "Intervention",
+                     "Lab Test","Reference Test",
+                    "Sensitivity","Specificity",
+                    "Sampling Unit","Sample Size",
+                    "Test Limit","Time Point",
+                    "nTested","nTruePOS","nTrueNEG","nPOS","nNEG",
+                    "Route","Dose","Infection Mode",
+                    "Context","Samp. Strategy","Evaluation Test"))
+  }else{
+    
+kable(df1.display)%>%kable_styling()
+  }
+
+
+
+}else{
+  cat("\nNo articles included in the systematic literature reviews for this agent/disease contained this type of evaluation.\n")
+}
+
+
+```
+
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REFERENCES </h1>
+
+
+Row
+-----------------------------------------------------------------------
+###
+In the left panel you can find information about the entire systematic literature review. The specific references for this agent, and used in this section of the story map are listed below.
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+
+```{r references}
+options(DT.options = list(scrollY="100vh",pageLength =5))
+
+#references$labTest <- dfDZ$labTest[match(dfDZ$refID,references$Refid)]
+
+datatable(unique(references[references$Refid%in%dfDZ$refID,c(1,3,4,6)]), filter = 'top', rownames=FALSE)
+
+```
+ 
+ 
