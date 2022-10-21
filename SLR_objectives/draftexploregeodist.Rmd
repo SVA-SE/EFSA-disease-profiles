@@ -1,0 +1,340 @@
+---
+title: "descriptive"
+output: html_document
+date: "2022-10-20"
+---
+# Setting up
+```{r}
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(readxl)
+```
+
+
+
+```{r}
+source("RUN-list-header.r")
+
+dfgd <- read.csv("../data/FilesDownload/GeoDistribution_cleaned.csv")
+references <- read.csv("../data/FilesDownload/GeoDistribution_refid.csv")
+
+n.papers.total <- length(unique(dfgd$refID))
+```
+
+Geo distribution
+
+i. Study info
+ii. Animals/epidemiological unit
+iii. Detection method
+iv. Disease frequency measures
+
+
+
+```{r}
+for (a in 1:length(agents)){ 
+      
+      dfgd <- read.csv("../data/FilesDownload/GeoDistribution_cleaned.csv")
+      agent <- agents[a] 
+      dfDZ <- dfgd[dfgd$agent==agent,]
+      n.papers <- length(unique(dfDZ$refID))
+      out <- paste0(agents[a], " has ", n.papers, " papers.")
+      print(out)
+}
+```
+
+
+Host species
+```{r}
+for (a in 1:length(agents)){ 
+      
+      agent <- agents[a] 
+      dfDZ <- dfgd[dfgd$agent==agent,]
+      n.papers <- length(unique(dfDZ$refID))
+      out <- paste0(agents[a], " has ", n.papers, " papers.")
+      print(out)
+}
+```
+
+
+
+
+
+
+
+```{r}
+for(a in 1:length(agents)){
+  
+  cat(paste0("## [", a ,"] \n\n"))
+  
+agent <- agents[a]
+
+  filtered = dfgd %>%
+    filter(agent == agents[a]) 
+
+  fig1 = filtered %>%
+  group_by(studyContext, analysisYear) %>%
+  summarize(n = n()) %>%
+  arrange(desc(n)) %>%
+  ggplot(aes(x = fct_reorder(studyContext, n), fill = studyContext)) +
+    geom_bar()
+  
+  print(fig1)
+  cat("\n\n")
+  
+}
+```
+
+How many studies are there per sampling context (types of studies)?
+
+```{r setup, include=FALSE}
+dftypesstudies <- dfgd %>%
+  group_by(studyContext) %>%
+  summarize(number = n()) %>%
+  arrange(desc(number))
+
+
+dftypesstudies 
+
+
+
+```
+
+Which agents were the most frequent?
+
+```{r}
+dfgd %>%
+  group_by(agent) %>%
+  summarize(n = n()) %>%
+  arrange(desc(n))
+```
+
+How many species were targeted per agent?
+
+```{r}
+dfgd %>%
+  group_by(agent, 
+           targetSpecies) %>%
+  summarize(n = n()) %>%
+  arrange(desc(n)) 
+#%>%
+  #ggplot(mapping = aes(agent, n)) + 
+           #geom_bar(stat = "identity")
+```
+
+Which countries present more studies reported? For which agents?
+
+```{r}
+dfgd %>%
+  group_by(agent, 
+           country) %>%
+  summarize(n = n()) %>%
+  arrange(desc(n))
+```
+
+```{r}
+R0table <- dfgd %>%
+  filter(!is.na(R0)) %>%
+  select(agent, 
+         country, 
+         sampArea, 
+         studyContext, 
+         startYear, 
+         analysisYear, 
+         R0, 
+         lowerR0, 
+         upperR0) %>%
+  rename()
+
+R0table1 <- head(R0table)
+knitr::kable(R0table1, col.names = gsub("[.]", " ", names(R0table)))
+  
+```
+
+
+
+#Animals/epidemiological unit
+
+```{r}
+
+animal <- dfgd %>% 
+  select(targetSpecies,
+    targetSpecies_C,
+    sampPoint,
+    sampPoint_C,
+    sampStrategy,
+    sampStrategy_C,
+    longitudinal,
+    sampUnit,
+    sampUnit_C,
+    sampUnitSize,
+    minAgeMonths,
+    maxAgeMonths) 
+
+```
+
+#Detection method
+```{r}
+dzDetec <- dfgd %>%
+  select(
+    refID,
+    agent,
+    matrix,
+    matrix_C,
+    labTest,
+    labTest_C,
+    labTarget,
+    labTarget_C,
+    labDescription,
+    sensitivity,
+    specificity) 
+
+
+for (a in 1:length(agents)){ 
+  cat(paste0("## [", a ,"] \n\n"))
+  
+  agent <- agents[a]
+  
+  tmp1 <- dzDetec %>%
+    filter(#agent == "Rift Valley fever virus",
+    agent == agents[a],
+    !is.na(sensitivity | specificity)) %>%
+    distinct(refID) %>%
+    nrow()
+  
+ #n.sensSpec <- length(unique(tmp1$refID))
+
+dzDetecprint <- paste0("From ", n.papers.total, " studies, ", tmp1, " have reported sensitivity and specificity results for ", agents[a],".")
+
+print(dzDetecprint)
+  cat("\n\n")
+}
+```
+
+
+
+## Antibody
+```{r}
+
+detectiontb1 <- dfgd %>%
+   filter(labTarget == "Antibody",
+          nPositive != 0) %>% #fix
+  select(
+    refID,
+    country,
+    sampArea,
+    nPositive,
+    nNegative,
+    sampUnitSize,
+    labTest,
+    #sensitivity,
+    #specificity
+        ) %>%
+  rename(
+    "Country" = country,
+    "Sampled area" = sampArea,
+    "Number of positives" = nPositive,
+    "Number of negatives" = nNegative,
+    "Samp unit size" = sampUnitSize,
+    "Test" = labTest,
+    #"Sensitivity" = sensitivity,
+    #"Specificity" = specificity
+  )
+
+detectiontb <- head(detectiontb)
+knitr::kable(detectiontb, col.names = gsub("[.]", " ", names(detectiontb)))
+
+```
+
+
+
+
+
+##Atg
+```{r}
+detectiontb2 <- dfgd %>%
+   filter(labTarget == "Antigen",
+          nPositive != 0) %>% #fix
+  select(
+    refID,
+    country,
+    sampArea,
+    nPositive,
+    nNegative,
+    sampUnitSize,
+    labTest,
+    #sensitivity,
+    #specificity
+        ) %>%
+  rename(
+    "Country" = country,
+    "Sampled area" = sampArea,
+    "Number of positives" = nPositive,
+    "Number of negatives" = nNegative,
+    "Samp unit size" = sampUnitSize,
+    "Test" = labTest,
+    #"Sensitivity" = sensitivity,
+    #"Specificity" = specificity
+  )
+
+detectiontb2 <- head(detectiontb2)
+knitr::kable(detectiontb2, col.names = gsub("[.]", " ", names(detectiontb2)))
+
+```
+
+
+#Disease frequency measures given
+
+```{r}
+
+dzFreq <- dfgd %>%
+    select(
+    refID,
+    agent,
+    nPositive,
+    imported,
+    nNegative,
+    disFreedom,
+    prevalence,
+    UCI_prev,
+    LCI_prev,
+    incidence,
+    UCI_incid,
+    LCI_incid,
+    incidUnit,
+    incidUnit2,
+    R0,
+    lowerR0,
+    upperR0,
+    impactMeasure,
+    impactValue,
+    impactUnit,
+    clinicalSigns,
+    severity,
+    moreInfo,
+    riskFactors,
+    protectiveFactors,
+    moreInfo2)
+
+#We should report clinical signs only from studies that would do so, though. 
+
+for (a in 1:length(agents)){ 
+  cat(paste0("## [", a ,"] \n\n"))
+  
+  agent <- agents[a]
+  
+  n.clinSigns <- dzFreq %>%
+  filter(!is.na(clinicalSigns),
+         agent == agents[a]) %>%
+  distinct(refID) %>%
+  nrow()
+
+dzClinSigns <- paste("From", n.papers.total,"studies, ", n.clinSigns, "have reported clinical signs for", agents[a],".")
+
+print(dzClinSigns)
+  cat("\n\n")
+}
+
+```
+
+

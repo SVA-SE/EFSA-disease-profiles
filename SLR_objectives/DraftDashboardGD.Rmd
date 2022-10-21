@@ -1,0 +1,573 @@
+---
+title: "Evidence from systematic literature review"
+params:
+    styling: TRUE
+    agent: "agent"
+    min.groups.plot: 1
+    agent.subtype: "agentSubtype"
+output:
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    orientation: rows
+    self_contained: false
+
+---
+<style type="text/css">
+
+body{
+  font-family: Verdana;
+  font-size: 12pt;
+}
+
+.navbar {
+  background-color:#1DAF8E;
+}
+
+.bggreen {
+  background-color: #1DAF8E;
+}
+
+/* Headers */
+h1{
+  font-family: Verdana;
+  font-size: 16pt;
+  font-weight: bold; 
+  color: white;
+}
+
+.chart-title {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li.active a {
+    font-size: 16pt;
+}
+
+.nav-tabs-custom .nav-tabs li:not(.active) a {
+    font-size: 16pt;
+}
+
+
+</style>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message=FALSE, fig.width=10,fig.height=6)
+library(plotly)
+library(dplyr)
+library(stringr)
+library(knitr)
+library(gdata)
+library(kableExtra)
+library(DT)
+library(flexdashboard)
+
+source("Functions.r")
+#source("Metaanalysis_functions.r")
+
+dfgd <- read.csv("../data/FilesDownload/GeoDistribution_cleaned.csv")
+references <- read.csv("../data/FilesDownload/GeoDistribution_refid.csv")
+
+agent <- params$agent 
+styling <- params$styling 
+min.groups.plot <- params$min.groups.plot 
+agent.subtype <- params$agent.subtype
+
+# source("SLR_objectives/Functions.r")
+# source("SLR_objectives/Metaanalysis_functions.r")
+# dfei <- read.csv("data/FilesDownload/ExperimentalInfections_cleaned.csv")
+# references <- read.csv("data/FilesDownload/ExperimentalInfections_refid.csv")
+# styling=T
+# min.groups.plot=1
+# agent = agents[a]
+# #agent=agent.list[1]
+# #agent <- "African horse sickness virus"
+# #agent <-"Rift Valley fever virus"
+# agent.subtype <- agent.subtypes[a]
+
+
+dfDZ <- dfei[dfei$agent==agent,]
+
+
+dfDZ$targetSpecies <- gsub("\\s*\\([^\\)]+\\)","",as.character(dfDZ$targetSpecies))
+dfDZ <- species.name.cleanup(data=dfDZ)
+
+references$targetSpecies<- gsub("\\s*\\([^\\)]+\\)","",as.character(references$targetSpecies))
+references <- species.name.cleanup(data=references)
+
+
+dfDZ$targetSpecies <- as.factor(dfDZ$targetSpecies)
+
+plots.font <- list(
+  family="Verdana",
+  size=16
+)
+
+#table(dfDZ$targetSpecies)
+```
+
+
+Row
+-----------------------------------------------------------------------
+
+
+###  {.bggreen data-width=150}
+<h1>Host species</h1>
+
+
+###
+
+Experimental infection was demonstrated in the following animal species:
+
+<b>  `r trimws(as.character(unique(dfDZ$targetSpecies)),which="right")`</b>
+
+
+
+
+Row{data-height=500}
+-----------------------------------------------------------------------
+
+###  {.bggreen data-width=150}
+<a name="CS_duration"></a>
+
+<h1>Most frequent clinical signs</h1>
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#cs">
+<img src=../../../../templates/assets/css/images/info.png>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="cs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+
+Add notes
+
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+### 
+
+
+
+```{r clinicalsigns.plot,fig.height=4,  message=FALSE, warning=FALSE}
+#Do it per species
+library(dplyr)
+library(tidyr)
+library(wordcloud)
+library(RColorBrewer)
+library(wordcloud2)
+library(tm)
+
+text <- dfgd %>%
+    select(clinicalSigns) %>%
+    mutate_all(na_if,"") %>%
+    na.omit()
+
+#Do not run. This takes the different clinical signs (if they are in the clinicalSigns column and separated by commas) and put them into different columns
+#ncols <- max(stringr::str_count(dfgd$clinicalSigns, ",")) + 1
+#
+#ncols
+#
+# colmn <- paste("col", 1:ncols)
+#
+# cs <-
+#    tidyr::separate(
+#       data = dfgd,
+#       col = clinicalSigns,
+#       sep = ",",
+#       into = colmn,
+#       remove = FALSE
+#     )
+#
+# require(dplyr)
+# head(cs) %>% knitr::kable()
+
+#Number of papers that reported clinical signs
+dfgd %>%
+    select(refID, agent, agent.subtype, clinicalSigns) %>%
+    mutate(CSbool = case_when(clinicalSigns == "" ~ 0,
+                              TRUE ~ 1)) %>%
+    summarise(sum(CSbool))
+
+#Create a vector containing only the text
+text <- dfgd %>%
+    select(clinicalSigns) %>%
+    mutate_all(na_if,"") %>%
+    na.omit()
+
+#This also shows the number of papers that reported clinical signs
+nrow(text)
+
+# Create a corpus
+docs <- Corpus(VectorSource(text))
+
+#Remove everything we do not want in the cloud. Not necessary if word appears less times than min.freq
+# gsub("raised", "", dfgd$text,
+#      "rate", "", dfgd$text)
+# gsub("rate", "", dfgd$text)
+# gsub("rates", "", dfgd$text)
+# gsub("recent", "", dfgd$text)
+# gsub("region", "", dfgd$text)
+# gsub("rosaries", "", dfgd$text)
+# gsub("rosaryshaped", "", dfgd$text)
+# gsub("round", "", dfgd$text)
+# gsub("ruminants", "", dfgd$text)
+# gsub("rvfv", "", dfgd$text)
+# gsub("sanguinolent", "", dfgd$text)
+# gsub("septum", "", dfgd$text)
+# gsub("severe", "", dfgd$text)
+# gsub("sizes", "", dfgd$text)
+# gsub("small", "", dfgd$text)
+# gsub("sneezing", "", dfgd$text)
+# gsub("specified", "", dfgd$text)
+# gsub("stertors", "", dfgd$text)
+# gsub("submaxillary", "", dfgd$text)
+# gsub("system", "", dfgd$text)
+# gsub("tracts", "", dfgd$text)
+# gsub("trunk", "", dfgd$text)
+# gsub("typical", "", dfgd$text)
+# gsub("ulcers", "", dfgd$text)
+# gsub("unilaterally", "", dfgd$text)
+# gsub("upper", "", dfgd$text)
+# gsub("ventrum", "", dfgd$text)
+# gsub("vessels", "", dfgd$text)
+# gsub("visible", "", dfgd$text)
+# gsub("xbc", "", dfgd$text)
+
+docs <- docs %>%
+    tm_map(removeNumbers) %>%
+    tm_map(removePunctuation) %>%
+    tm_map(stripWhitespace)
+docs <- tm_map(docs, content_transformer(tolower))
+docs <- tm_map(docs, removeWords, stopwords("english"))
+
+dtm <- TermDocumentMatrix(docs)
+matrix <- as.matrix(dtm)
+words <- sort(rowSums(matrix),decreasing=TRUE)
+df <- data.frame(word = names(words),freq=words)
+
+#From n_row(text) papers that provided clinical signs, x (df$freq) reported df$word
+
+
+#for loop
+
+set.seed(1234)
+wordcloud(words = df$word, freq = df$freq, min.freq = 4,
+          max.words=200,
+          random.order=FALSE,
+          rot.per=0.35,
+          colors=brewer.pal(8, "Dark2"))
+
+#Different design
+#wordcloud2(df, color = "random-light", backgroundColor = "grey")
+
+
+```
+
+
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+###  {.bggreen data-width=150}
+<h1>Clinical signs observed</h1>
+
+### 
+
+```{r CS.wordcloud, message=FALSE, warning=FALSE}
+
+#stringdetect specific clinical signs; table with their frequencies per regions?
+
+```
+
+
+Row{data-height=500}
+-----------------------------------------------------------------------
+
+###  {.bggreen data-width=150}
+<a name="CF"></a>
+
+<h1>Study context</h1>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#cfr">
+<img src=../../../../templates/assets/css/images/info.png>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="cfr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+
+Add notes
+
+Further details about the case fatality data are provided in the meta-analysis section.
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+###
+
+```{r types of studies, message=FALSE, warning=FALSE}
+
+dftypesstudies <- dfgd %>%
+  group_by(studyContext) %>%
+  summarize(number = n()) %>%
+  arrange(desc(number))
+
+
+```
+
+
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detection </h1>
+
+#Detection
+
+```{r, detection='asis'}
+if(file.exists("impact_ma1.png")|file.exists("impact_ma2.png")){
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### Duration of clinical signs: Meta-analysis accounting for censoring\n")
+  cat("\nKaplan-Meier curves were fit to the data,in order to estimate confidence intervals (CI) and interquartile ranges (IQ) that explicitly take into account the data censoring issue (lack of information about true maximum when experiments ended while the agent was still detectable). The results are the survival curves shown below, first with confidence intervals (parametric assumption), and then with interquartile ranges (non-parametric). Further below you will find a table with the exact calculated CI and IQ.\n")
+  
+  
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### Kaplan-Meier curves with parametric Confidence Intervals\n")
+}
+```
+
+##Antibodies
+
+```{r}
+
+
+detectiontb1 <- dfgd %>%
+   filter(labTarget == "Antibody",
+          nPositive != 0) %>% #fix
+  select(
+    refID,
+    country,
+    sampArea,
+    nPositive,
+    nNegative,
+    sampUnitSize,
+    labTest,
+    #sensitivity,
+    #specificity
+        ) %>%
+  rename(
+    "Country" = country,
+    "Sampled area" = sampArea,
+    "Number of positives" = nPositive,
+    "Number of negatives" = nNegative,
+    "Samp unit size" = sampUnitSize,
+    "Test" = labTest,
+    #"Sensitivity" = sensitivity,
+    #"Specificity" = specificity
+  )
+
+detectiontb <- head(detectiontb)
+knitr::kable(detectiontb, col.names = gsub("[.]", " ", names(detectiontb)))
+  
+}
+
+
+
+```
+  
+##Antigen 
+
+```{r, atg='asis'}
+idetectiontb2 <- dfgd %>%
+   filter(labTarget == "Antigen", #fix
+          nPositive != 0) %>% #fix
+  select(
+    refID,
+    country,
+    sampArea,
+    nPositive,
+    nNegative,
+    sampUnitSize,
+    labTest,
+    #sensitivity,
+    #specificity
+        ) %>%
+  rename( 
+    "Country" = country,
+    "Sampled area" = sampArea,
+    "Number of positives" = nPositive,
+    "Number of negatives" = nNegative,
+    "Samp unit size" = sampUnitSize,
+    "Test" = labTest,
+    #"Sensitivity" = sensitivity,
+    #"Specificity" = specificity
+  )
+
+detectiontb2 <- head(detectiontb2)
+knitr::kable(detectiontb2, col.names = gsub("[.]", " ", names(detectiontb2)))
+
+```
+
+
+ 
+```{r, results='asis'}
+if(file.exists("impact_ma1.png")|file.exists("impact_ma2.png")){
+ 
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### Duration of clinical signs: Calculated confidence interval and interquartile ranges accounting for censoring\n")
+  cat("\nLCL and UCL stand for the lower and upper control limit of a 95% confidence interval accounting for censoring (lack of information about true maximum when experiments ended while the agent was still detectable).\n")
+  cat("\nN.groups is the number of animal groups from which experimental infection data was available.\n")
+  
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n###\n")
+  tables.INCUB <- produce.tables.INCUB()
+  kable(tables.INCUB)%>%kable_styling()
+  
+}else{
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### Meta-analysis was not performed for this agent/disease\n")
+  cat("\nWhen evidence was available through systematic literature review for a <b>minimum of 4 animal groups</b> studied through experimental infections, this evidence was subjected to meta-analysis. In such cases, Kaplan-Meier curves would be fit to the data,in order to estimate confidence intervals (CI) and interquartile ranges (IQ) for the duration of clinical signs  explicitly taking into account the data censoring issue (lack of information about true maximum when experiments ended while the agent was still detectable).\n")
+      cat("\nThere was not enough evidence for this disease/pathogen.\n")
+      cat("\nThe systematic literature reviews are updated regularly (see information in the left panel).\n")
+
+}
+  
+```
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Case-fatality in further details </h1>
+
+Row
+-----------------------------------------------------------------------
+
+###
+
+The table below details the number of groups (N.groups) for which experimental infection data was available, and gives a summary of the fatality observed within these experimentally infected groups.
+
+For each combination of animal species and, when relevant, agent subtype, three rows of information are available:
+
+1) The within group fatality, summarized for all animal groups in which the reference explicitly gave information about whether deaths were observed (or animals were euthanised due to advanced clinical signs). This therefore can include groups in which no animals died or were euthanised, as long as this information was explicitily observed and reported. The within group percentage displayed in the table is the median of all observations available (one observation = % dead within one animal group experimentally infected and followed).
+
+2) the within group fatality only for groups in which mortality was observed. That is, when disease was observed to cause deathes, what was the percentage fatality within animal groups.
+
+3) the number of animal groups for which no fatality information is available (the reference did not report deaths, but it was not possible to determine whether no deaths were observed, or this information was simply not reported).
+
+
+
+Row
+-----------------------------------------------------------------------
+
+###
+```{r casefatality.all}
+
+columns <- c("targetSpecies","agentSubtype","death.inf")
+if(is.na(agent.subtype)){
+  columns <- c("targetSpecies","death.inf")
+}
+
+
+table.data <- cf[,c("uniqueID",columns,"cf")]
+table.data <- unique(table.data)
+table.data$uniqueID<-1
+
+
+table.data_Y <- table.data[which(table.data$death.inf=="YES"),]
+if(dim(table.data_Y)[1]>0){
+        table.data_Y$death.inf <- "only groups with death"
+}
+
+table.data_ALL <- table.data[which(!is.na(table.data$death.inf)),]
+if(dim(table.data_ALL)[1]>0){
+        table.data_ALL$death.inf <- "groups with mortality information"
+}
+
+table.data_NA <- table.data[which(is.na(table.data$death.inf)),]
+if(dim(table.data_NA)[1]>0){
+        table.data_NA$death.inf <- "no mortality information"
+}
+
+        
+        table.data2 <- rbind(table.data_Y,table.data_ALL,table.data_NA)
+        table.data2$death.inf <- factor(table.data2$death.inf, ordered = TRUE, 
+                                        levels = c("groups with mortality information", 
+                                                   "only groups with death", 
+                                                   "no mortality information"))
+        
+groups.totals <- aggregate(table.data2[,c("uniqueID")],
+                          by=as.list(table.data2[,columns]),FUN=sum,na.rm=TRUE)
+colnames(groups.totals)<- c(columns,"N.groups")
+
+cf.median <- aggregate(table.data2[,"cf"],by=as.list(table.data2[,columns]),FUN=median,na.rm=TRUE)
+colnames(cf.median)<- c(columns,"cf")
+
+cf.median$cf[which(!is.na(cf.median$cf))] <- paste0(as.character(round(cf.median$cf[which(!is.na(cf.median$cf))],1)),"%")
+cf.median$cf[which(is.na(cf.median$cf))] <- "--"
+
+
+merged <- cbind(groups.totals,cf.median[,"cf"])
+colnames(merged) <- c(columns,"N.groups","Within group mortality")
+
+if(is.na(agent.subtype)){
+  merged <- merged[order(merged$targetSpecies),]
+}else{
+merged <- merged[order(merged$targetSpecies,merged$agentSubtype),]
+}
+
+    kable(merged, align="c",row.names = F)%>%
+        kable_styling()
+    
+
+```
+
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REFERENCES </h1>
+
+
+Row
+-----------------------------------------------------------------------
+###
+In the left panel you can find information about the entire systematic literature review. The specific references for this agent, and used in this section of the story map are listed below.
+
+Row{data-height=600}
+-----------------------------------------------------------------------
+
+```{r references}
+options(DT.options = list(scrollY="100vh",pageLength =5))
+datatable(unique(references[references$Refid%in%dfDZ$refID,c(1,3,5)]), filter = 'top', rownames=FALSE)
+
+```
+ 
+
