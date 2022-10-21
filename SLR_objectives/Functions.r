@@ -464,7 +464,7 @@ if(is.null(matrix)){
 }
 
 multiple.cat.summary.numerical <- function(dataset,columns,outcomes,ID="uniqueID",labels=NULL,FUN="median",
-                                           styling=T,outcome.type=NULL){
+                                           styling=T,outcome.type=NULL,pageLength=10){
 
   if(is.null(labels)){
     labels <- c(columns,outcomes)
@@ -500,7 +500,9 @@ if(!is.null(outcome.type)){
 
     if(styling=="word"){
 
-      datatable(table.data)
+      datatable(table.data,options = list(
+        pageLength = pageLength
+      ))
 
     }else{
     kable(table.data, align="c",row.names = F)
