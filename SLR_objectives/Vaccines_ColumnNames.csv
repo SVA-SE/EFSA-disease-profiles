@@ -37,7 +37,7 @@ Number of units in the group (the number of units listed above (e.g. herds))","s
 "testsubstance
 select the vaccine used","testSubstance"
 "testsubstance
-select the vaccine used_comment","testSubstanceCAT"
+select the vaccine used_comment","testSubstance_C"
 "Type of vaccine","vaccineType"
 "Type of vaccine_comment","vaccineType_C"
 "route
