@@ -360,7 +360,8 @@ dfva$nPositive[dfva$nPositive == -1] <- NA
 
 
 
-# dfva$quality <- NULL
+dfva$quality <- NULL
+
 
 # adjusted timelines
 # every study reported a timeline differently,
