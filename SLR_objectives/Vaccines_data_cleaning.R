@@ -49,8 +49,11 @@ dfva$rowID <- 1:dim(dfva)[1]
 ## Many columns may be completely empty, since we chose to export ALL columns
 ## in Distiller (not hide empty columns).
 ## This was done for consistency (so that we would always have the same dataset out).
+
+
 ## Removing columns with only NA:
-dfva[sapply(dfva, function(x) all(is.na(x)))] <- NULL
+#####dfva[sapply(dfva, function(x) all(is.na(x)))] <- NULL
+#####this was removed in 2022 because efficacy was empty. Also
 
 ##refID
 #any(is.na(dfva$refID))
@@ -89,22 +92,18 @@ dfva$agentSubtypeType <- factor (dfva$agentSubtypeType)
 ## agentDetails
 #dfva %>% count (agentDetails, sort = T)
 
-## agentSubtypeDC1
-#dfva %>% count (agentSubtypeDC1)
-## columns agentDetails and agentSubtypeDC1 seems to have the same information, so far BTV-8
 ## Columns will be merged
 if(!is.null(dfva$agentSubtypeType)){
-dfva$agentDetails <- ifelse (dfva$agentDetails != "", dfva$agentDetails, dfva$agentSubtypeDC1)
+dfva$agentDetails <- ifelse(dfva$agentDetails != "", dfva$agentDetails, dfva$agentSubtypeDC1)
 }else{
   dfva$agentDetails <- dfva$agentSubtypeDC1
 }
-dfva$agentSubtypeDC1 <- NULL
-dfva$agentDetails [dfva$agentDetails == ""] <- "not investigated/not given/not relevant"
-dfva$agentDetails [dfva$agentDetails == "BTV8"] <- "BTV-8"
-dfva$agentDetails <- factor (dfva$agentDetails)
+dfva$agentDetails[dfva$agentDetails == ""] <- "not investigated/not given/not relevant"
+dfva$agentDetails[dfva$agentDetails == "BTV8"] <- "BTV-8"
+dfva$agentDetails <- factor(dfva$agentDetails)
 
 ## targetSpecies
-dfva$targetSpecies <- factor (dfva$targetSpecies)
+dfva$targetSpecies <- factor(dfva$targetSpecies)
 #dfva %>% count (targetSpecies, sort = T)
 
 
@@ -119,74 +118,91 @@ dfva$sampUnit <- factor (dfva$sampUnit)
 ## sampUnitSize
 dfva$sampUnitSize <- as.numeric (dfva$sampUnitSize)
 
+#table(dfva$animalStatus)
+#table(dfva$animalStatus_C)
+dfva$animalStatus[dfva$animalStatus_C=="Not described"]<-"Not given"
+dfva$animalStatus <- factor(dfva$animalStatus)
+
+
+#table(dfva$testSubstance)
+#table(dfva$testSubstance_C)
+#table(dfva$testSubstance_C[dfva$testSubstance=="Other: specify"])
+
+dfva$testSubstance[dfva$testSubstance_C=="A/chicken/Vietnam/ C58/2004 (H5N3)"] <- "A/chicken/Vietnam/C58/2004 (H5N3)"
+dfva$testSubstance[dfva$testSubstance_C=="A/gyrfalcon/Washington/41088/2014 (H5N8)"] <-"A/Gyrfalcon/Washington/40188-6/2014 (H5N8), Merck Animal Health"
+dfva$testSubstance[dfva$testSubstance_C=="A/TK/OR/71 (TK/OR/71) (H7N3)"] <-"A/TK/OR/71 (TK/OR/71) (H7N3)"
+dfva$testSubstance[dfva$testSubstance_C=="H5N2: A/chicken/ Mexico/232/1994(H5N2); manufactured in Mexico"] <-"A/chicken/Mexico/232/1994 (H5N2), licensed in Indonesia"
+dfva$testSubstance[dfva$testSubstance_C=="H5N3: A/chicken/Vietnam/ C58/2004"] <- "A/chicken/Vietnam/C58/2004 (H5N3)"
+dfva$testSubstance[dfva$testSubstance_C=="Poulvac i-AI H5N9 and H7N1 bivalent vaccine"] <-"Poulvac i-AI"
+dfva$testSubstance[dfva$testSubstance_C=="Re-4"] <- "H5N1 Re-4"
+  dfva$testSubstance[dfva$testSubstance_C=="RE-5"] <- "H5N1 Re-5"
+  dfva$testSubstance[dfva$testSubstance_C=="Re-6"] <- "H5N1 Re-6"
+  dfva$testSubstance[dfva$testSubstance_C=="RE-6"] <- "H5N1 Re-6"
+  dfva$testSubstance[dfva$testSubstance_C=="Reassortant trivalent vaccine (H5N2 Re-11 strain + Re-12 strain, H7N9 H7-Re-2 strain)"] <-"Reassortant trivalent vaccine (H5N2 Re-11 + Re-12 + H7N9 H7-Re-2)"
+  dfva$testSubstance[str_detect(dfva$testSubstance_C,"Vectormune AI rHVT-AI")] <- "Vectormune HVT-AIV"
+  dfva$testSubstance[str_detect(dfva$testSubstance_C,"Vectormune AI rHVT-H5")] <- "Vectormune AI (rHVT-H5)"
+  dfva$testSubstance[dfva$testSubstance_C=="Volvac AI KV"] <- "Volvac AI KV"
+  
+
+  
+    #table(dfva$vaccineType)
+  #table(dfva$vaccineType_C)
+
+
+  
+  
+    
 ## route
-dfva$route [dfva$route == ""] <- "not investigated/not given/not relevant"
+#table(dfva$route)
+  #table(dfva$route_C)
+
+  
+  ##CHECK
+  table(dfva$testSubstance[dfva$route==""])
+  
+  
+  dfva$route [dfva$route == ""] <- "not investigated/not given/not relevant"
 dfva$route <- factor (dfva$route)
 #dfva %>% count (route, sort = T)
 
-## testSubstance - Column to be excluded.
-#dfva$testSubstance [dfva$testSubstance == ""] <- "not investigated/not given/not relevant"
-#dfva$testSubstance <- gsub ('BTV\tBTVPUR Alsap 8', "BTV - tBTVPUR Alsap 8", dfva$testSubstance, fixed = T)
-#dfva$testSubstance <- gsub ('SBV\tZulvac SBV', "SBV - tZulvac SBV", dfva$testSubstance, fixed = T)
-#dfva$testSubstance <- factor (dfva$testSubstance)
-#dfva %>% count (testSubstance, sort = T)
 
-# ## testSubstanceCAT
-# #dfva$testSubstanceCAT [dfva$testSubstanceCAT == ""] <- "not investigated/not given/not relevant"
-# dfva$testSubstanceCAT <- gsub ('BTV\tBTVPUR AlSap 2-4', "BTV-BTVPUR AlSap 2-4", dfva$testSubstanceCAT, fixed = T)
-# dfva$testSubstanceCAT <- gsub ('BTV\tBTVPUR Alsap 8', "BTV-BTVPUR Alsap 8", dfva$testSubstanceCAT, fixed = T)
-# dfva$testSubstanceCAT <- gsub ('WNV\tEquip WNV (previously Duvaxyn WNV)', "WNV-Equip WNV (previously Duvaxyn WNV)", dfva$testSubstanceCAT, fixed = T)
-# dfva$testSubstanceCAT <- gsub ('SBV\tZulvac SBV', "SBV-Zulvac SBV", dfva$testSubstanceCAT, fixed = T)
-# dfva$testSubstanceCAT <- factor (dfva$testSubstanceCAT)
-# #dfva %>% count (testSubstanceCAT, sort = T)
-
-#dfva$testSubstance <- NULL
-
-
-#to be able to separate control groups from intervention easily
-dfva$interventionType <- ifelse(
-  dfva$testSubstanceCAT=="Placebo"|dfva$testSubstanceCAT=="Unvaccinated control",
-  "control",
-  "vaccine"
-)
-
-
-# ## dosageFreq
-# dfva$dosageFreq [dfva$dosageFreq == -1] <- NA
-# dfva$dosageFreq <- as.numeric (dfva$dosageFreq)
-#
-# ## dosageInterval
-# if(!is.null(dfva$dosageInterval)){
-# dfva$dosageInterval [dfva$dosageInterval == -1] <- NA
-# dfva$dosageInterval <- as.numeric (dfva$dosageInterval)
-# }
-#
-# ## dose
-# dfva$dose [dfva$dose == -1] <- NA
-# dfva$dose <- as.numeric (dfva$dose)
-# #dfva %>% select (refID, groupID, dose, testSubstanceCAT) %>% filter (dose == 0)
-#
-# ## doseUnits
-# dfva$doseUnits [dfva$doseUnits == ""] <- "not investigated/not given/not relevant"
-# dfva$doseUnits <- factor (dfva$doseUnits)
-# #dfva %>% count (count = doseUnits, sort = T)
-#
-# ## dayDose1
-# dfva$dayDose1 <- as.numeric (dfva$dayDose1)
-#
-# ## dayDose2
-# if(!is.null(dfva$dayDose2)){
-# dfva$dayDose2 <- as.numeric(dfva$dayDose2)
-# }
 
 ## challengeType
-if(!is.null(dfva$challengeType)){
+#table(dfva$challengeType)
 dfva$challengeType [dfva$challengeType == ""] <- "not investigated/not given/not relevant"
 dfva$challengeType <- factor (dfva$challengeType)
-}
-#dfva %>% count (challengeType, sort = T)
+
+
+
+
+## challengeRoute
+#table(dfva$challengeRoute)
+#table(dfva$challengeRoute_C)
+dfva$challengeRoute[dfva$challengeRoute == ""] <- "not investigated/not given/not relevant"
+
+
+dfva$challengeRoute_C <- str_to_lower(dfva$challengeRoute_C)
+dfva$challengeRoute_C[str_detect(dfva$challengeRoute_C,"choanal")] <- "intrachoanal"
+dfva$challengeRoute_C[str_detect(dfva$challengeRoute_C,"direct contact")] <- "direct contact"
+dfva$challengeRoute_C[str_detect(dfva$challengeRoute_C,"eye drop and intranasal routes")] <- "oculo-nasal"
+dfva$challengeRoute_C[str_detect(dfva$challengeRoute_C,"intranasal and oral")] <- "oro-nasal"
+dfva$challengeRoute_C[str_detect(dfva$challengeRoute_C,"intraocular, intranasal, oral")] <- "oculo-oro-nasal"
+dfva$challengeRoute_C[str_detect(dfva$challengeRoute_C,"nose/eye drop")] <- "oculo-nasal"
+dfva$challengeRoute_C[str_detect(dfva$challengeRoute_C,"not mentioned")] <- "not investigated/not given/not relevant"
+dfva$challengeRoute_C[str_detect(dfva$challengeRoute_C,"oculo-oronasal")] <- "oculo-oro-nasal"
+dfva$challengeRoute_C[str_detect(dfva$challengeRoute_C,"oculo nasal")] <- "oculo-nasal"
+dfva$challengeRoute_C[str_detect(dfva$challengeRoute_C,"oronasal")] <- "oro-nasal"
+
+
+dfva$challengeRoute[dfva$challengeRoute=="OTHER: specify"] <- dfva$challengeRoute_C[dfva$challengeRoute=="OTHER: specify"]
+dfva$challengeRoute[dfva$challengeRoute=="MULTIPLE: specify"] <- "MULTIPLE"
+  
+#table(dfva$challengeRoute)
+dfva$challengeRoute <- factor (dfva$challengeRoute)
+
 
 ## challengeSubstance
+#table(dfva$challengeSubstance)
 if(!is.null(dfva$challengeSubstance)){
 dfva$challengeSubstance [dfva$challengeSubstance == ""] <- "not investigated/not given/not relevant"
 dfva$challengeSubstance <- factor (dfva$challengeSubstance)
@@ -196,11 +212,6 @@ dfva$challengeSubstance <- factor (dfva$challengeSubstance)
 ## challengeDose
 dfva$challengeDose [dfva$challengeDose == -1] <- NA
 
-# ## challengeDoseUnits
-# dfva$challengeDoseUnits [dfva$challengeDoseUnits == ""] <- "not investigated/not given/not relevant"
-# dfva$challengeDoseUnits <- gsub("mililiter", "milliliter", dfva$challengeDoseUnits, fixed = T)
-# dfva$challengeDoseUnits <- factor (dfva$challengeDoseUnits)
-# #dfva %>% count (challengeDoseUnits, sort = T)
 
 ## challengeDay
 dfva$challengeDay <- as.numeric(dfva$challengeDay)
@@ -209,10 +220,54 @@ dfva$challengeDay <- as.numeric(dfva$challengeDay)
 # #which(dfva$lastVaccine > dfva$challengeDay)
 # dfva$lastVaccine <- as.numeric(dfva$lastVaccine)
 
+
+
+## deadUnits
+dfva$deadUnits <- as.numeric (dfva$deadUnits)
+dfva$deadUnits[dfva$deadUnits == -1] <- NA
+
+## mortalityTime
+dfva$mortalityTime <- as.numeric (dfva$mortalityTime)
+dfva$mortalityTime[dfva$mortalityTime == -1] <- NA
+
+## mortalityTimeUnits
+  dfva$mortalityTimeUnits <- factor (dfva$mortalityTimeUnits)
+
+  
+  ## mortalityTime
+  dfva$mortalityTimeMax <- as.numeric (dfva$mortalityTimeMax)
+  dfva$mortalityTimeMax[dfva$mortalityTimeMax == -1] <- NA
+  
+  ## mortalityTimeUnits
+  dfva$mortalityTimeUnitsMax <- factor(dfva$mortalityTimeUnitsMax)
+
+    
+  
+#dfva %>% count (mortalityTimeUnits)
+
+## efficacy
+if(!is.null(dfva$efficacy)){
+  dfva$efficacy <- as.numeric (dfva$efficacy)
+}
+
+  ## coverage
+  if(!is.null(dfva$coverage)){
+    dfva$coverage <- as.numeric (dfva$coverage)
+  }
+
+
+  dfva$vaccCost
+  dfva$vaccCostIndirect
+  dfva$withdrawal
+  dfva$storage
+
+  
+  
 ## timePoint
 dfva$timePoint <- as.numeric (dfva$timePoint)
 
 ## experimentStatus
+#table(dfva$experimentStatus)
 dfva$experimentStatus [dfva$experimentStatus == ""] <- "not investigated/not given/not relevant"
 dfva$experimentStatus <- factor (dfva$experimentStatus)
 #dfva %>% count (experimentStatus)
@@ -227,80 +282,98 @@ dfva$labDescription [dfva$labDescription == ""] <- "not investigated/not given/n
 #dfva %>% count (labDescription)
 
 ## labTarget
-dfva$labTarget [dfva$labTarget == "Not applicable"] <- "not investigated/not given/not relevant"
-dfva %>% count (labTarget)
+#table(dfva$labTarget)
+#table(dfva$labTarget_C)
+
+dfva$labTarget[dfva$labTarget == "Not applicable"] <- "not investigated/not given/not relevant"
+dfva$labTarget[dfva$labTarget == "Other: specify"] <- dfva$labTarget_C[dfva$labTarget == "Other: specify"]
+dfva$labTarget <- factor(dfva$labTarget)
+
 
 ## matrix
-dfva$matrix <- factor (dfva$matrix)
-#dfva %>% count (matrix, sort = T)
+#table(dfva$matrix)
+#table(dfva$matrix_C)
+
+dfva$matrix[dfva$matrix_C=="lung tissue"] <- "lung"
+dfva$matrix[dfva$matrix_C=="Organ tissues"] <- "organ tissue (not specified)"
+dfva$matrix[dfva$matrix_C=="spleen tissue"] <- "spleen"
+dfva$matrix[dfva$matrix_C=="tracheal"] <- "tracheal swab"
+
+dfva$matrix[dfva$matrix_C=="Bursa Fabricius tissue"] <- "Bursa Fabricius tissue"
+dfva$matrix[dfva$matrix_C=="cloacal swab"] <- "cloacal swab"
+dfva$matrix[dfva$matrix_C=="intestine"] <- "intestine"
+dfva$matrix[dfva$matrix_C=="liver"] <- "liver"
+dfva$matrix[dfva$matrix_C=="lung"] <- "lung"
+dfva$matrix[dfva$matrix_C=="organ tissue (not spedified)"] <- "organ tissue (not spedified)"
+dfva$matrix[dfva$matrix_C=="oronasal swab"] <- "oronasal swab"
+dfva$matrix[dfva$matrix_C=="oropharyngeal swab"] <- "oropharyngeal swab"
+dfva$matrix[dfva$matrix_C=="orophgaryngeal swab"] <- "oropharyngeal swab"
+dfva$matrix[dfva$matrix_C=="tracheal swab"] <- "tracheal swab"
+
+
+
+dfva$matrix[dfva$matrix_C=="Oropharyngeal and cloacal swabs"] <- "MULTIPLE"
+dfva$matrix[dfva$matrix_C=="oropharyngeal/cloacal swabs"] <- "MULTIPLE"
+dfva$matrix[dfva$matrix_C=="tracheal and cloacal swab"] <- "MULTIPLE"
+dfva$matrix[dfva$matrix_C=="tracheal/cloacal swab"] <- "MULTIPLE"
+
+dfva$matrix[dfva$matrix=="MULTIPLE: specify"] <- "MULTIPLE"
+
+dfva$matrix <- factor(dfva$matrix)
+
 
 ## nTested
 dfva$nTested <- as.numeric (dfva$nTested)
+dfva$nTested[dfva$nTested == -1] <- NA
+
 
 ## nPositive
 dfva$nPositive <- as.numeric (dfva$nPositive)
+dfva$nPositive[dfva$nPositive == -1] <- NA
+
 
 ## testValue
 #dfva$testValue
 #dfva %>% select (refID, groupID, nPositive, testValue) %>% filter (is.na(dfva$nPositive))
 
 ## testValueUnits
-dfva$testValueUnits <- as.character(dfva$testValueUnits)
-dfva$testValueUnits [dfva$testValueUnits == ""] <- "not investigated/not given/not relevant"
+#dfva$testValueUnits <- as.character(dfva$testValueUnits)
+#dfva$testValueUnits [dfva$testValueUnits == ""] <- "not investigated/not given/not relevant"
 
-for (r in 1:dim(dfva)[1]){
-  if(is.na(dfva$testValue[r])&!is.na(dfva$nPositive[r])){
-    dfva$testValue[r] <- dfva$nPositive[r]/dfva$nTested[r]*100
-    dfva$testValueUnits[r] <- paste0("% POS, ", dfva$labTest[r])
-  }
-}
+#for (r in 1:dim(dfva)[1]){
+#  if(is.na(dfva$testValue[r])&!is.na(dfva$nPositive[r])){
+#    dfva$testValue[r] <- dfva$nPositive[r]/dfva$nTested[r]*100
+#    dfva$testValueUnits[r] <- paste0("% POS, ", dfva$labTest[r])
+#  }
+#}
 
 
-dfva$testValueUnits <- factor (dfva$testValueUnits)
+#dfva$testValueUnits <- factor (dfva$testValueUnits)
 #dfva %>% count (testValueUnits)
 
-## scaleMin
-dfva$scaleMin <- as.numeric (dfva$scaleMin)
+# ## scaleMin
+# dfva$scaleMin <- as.numeric (dfva$scaleMin)
+# 
+# ## ScaleMax
+# dfva$ScaleMax <- as.numeric (dfva$scaleMin)
 
-## ScaleMax
-dfva$ScaleMax <- as.numeric (dfva$scaleMin)
 
-## deadUnits
-dfva$deadUnits <- as.numeric (dfva$deadUnits)
 
-## mortalityTime
-if(!is.null(dfva$mortalityTime)){
-dfva$mortalityTime <- as.numeric (dfva$mortalityTime)
-}
 
-## mortalityTimeUnits
-if(!is.null(dfva$mortalityTimeUnits)){
-dfva$mortalityTimeUnits [dfva$mortalityTimeUnits == ""] <- "not investigated/not given/not relevant"
-dfva$mortalityTimeUnits <- factor (dfva$mortalityTimeUnits)
-}
-#dfva %>% count (mortalityTimeUnits)
-
-## efficacy
-if(!is.null(dfva$efficacy)){
-dfva$efficacy <- as.numeric (dfva$efficacy)
-}
-
-# ## UCI_efficacy
-# if(!is.null(dfva$UCI_efficacy)){
-# dfva$UCI_efficacy <- as.numeric (dfva$UCI_efficacy)
-# }
-#
-# ## LCI_efficacy
-# if(!is.null(dfva$LCI_efficacy)){
-# dfva$LCI_efficacy <- as.numeric (dfva$LCI_efficacy)
-# }
-
-dfva$quality <- NULL
+# dfva$quality <- NULL
 
 # adjusted timelines
 # every study reported a timeline differently,
 # to be able to plot and compare results, we standardize all timelines according to the
 # CHALLENGE DAY
+
+dfva$dayDose1 <- as.numeric(dfva$dayDose1)
+dfva$dayDose1[dfva$dayDose1 == -1] <- NA
+
+dfva$dayDose2 <- as.numeric(dfva$dayDose2)
+dfva$dayDose2[dfva$dayDose2 == -1] <- NA
+
+
 
 offsetDay <- dfva$challengeDay
 dfva$dayDose1Std <- dfva$dayDose1 - offsetDay

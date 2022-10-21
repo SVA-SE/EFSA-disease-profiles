@@ -17,8 +17,8 @@ for (a in c(1:38,40:48)){
     # text_to_look <- "\\(true positive and negative samples\\)"
     # text_to_replace <- "\\(samples from truly infected and non-infected animals\\)"
 
-     text_to_look <- "Survival-"
-     text_to_replace <- "PathogenSurvival-"
+     text_to_look <- "The next update is planned for 2022"
+     text_to_replace <- "The next update is planned for 2023"
 
 
 
