@@ -115,8 +115,7 @@ if(length(unique(dzeff$refID))>0){
   cat("\nRow\n-----------------------------------------------------------------------\n")
   cat("\n### \n")
    cat(paste0("\nA total of ",length(unique(dfDZ$refID))," references were reviewed, of which ",length(unique(dzeff$refID)),"  reported vaccine efficacy. The results are presented in the table below.\n"))
-  cat("\nAll references, and the species they studied, are listed further below in the complete reference list.\n")
-  cat("\nIn the next round of updates of the systematic literature reviews for vaccines (planned for 2023), outcomes other than efficacy will be summarized and displayed in this story map.\n")
+  cat("\nIn the next round of updates of the systematic literature reviews for vaccines (planned for 2023), outcomes other than efficacy and coverage will be summarized and displayed in this story map.\n")
 
   
   cat("\nRow{data-height=600}\n")
@@ -130,8 +129,7 @@ datatable(dzeff[,c("refID","targetSpecies","testSubstance",
   cat("\nRow\n-----------------------------------------------------------------------\n")
   cat("\n### \n")
    cat(paste0("\nA total of ",length(unique(dfDZ$refID))," references were reviewed, but NONE reported  vaccine efficacy explicitly.\n"))
-  cat("\nAll references, and the species they studied, are listed further below in the complete reference list.\n")
-  cat("\nIn the next round of updates of the systematic literature reviews for vaccines (planned for 2023), outcomes other than efficacy will be summarized and displayed in this story map.\n")
+  cat("\nIn the next round of updates of the systematic literature reviews for vaccines (planned for 2023), outcomes other than efficacy and coverage will be summarized and displayed in this story map.\n")
 
 }
 
@@ -152,9 +150,8 @@ Row{data-height=60 .bggreen}
 if(length(unique(dzcov$refID))>0){
   cat("\nRow\n-----------------------------------------------------------------------\n")
   cat("\n### \n")
-   cat(paste0("\nA total of ",length(unique(dfDZ$refID))," references were reviewed, of which ",length(unique(dzcov$refID)),"  reported vaccine efficacy. The results are presented in the table below.\n"))
-  cat("\nAll references, and the species they studied, are listed further below in the complete reference list.\n")
-  cat("\nIn the next round of updates of the systematic literature reviews for vaccines (planned for 2023), outcomes other than efficacy will be summarized and displayed in this story map.\n")
+   cat(paste0("\nA total of ",length(unique(dfDZ$refID))," references were reviewed, of which ",length(unique(dzcov$refID)),"  reported vaccine coverage The results are presented in the table below.\n"))
+  cat("\nIn the next round of updates of the systematic literature reviews for vaccines (planned for 2023), outcomes other than efficacy ad coverage will be summarized and displayed in this story map.\n")
 
   
   cat("\nRow{data-height=600}\n")
@@ -167,14 +164,42 @@ datatable(dzeff[,c("refID","targetSpecies","testSubstance",
 }else{
   cat("\nRow\n-----------------------------------------------------------------------\n")
   cat("\n### \n")
-   cat(paste0("\nA total of ",length(unique(dfDZ$refID))," references were reviewed, but NONE reported  vaccine efficacy explicitly.\n"))
-  cat("\nAll references, and the species they studied, are listed further below in the complete reference list.\n")
-  cat("\nIn the next round of updates of the systematic literature reviews for vaccines (planned for 2023), outcomes other than efficacy will be summarized and displayed in this story map.\n")
+   cat(paste0("\nA total of ",length(unique(dfDZ$refID))," references were reviewed, but NONE reported  vaccine coverage explicitly.\n"))
+  cat("\nIn the next round of updates of the systematic literature reviews for vaccines (planned for 2023), outcomes other than efficacy and coverage will be summarized and displayed in this story map.\n")
 
 }
 
 ```
 
+
+
+
+
+
+
+Row{data-height=60 .bggreen}
+-----------------------------------------------------------------------
+
+<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;References reporting other results </h1>
+
+
+```{r, results='asis'}
+if(length(unique(dzcov$refID))|length(unique(dzeff$refID))>0){
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+  cat("\n### \n")
+   cat("\nThe table below lists all studies which were reviewed, but which did not report vaccine efficacy or coverage explicitly.\n")
+
+  
+  cat("\nRow{data-height=600}\n")
+cat("\n-----------------------------------------------------------------------\n")
+
+options(DT.options = list(scrollY="100vh",pageLength =5))
+datatable(dfDZ[,c("refID","targetSpecies","testSubstance",
+                    "coverage","vaccineType","route","dose1")])
+
+}
+
+```
 
 
 

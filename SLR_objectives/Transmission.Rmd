@@ -5,6 +5,7 @@ params:
     agent: "agent"
     min.groups.plot: 1
     agent.subtype: "agentSubtype"
+    matrix: "matrix"
 output:
   flexdashboard::flex_dashboard:
     vertical_layout: scroll
@@ -71,7 +72,7 @@ agent <- params$agent
 styling <- params$styling 
 min.groups.plot <- params$min.groups.plot 
 agent.subtype <- params$agent.subtype
-
+matrix <- params$matrix
  
 # # running local
 # source("SLR_objectives/Functions.r")
@@ -167,7 +168,8 @@ Data collected from matrices other than blood, and calculations of the infectiou
 
 ```{r INFduration.plot, message=FALSE, warning=FALSE}
 
-matrix="Blood"
+#matrix="Blood"
+
 if(length(which(dfDZ$matrix==matrix))==0){
   matrix=NULL
 }

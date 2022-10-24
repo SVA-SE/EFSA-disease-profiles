@@ -59,7 +59,8 @@ a=1
                     params = list(agent = agents[a],
                                   agent.subtype = agent.subtypes[a],
                                   styling = TRUE,
-                                  min.groups.plot = 1),
+                                  min.groups.plot = 1,
+                                  matrix = matrix.vector[a]),
                     output_file = paste0("../agents/",agent.folder.names[a],
                                          "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
   )
@@ -170,6 +171,7 @@ a=1
   
   i=6
   
+  #a=3
   for (a in 1:length(agents)){ 
     
   rmarkdown::render(paste0("SLR_objectives/",input.files[i]),

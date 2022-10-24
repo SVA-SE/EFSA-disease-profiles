@@ -80,9 +80,6 @@ agent.subtype <- params$agent.subtype
 # styling=T
 # min.groups.plot=1
 # agent = agents[a]
-# #agent=agent.list[1]
-# #agent <- "African horse sickness virus"
-# #agent <-"Rift Valley fever virus"
 # agent.subtype <- agent.subtypes[a]
 
 

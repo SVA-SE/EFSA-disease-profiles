@@ -76,6 +76,16 @@ oie.list <- c(T,T,T,T,T,T,T,T,T,T,T,T,T,T,
               F,F,F,F,T,F,F,T,T,T,F,T,F,F,F,T,F,
               T,F,F,T,F,F,T,F,F,F,F,T,T,F,F,T,T)
 
+matrix.vector <- c("Blood","Blood","Blood","Blood","Blood",
+                   "Blood","Blood","Blood","Blood","Blood",
+                   "Blood","Blood","Blood","Blood","Blood",
+                   "Blood","Blood","Blood","Blood","Blood",
+                   "Blood","Blood","Blood","Blood","Blood",
+                   "Blood","Blood","Blood","Blood","Blood",
+                   "Blood","Blood","Blood","Blood","Blood","Blood",
+                   "Blood","Blood","Blood","Blood","Blood","Blood",
+                   "Blood","Blood","Blood","Blood","Blood","Blood")
+
 agent.subtypes=c("agentSubtype",
                  "agentSubtype",NA,
                  NA,# PPR - 1 serotype, 4 lineages
