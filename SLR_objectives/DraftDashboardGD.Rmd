@@ -82,11 +82,11 @@ agent.subtype <- params$agent.subtype
 # agent = agents[a]
 # #agent=agent.list[1]
 # #agent <- "African horse sickness virus"
-# #agent <-"Rift Valley fever virus"
+agent <-"Rift Valley fever virus"
 # agent.subtype <- agent.subtypes[a]
 
 
-dfDZ <- dfei[dfei$agent==agent,]
+dfDZ <- dfgd[dfgd$agent==agent,]
 
 
 dfDZ$targetSpecies <- gsub("\\s*\\([^\\)]+\\)","",as.character(dfDZ$targetSpecies))
@@ -333,6 +333,7 @@ dftypesstudies <- dfgd %>%
   summarize(number = n()) %>%
   arrange(desc(number))
 
+dftypesstudies
 
 ```
 
@@ -345,7 +346,7 @@ Row{data-height=60 .bggreen}
 
 <h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Detection </h1>
 
-#Detection
+
 
 ```{r, detection='asis'}
 if(file.exists("impact_ma1.png")|file.exists("impact_ma2.png")){
@@ -359,7 +360,7 @@ if(file.exists("impact_ma1.png")|file.exists("impact_ma2.png")){
 }
 ```
 
-##Antibodies
+
 
 ```{r}
 
@@ -389,19 +390,17 @@ detectiontb1 <- dfgd %>%
     #"Specificity" = specificity
   )
 
-detectiontb <- head(detectiontb)
-knitr::kable(detectiontb, col.names = gsub("[.]", " ", names(detectiontb)))
-  
-}
-
+detectiontb1 <- head(detectiontb1)
+knitr::kable(detectiontb1, col.names = gsub("[.]", " ", names(detectiontb1)))
 
 
 ```
   
-##Antigen 
+
 
 ```{r, atg='asis'}
-idetectiontb2 <- dfgd %>%
+
+detectiontb2 <- dfgd %>%
    filter(labTarget == "Antigen", #fix
           nPositive != 0) %>% #fix
   select(
@@ -434,26 +433,26 @@ knitr::kable(detectiontb2, col.names = gsub("[.]", " ", names(detectiontb2)))
 
  
 ```{r, results='asis'}
-if(file.exists("impact_ma1.png")|file.exists("impact_ma2.png")){
- 
-  cat("\nRow\n-----------------------------------------------------------------------\n")
-  cat("\n### Duration of clinical signs: Calculated confidence interval and interquartile ranges accounting for censoring\n")
-  cat("\nLCL and UCL stand for the lower and upper control limit of a 95% confidence interval accounting for censoring (lack of information about true maximum when experiments ended while the agent was still detectable).\n")
-  cat("\nN.groups is the number of animal groups from which experimental infection data was available.\n")
-  
-  cat("\nRow\n-----------------------------------------------------------------------\n")
-  cat("\n###\n")
-  tables.INCUB <- produce.tables.INCUB()
-  kable(tables.INCUB)%>%kable_styling()
-  
-}else{
-  cat("\nRow\n-----------------------------------------------------------------------\n")
-  cat("\n### Meta-analysis was not performed for this agent/disease\n")
-  cat("\nWhen evidence was available through systematic literature review for a <b>minimum of 4 animal groups</b> studied through experimental infections, this evidence was subjected to meta-analysis. In such cases, Kaplan-Meier curves would be fit to the data,in order to estimate confidence intervals (CI) and interquartile ranges (IQ) for the duration of clinical signs  explicitly taking into account the data censoring issue (lack of information about true maximum when experiments ended while the agent was still detectable).\n")
-      cat("\nThere was not enough evidence for this disease/pathogen.\n")
-      cat("\nThe systematic literature reviews are updated regularly (see information in the left panel).\n")
+# if(file.exists("impact_ma1.png")|file.exists("impact_ma2.png")){
+#  
+#   cat("\nRow\n-----------------------------------------------------------------------\n")
+#   cat("\n### Duration of clinical signs: Calculated confidence interval and interquartile ranges accounting for censoring\n")
+#   cat("\nLCL and UCL stand for the lower and upper control limit of a 95% confidence interval accounting for censoring (lack of information about true maximum when experiments ended while the agent was still detectable).\n")
+#   cat("\nN.groups is the number of animal groups from which experimental infection data was available.\n")
+#   
+#   cat("\nRow\n-----------------------------------------------------------------------\n")
+#   cat("\n###\n")
+#   tables.INCUB <- produce.tables.INCUB()
+#   kable(tables.INCUB)%>%kable_styling()
+#   
+# }else{
+#   cat("\nRow\n-----------------------------------------------------------------------\n")
+#   cat("\n### Meta-analysis was not performed for this agent/disease\n")
+#   cat("\nWhen evidence was available through systematic literature review for a <b>minimum of 4 animal groups</b> studied through experimental infections, this evidence was subjected to meta-analysis. In such cases, Kaplan-Meier curves would be fit to the data,in order to estimate confidence intervals (CI) and interquartile ranges (IQ) for the duration of clinical signs  explicitly taking into account the data censoring issue (lack of information about true maximum when experiments ended while the agent was still detectable).\n")
+#       cat("\nThere was not enough evidence for this disease/pathogen.\n")
+#       cat("\nThe systematic literature reviews are updated regularly (see information in the left panel).\n")
 
-}
+#}
   
 ```
 
@@ -487,62 +486,62 @@ Row
 ###
 ```{r casefatality.all}
 
-columns <- c("targetSpecies","agentSubtype","death.inf")
-if(is.na(agent.subtype)){
-  columns <- c("targetSpecies","death.inf")
-}
-
-
-table.data <- cf[,c("uniqueID",columns,"cf")]
-table.data <- unique(table.data)
-table.data$uniqueID<-1
-
-
-table.data_Y <- table.data[which(table.data$death.inf=="YES"),]
-if(dim(table.data_Y)[1]>0){
-        table.data_Y$death.inf <- "only groups with death"
-}
-
-table.data_ALL <- table.data[which(!is.na(table.data$death.inf)),]
-if(dim(table.data_ALL)[1]>0){
-        table.data_ALL$death.inf <- "groups with mortality information"
-}
-
-table.data_NA <- table.data[which(is.na(table.data$death.inf)),]
-if(dim(table.data_NA)[1]>0){
-        table.data_NA$death.inf <- "no mortality information"
-}
-
-        
-        table.data2 <- rbind(table.data_Y,table.data_ALL,table.data_NA)
-        table.data2$death.inf <- factor(table.data2$death.inf, ordered = TRUE, 
-                                        levels = c("groups with mortality information", 
-                                                   "only groups with death", 
-                                                   "no mortality information"))
-        
-groups.totals <- aggregate(table.data2[,c("uniqueID")],
-                          by=as.list(table.data2[,columns]),FUN=sum,na.rm=TRUE)
-colnames(groups.totals)<- c(columns,"N.groups")
-
-cf.median <- aggregate(table.data2[,"cf"],by=as.list(table.data2[,columns]),FUN=median,na.rm=TRUE)
-colnames(cf.median)<- c(columns,"cf")
-
-cf.median$cf[which(!is.na(cf.median$cf))] <- paste0(as.character(round(cf.median$cf[which(!is.na(cf.median$cf))],1)),"%")
-cf.median$cf[which(is.na(cf.median$cf))] <- "--"
-
-
-merged <- cbind(groups.totals,cf.median[,"cf"])
-colnames(merged) <- c(columns,"N.groups","Within group mortality")
-
-if(is.na(agent.subtype)){
-  merged <- merged[order(merged$targetSpecies),]
-}else{
-merged <- merged[order(merged$targetSpecies,merged$agentSubtype),]
-}
-
-    kable(merged, align="c",row.names = F)%>%
-        kable_styling()
-    
+# columns <- c("targetSpecies","agentSubtype","death.inf")
+# if(is.na(agent.subtype)){
+#   columns <- c("targetSpecies","death.inf")
+# }
+# 
+# 
+# table.data <- cf[,c("uniqueID",columns,"cf")]
+# table.data <- unique(table.data)
+# table.data$uniqueID<-1
+# 
+# 
+# table.data_Y <- table.data[which(table.data$death.inf=="YES"),]
+# if(dim(table.data_Y)[1]>0){
+#         table.data_Y$death.inf <- "only groups with death"
+# }
+# 
+# table.data_ALL <- table.data[which(!is.na(table.data$death.inf)),]
+# if(dim(table.data_ALL)[1]>0){
+#         table.data_ALL$death.inf <- "groups with mortality information"
+# }
+# 
+# table.data_NA <- table.data[which(is.na(table.data$death.inf)),]
+# if(dim(table.data_NA)[1]>0){
+#         table.data_NA$death.inf <- "no mortality information"
+# }
+# 
+#         
+#         table.data2 <- rbind(table.data_Y,table.data_ALL,table.data_NA)
+#         table.data2$death.inf <- factor(table.data2$death.inf, ordered = TRUE, 
+#                                         levels = c("groups with mortality information", 
+#                                                    "only groups with death", 
+#                                                    "no mortality information"))
+#         
+# groups.totals <- aggregate(table.data2[,c("uniqueID")],
+#                           by=as.list(table.data2[,columns]),FUN=sum,na.rm=TRUE)
+# colnames(groups.totals)<- c(columns,"N.groups")
+# 
+# cf.median <- aggregate(table.data2[,"cf"],by=as.list(table.data2[,columns]),FUN=median,na.rm=TRUE)
+# colnames(cf.median)<- c(columns,"cf")
+# 
+# cf.median$cf[which(!is.na(cf.median$cf))] <- paste0(as.character(round(cf.median$cf[which(!is.na(cf.median$cf))],1)),"%")
+# cf.median$cf[which(is.na(cf.median$cf))] <- "--"
+# 
+# 
+# merged <- cbind(groups.totals,cf.median[,"cf"])
+# colnames(merged) <- c(columns,"N.groups","Within group mortality")
+# 
+# if(is.na(agent.subtype)){
+#   merged <- merged[order(merged$targetSpecies),]
+# }else{
+# merged <- merged[order(merged$targetSpecies,merged$agentSubtype),]
+# }
+# 
+#     kable(merged, align="c",row.names = F)%>%
+#         kable_styling()
+#     
 
 ```
 
