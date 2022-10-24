@@ -91,9 +91,12 @@ plots.font <- list(
   size=16
 )
 
+eff.refid <- unique(dfDZ$refID[which(!is.na(dfDZ$efficacy))])
+cov.refid <- unique(dfDZ$refID[which(!is.na(dfDZ$coverage))])
 
-dzeff <- dfDZ[which(!is.na(dfDZ$efficacy)),]
-dzcov <- dfDZ[which(!is.na(dfDZ$coverage)),]
+
+dzeff <- dfDZ[dfDZ$refID%in%eff.refid,]
+dzcov <- dfDZ[dfDZ$refID%in%cov.refid,]
 
 
 #table(dfDZ$targetSpecies)
@@ -118,12 +121,19 @@ if(length(unique(dzeff$refID))>0){
   cat("\nIn the next round of updates of the systematic literature reviews for vaccines (planned for 2023), outcomes other than efficacy and coverage will be summarized and displayed in this story map.\n")
 
   
-  cat("\nRow{data-height=600}\n")
+  cat("\nRow\n")
 cat("\n-----------------------------------------------------------------------\n")
+ cat("\n### \n")
+# options(DT.options = list(scrollY="100vh",pageLength =5))
+# datatable(unique(dzeff[dzeff$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance",
+#                     "efficacy","vaccineType","route","dose1")]))
+ table.data <- unique(dzeff[dzeff$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance",
+                    "coverage","vaccineType","route","days.lastdose.atchallenge","dose1")])%>%
+  arrange(targetSpecies,vaccineType,testSubstance,efficacy,route)
+colnames(table.data)<- c("uniqueID","Species","Vaccine","Efficacy %","Type","Route","Days from last dose to challenge","Dose")
 
-options(DT.options = list(scrollY="100vh",pageLength =5))
-datatable(dzeff[,c("refID","targetSpecies","testSubstance",
-                    "efficacy","vaccineType","route","dose1")])
+kable(table.data, align="c",row.names = F)%>%
+    kable_styling()
 
 }else{
   cat("\nRow\n-----------------------------------------------------------------------\n")
@@ -154,12 +164,18 @@ if(length(unique(dzcov$refID))>0){
   cat("\nIn the next round of updates of the systematic literature reviews for vaccines (planned for 2023), outcomes other than efficacy ad coverage will be summarized and displayed in this story map.\n")
 
   
-  cat("\nRow{data-height=600}\n")
-cat("\n-----------------------------------------------------------------------\n")
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+cat("\n### \n")
+#options(DT.options = list(scrollY="100vh",pageLength =10))
+#datatable(unique(dzcov[dzcov$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance",
+#                    "coverage","vaccineType","route","dose1")]))
 
-options(DT.options = list(scrollY="100vh",pageLength =5))
-datatable(dzeff[,c("refID","targetSpecies","testSubstance",
-                    "coverage","vaccineType","route","dose1")])
+table.data <- unique(dzcov[dzcov$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance",
+                    "coverage","vaccineType","route","days.lastdose.atchallenge","dose1")])%>%
+  arrange(targetSpecies,vaccineType,testSubstance,coverage,route)
+colnames(table.data)<- c("uniqueID","Species","Vaccine","Coverage %","Type","Route","Days from last dose to challenge","Dose")
+kable(table.data, align="c",row.names = F)%>%
+    kable_styling()
 
 }else{
   cat("\nRow\n-----------------------------------------------------------------------\n")
@@ -174,28 +190,32 @@ datatable(dzeff[,c("refID","targetSpecies","testSubstance",
 
 
 
-
-
-
-Row{data-height=60 .bggreen}
------------------------------------------------------------------------
-
-<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;References reporting other results </h1>
-
-
 ```{r, results='asis'}
 if(length(unique(dzcov$refID))|length(unique(dzeff$refID))>0){
+  cat("\nRow{data-height=60 .bggreen}\n-----------------------------------------------------------------------\n")
+  cat("\n<h1> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;References reporting other results </h1>\n")
+  
   cat("\nRow\n-----------------------------------------------------------------------\n")
   cat("\n### \n")
    cat("\nThe table below lists all studies which were reviewed, but which did not report vaccine efficacy or coverage explicitly.\n")
 
   
-  cat("\nRow{data-height=600}\n")
-cat("\n-----------------------------------------------------------------------\n")
+  cat("\nRow\n-----------------------------------------------------------------------\n")
+cat("\n### \n")
 
-options(DT.options = list(scrollY="100vh",pageLength =5))
-datatable(dfDZ[,c("refID","targetSpecies","testSubstance",
-                    "coverage","vaccineType","route","dose1")])
+dfDZ2 <- dfDZ[!dfDZ$refID%in%eff.refid,]
+dfDZ2 <- dfDZ2[!dfDZ2$refID%in%cov.refid,]
+
+# options(DT.options = list(scrollY="100vh",pageLength =5))
+# datatable(unique(dfDZ2[dfDZ2$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance",
+#                     "vaccineType","route","dose1")]))
+
+table.data <- unique(dfDZ2[dfDZ2$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance",
+                     "vaccineType","route","days.lastdose.atchallenge","dose1")])%>%
+  arrange(targetSpecies,vaccineType,testSubstance,route)
+colnames(table.data)<- c("uniqueID","Species","Vaccine","Type","Route","Days from last dose to challenge","Dose")
+kable(table.data, align="c",row.names = F)%>%
+    kable_styling()
 
 }
 
@@ -221,7 +241,7 @@ Row
 ###
 In the left panel you can find information about the entire systematic literature review. The specific references for this agent, and used in this section of the story map are listed below.
 
-Row{data-height=600}
+Row{data-height=800}
 -----------------------------------------------------------------------
 
 ```{r references}

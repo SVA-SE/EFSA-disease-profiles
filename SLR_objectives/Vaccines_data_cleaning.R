@@ -148,7 +148,17 @@ dfva$testSubstance[dfva$testSubstance_C=="Re-4"] <- "H5N1 Re-4"
     #table(dfva$vaccineType)
   #table(dfva$vaccineType_C)
 
-
+  
+  
+  ########
+  #########
+  ## needs to be properly categorized!!!
+  #######
+  #######
+  dfva$vaccineType[dfva$vaccineType=="Other (specify):"] <- dfva$vaccineType_C[dfva$vaccineType=="Other (specify):"]
+  
+  
+  
   
   
     
@@ -381,6 +391,11 @@ dfva$dayDose1Std <- dfva$dayDose1 - offsetDay
 dfva$dayDose2Std <- dfva$dayDose2 - offsetDay
 dfva$challengeDayStd <- 0
 dfva$timePointStd <- dfva$timePoint - offsetDay
+
+
+dfva$days.lastdose.atchallenge <- abs(apply(dfva[,c("dayDose1Std","dayDose2Std")],1,min,na.rm=TRUE))
+dfva$days.lastdose.atchallenge[is.infinite(dfva$days.lastdose.atchallenge)]<- NA
+
 
 dfva$experimentStatus2 <- as.character(dfva$experimentStatus)
 dfva$experimentStatus2[dfva$experimentStatus2=="1st vaccination day"]<- "Not vaccinated/Before vaccination"
