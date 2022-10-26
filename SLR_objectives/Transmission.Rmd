@@ -177,7 +177,7 @@ if(length(which(dfDZ$matrix==matrix))==0){
 inf.plots(dataset=dfDZ,
                 category="targetSpecies",
                 targetLabTest=NULL, #set to NULL to run all lab tests together)
-                matrix=matrix, #not case sensitive, #can be set to NULL
+                matrix=NULL, #not case sensitive, #can be set to NULL
                 not.matrix=NULL,
                 min.groups.plot=min.groups.plot,
           separated.tests=TRUE)%>% layout(font=plots.font)

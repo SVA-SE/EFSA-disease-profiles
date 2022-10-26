@@ -7,22 +7,23 @@ a=1
 
 # ExperimentalInfections ---- 
     i=1
- #   for (a in 1:length(agents)){ 
+  for (a in 1:length(agents)){ 
+
+
+    dfei <- read.csv("data/FilesDownload/ExperimentalInfections_cleaned.csv")
+    agent <- agents[a] 
+    dfDZ <- dfei[dfei$agent==agent,]
+    n.papers <- length(unique(dfDZ$refID))
       
-      dfei <- read.csv("data/FilesDownload/ExperimentalInfections_cleaned.csv")
-      agent <- agents[a] 
-      dfDZ <- dfei[dfei$agent==agent,]
-      n.papers <- length(unique(dfDZ$refID))
-      
-      file.input <- paste0("SLR_objectives/",input.files[i])
+    file.input <- paste0("SLR_objectives/",input.files[i])
       if(n.papers==0)(file.input <- "SLR_objectives/ExperimentalInfections-NOPAPER.Rmd" )
       if(n.papers==1)(file.input <- "SLR_objectives/ExperimentalInfections-onlyREF.Rmd" )
   
   if(n.papers > 1){
-  source("SLR_objectives/ExperimentalInfections_MA.r")
+    source("SLR_objectives/ExperimentalInfections_MA.r")
   }
       
-  rmarkdown::render(file.input,
+    rmarkdown::render(file.input,
                     params = list(agent = agents[a],
                                   agent.subtype = agent.subtypes[a],
                                   styling = TRUE,
@@ -41,21 +42,34 @@ a=1
   # cat(x, file=f, sep="\n")
   unlink("SLR_objectives/*.png")
 
-#}
+  }
 
 
     
     # transmission ----
     
   i=2
-  for (a in 1:length(agents)){ 
+  for (a in 1:length(agents)){ #a=48
     
-  source("SLR_objectives/Transmission_MA.r")
-  file.input <- input.files[i]
-  if(agent.types[a]=="b")(file.input <- "2transmission_Bact.Rmd" )
-  if(agent.types[a]=="p")(file.input <- "2transmission_Paras.Rmd" )
-
-  rmarkdown::render(paste0("SLR_objectives/",file.input),
+    
+    dfei <- read.csv("data/FilesDownload/ExperimentalInfections_cleaned.csv")
+    agent <- agents[a] 
+    dfDZ <- dfei[dfei$agent==agent,]
+    n.papers <- length(unique(dfDZ$refID))
+    
+    file.input <- paste0("SLR_objectives/",input.files[i])
+    if(n.papers==0)(file.input <- "Transmission-NOPAPER.Rmd" )
+    if(n.papers==1)(file.input <- "Transmission-onlyREF.Rmd" )
+    
+    if(n.papers > 1){
+    
+      source("SLR_objectives/Transmission_MA.r")
+      file.input <- input.files[i]
+        if(agent.types[a]=="b")(file.input <- "Transmission_Bact.Rmd" )
+        if(agent.types[a]=="p")(file.input <- "Transmission_Paras.Rmd" )
+    }
+  
+    rmarkdown::render(paste0("SLR_objectives/",file.input),
                     params = list(agent = agents[a],
                                   agent.subtype = agent.subtypes[a],
                                   styling = TRUE,
@@ -64,6 +78,7 @@ a=1
                     output_file = paste0("../agents/",agent.folder.names[a],
                                          "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
   )
+    }
   f <- paste0("agents/",agent.folder.names[a],
               "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
   x <- readLines(f)
@@ -74,7 +89,7 @@ a=1
              "src=../../assets/css/images/info.png", x )
   cat(x, file=f, sep="\n")
   unlink("SLR_objectives/*.png")
-}
+
 
 
 
@@ -84,7 +99,7 @@ a=1
   
   i=3
 
-  for (a in 1:length(agents)){ #a=1
+  for (a in 1:length(agents)){ #a=48
     
   file.input <- input.files[i]
   if(agent.types[a]!="v"){
