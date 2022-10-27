@@ -120,7 +120,8 @@ input.files = c("ExperimentalInfections.Rmd",
                 "PathogenSurvival.Rmd",
                 "DiagnosticTests.Rmd",
                 "5treatment.Rmd",
-                "Vaccines.Rmd")
+                "Vaccines.Rmd",
+                "Disease.Rmd")
 #input.files=input.files[4]
 
 
@@ -130,7 +131,8 @@ output.files = c("ExperimentalInfections-",
                  "PathogenSurvival-",
                  "Diagnostic-",
                  "Treatment-",
-                 "Vaccines-")
+                 "Vaccines-",
+                 "Disease-")
 #output.files=output.files[4]
 
 

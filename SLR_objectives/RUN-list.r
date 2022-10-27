@@ -49,9 +49,9 @@ a=1
     # transmission ----
     
   i=2
-  for (a in 1:length(agents)){ #a=48
-    
-    
+  for (a in 1:length(agents)){ #a=26
+     
+   
     dfei <- read.csv("data/FilesDownload/ExperimentalInfections_cleaned.csv")
     agent <- agents[a] 
     dfDZ <- dfei[dfei$agent==agent,]
@@ -265,5 +265,31 @@ for(a in midges.dz){
 
 
 
-
+# Diseases ----
+  
+  
+  i=7
+  
+ for (a in 1:length(agents)){ #a=3
+    
+    rmarkdown::render(paste0("SLR_objectives/",input.files[i]),
+                      params = list(agent = agents[a],
+                                    agent.subtype = agent.subtypes[a],
+                                    styling = TRUE,
+                                    min.groups.plot = 1),
+                      output_file = paste0("../agents/",agent.folder.names[a],
+                                           "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
+    )
+    f <- paste0("agents/",agent.folder.names[a],
+                "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
+    x <- readLines(f)
+    x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
+    x <- gsub( paste0(local.dir, "SLR_objectives/"),
+               "", x )
+    x <- gsub( "src=../../../../templates/assets/css/images/info.png",
+               "src=../../assets/css/images/info.png", x )
+    cat(x, file=f, sep="\n")
+  }
+  
+  
 
