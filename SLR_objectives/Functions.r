@@ -719,7 +719,8 @@ species.name.cleanup <- function(data,colname="targetSpecies"){
     c("LEPORIDAE - European hare","European hare"),
                   c("LEPORIDAE - Rabbit","Rabbit"),
                       c("PIG - Pig","Pigs"),
-    c("PIG - Wild boar","Wild boar")
+    c("PIG - Wild boar","Wild boar"),
+    c("Birds of prey: specify","Birds of prey")
   )
 
   for(s in 1:dim(species.clean)[1]){
