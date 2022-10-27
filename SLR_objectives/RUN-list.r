@@ -187,8 +187,8 @@ a=1
   i=6
   
   #a=13
-  #for (a in 1:length(agents)){
-  for (a in 1:c(3,13,14)){ 
+  #for (a in 1:length(agents)){ 
+  for (a in 1:c(3,13,14)){ #restrict to those with known SLRs for now, as the others are manually set to have pictures.
     
   rmarkdown::render(paste0("SLR_objectives/",input.files[i]),
                     params = list(agent = agents[a]),
