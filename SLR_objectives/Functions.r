@@ -427,14 +427,52 @@ inf.plots <- function(dataset,category,targetLabTest=NULL,matrix=NULL,not.matrix
     }
 
     dfplot$limit<- as.ordered(dfplot$limit)
+    
+    
+    
+    
 
     plot <- plot_ly(dfplot, y = ~Species, x = ~Days, color = ~limit, type = "box") %>%
       layout(boxmode = "group",  title=list(text=text.title,y = 0.95, x = 0.5),
-             legend = list(traceorder="reversed",x = 0.7, y = 0.9))
+              legend = list(traceorder="reversed",x = 0.7, y = 0.9)) 
+    #%>%
+    #   layout(
+    #   title = "Drop down menus - Plot type",
+    # # xaxis = list(domain = c(0.1, 1)),
+    # # yaxis = list(title = "y"),
+    # list(
+    #   list(
+    #     active = -1,
+    #     type= 'buttons',
+    #     buttons = list(
+    #       list(
+    #         label = "Blood",
+    #         method = "Swab",
+    #         args = list(list(visible = c(FALSE, TRUE)),
+    #                     list(title = "Matrices",
+    #                          annotations = list(c(), high_annotations)))),
+    #       
+    #   )
+    # )
+    # 
+    #  )
     plot
 
 
-
+    # plot <- renderPlot(
+    #   dfplot %>% 
+    #     filter(matrix == input$matrix) %>% 
+    #     #filter(!is.na(grade)) %>%
+    #     #group_by(grade) %>% 
+    #     #summarise(count = n()) %>% 
+    #     ggplot(aes(x = Days, y = Species, fill = limit)) +
+    #     geom_boxplot() +
+    #     xlab("Species") + ylab("Days") +
+    #     ggtitle(list(text=text.title,y = 0.95, x = 0.5)) 
+    #     #scale_fill_discrete(name="Grades") +
+    #     #scale_fill_manual("Grades", values = c("O"= "blue", "G"="green", "NA"="grey", "S"="yellow", "U"="red"))
+    # )
+    # plot
 
   }else{
   df3 <- data.frame(
@@ -455,10 +493,25 @@ if(is.null(matrix)){
   text.title <- "Distribution for ALL matrices evaluated"
 }
 
-  plot <- plot_ly(dfplot, y = ~Species, x = ~Days, color = ~limit, type = "box") %>%
-    layout(boxmode = "group", title=list(text=text.title,y = 0.95, x = 0.5),
-           legend = list(traceorder="reversed",x = 0.7, y = 0.9))
+  # plot <- plot_ly(dfplot, y = ~Species, x = ~Days, color = ~limit, type = "box") %>%
+  #   layout(boxmode = "group", title=list(text=text.title,y = 0.95, x = 0.5),
+  #          legend = list(traceorder="reversed",x = 0.7, y = 0.9))
+
+plot <- renderPlot(
+  dfplot %>% 
+    filter(matrix == input$matrix) %>% 
+    #filter(!is.na(grade)) %>%
+    #group_by(grade) %>% 
+    #summarise(count = n()) %>% 
+    ggplot(aes(x = Days, y = Species, fill = limit)) +
+    geom_boxplot() +
+    xlab("Species") + ylab("Days") +
+    ggtitle(list(text=text.title,y = 0.95, x = 0.5)) 
+  #scale_fill_discrete(name="Grades") +
+  #scale_fill_manual("Grades", values = c("O"= "blue", "G"="green", "NA"="grey", "S"="yellow", "U"="red"))
+)
   plot
+  
   }
 
 }
