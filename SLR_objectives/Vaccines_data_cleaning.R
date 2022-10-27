@@ -147,7 +147,21 @@ dfva$testSubstance[dfva$testSubstance_C=="Re-4"] <- "H5N1 Re-4"
   
     #table(dfva$vaccineType)
   #table(dfva$vaccineType_C)
-
+  
+  dfva$vaccineType[dfva$vaccineType_C=="Alphavirus vectored RNA particle vaccine"] <- "Live recombinant"
+  dfva$vaccineType[dfva$vaccineType_C=="commercial inactivated"] <- "Inactivated (dead)"
+  dfva$vaccineType[dfva$vaccineType_C=="commercial inactivated; RG A/duck/Anhui/1/2006(H5N1)(Re-5)"] <- "Inactivated (dead)"
+  dfva$vaccineType[dfva$vaccineType_C=="inactivated"] <- "Inactivated (dead)"
+  dfva$vaccineType[dfva$vaccineType_C=="Inactivated"] <- "Inactivated (dead)"
+  dfva$vaccineType[dfva$vaccineType_C=="Live recombinant vector vaccine"] <- "Live recombinant"
+  dfva$vaccineType[dfva$vaccineType_C=="live recombinant vectored vaccine"] <- "Live recombinant"
+  dfva$vaccineType[dfva$vaccineType_C=="Mareks Disease vaccine of serotype 3 (turkey Herpesvirus or HVT) expressing Avian Influenza key protective antigens"] <- "Recombinant (subunit vaccines)"
+  dfva$vaccineType[dfva$vaccineType_C=="Recombinant alphavirus replicon-based vaccine"] <- "Recombinant (subunit vaccines)"
+  dfva$vaccineType[dfva$vaccineType_C=="Recombinant fowpox vectored vaccine"] <- "Recombinant (subunit vaccines)"
+  dfva$vaccineType[dfva$vaccineType_C=="Recombinant inactivated"] <- "Recombinant (subunit vaccines)"
+  dfva$vaccineType[dfva$vaccineType_C=="RNA particle vaccine"] <- "Recombinant (subunit vaccines)"
+  
+  dfva$vaccineType[dfva$vaccineType=="Other (specify):"]<- "Other"
   
   
   ########
