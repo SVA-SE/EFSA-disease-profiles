@@ -187,16 +187,13 @@ inf.plots(dataset=dfDZ,
 
 
 
-Row
+Row{data-height=130}
 -----------------------------------------------------------------------
+###  {.bggreen data-width=217}
 
-###  {.bggreen data-width=150}
 <h1>Evidence of Host-host transmission?</h1>
 
-
 ###
-
-
 ```{r hosthost, message=FALSE, warning=FALSE, include=FALSE}
 hh <- cbind(dfDZ$uniqueID,dfDZ$hostHost)
 hh <- hh[!duplicated(hh),]
@@ -227,9 +224,9 @@ transpM <- sum(transp=="not investigated/not given/not relevant")
 
 if(agent!="HPAI - Highly Pathogenic Avian Influenza"&
    agent!="Newcastle disease"){  
-  cat("\nRow\n-----------------------------------------------------------------------\n")
-  cat("\n### {.bggreen data-width=150}\n")
- cat("<h1>Evidence of transplacentary transmission?</h1>\n")
+  cat("\nRow{data-height=130}\n-----------------------------------------------------------------------\n")
+  cat("\n### {.bggreen data-width=130}\n")
+ cat("<h1>Evidence of transplacentary transmission?\n</h1>\n")
    cat("\n### \n")
     cat(paste0(" The systematic literature review included a total of ", total.p," articles, which combined presented evidence from ",total.n," animal groups subjected to experimental infections with this agent. Transplacentary transmission was reported in ",transpY," animal groups, and investigated but not found in ",transpN," animal groups. Transplacentary transmission was not investigated or not explicitly reported for ",transpM," animal groups. 
 <br><br>\n"))
