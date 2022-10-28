@@ -127,10 +127,10 @@ cat("\n-----------------------------------------------------------------------\n
 # options(DT.options = list(scrollY="100vh",pageLength =5))
 # datatable(unique(dzeff[dzeff$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance",
 #                     "efficacy","vaccineType","route","dose1")]))
- table.data <- unique(dzeff[dzeff$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance",
+ table.data <- unique(dzeff[dzeff$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance","challengeSubstance",
                     "coverage","vaccineType","route","days.lastdose.atchallenge","dose1")])%>%
   arrange(targetSpecies,vaccineType,testSubstance,efficacy,route)
-colnames(table.data)<- c("uniqueID","Species","Vaccine","Efficacy %","Type","Route","Days from last dose to challenge","Dose")
+colnames(table.data)<- c("uniqueID","Species","Vaccine","Challenged with","Efficacy %","Type","Route","Days from last dose to challenge","Dose")
 
 kable(table.data, align="c",row.names = F)%>%
     kable_styling()
@@ -170,10 +170,10 @@ cat("\n### \n")
 #datatable(unique(dzcov[dzcov$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance",
 #                    "coverage","vaccineType","route","dose1")]))
 
-table.data <- unique(dzcov[dzcov$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance",
+table.data <- unique(dzcov[dzcov$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance","challengeSubstance",
                     "coverage","vaccineType","route","days.lastdose.atchallenge","dose1")])%>%
   arrange(targetSpecies,vaccineType,testSubstance,coverage,route)
-colnames(table.data)<- c("uniqueID","Species","Vaccine","Coverage %","Type","Route","Days from last dose to challenge","Dose")
+colnames(table.data)<- c("uniqueID","Species","Vaccine","Challenged with","Coverage %","Type","Route","Days from last dose to challenge","Dose")
 kable(table.data, align="c",row.names = F)%>%
     kable_styling()
 
@@ -210,10 +210,10 @@ dfDZ2 <- dfDZ2[!dfDZ2$refID%in%cov.refid,]
 # datatable(unique(dfDZ2[dfDZ2$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance",
 #                     "vaccineType","route","dose1")]))
 
-table.data <- unique(dfDZ2[dfDZ2$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance",
+table.data <- unique(dfDZ2[dfDZ2$testSubstance!="Unvaccinated control",c("refID","targetSpecies","testSubstance","challengeSubstance",
                      "vaccineType","route","days.lastdose.atchallenge","dose1")])%>%
   arrange(targetSpecies,vaccineType,testSubstance,route)
-colnames(table.data)<- c("uniqueID","Species","Vaccine","Type","Route","Days from last dose to challenge","Dose")
+colnames(table.data)<- c("uniqueID","Species","Vaccine","Challenged with","Type","Route","Days from last dose to challenge","Dose")
 kable(table.data, align="c",row.names = F)%>%
     kable_styling()
 
