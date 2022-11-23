@@ -4,7 +4,10 @@ require(stringr)
 
 source("SLR_objectives/RUN-list-header.r")
 
-for (a in c(1:38,40:48)){
+active.agents <- c(1:38,40:48)
+
+
+for (a in active.agents){
 #for (a in 1:14){
 
     #text_to_look <- 'https://svastatichosting.z6.web.core.windows.net/storymaps/'
@@ -61,3 +64,13 @@ for (a in c(1:38,40:48)){
 
 
 
+for (a in active.agents){
+    file <- paste0("C:/Users/fernanda.dorea/Documents/GitHub/EFSA-disease-profiles/agents/",agent.folder.names[a],
+                   "/",agent.folder.names[a],"-Data-Contents.xlsx")
+    destination <- paste0("C:/Users/fernanda.dorea/Documents/Azure/storymaps/agents/",agent.folder.names[a])
+
+    file.copy(file,destination,overwrite=TRUE)
+
+
+
+}

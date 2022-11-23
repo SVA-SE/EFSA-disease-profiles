@@ -79,15 +79,15 @@ a=1
                                          "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
   )
     }
-  f <- paste0("agents/",agent.folder.names[a],
-              "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
-  x <- readLines(f)
-  x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
-  x <- gsub( paste0(local.dir, "SLR_objectives/"),
-             "", x )
-  x <- gsub( "src=../../../../templates/assets/css/images/info.png",
-             "src=../../assets/css/images/info.png", x )
-  cat(x, file=f, sep="\n")
+  # f <- paste0("agents/",agent.folder.names[a],
+  #             "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
+  # x <- readLines(f)
+  # x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
+  # x <- gsub( paste0(local.dir, "SLR_objectives/"),
+  #            "", x )
+  # x <- gsub( "src=../../../../templates/assets/css/images/info.png",
+  #            "src=../../assets/css/images/info.png", x )
+  # cat(x, file=f, sep="\n")
   unlink("SLR_objectives/*.png")
 
 
@@ -117,15 +117,15 @@ a=1
                     output_file = paste0("../agents/",agent.folder.names[a],
                                          "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
   )
-  f <- paste0("agents/",agent.folder.names[a],
-              "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
-  x <- readLines(f)
-  x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
-  x <- gsub( paste0(local.dir, "SLR_objectives/"),
-             "", x )
-  x <- gsub( "src=../../../../templates/assets/css/images/info.png",
-             "src=../../assets/css/images/info.png", x )
-  cat(x, file=f, sep="\n")
+  # f <- paste0("agents/",agent.folder.names[a],
+  #             "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
+  # x <- readLines(f)
+  # x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
+  # x <- gsub( paste0(local.dir, "SLR_objectives/"),
+  #            "", x )
+  # x <- gsub( "src=../../../../templates/assets/css/images/info.png",
+  #            "src=../../assets/css/images/info.png", x )
+  # cat(x, file=f, sep="\n")
   unlink("SLR_objectives/*.png")
 }
 
@@ -145,15 +145,15 @@ a=1
                     output_file = paste0("../agents/",agent.folder.names[a],
                                          "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
   )
-  f <- paste0("agents/",agent.folder.names[a],
-              "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
-  x <- readLines(f)
-  x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
-  x <- gsub( paste0(local.dir, "SLR_objectives/"),
-             "", x )
-  x <- gsub( "src=../../../../templates/assets/css/images/info.png",
-             "src=../../assets/css/images/info.png", x )
-  cat(x, file=f, sep="\n")
+  # f <- paste0("agents/",agent.folder.names[a],
+  #             "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
+  # x <- readLines(f)
+  # x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
+  # x <- gsub( paste0(local.dir, "SLR_objectives/"),
+  #            "", x )
+  # x <- gsub( "src=../../../../templates/assets/css/images/info.png",
+  #            "src=../../assets/css/images/info.png", x )
+  # cat(x, file=f, sep="\n")
 }
 
 
@@ -168,15 +168,15 @@ a=1
                     output_file = paste0("../agents/",agent.folder.names[a],
                                          "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
   )
-  f <- paste0("agents/",agent.folder.names[a],
-              "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
-  x <- readLines(f)
-  x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
-  x <- gsub( paste0(local.dir, "SLR_objectives/"),
-             "", x )
-  x <- gsub( "src=../../../../templates/assets/css/images/info.png",
-             "src=../../assets/css/images/info.png", x )
-  cat(x, file=f, sep="\n")
+  # f <- paste0("agents/",agent.folder.names[a],
+  #             "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
+  # x <- readLines(f)
+  # x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
+  # x <- gsub( paste0(local.dir, "SLR_objectives/"),
+  #            "", x )
+  # x <- gsub( "src=../../../../templates/assets/css/images/info.png",
+  #            "src=../../assets/css/images/info.png", x )
+  # cat(x, file=f, sep="\n")
 
 
   }
@@ -195,15 +195,15 @@ a=1
                     output_file = paste0("../agents/",agent.folder.names[a],
                                          "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
   )
-  f <- paste0("agents/",agent.folder.names[a],
-              "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
-  x <- readLines(f)
-  x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
-  x <- gsub( paste0(local.dir, "SLR_objectives/"),
-             "", x )
-  x <- gsub( "src=../../../../templates/assets/css/images/info.png",
-             "src=../../assets/css/images/info.png", x )
-  cat(x, file=f, sep="\n")
+  # f <- paste0("agents/",agent.folder.names[a],
+  #             "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
+  # x <- readLines(f)
+  # x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
+  # x <- gsub( paste0(local.dir, "SLR_objectives/"),
+  #            "", x )
+  # x <- gsub( "src=../../../../templates/assets/css/images/info.png",
+  #            "src=../../assets/css/images/info.png", x )
+  # cat(x, file=f, sep="\n")
 
 }
 
@@ -217,15 +217,15 @@ rmarkdown::render(paste0("SLR_objectives/","VectorControl-Ticks.Rmd"),
                   output_file = paste0("../agents/",agent.folder.names[a],
                                        "/AgentAssets/pages/VectorControl-Ticks.html")
 )
-f <- paste0("agents/",agent.folder.names[a],
-            "/AgentAssets/pages/VectorControl-Ticks.html")
-x <- readLines(f)
-x <- gsub( paste0("VectorControl-Ticks_files/"), "../../assets/flexdash_libs/", x )
-x <- gsub( paste0(local.dir, "SLR_objectives/"),
-           "", x )
-x <- gsub( "src=../../../../templates/assets/css/images/info.png",
-           "src=../../assets/css/images/info.png", x )
-cat(x, file=f, sep="\n")
+# f <- paste0("agents/",agent.folder.names[a],
+#             "/AgentAssets/pages/VectorControl-Ticks.html")
+# x <- readLines(f)
+# x <- gsub( paste0("VectorControl-Ticks_files/"), "../../assets/flexdash_libs/", x )
+# x <- gsub( paste0(local.dir, "SLR_objectives/"),
+#            "", x )
+# x <- gsub( "src=../../../../templates/assets/css/images/info.png",
+#            "src=../../assets/css/images/info.png", x )
+# cat(x, file=f, sep="\n")
 }
 
 
@@ -234,15 +234,15 @@ for(a in mosquitoes.dz){
                     output_file = paste0("../agents/",agent.folder.names[a],
                                          "/AgentAssets/pages/VectorControl-Mosquitoes.html")
   )
-  f <- paste0("agents/",agent.folder.names[a],
-              "/AgentAssets/pages/VectorControl-Mosquitoes.html")
-  x <- readLines(f)
-  x <- gsub( paste0("VectorControl-Mosquitoes_files/"), "../../assets/flexdash_libs/", x )
-  x <- gsub( paste0(local.dir, "SLR_objectives/"),
-             "", x )
-  x <- gsub( "src=../../../../templates/assets/css/images/info.png",
-             "src=../../assets/css/images/info.png", x )
-  cat(x, file=f, sep="\n")
+  # f <- paste0("agents/",agent.folder.names[a],
+  #             "/AgentAssets/pages/VectorControl-Mosquitoes.html")
+  # x <- readLines(f)
+  # x <- gsub( paste0("VectorControl-Mosquitoes_files/"), "../../assets/flexdash_libs/", x )
+  # x <- gsub( paste0(local.dir, "SLR_objectives/"),
+  #            "", x )
+  # x <- gsub( "src=../../../../templates/assets/css/images/info.png",
+  #            "src=../../assets/css/images/info.png", x )
+  # cat(x, file=f, sep="\n")
 }
 
 
@@ -252,15 +252,15 @@ for(a in midges.dz){
                     output_file = paste0("../agents/",agent.folder.names[a],
                                          "/AgentAssets/pages/VectorControl-Midges.html")
   )
-  f <- paste0("agents/",agent.folder.names[a],
-              "/AgentAssets/pages/VectorControl-Midges.html")
-  x <- readLines(f)
-  x <- gsub( paste0("VectorControl-Midges_files/"), "../../assets/flexdash_libs/", x )
-  x <- gsub( paste0(local.dir, "SLR_objectives/"),
-             "", x )
-  x <- gsub( "src=../../../../templates/assets/css/images/info.png",
-             "src=../../assets/css/images/info.png", x )
-  cat(x, file=f, sep="\n")
+  # f <- paste0("agents/",agent.folder.names[a],
+  #             "/AgentAssets/pages/VectorControl-Midges.html")
+  # x <- readLines(f)
+  # x <- gsub( paste0("VectorControl-Midges_files/"), "../../assets/flexdash_libs/", x )
+  # x <- gsub( paste0(local.dir, "SLR_objectives/"),
+  #            "", x )
+  # x <- gsub( "src=../../../../templates/assets/css/images/info.png",
+  #            "src=../../assets/css/images/info.png", x )
+  # cat(x, file=f, sep="\n")
 }
 
 
@@ -280,15 +280,15 @@ for(a in midges.dz){
                       output_file = paste0("../agents/",agent.folder.names[a],
                                            "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
     )
-    f <- paste0("agents/",agent.folder.names[a],
-                "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
-    x <- readLines(f)
-    x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
-    x <- gsub( paste0(local.dir, "SLR_objectives/"),
-               "", x )
-    x <- gsub( "src=../../../../templates/assets/css/images/info.png",
-               "src=../../assets/css/images/info.png", x )
-    cat(x, file=f, sep="\n")
+    # f <- paste0("agents/",agent.folder.names[a],
+    #             "/AgentAssets/pages/",output.files[i], agent.folder.names[a], ".html")
+    # x <- readLines(f)
+    # x <- gsub( paste0(output.files[i],agent.folder.names[a],"_files/"), "../../assets/flexdash_libs/", x )
+    # x <- gsub( paste0(local.dir, "SLR_objectives/"),
+    #            "", x )
+    # x <- gsub( "src=../../../../templates/assets/css/images/info.png",
+    #            "src=../../assets/css/images/info.png", x )
+    # cat(x, file=f, sep="\n")
   }
   
   
