@@ -75,6 +75,7 @@ library(flexdashboard)
 
 
 
+source('ExperimentalInfections_functions.R') #if we end up using this one, we should copy the functions used to the Function.R file and delete this line.
 source("Functions.r")
 #source("Metaanalysis_functions.r")
 
@@ -91,6 +92,7 @@ agent.subtype <- params$agent.subtype
 # agent = agents[a]
 # agent.subtype <- agent.subtypes[a]
 
+#agent = "Rift Valley fever virus"
 
 dfDZ <- dfgd[dfgd$agent==agent,]
 
@@ -142,13 +144,34 @@ This section of the disease profiles in currently under construction, we will ke
 
 
 
-Row
+Row{data-height=550}
 -----------------------------------------------------------------------
 
 ###  {.bggreen data-width=150}
 
 <h1>Most frequent clinical signs</h1>
 
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#cfr">
+<img src=../../../../templates/assets/css/images/info.png>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="cfr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+
+These are the most frequently mentioned clinical signs for this agent, when considering all groups reported. 
+
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
 
 
 
@@ -157,18 +180,15 @@ Row
 
 
 ```{r clinicalsigns.plot, message=FALSE, warning=FALSE, results='asis'}
-#Do it per species
-
 
 text <- dfDZ %>%
     select(clinicalSigns) %>%
+    #mutate(clinicalSigns = str_replace_all(clinicalSigns))
     mutate_all(na_if,"") %>%
-    na.omit()
-
+    na.omit() 
 
 # Create a corpus
 docs <- Corpus(VectorSource(text))
-
 
 
 docs <- docs %>%
@@ -177,6 +197,7 @@ docs <- docs %>%
     tm_map(stripWhitespace)
 docs <- tm_map(docs, content_transformer(tolower))
 docs <- tm_map(docs, removeWords, stopwords("english"))
+docs <- tm_map(docs, removeWords, c("disc", "optic", "among", "confirmed", "confirmedncases", "cases", "high", "nand", "macular", "ocular", "fevern", "symptomatic"))
 
 dtm <- TermDocumentMatrix(docs)
 matrix <- as.matrix(dtm)
@@ -184,15 +205,434 @@ words <- sort(rowSums(matrix),decreasing=TRUE)
 df <- data.frame(word = names(words),freq=words)
 
 
-
  df$word <- as.factor(df$word)
- wordcloud2(df[(df$freq>3),], size=0.5,minSize=0.4)
-
-
+ wordcloud2(df[(df$freq>3),], size=6,minSize=1)
 
 
 ```
 
+
+Row{data-height=650}
+-----------------------------------------------------------------------
+
+###  {.bggreen data-width=150}
+<a name="CF"></a>
+
+<h1>Study context</h1>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-link" data-toggle="modal" data-target="#cfr">
+<img src=../../../../templates/assets/css/images/info.png>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="cfr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-body">
+
+Add notes
+
+Further details about the case fatality data are provided in the meta-analysis section.
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
+###
+
+```{r types of studies, message=FALSE, warning=FALSE}
+ 
+total.gps <- dfDZ %>% 
+  group_by(refID, groupID) %>% nrow()
+
+total.papers <- n_distinct(dfDZ$refID)
+
+total.countries <- n_distinct(dfDZ$country)
+
+total.regions <- n_distinct(dfDZ$sampArea)
+
+
+# dfbind <- cbind(dfgd$refID,dfgd$studyContext)
+# dfbind <- dfbind[!duplicated(dfbind),]
+# 
+# total.papers <- sum(!duplicated(dfgd$refID))
+# total.gps <- dim(dfbind)[1]
+
+```
+The systematic literature review included a total of `r total.papers` articles, for this agent. Data was retrieved from `r total.countries` countries and `r total.regions` different regions. 
+
+
+```{r}
+
+#Replacing the wrong string for a dash; summing the amount of papers per types of study. NAs have been added to 'Unspecified'.
+dftypesstudies <- dfDZ %>%
+  mutate(studyContext = str_replace(studyContext, " &ndash;", " - "),
+         studyContext = na_if(studyContext, ""),
+         studyContext = replace_na(studyContext, "Unspecified")) %>%
+  group_by(studyContext) %>%
+  summarize(npapers = n_distinct(refID)) %>%
+  arrange(studyContext) %>%
+  #na.omit() %>% 
+  rename(
+    "Study context" = studyContext,
+    "Number of papers" = npapers,
+  )
+
+ # dftypesstudies <- head(dftypesstudies)
+ # knitr::kable(dftypesstudies, col.names = gsub("[.]", " ", names(dftypesstudies)))
+
+kable(dftypesstudies, align="c",row.names = F)%>%
+    kable_material(c("striped", "hover"))
+```
+
+
+###
+
+Row{data-height=550}
+-----------------------------------------------------------------------
+
+###  {.bggreen data-width=150}
+<a name="CF"></a>
+
+<h1>Start year of study/outbreak</h1>
+
+
+###
+
+```{r}
+
+startYearplot <- dfDZ %>%
+    mutate(startYear = case_when(startYear == 89 ~ 1989,
+                          TRUE ~ as.numeric(startYear))) %>%
+    ggplot(aes(x = factor(startYear))) +
+    geom_bar(fill = "blue") +
+    ggtitle("Total number of papers per reported start year of study/ outbreak/ disease occurence") +
+      xlab("Year") + ylab("Sum") 
+      #scale_x_date(labels=date_format ("%b %y"), breaks=date_breaks("1 year")) +
+      #theme(plot.title = element_text(lineheight=.8, face="bold", size = 15)) +
+      #theme(text = element_text(size=6))
+
+startYearplot
+```
+
+
+
+Row{data-height=550}
+-----------------------------------------------------------------------
+
+###  {.bggreen data-width=150}
+<a name="CF"></a>
+
+<h1>Clinical investigations</h1>
+
+```{r Clinical investigations}
+clinicalinvestigation <- datatable(
+  dfDZ %>%
+    filter(studyContext == "Clinical investigations") %>%
+    mutate(labTarget = case_when(str_detect(labTarget, "Ig.") ~ "Antibody", 
+           TRUE ~ as.character(labTarget))) %>%
+    select( #add here variables to be displayed
+      refID,
+      startYear,
+      duration,
+      targetSpecies,
+      sampStrategy,
+      sampUnit,
+      clinicalSigns,
+      severity
+    ) %>% 
+    distinct() %>% #keeping only distinct rows 
+    arrange (desc(refID), targetSpecies, .by_group= TRUE), 
+            filter = "top", 
+            rownames = F) 
+            # colnames = c("refID", 
+            #              "Start year", 
+            #              "Target species",
+            #              "Duration",
+            #              "Phase",
+            #              "Sampling point",
+            #              "Sampling strategy",
+            #              "Matrix",
+            #              "Lab target"))
+
+clinicalinvestigation
+
+#Run this if the datatable does not work. Just need to delete the datatable() function from the vector first, and then run it again. Might be necessary to adjust height afterwards. 
+
+  # kable(clinicalinvestigation, align="c",row.names = F)%>%
+  #   kable_material(c("striped", "hover"))
+```
+
+
+###
+
+
+Row{data-height=550}
+-----------------------------------------------------------------------
+
+###  {.bggreen data-width=150}
+<a name="CF"></a>
+
+<h1>Monitoring - active</h1>
+
+```{r Monitoring - active}
+monitoring <- datatable(
+  dfDZ %>%
+    filter(studyContext == "Monitoring &ndash;active") %>%
+    mutate(labTarget = case_when(str_detect(labTarget, "Ig.") ~ "Antibody", 
+           TRUE ~ as.character(labTarget))) %>%
+    select( #add here variables to be displayed
+      refID,
+      startYear,
+      country,
+      duration,
+      targetSpecies,
+      reasonSampling,
+      sampPoint,
+      sampStrategy,
+      sampUnit,
+      labTarget
+    ) %>% 
+    distinct() %>% #keeping only distinct rows 
+    arrange (desc(refID), targetSpecies, .by_group= TRUE), 
+            filter = "top", 
+            rownames = F) 
+            # colnames = c("refID", 
+            #              "Start year", 
+            #              "Target species",
+            #              "Duration",
+            #              "Phase",
+            #              "Sampling point",
+            #              "Sampling strategy",
+            #              "Matrix",
+            #              "Lab target"))
+
+monitoring
+
+#Run this if the datatable does not work. Just need to delete the datatable() function from the vector first, and then run it again. Might be necessary to adjust height afterwards. 
+
+  # kable(monitoring, align="c",row.names = F)%>%
+  #   kable_material(c("striped", "hover"))
+```
+
+
+###
+
+
+Row{data-height=550}
+-----------------------------------------------------------------------
+
+###  {.bggreen data-width=150}
+<a name="CF"></a>
+
+<h1>Observational study</h1>
+
+```{r Observational study}
+observationalstudy <- datatable(
+  dfDZ %>%
+    filter(studyContext == "Observational study (case control, cohort)") %>%
+    mutate(labTarget = case_when(str_detect(labTarget, "Ig.") ~ "Antibody", 
+           TRUE ~ as.character(labTarget))) %>%
+    select(
+      refID,
+      startYear,
+      country,
+      duration,
+      targetSpecies,
+      prevalence,
+      UCI_prev,
+      LCI_prev,
+      incidence,
+      UCI_incid,
+      LCI_incid
+    ) %>% 
+    distinct() %>% #keeping only distinct rows 
+    arrange (desc(refID), targetSpecies, .by_group= TRUE), 
+            filter = "top", 
+            rownames = F) 
+            # colnames = c("refID", 
+            #              "Start year", 
+            #              "Target species",
+            #              "Duration",
+            #              "Phase",
+            #              "Sampling point",
+            #              "Sampling strategy",
+            #              "Matrix",
+            #              "Lab target"))
+
+observationalstudy
+
+#Run this if the datatable does not work. Just need to delete the datatable() function from the vector first, and then run it again. Might be necessary to adjust height afterwards. 
+
+  # kable(observationalstudy, align="c",row.names = F)%>%
+  #   kable_material(c("striped", "hover"))
+
+
+```
+
+
+###
+
+
+
+Row{data-height=550}
+-----------------------------------------------------------------------
+
+###  {.bggreen data-width=150}
+<a name="CF"></a>
+
+<h1>Outbreak investigation</h1>
+
+
+###
+
+```{r Outbreak investigation}
+
+
+outbreakinvestigation <- datatable(
+  dfDZ %>%
+    filter(studyContext == "Outbreak investigation") %>%
+    mutate(labTarget = case_when(str_detect(labTarget, "Ig.") ~ "Antibody", 
+           TRUE ~ as.character(labTarget))) %>%
+    select(
+      refID,
+      startYear,
+      targetSpecies,
+      duration,
+      phase,
+      sampPoint,
+      sampStrategy,
+      matrix,
+      labTarget
+    ) %>% 
+    distinct() %>% #keeping only distinct rows 
+    arrange (desc(refID), targetSpecies, .by_group= TRUE), 
+            filter = "top", 
+            rownames = F, 
+            colnames = c("refID", 
+                         "Start year", 
+                         "Target species",
+                         "Duration",
+                         "Phase",
+                         "Sampling point",
+                         "Sampling strategy",
+                         "Matrix",
+                         "Lab target"))
+
+outbreakinvestigation
+
+#Run this if the datatable does not work. Just need to delete the datatable() function from the vector first, and then run it again. Might be necessary to adjust height afterwards. 
+
+  # kable(outbreakinvestigation, align="c",row.names = F)%>%
+  #   kable_material(c("striped", "hover"))
+
+
+```
+
+
+<!-- Row{data-height=550} -->
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ###  {.bggreen data-width=150} -->
+<!-- <a name="CF"></a> -->
+
+<!-- <h1>Proof of disease freedom</h1> -->
+
+<!-- ```{r Proof of disease freedom} -->
+
+<!-- ``` -->
+
+
+<!-- ### -->
+
+Row{data-height=550}
+-----------------------------------------------------------------------
+
+###  {.bggreen data-width=150}
+<a name="CF"></a>
+
+<h1>Surveillance - active or passive</h1>
+
+```{r Surveillance - active}
+surveillance <- datatable(
+  dfDZ %>%
+    filter(studyContext == "Surveillance active (active search for cases)" | studyContext == "Surveillance passive (follow up reports)") %>%
+    mutate(labTarget = case_when(str_detect(labTarget, "Ig.") ~ "Antibody", 
+           TRUE ~ as.character(labTarget))) %>%
+    select(
+      refID,
+      country,
+      targetSpecies,
+      sampPoint,
+      sampArea,
+      sampStrategy,
+      sampUnit,
+      matrix,
+      labTarget
+    ) %>% 
+    distinct() %>% #keeping only distinct rows 
+    arrange (desc(refID), targetSpecies, .by_group= TRUE), 
+            filter = "top", 
+            rownames = F) 
+            # colnames = c("refID", 
+            #              "Start year", 
+            #              "Target species",
+            #              "Duration",
+            #              "Phase",
+            #              "Sampling point",
+            #              "Sampling strategy",
+            #              "Matrix",
+            #              "Lab target"))
+
+surveillance
+
+#Run this if the datatable does not work. Just need to delete the datatable() function from the vector first, and then run it again. Might be necessary to adjust height afterwards. 
+
+  # kable(surveillance, align="c",row.names = F)%>%
+  #   kable_material(c("striped", "hover"))
+
+
+```
+
+
+###
+
+<!-- Row{data-height=550} -->
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ###  {.bggreen data-width=150} -->
+<!-- <a name="CF"></a> -->
+
+<!-- <h1>Surveillance - passive</h1> -->
+
+<!-- ```{r Surveillance - passive} -->
+
+<!-- ``` -->
+
+
+<!-- ### -->
+
+<!-- Row{data-height=550} -->
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ###  {.bggreen data-width=150} -->
+<!-- <a name="CF"></a> -->
+
+<!-- <h1>Survey (designed sampling)</h1> -->
+
+<!-- ```{r Survey (designed sampling)} -->
+
+<!-- ``` -->
+
+
+<!-- ### -->
 
 
 Row{data-height=60 .bggreen}
