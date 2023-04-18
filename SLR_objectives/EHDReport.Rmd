@@ -1,0 +1,900 @@
+---
+title: "EHD Report"
+output: 
+  html_document:
+    df_print: paged
+---
+
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(here)
+library(readxl)
+library("writexl")
+library(doBy)
+library(psych)
+library(DT)
+library(kableExtra)
+
+#Read files
+
+#Diagnostic tests
+DiagnosticTestsData <- read_csv(here("REPORT", "DiagnosticTests_cleaned.csv"))
+DiagnosticTestsAvailable <- read_xlsx(here("REPORT", "DiagnosticTests_list.xlsx"))
+DiagnosticTests_refid <- read_csv(here("REPORT", "DiagnosticTests_refid.csv"))
+
+#Experimental Infections
+ExperimentalInfectionsData <- read_csv(here("REPORT", "ExperimentalInfections_cleaned.csv"))
+ExperimentalInfections_refid <- read_csv(here("REPORT", "ExperimentalInfections_refid.csv"))
+
+#GeoDistribution
+GeoDistributionData <- read_csv(here("REPORT", "GeoDistribution_cleaned.csv"))
+GeoDistribution_refid <- read_csv(here("REPORT","GeoDistribution_refid.csv"))
+
+```
+
+
+
+#Diagnostic tests
+
+```{r}
+dbclean <- DiagnosticTestsData %>%
+  select(refID, groupID, ShortBibliography, targetSpecies, intervention, labTest, #reference#
+         sensitivity, specificity, testLimit, timePoint, nTested, nTruePositive, nTrueNegative,
+         nPositive, nNegative, route, dose, infMode, context, sampStrategy)
+
+write_xlsx(dbclean,
+           path = "diagtestsclean.xlsx",
+           col_names = TRUE,
+           format_headers = TRUE)
+
+
+write.table(dbclean, file = "diagtestsclean.csv", sep = ",", row.names = FALSE)
+
+dbclean
+
+
+```
+
+#Experimental infections
+
+##Tidy
+```{r}
+#Remove the "route" before every route of inf
+ExperimentalInfectionsData <- ExperimentalInfectionsData %>%
+  mutate(route = str_remove_all(route, "route")) %>%
+  mutate(agentSubtype = if_else(agentSubtype == "serotype 1, strain USA1955/01", "EHDV1", agentSubtype),
+         agentSubtype = if_else(agentSubtype == "serotype 2, strain CAN1962/01", "EHDV2", agentSubtype),
+         agentSubtype = if_else(agentSubtype == "serotype 2", "EHDV-2", agentSubtype),
+         agentSubtype = if_else(agentSubtype == "serotype 4, strain NIG1968/01", "EHDV4", agentSubtype),
+         agentSubtype = if_else(agentSubtype == "serotype 5, strain AUS1979/06", "EHDV5", agentSubtype),
+         agentSubtype = if_else(agentSubtype == "serotype 6, strain AUS1981/07", "EHDV6", agentSubtype),
+         agentSubtype = if_else(agentSubtype == "serotype 6, strain AUS1981/07", "EHDV6", agentSubtype),
+         agentSubtype = if_else(agentSubtype == "EHDV6 (Indiana); 1 passage", "EHDV6", agentSubtype),
+         agentSubtype = if_else(agentSubtype == "6", "EHDV6", agentSubtype),
+         agentSubtype = if_else(agentSubtype == "serotype 7, strain ISR2006/01", "EHDV7", agentSubtype),
+         agentSubtype = if_else(agentSubtype == "serotype 8, strainAUS1982/06", "EHDV8", agentSubtype))
+```
+
+
+##Number of papers, groups and species reported.
+```{r}
+
+n.papers <- length(unique(ExperimentalInfectionsData$refID))
+
+n.groups <- length(unique(ExperimentalInfectionsData$groupID))
+
+species <-unique(ExperimentalInfectionsData$targetSpecies)
+
+paste0("There were ", n.papers, " papers and ", n.groups, " groups reported for EHD.") 
+
+paste0("Experimental infection was demonstrated in ", species)
+
+#species_clean <- paste0("White-tailed deer, Cattle, Red deer, Fallow deer, Roe deer, Goat, Sheep, Pigs, Wapiti elk")
+
+```
+
+##Censoring
+Documentation: "The reported minimum incubation time (“Minincub”) is the first day (in days-post-inoculation, dpi) in the animal study group where at least one animal presented with clinical signs. “Maxincub” refers to the last day (in dpi) in which clinical signs were observed in the whole animal group. Please note that these numbers could have been censored according to the days tested in the experiment. When the experiment was stopped at a certain moment, or when no observations were made after a certain day post inoculation, it might be possible that signs were still visible (and could have been seen for a longer period).
+“Mindetect” is the first day (in dpi) in which virus/RNA was detected in a sample from at least one animal in the whole animal group. “Maxdetect” is the last day (in dpi) in which virus/RNA was detected in a sample for the whole animal group. In most cases sampling was not performed along consecutive days (e.g. started on day 4 and/or stopped at day 7). Therefore these data are also censored according to the observation time".
+```{r}
+#Were there any values that were higher or equal to the duration of the experiment/time in which animals were kept (durationPI)?
+censoring <- ExperimentalInfectionsData %>%
+  mutate(censoredIncubation = case_when(
+    max(maxIncub) > durationPI ~ "check",
+    max(maxIncub) == durationPI ~ "yes",
+    TRUE ~ "no"
+  ),
+  censoredDetection = case_when(
+    max(maxDetect) > durationPI ~ "check",
+    max(maxDetect) == durationPI ~ "yes",
+    TRUE ~ "no"
+  ),
+  censoredMortality = case_when(
+    max(maxMortTime) > durationPI ~ "check",
+    max(maxMortTime) == durationPI ~ "yes",
+    TRUE ~ "no"
+  )) 
+
+censoring %>%
+  filter(censoredIncubation %in% c("yes", "check"),
+         censoredDetection %in% c("yes", "check"),
+         censoredMortality %in% c("yes", "check"))
+```
+
+##Evidence of host to host infection
+```{r}
+ExperimentalInfectionsData %>%
+  filter(hostHost != "not investigated/not given/not relevant")
+```
+No studies found evidence of host to host infection.
+
+##Evidence of transplacentary infection
+```{r}
+ExperimentalInfectionsData %>%
+  filter(transplac != "not investigated/not given/not relevant")
+```
+No studies found evidence of transplacentary infection.
+
+##Inoculation routes
+```{r}
+
+ExperimentalInfectionsData %>%
+  group_by(targetSpecies, route, agentSubtype) %>%
+  select(targetSpecies, route, agentSubtype) %>%
+  mutate(route = str_remove(route, "^route")) %>%
+  distinct()
+
+
+ExperimentalInfectionsData %>%
+  select(targetSpecies, route, agentSubtype) %>%
+  distinct()
+
+```
+
+##Matrices in which antigen was detected
+```{r}
+ExperimentalInfectionsData %>%
+  group_by(matrix) %>% 
+  filter(!is.na(minDetect) | !is.na(maxDetect)) %>%
+  distinct(matrix) 
+```
+
+
+
+##Matrices in which virus/Nuc acid was detected
+###Nucleic acid
+```{r}
+nucacid <- ExperimentalInfectionsData %>%
+  group_by(matrix) %>% 
+  filter(!is.na(minDetect) | !is.na(maxDetect),
+         targetLabTest == "Nucleic acid") %>%
+  summarise(
+    "Minimum start of infectious period" = min(minDetect, na.rm = TRUE),
+    "25th start of infectious period" = quantile(minDetect, 0.25, na.rm = TRUE),
+    "Median start of infectious period" = median(minDetect, na.rm = TRUE),
+    "75th start of infectious period" = quantile(minDetect, 0.75, na.rm = TRUE),
+    "Maximum start of infectious period" = max(minDetect, na.rm = TRUE),
+    "Minimum end of infectious period" = min(maxDetect, na.rm = TRUE),
+    "25th end of infectious period" = quantile(maxDetect, 0.25, na.rm = TRUE),
+    "Median end of infectious period" = median(maxDetect, na.rm = TRUE),
+    "75th end of infectious period" = quantile(maxDetect, 0.75, na.rm = TRUE),
+    "Maximum end of infectious period" = max(maxDetect, na.rm = TRUE)
+  ) 
+
+nucacid
+
+write.table(nucacid, file = "nucacid.csv", sep = ",", row.names = FALSE)
+
+```
+
+###Virus
+```{r}
+virus <- ExperimentalInfectionsData %>%
+  group_by(matrix) %>% 
+  filter(!is.na(minDetect) | !is.na(maxDetect),
+         targetLabTest == "Virus") %>%
+  summarise(
+    "Minimum start of infectious period" = min(minDetect, na.rm = TRUE),
+    "25th start of infectious period" = quantile(minDetect, 0.25, na.rm = TRUE),
+    "Median start of infectious period" = median(minDetect, na.rm = TRUE),
+    "75th start of infectious period" = quantile(minDetect, 0.75, na.rm = TRUE),
+    "Maximum start of infectious period" = max(minDetect, na.rm = TRUE),
+    "Minimum end of infectious period" = min(maxDetect, na.rm = TRUE),
+    "25th end of infectious period" = quantile(maxDetect, 0.25, na.rm = TRUE),
+    "Median end of infectious period" = median(maxDetect, na.rm = TRUE),
+    "75th end of infectious period" = quantile(maxDetect, 0.75, na.rm = TRUE),
+    "Maximum end of infectious period" = max(maxDetect, na.rm = TRUE)
+  ) 
+
+virus
+
+write.table(virus, file = "virus.csv", sep = ",", row.names = FALSE)
+
+```
+
+
+##Length of infectious period
+What is the minimum and maximum infectious period in days? Per: Species, route of infection, matrix and lab target.
+
+```{r}
+
+InfPeriodMatrix <-  ExperimentalInfectionsData %>%
+  group_by(targetSpecies, route, matrix, targetLabTest) %>% 
+    filter(!is.na(minDetect) | !is.na(maxDetect)) %>%
+  summarise(
+    "Minimum start of infectious period" = min(minDetect, na.rm = TRUE),
+    "25th start of infectious period" = quantile(minDetect, 0.25, na.rm = TRUE),
+    "Median start of infectious period" = median(minDetect, na.rm = TRUE),
+    "75th start of infectious period" = quantile(minDetect, 0.75, na.rm = TRUE),
+    "Maximum start of infectious period" = max(minDetect, na.rm = TRUE),
+    "Minimum end of infectious period" = min(maxDetect, na.rm = TRUE),
+    "25th end of infectious period" = quantile(maxDetect, 0.25, na.rm = TRUE),
+    "Median end of infectious period" = median(maxDetect, na.rm = TRUE),
+    "75th end of infectious period" = quantile(maxDetect, 0.75, na.rm = TRUE),
+    "Maximum end of infectious period" = max(maxDetect, na.rm = TRUE)
+  ) 
+
+InfPeriodMatrix
+
+write.table(InfPeriodMatrix, file = "InfPeriodMatrix.csv", sep = ",", row.names = FALSE)
+
+```
+
+
+##Clinical signs
+Clinical signs, and length of period of showing clinical signs
+
+####How many studies reported clinical signs?
+```{r}
+ExperimentalInfectionsData %>%
+  group_by(refID) %>%
+  filter(reportingCS == "yes") %>%
+  nrow() 
+```
+
+
+####Duration (onset/end)
+```{r}
+
+duration <- ExperimentalInfectionsData %>% 
+  filter(!is.na(minIncub) | !is.na(maxIncub)) %>% 
+  select(uniqueID, minIncub, maxIncub, targetSpecies) %>% 
+  unique()
+
+
+dfdur <- duration %>% 
+  pivot_longer(cols = c(minIncub, maxIncub), names_to = "limit", values_to = "Days") %>% 
+  mutate(limit = ifelse(limit == "minIncub", "Start of Clinical Signs", "End of Clinical Signs"))
+
+plot <- ggplot(dfdur, aes(x = Days, y = targetSpecies, color = limit)) + 
+  geom_boxplot() + 
+  scale_color_manual(values = c("blue", "orange")) + 
+  labs(title = "Clinical Signs by Incubation Period", 
+       x = "Incubation Period (Days)", 
+       y = "Target Species") +
+  theme_minimal()
+
+plot
+
+
+```
+
+#####Unique Min and Max periods all studies
+```{r}
+IncPeriod <- ExperimentalInfectionsData %>% 
+  filter(!is.na(minIncub) | !is.na(maxIncub)) %>% 
+  select(uniqueID, minIncub, maxIncub, targetSpecies) %>% 
+  unique()
+
+IncPeriod
+```
+
+###Duration per species
+What is the minimum and maximum time post inoculation to observe clinical signs?
+```{r}
+
+quantilesInc <- duration %>% 
+  group_by(targetSpecies) %>% 
+  summarise(
+    "Minimum start of clinical signs" = min(minIncub, na.rm = TRUE),
+    "25th start of clinical signs" = quantile(minIncub, 0.25, na.rm = TRUE),
+    "Median start of clinical signs" = median(minIncub, na.rm = TRUE),
+    "75th start of clinical signs" = quantile(minIncub, 0.75, na.rm = TRUE),
+    "Maximum start of clinical signs" = max(minIncub, na.rm = TRUE),
+    "Minimum end of clinical signs" = min(maxIncub, na.rm = TRUE),
+    "25th end of clinical signs" = quantile(maxIncub, 0.25, na.rm = TRUE),
+    "Median end of clinical signs" = median(maxIncub, na.rm = TRUE),
+    "75th end of clinical signs" = quantile(maxIncub, 0.75, na.rm = TRUE),
+    "Maximum end of clinical signs" = max(maxIncub, na.rm = TRUE)
+  ) 
+
+quantilesInc
+
+write.table(quantilesInc, file = "quantilesInc.csv", sep = ",", row.names = FALSE)
+
+```
+
+
+```{r}
+dataset <- ExperimentalInfectionsData %>%
+  filter(reportingCS != "not investigated/not given/not relevant") %>%
+  select(uniqueID, targetSpecies, reportingCS, starts_with("CS_")) %>%
+  select(-ends_with("_NA")) %>%
+  filter(across(starts_with("CS_"), ~ any(!is.na(.))))
+
+
+listAllClinicalSigns <- ExperimentalInfectionsData %>%
+  select(starts_with("CS_")) %>%
+  colnames() %>%
+  str_remove("CS_") %>%
+  unique() %>%
+  na.omit()
+```
+
+
+###Per species
+```{r}
+
+
+dataset <- ExperimentalInfectionsData %>% 
+  distinct(uniqueID, .keep_all = TRUE) %>% 
+  select(uniqueID, targetSpecies, reportingCS, starts_with("CS_")) %>% 
+  filter(reportingCS != "not investigated/not given/not relevant") %>% 
+  select_if(~length(unique(.)) > 1) %>%
+  mutate(across(everything(), ~ifelse(. == "not investigated/not given/not relevant", NA, .)))
+  
+
+#tentativa com pivot_longer
+dataset <- ExperimentalInfectionsData %>% 
+  distinct(uniqueID, .keep_all = TRUE) %>% 
+  select(uniqueID, targetSpecies, reportingCS, starts_with("CS_")) %>% 
+  filter(reportingCS != "not investigated/not given/not relevant") %>% 
+  select_if(~length(unique(.)) > 1) %>%
+  mutate(across(everything(), ~ifelse(. == "not investigated/not given/not relevant", NA, .)))
+
+
+long_dataset <- dataset %>% 
+  select(targetSpecies, starts_with("CS_")) %>%
+  pivot_longer(cols = -targetSpecies, names_to = "clinical_sign") %>%
+  filter(!is.na(value)) %>%
+  mutate(clinical_sign = str_remove(clinical_sign, "CS_")) #OK! this is showing all the signs reported per species. 
+
+freqSignsSpecies <- long_dataset %>%
+  group_by(targetSpecies, clinical_sign) %>%
+  summarise(count = n()) #ok
+
+
+write.table(freqSignsSpecies, file = "freqSignsSpecies.csv", sep = ",", row.names = FALSE)
+
+freqSignsSpecies
+```
+##Mortality
+
+
+```{r}
+mortality <-ExperimentalInfectionsData %>%
+  #group_by(refID, agentDetails, targetSpecies) %>%
+  distinct(refID, agentDetails, agentSubtype, targetSpecies, deadInfection, sampUnitSize, deadInfection, nrDeadInfection, eutInfection, nrEutInfection, NoDeath) %>%
+  mutate(deadinfection = nrDeadInfection + nrEutInfection,
+         deadbyinfection = if_else(deadInfection == "yes", 1, 0)) %>%
+  group_by(agentSubtype, targetSpecies) %>%
+  summarise(nrgroups = n(),
+            meanStudySize = mean(sampUnitSize),
+            minStudySize = min(sampUnitSize),
+            maxStudySize = max(sampUnitSize),
+            deadbyinfection = sum(deadbyinfection) #nr of studies that reported mortality
+           )
+# 2 studies that reported on mortality DUE TO THE INFECTION: 236373 and 236386;
+#The other studies may have reported on animals being euthanized due to other reasons/ at the end of the study period, or no animals died 
+#OR the study may have not reported on mortality at all
+
+write.table(mortality, file = "mortality.csv", sep = ",", row.names = FALSE)
+
+mortality
+```
+
+
+#Geo Distribution
+
+##Tidy
+```{r}
+#Replacing the wrong string for a dash; summing the amount of papers per types of study. NAs have been added to 'Unspecified'. Summarizing the number of papers and groups per type of study. 
+
+
+GeoDistributionData <- GeoDistributionData %>%
+  mutate(targetSpecies = if_else(targetSpecies == "Other", targetSpecies_C, targetSpecies),
+         targetSpecies = if_else(targetSpecies %in% c("White-tailed deer", "White-tailed deer (Odocoileus virginianus)", "Wild-tailed deer"), "White-tailed deer (Odocoileus virginianus)", targetSpecies),
+    studyContext = case_when(
+    studyContext == "Monitoring &ndash;active" ~ "Active surveillance",
+    studyContext == "Surveillance active (active search for cases)" ~ "Active surveillance",
+    studyContext == "Surveillance passive (follow up reports)" ~ "Passive surveillance",
+    TRUE ~ studyContext
+  )) %>%
+  mutate(studyContext = str_replace(studyContext, " &ndash;", " - "),
+         studyContext = na_if(studyContext, ""),
+         studyContext = replace_na(studyContext, "Unspecified"))
+
+```
+
+
+##Number of papers, countries and regions
+```{r}
+total.gps <- GeoDistributionData %>% 
+  group_by(refID, groupID) %>% nrow()
+
+total.papers <- n_distinct(GeoDistributionData$refID)
+
+total.countries <- n_distinct(GeoDistributionData$country)
+
+total.regions <- n_distinct(GeoDistributionData$sampArea)
+
+
+
+paste0("The systematic literature review included a total of ", total.papers, " articles for Geo Distribution-EHD and data was retrieved from ", total.countries, " contries and ", total.regions, " regions") 
+
+```
+
+
+
+##Number of studies and groups 
+```{r}
+
+
+dftypesstudies <- GeoDistributionData %>%
+   group_by(studyContext) %>%
+  summarize(npapers = n_distinct(refID),
+            ngroups = n_distinct(refID,groupID),
+            Species = paste(unique(targetSpecies), collapse = "; ")) %>%
+  arrange(desc(npapers)) %>%
+  #na.omit() %>% 
+  rename(
+    "Study context" = studyContext,
+    #"Species" = targetSpecies,
+    "Number of papers" = npapers,
+    "Number of groups" = ngroups,
+  )
+
+dftypesstudies
+
+write.table(dftypesstudies, file = "dftypesstudies.csv", sep = ",", row.names = FALSE)
+
+```
+
+
+
+##Questions
+###i. What were the different serotypes identified per country/area? In what species?
+```{r}
+# GeoDistributionData %>%
+#   mutate(targetSpecies = if_else(targetSpecies == "Other", targetSpecies_C, targetSpecies)) %>%
+#   group_by(refID, country, studyContext, targetSpecies, startYear, analysisYear, sampArea, agentSubtype, agentDetails) %>%
+#     summarise(num_occurrences = n()) %>%
+#     filter(num_occurrences > 0) %>%
+#     arrange(desc(num_occurrences))
+# 
+# 
+# GeoDistributionData %>%
+#   mutate(targetSpecies = if_else(targetSpecies == "Other", targetSpecies_C, targetSpecies)) %>%
+#   group_by(refID, country, studyContext, targetSpecies, startYear, analysisYear, sampArea, agentSubtype, agentDetails) %>%
+#   mutate(investigated = if_else(agentSubtype == "not investigated/not given/not relevant" | agentDetails == "not investigated/not given/not relevant", "no", "yes")) %>%
+#   summarise(num_occurrences = n(), num_investigated = sum(investigated == "no"), 
+#             num_not_investigated = sum(investigated == "yes")) %>%
+#   filter(num_occurrences > 0) %>%
+#   arrange(desc(num_occurrences))
+
+
+#Studies that did NOT specify which Serotypes were detected/found for EHD
+serotype_no <- GeoDistributionData %>%
+  mutate(targetSpecies = if_else(targetSpecies == "Other", targetSpecies_C, targetSpecies)) %>%
+  select(refID, country, studyContext, targetSpecies, startYear, analysisYear, sampArea, agentSubtype, agentDetails) %>%
+  mutate(investigated = if_else(agentSubtype == "not investigated/not given/not relevant"
+                                | agentDetails == "not investigated/not given/not relevant"
+                                | agentDetails == "Used PCR not able to identify serotype"
+                                | agentDetails == "the virus was not typed",
+                                "no", "yes")) %>% 
+  filter(investigated == "no") 
+n.serotype.no <- n_distinct(serotype_no$refID) #7 studies
+
+#Studies that DID specify which Serotypes were detected/found for EHD
+serotype_yes <- GeoDistributionData %>%
+  mutate(targetSpecies = if_else(targetSpecies == "Other", targetSpecies_C, targetSpecies)) %>%
+  mutate(investigated = if_else(agentSubtype == "not investigated/not given/not relevant"
+                                | agentDetails == "not investigated/not given/not relevant"
+                                | agentDetails == "Used PCR not able to identify serotype"
+                                | agentDetails == "the virus was not typed",
+                                "no", "yes")) %>% 
+    filter(investigated == "yes") 
+n.serotype.yes <- n_distinct(serotype_yes$refID) #19 studies
+
+serotypestable <- serotype_yes %>%
+  mutate(agentDetails = if_else(agentDetails == "serotype 6", "EHDV-6", agentDetails),
+         agentDetails = if_else(agentDetails == "serotype 2", "EHDV-2", agentDetails),
+         agentDetails = if_else(agentDetails == "serotype 2", "EHDV-2", agentDetails),
+         agentDetails = if_else(agentDetails == "1", "EHDV-1", agentDetails),
+         agentDetails = if_else(agentDetails == "6", "EHDV-6", agentDetails),
+         agentDetails = if_else(agentDetails == "Ibaraki", "EHDV-2", agentDetails),
+         #The etiological agent of Ibaraki disease is Ibaraki virus (IBAV), which is a strain of serotype 2 of epizootic hemorrhagic disease virus (EHDV): https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4638292/
+         agentDetails = str_replace_all(agentDetails, " ", "-")) %>%
+  select(refID, startYear, studyContext, targetSpecies, agentSubtype, agentDetails, country, sampArea) %>%
+  distinct() %>%
+  arrange(desc(startYear), desc(agentDetails))  
+
+
+write.table(serotypestable, file = "serotypestable.csv", sep = ",", row.names = FALSE,
+            col.names = c(
+              "refID",
+              "Start year",
+              "Study context",
+              "Target species",
+              "Agent subtype",
+              "Agent details",
+              "Country",
+              "Sampled area"
+            ))
+
+paste0(n.serotype.yes, " studies reported on serotypes found for EHD.")
+```
+
+
+###i.i Serotypes collapsed 
+```{r}
+uniqueserotypes <- serotypestable %>%
+     group_by(agentDetails) %>%
+     summarise(Studies = paste(unique(refID), collapse = "; "),
+               Country = paste(unique(country), collapse = "; "),
+               Species = paste(unique(targetSpecies), collapse = "; "),
+               Year = paste(unique(startYear), collapse = "; "))
+
+uniqueserotypes
+
+write.table(uniqueserotypes, file = "uniqueserotypes.csv", sep = ",", row.names = FALSE)
+
+```
+
+###Main detection methods/ diagnostic tests used 
+```{r}
+
+detectionMethods <- GeoDistributionData %>%
+     group_by(targetSpecies) %>%
+     mutate(across(everything(), ~str_replace(., "not investigated/not given/not relevant", "Not investigated/not given/not relevant"))) %>%
+     summarise(Studies = paste(unique(refID), collapse = "; "),
+               Matrix = paste(unique(matrix), collapse = "; "),
+               Test = paste(unique(labTest), collapse = "; "))
+               #Target = paste(unique(labTarget), collapse = "; ")) target was removed because most were not investigated/given/relevant
+
+detectionMethods
+
+write.table(detectionMethods, file = "detectionMethods.csv", sep = ",", row.names = FALSE)
+
+```
+
+
+###Disease frequency measures
+
+```{r}
+#Which studies reported on disease frequency measures?
+#Got to check one by one.
+
+# GeoDistributionData %>%
+#   select(nPositive, imported, nNegative, disFreedom, designPrev, prevalence, UCI_prev, LCI_prev, incidence, UCI_incid, LCI_incid, incidUnit, incidUnit2, R0, lowerR0, upperR0, impactMeasure, impactValue, impactUnit) %>%
+#   filter(!is.na(nPositive) & !is.na(imported) & !is.na(nNegative) & !is.na(disFreedom) & !is.na(designPrev) & !is.na(prevalence) & !is.na(UCI_prev) & !is.na(LCI_prev) & !is.na(incidence) & !is.na(incidUnit) & !is.na(incidUnit2) & !is.na(R0) & !is.na(impactMeasure) & !is.na(impactValue) & !is.na(impactUnit)) %>%
+#   filter(across(everything(), ~!str_detect(.x, "not investigated/not given/not relevant")))
+
+
+```
+
+####Prevalence 
+```{r}
+prevGeo <- GeoDistributionData %>%
+  filter(!is.na(prevalence)) %>%
+  select(refID, groupID, country, sampArea, targetSpecies, startYear, studyContext, nPositive, imported, nNegative, disFreedom, designPrev, prevalence, UCI_prev, LCI_prev)
+
+write.table(prevGeo, file = "prevGeo.csv", sep = ",", row.names = FALSE)
+```
+No studies reported on: cases that confirmed to be IMPORTED (animals believed not to have been infected in the study area) or on the designed prevalence. 
+
+####Incidence: None
+```{r}
+GeoDistributionData %>%
+  filter(!is.na(incidence))
+```
+No studies reported on an incidence value.
+
+####R0: None
+```{r}
+GeoDistributionData %>%
+  filter(!is.na(R0))
+```
+No studies reported on R0 values.
+
+####Other impact measures
+What other measures were given?
+```{r}
+impqctOthergeo <- GeoDistributionData %>%
+  filter(!is.na(impactMeasure)) %>%
+  select(refID, groupID, targetSpecies, startYear, studyContext, impactMeasure, impactValue, impactUnit)
+  
+
+write.table(impqctOthergeo, file = "impqctOthergeo.csv", sep = ",", row.names = FALSE)
+
+#no info on nPositive, nNegative values
+```
+
+
+##Types of study
+###Clinical severity
+This table refers to all studies that reported on clinical signs for EHD, except for the study contexts that were specific for clinical investigations. 
+```{r}
+
+ClinsignsSevtable <- GeoDistributionData %>%
+  filter(!(clinicalSigns == "" & severity == ""),
+         studyContext != "Clinical investigations") %>%
+  mutate(targetSpecies = if_else(targetSpecies == "Other", targetSpecies_C, targetSpecies)) %>%
+  select(refID, studyContext, targetSpecies, clinicalSigns, severity) %>%
+  distinct() %>%
+  arrange(desc(refID), targetSpecies)
+
+n_distinct(ClinsignsSevtable$refID)
+
+ClinsignsSevtable
+
+
+write.table(ClinsignsSevtable, file = "ClinsignsSevtable.csv", sep = ",", row.names = FALSE,
+            col.names = c("RefID",
+                          "Study context",
+                         "Target species",
+                         "Clinical signs",
+                         "Severity"))
+#write_xlsx(ClinsignsSevtable, path = "ClinsignsSevtable.xlsx")
+
+```
+
+
+
+
+
+###Outbreaks 
+```{r}
+outbreaks <-  GeoDistributionData %>%
+    filter(studyContext == "Outbreak investigation") %>%
+    mutate(labTarget = case_when(str_detect(labTarget, "Ig.") ~ "Antibody", 
+           TRUE ~ as.character(labTarget))) %>%
+    select( #add here variables to be displayed
+      country,
+      startYear,
+      targetSpecies,
+      labTarget,
+      sampUnitSize,
+      nPositive,
+      prevalence
+    ) %>% 
+    distinct() %>% #keeping only distinct rows 
+    arrange (desc(startYear), targetSpecies, .by_group= TRUE)
+           
+outbreaksn <- outbreaks %>%
+  mutate(across(c(sampUnitSize, nPositive, prevalence), as.numeric)) %>%
+  group_by(country, startYear, targetSpecies, labTarget) %>%
+  summarise(nTested = sum(sampUnitSize, na.rm = TRUE),
+            nPos = sum(nPositive, na.rm = TRUE),
+            prevalence = round(mean(prevalence, na.rm = TRUE), 1)) %>%
+  select(country, startYear, targetSpecies, labTarget, nTested, nPos, prevalence) %>%
+  rename(`Target Species` = targetSpecies, `Lab target` = labTarget) %>%
+  mutate(`Target Species` = str_replace(`Target Species`, "not investigated/not given/not relevant", "")) %>%
+  mutate(`Lab target` = str_replace(`Lab target`, "not investigated/not given/not relevant", "")) %>%
+  arrange(`Target Species`, desc(startYear))
+
+outbreaks
+
+    write.table(outbreaks, file = "outbreaks.csv", sep = ",", row.names = FALSE,
+            col.names = c("Country",
+                         "Start year",
+                         "Target species",
+                         "Lab target",
+                         "n tested",
+                         "n pos",
+                         "Prevalence"))
+
+```
+
+
+
+
+###Clinical investigations
+```{r Clinical investigations}
+
+clinical <- GeoDistributionData %>%
+    mutate(targetSpecies = if_else(targetSpecies == "Other", targetSpecies_C, targetSpecies),
+           clinicalSigns = str_to_sentence(clinicalSigns)) %>%
+    filter(studyContext == "Clinical investigations") %>%
+    mutate(labTarget = case_when(str_detect(labTarget, "Ig.") ~ "Antibody",
+           TRUE ~ as.character(labTarget))) %>%
+  
+    select( 
+      refID,
+      targetSpecies,
+      sampUnitSize,
+      clinicalSigns,
+      severity
+    ) %>%
+    distinct() %>% 
+    arrange(targetSpecies, .by_group= TRUE)
+
+
+n_distinct(clinical$targetSpecies) 
+n_distinct(clinical$refID)
+
+
+
+#options(DT.options = list(scrollY="100vh",pageLength =10))
+# datatable(clinical,
+#             filter = "none", 
+#             rownames = F,
+#             colnames = c("refID","Target species","group size","Clinical Signs","Severity"))
+# 
+clinical
+
+  write.table(clinical, file = "clinical.csv", sep = ",", row.names = FALSE,
+            col.names = c("refID","Target species","Group size","Clinical Signs","Severity"))
+
+```
+
+
+
+
+
+
+
+###Active surveillance
+```{r active surveillance}
+active <- GeoDistributionData %>%
+    filter(studyContext == "Active surveillance") %>%
+    mutate(labTarget = case_when(str_detect(labTarget, "Ig.") ~ "Antibody", 
+           TRUE ~ as.character(labTarget))) %>%
+    select(
+      refID,
+      country,
+      startYear,
+      targetSpecies,
+      sampPoint,
+      reasonSampling,
+      sampStrategy,
+      matrix,
+      labTarget,
+      sampUnitSize,
+      nPositive,
+      prevalence
+    ) %>% 
+    distinct() %>% #keeping only distinct rows 
+    arrange (desc(refID), targetSpecies, .by_group= TRUE)#, 
+
+active
+
+ write.table(active, file = "active.csv", sep = ",", row.names = FALSE,
+            col.names = c("refID","Country","Year","Target species",
+                         "Sampling Point", "Reason for sampling", "Sampling strategy",
+                         "matrix","Lab target","sample size","n Pos","prevalence"))
+
+```
+
+
+###Survey
+```{r survey}
+survey <- GeoDistributionData %>%
+    filter(studyContext == "Survey (designed sampling)") %>%
+    mutate(labTarget = case_when(str_detect(labTarget, "Ig.") ~ "Antibody", 
+           TRUE ~ as.character(labTarget))) %>%
+    select(
+      refID,
+      country,
+      startYear,
+      targetSpecies,
+      sampPoint,
+      reasonSampling,
+      sampStrategy,
+      matrix,
+      labTarget,
+      sampUnitSize,
+      nPositive,
+      prevalence
+    ) %>% 
+    distinct() %>% 
+    arrange (desc(refID), targetSpecies, .by_group= TRUE)#, 
+
+
+
+survey
+
+write.table(survey, file = "survey.csv", sep = ",", row.names = FALSE,
+            col.names = c("refID","Country","Year","Target species",
+                         "Sampling Point", "Reason for sampling", "Sampling strategy",
+                         "matrix","Lab target","sample size","n Pos","prevalence"))
+```
+
+ 
+###Passive surveillance: None
+```{r Surveillance - passive}
+passive <- GeoDistributionData %>%
+    filter(studyContext == "Passive surveillance") %>%
+    mutate(labTarget = case_when(str_detect(labTarget, "Ig.") ~ "Antibody", 
+           TRUE ~ as.character(labTarget))) %>%
+    select(
+      refID,
+      country,
+      startYear,
+      targetSpecies,
+      sampPoint,
+      reasonSampling,
+      sampStrategy,
+      matrix,
+      labTarget,
+      sampUnitSize,
+      nPositive,
+      prevalence
+    ) %>% 
+    distinct() %>% #keeping only distinct rows 
+    arrange (desc(refID), targetSpecies, .by_group= TRUE)#, 
+
+passive
+
+
+```
+
+
+###Proof of disease freedom: None
+```{r dz.freedom}
+dzfreedom <- GeoDistributionData %>%
+    filter(studyContext == "Proof of disease freedom") %>%
+    mutate(labTarget = case_when(str_detect(labTarget, "Ig.") ~ "Antibody",
+           TRUE ~ as.character(labTarget))) %>%
+    select(
+      refID,
+      country,
+      startYear,
+      targetSpecies,
+      sampPoint,
+      sampStrategy,
+      matrix,
+      labTarget,
+      sampUnitSize
+      ) %>% 
+    distinct() %>% 
+    arrange (desc(refID), targetSpecies, .by_group= TRUE) 
+
+
+
+```
+
+
+
+
+###Observational: None
+```{r Observational study}
+observational <- GeoDistributionData %>%
+    filter(studyContext == "Observational study (case control, cohort)") %>%
+    mutate(labTarget = case_when(str_detect(labTarget, "Ig.") ~ "Antibody", 
+           TRUE ~ as.character(labTarget))) %>%
+    select(
+      refID,
+      country,
+      startYear,
+      targetSpecies,
+      sampPoint,
+      reasonSampling,
+      sampStrategy,
+      matrix,
+      labTarget,
+      sampUnitSize,
+      nPositive,
+      prevalence
+    ) %>% 
+    distinct() %>% 
+    arrange (desc(refID), targetSpecies, .by_group= TRUE)
+
+
+
+```
+
+
+
+
